@@ -1,0 +1,10 @@
+test/*
+prettify_js.py
+adder.py
+.env
+.venv/*
+.vscode/*
+output_domains/*
+*.py
+domain_tester.py
+config.ini
