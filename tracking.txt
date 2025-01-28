@@ -322,3 +322,5 @@ geolocation.onetrust.com
 privacyportal.onetrust.com
 stats.g.doubleclick.net
 www.google-analytics.com
+beacons3.gvt2.com
+www15.smartadserver.com
