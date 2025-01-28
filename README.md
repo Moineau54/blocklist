@@ -22,6 +22,17 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [spam.txt](spam.txt) | contains spam domains |
 | [phishing](phishing.txt) | contains phishing domains |
 
+
+## To add to Pi-hole or ublock
+
+```
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/advertisement.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/malware.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/phishing.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking.txt
+```
+
 ## To anyone wanting to contribute
 
 Feel free to do so. Just use the **dev** branch to push stuff as the **main** branch will only be for the releases.
