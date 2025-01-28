@@ -311,3 +311,14 @@ privacyportal.onetrust.com
 cse.google.com
 google.com
 clients1.google.com
+a.pub.network
+cmp.inmobi.com
+ad.doubleclick.net
+widgets.outbrain.com
+region1.google-analytics.com
+partner.googleadservices.com
+munchkin.marketo.net
+geolocation.onetrust.com
+privacyportal.onetrust.com
+stats.g.doubleclick.net
+www.google-analytics.com
