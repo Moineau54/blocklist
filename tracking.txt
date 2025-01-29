@@ -1,6 +1,9 @@
 # Rest
 ecdn.analysis.fi
 
+# Snigel
+cdn.snigelweb.com
+
 # Datadog
 browser-intake-datadoghq.com
 
