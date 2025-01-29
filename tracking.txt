@@ -325,3 +325,7 @@ www.google-analytics.com
 beacons3.gvt2.com
 www15.smartadserver.com
 csi.gstatic.com
+app-measurement.com
+crashlyticsreports-pa.googleapis.com
+firebaselogging.googleapis.com
+beacons3.gvt2.com
