@@ -143,6 +143,12 @@ adomik.info
 adomik.net
 adomik.org
 
+# Kameleoon
+j7q313hy22.kameleoon.eu
+
+# Piano
+experience-eu.piano.io
+
 # Adotmob
 adotmob.com
 
@@ -158,6 +164,12 @@ adroll.com
 
 # Adscale
 adscale.de
+
+# DoubleVerify
+pub.doubleverify.com
+
+# OpeCloud
+adalliance.profiles.tagger.opecloud.co
 
 # AdsWizz (SiriusXM/Pandora)
 adswizz.com
@@ -177,6 +189,7 @@ adversni.com
 adviva.net
 
 # Rest (Unknown or Smaller Ad Networks)
+te-static.technical-service.net
 script.ioam.de
 script.ioam.de
 12ezo5v60.com
