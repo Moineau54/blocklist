@@ -333,3 +333,4 @@ incoming.telemetry.mozilla.org
 ecdn.analysis.fi
 cmp.inmobi.com
 ecdn.firstimpression.io
+app-measurement.com
