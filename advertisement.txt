@@ -2,6 +2,7 @@
 adometry.com
 admob.com
 adwords.google.com
+securepubads.g.doubleclick.net
 
 # Spotify
 adeventtracker.spotify.com
@@ -51,6 +52,8 @@ adformdsp.net
 
 # Outbrain
 boot.pbstck.com
+amplify.outbrain.com
+widgets.outbrain.com
 
 # AdRoll
 adroll.com
@@ -174,6 +177,8 @@ adversni.com
 adviva.net
 
 # Rest (Unknown or Smaller Ad Networks)
+script.ioam.de
+script.ioam.de
 12ezo5v60.com
 adclk.com-ssl.biz
 addnexus.com
