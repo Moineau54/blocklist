@@ -6,6 +6,7 @@
   - [Index](#index)
   - [Description](#description)
   - [List of blocklists](#list-of-blocklists)
+  - [To add to Pi-hole or ublock](#To-add-to-Pi-hole-or-ublock)
   - [To anyone wanting to contribute](#to-anyone-wanting-to-contribute)
 
 ## Description
