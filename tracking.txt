@@ -330,3 +330,6 @@ crashlyticsreports-pa.googleapis.com
 firebaselogging.googleapis.com
 beacons3.gvt2.com
 incoming.telemetry.mozilla.org
+ecdn.analysis.fi
+cmp.inmobi.com
+ecdn.firstimpression.io
