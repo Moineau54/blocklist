@@ -1,8 +1,12 @@
+# Batch
+ws.batch.com
+
 # Google
 adometry.com
 admob.com
 adwords.google.com
 securepubads.g.doubleclick.net
+mail-ads.google.com
 
 # Spotify
 adeventtracker.spotify.com
