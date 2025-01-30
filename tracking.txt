@@ -1,6 +1,9 @@
 # Rest
 ecdn.analysis.fi
 
+# Batch
+via.batch.com
+
 # Snigel
 cdn.snigelweb.com
 
