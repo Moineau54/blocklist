@@ -1,3 +1,6 @@
+# Batch
+ws.batch.com
+
 # Google
 adometry.com
 admob.com
