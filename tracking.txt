@@ -1,5 +1,9 @@
 # Rest
 ecdn.analysis.fi
+btloader.com
+
+# 4DEX
+script.4dex.io
 
 # Batch
 via.batch.com
