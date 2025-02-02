@@ -1,3 +1,9 @@
+# Umeng
+alogus.umeng.com
+
+# Microsoft
+bat.bing.com
+
 # Rest
 ecdn.analysis.fi
 btloader.com
@@ -51,6 +57,8 @@ app-measurement.com
 crashlyticsreports-pa.googleapis.com
 firebaselogging.googleapis.com
 pagead2.googlesyndication.com
+beacons.gcp.gvt2.com
+beacons.gvt2.com
 
 # Mozilla
 incoming.telemetry.mozilla.org
