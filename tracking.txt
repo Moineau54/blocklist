@@ -1,3 +1,6 @@
+# Umeng
+alogus.umeng.com
+
 # Microsoft
 bat.bing.com
 
