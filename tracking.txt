@@ -1,3 +1,6 @@
+# Microsoft
+bat.bing.com
+
 # Rest
 ecdn.analysis.fi
 
