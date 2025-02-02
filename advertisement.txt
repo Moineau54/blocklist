@@ -1,3 +1,45 @@
+# Omnitag
+hb-api.omnitagjs.com
+
+# ConnectAd
+i.connectad.io
+
+# Media.net
+prebid.media.net
+
+# Snigel
+cdn.snigelweb.com
+
+# BuySellAds
+srv.buysellads.com
+
+# PubMatic
+hbopenbid.pubmatic.com
+
+# OneTag
+onetag-sys.com
+
+# Rubicon Project
+fastlane.rubiconproject.com
+
+# Xandr
+ib.adnxs.com
+
+# OpenX
+rtb.openx.net
+
+# Smart Adserver
+prg.smartadserver.com
+
+# ServeNoBild
+ads.servenobid.com
+
+# E-Planning
+pbjs.e-planning.net
+
+# Cootlogix
+exchange.cootlogix.com
+
 # Batch
 ws.batch.com
 
@@ -38,6 +80,8 @@ ads.ebay.com
 
 # Criteo
 gum.criteo.com
+bidder.criteo.com
+static.criteo.net
 
 # Amazon
 advertising.amazon.co.uk
