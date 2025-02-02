@@ -1,5 +1,6 @@
 # Umeng
 alogus.umeng.com
+alogsus.umeng.com
 
 # Microsoft
 bat.bing.com
