@@ -4,11 +4,17 @@ log.111percent.net
 # UserReport
 visitanalytics.userreport.com
 
+# TikTok
+analytics.tiktok.com
+
 # Vungle
 logs.ads.vungle.com
 
 # InMobi Pte Ltd
 telemetry.sdk.inmobi.com
+
+# Hotjar
+pacman-metrics-live.live.eks.hotjar.com 
 
 # Umeng (chinese spyware)
 alogus.umeng.com
@@ -29,6 +35,10 @@ eu-mobile.events.data.microsoft.com # To test
 # Github
 copilot-telemetry.githubusercontent.com
 telemetry.individual.githubcopilot.com
+codeload.github.com
+
+# Taboola
+api.taboola.com
 
 # AT Internet
 logs1412.xiti.com
@@ -99,6 +109,7 @@ photosdata-pa.googleapis.com
 region1.analytics.google.com
 www.google-analytics.com
 region1.google-analytics.com
+googleads.g.doubleclick.net
 
 # Mozilla
 incoming.telemetry.mozilla.org
