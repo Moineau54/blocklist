@@ -24,7 +24,8 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [malware.txt](malware.txt) | contains domains flagged for having malware. |
 | [tracking.txt](tracking.txt) | contains tracking domains. |
 | [spam.txt](spam.txt) | contains spam domains |
-| [phishing](phishing.txt) | contains phishing domains |
+| [phishing.txt](phishing.txt) | contains phishing domains |
+| [fingerprinting.txt](fingerprinting.txt) | contains fingerprinting domains |
 
 ## To add to Pi-hole or ublock
 
