@@ -26,6 +26,7 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [spam.txt](spam.txt) | contains spam domains |
 | [phishing.txt](phishing.txt) | contains phishing domains |
 | [fingerprinting.txt](fingerprinting.txt) | contains fingerprinting domains |
+| [suspicious.txt](suspicious.txt) | contains suspicious domains |
 
 ## To add to Pi-hole or ublock
 
