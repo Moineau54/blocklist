@@ -37,7 +37,7 @@ https://github.com/Moineau54/blocklist/raw/refs/heads/main/phishing.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting.txt
-https://github.com/Moineau54/blocklist/edit/main/suspicious.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious.txt
 ```
 
 ## To anyone wanting to contribute
