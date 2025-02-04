@@ -85,6 +85,9 @@ o1358113.ingest.sentry.io
 # Parsely
 api.parsely.com
 
+# Canva
+telemetry.canva.com
+
 # Quantcast
 secure.quantserve.com
 
@@ -110,6 +113,7 @@ region1.analytics.google.com
 www.google-analytics.com
 region1.google-analytics.com
 googleads.g.doubleclick.net
+www.googletagmanager.com
 
 # Mozilla
 incoming.telemetry.mozilla.org
@@ -225,4 +229,3 @@ activity.windows.com
 bingapis.com msedge.net assets.msn.com 
 scorecardresearch.com edge.microsoft.com 
 data.msn.com 
-
