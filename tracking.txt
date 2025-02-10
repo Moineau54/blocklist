@@ -16,6 +16,11 @@ telemetry.sdk.inmobi.com
 # Hotjar
 pacman-metrics-live.live.eks.hotjar.com 
 
+# Automattic
+0.gravatar.com
+1.gravatar.com
+2.gravatar.com
+
 # Umeng (chinese spyware)
 alogus.umeng.com
 alogsus.umeng.com
