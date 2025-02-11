@@ -13,3 +13,10 @@ us.vortex-win.data.microsoft.com
 v10-win.vortex.data.microsoft.com.akadns.net
 v10.vortex-win.data.microsoft.com
 vortex-win-sandbox.data.microsoft.com
+
+# Mozilla
+incoming.telemetry.mozilla.org
+
+# Github
+copilot-telemetry.githubusercontent.com
+telemetry.individual.githubcopilot.com

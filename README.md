@@ -27,6 +27,7 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [phishing.txt](phishing.txt) | contains phishing domains |
 | [fingerprinting.txt](fingerprinting.txt) | contains fingerprinting domains |
 | [suspicious.txt](suspicious.txt) | contains suspicious domains |
+| [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
 
 ## To add to Pi-hole or ublock
 
@@ -38,6 +39,7 @@ https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry.txt
 ```
 
 ## To anyone wanting to contribute
