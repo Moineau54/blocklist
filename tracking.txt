@@ -235,4 +235,4 @@ msedge.net
 assets.msn.com 
 scorecardresearch.com edge.microsoft.com 
 data.msn.com 
-
+cdn.oaistatic.com
