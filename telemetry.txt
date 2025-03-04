@@ -20,3 +20,8 @@ incoming.telemetry.mozilla.org
 # Github
 copilot-telemetry.githubusercontent.com
 telemetry.individual.githubcopilot.com
+
+w3.org
+
+# Cloudflare
+static.cloudflareinsights.com

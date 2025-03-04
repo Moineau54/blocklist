@@ -121,6 +121,8 @@ www.google-analytics.com
 region1.google-analytics.com
 googleads.g.doubleclick.net
 www.googletagmanager.com
+www.gstatic.com
+fonts.googleapis.com
 
 # Cookiebot
 consent.cookiebot.com
