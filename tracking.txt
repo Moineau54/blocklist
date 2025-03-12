@@ -136,6 +136,9 @@ ecdn.firstimpression.io
 amplify.outbrain.com
 widgets.outbrain.com
 
+# Global Multimedia Protocols Group 
+gmpg.org
+
 # Amazon
 advertising.amazon.co.uk
 
