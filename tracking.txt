@@ -135,6 +135,7 @@ googleads.g.doubleclick.net
 googletagmanager.com
 gstatic.com
 fonts.googleapis.com
+googleapis.com
 
 # Cookiebot
 consent.cookiebot.com
