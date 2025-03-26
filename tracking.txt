@@ -10,6 +10,12 @@ analytics.tiktok.com
 # Vungle
 logs.ads.vungle.com
 
+# Sprig
+sprig.com
+
+# Ashby
+ashbyhq.com
+
 # InMobi Pte Ltd
 telemetry.sdk.inmobi.com
 
@@ -106,6 +112,9 @@ api-adservices.apple.com
 notes-analytics-events.apple.com
 splunk-hec.apple.com
 
+# Algolia
+algolia.net
+
 # Google (DoubleClick, Firebase, Crashlytics, Measurement)
 stats.g.doubleclick.net
 beacons3.gvt2.com
@@ -113,18 +122,20 @@ csi.gstatic.com
 app-measurement.com
 crashlyticsreports-pa.googleapis.com
 firebaseinstallations.googleapis.com
+firebaseremoteconfig.googleapis.com
 firebaselogging.googleapis.com
 pagead2.googlesyndication.com
 beacons.gcp.gvt2.com
 beacons.gvt2.com
 photosdata-pa.googleapis.com
 region1.analytics.google.com
-www.google-analytics.com
+google-analytics.com
 region1.google-analytics.com
 googleads.g.doubleclick.net
-www.googletagmanager.com
-www.gstatic.com
+googletagmanager.com
+gstatic.com
 fonts.googleapis.com
+googleapis.com
 
 # Cookiebot
 consent.cookiebot.com
@@ -247,3 +258,6 @@ megabrain.co
 cloudflareinsight.com
 intercom.com
 intercomcdn.com
+hubvisor.io
+nmrodam.com
+

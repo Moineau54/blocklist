@@ -1,3 +1,9 @@
+# Ziff Davis LLC
+ziffstatic.com
+
+# Implcit
+implcit.com
+
 # Omnitag
 hb-api.omnitagjs.com
 
