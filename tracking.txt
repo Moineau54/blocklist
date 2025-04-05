@@ -133,6 +133,7 @@ google-analytics.com
 region1.google-analytics.com
 googleads.g.doubleclick.net
 googletagmanager.com
+www.googletagmanager.com
 gstatic.com
 fonts.googleapis.com
 googleapis.com
@@ -237,6 +238,9 @@ api-logncrash.cloud.toast.com
 # Wattpad Corp
 track.wattpad.com # To test
 
+# Clickadu
+chaseherbalpasty.com
+
 # Rest
 ecdn.analysis.fi
 btloader.com
@@ -260,4 +264,5 @@ intercom.com
 intercomcdn.com
 hubvisor.io
 nmrodam.com
+chaseherbalpasty.com
 
