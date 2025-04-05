@@ -1,3 +1,9 @@
+# Ziff Davis LLC
+ziffstatic.com
+
+# Implcit
+implcit.com
+
 # Omnitag
 hb-api.omnitagjs.com
 
@@ -397,3 +403,7 @@ adyard.net
 adzhub.com
 adzip.co
 da.chartboost.com
+banhq.com
+bellonapotype.com
+trialhd.com
+boomio-cdn.com
