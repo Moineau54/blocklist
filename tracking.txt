@@ -256,8 +256,7 @@ bingapis.com
 msedge.net 
 assets.msn.com 
 scorecardresearch.com edge.microsoft.com 
-data.msn.com 
-cdn.oaistatic.com
+data.msn.com
 megabrain.co
 cloudflareinsight.com
 intercom.com
