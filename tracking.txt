@@ -21,6 +21,14 @@ telemetry.sdk.inmobi.com
 
 # Hotjar
 pacman-metrics-live.live.eks.hotjar.com 
+static.hotjar.com
+
+# Twilio Inc
+cdn.segment.com
+app.segment.com
+
+# 6sc.co
+j.6sc.co
 
 # Automattic
 gravatar.com
@@ -84,6 +92,7 @@ cdn.snigelweb.com
 
 # Datadog
 browser-intake-datadoghq.com
+rum.browser-intake-datadoghq.com
 0.datadog.pool.ntp.org # To test
 
 # Qualaroo
@@ -97,6 +106,14 @@ js.hs-scripts.com
 
 # Sentry
 o1358113.ingest.sentry.io
+o13027.ingest.sentry.io
+browser.sentry-cdn.com
+
+# Wistia
+fast.wistia.com
+pipedream.wistia.com
+embed-ssl.wistia.com
+distillery.wistia.com
 
 # Parsely
 api.parsely.com
@@ -268,6 +285,9 @@ dn6rwwtxa647p.cloudfront.net
 d3lqotgbn3npr.cloudfront.net
 d15kdpgjg3unno.cloudfront.net
 d11enq2rymy0yl.cloudfront.net
+
+# Amplitude
+cdn.amplitude.com
 
 # Rest
 ecdn.analysis.fi
