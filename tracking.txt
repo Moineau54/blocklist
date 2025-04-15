@@ -185,6 +185,7 @@ functions.adnami.io
 
 # Meta
 connect.facebook.net
+graph.facebook.com
 
 # Qualtrics
 zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com
@@ -202,6 +203,7 @@ imasdk.googleapis.com
 id.google.com
 id.google.de
 firebaselogging-pa.googleapis.com
+ajax.googleapis.com #to test
 
 # Tealium
 collect-eu-central-1.tealiumiq.com
@@ -331,3 +333,4 @@ www.zoiefwqhcaczun.com
 www.piwik.bayern.de
 www.ojgzytrmr.com
 www.cvvczlcg.com
+holahupa.com
