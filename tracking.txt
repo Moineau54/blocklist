@@ -20,6 +20,7 @@ ashbyhq.com
 telemetry.sdk.inmobi.com
 
 # Hotjar
+<<<<<<< HEAD
 pacman-metrics-live.live.eks.hotjar.com 
 static.hotjar.com
 
@@ -29,6 +30,9 @@ app.segment.com
 
 # 6sc.co
 j.6sc.co
+=======
+pacman-metrics-live.live.eks.hotjar.com
+>>>>>>> 6d4d990 (test)
 
 # Automattic
 gravatar.com
@@ -173,7 +177,7 @@ ecdn.firstimpression.io
 amplify.outbrain.com
 widgets.outbrain.com
 
-# Global Multimedia Protocols Group 
+# Global Multimedia Protocols Group
 gmpg.org
 
 # Amazon
@@ -296,8 +300,8 @@ app-analytics-services.com
 region1.app-analytics-services.com
 logos.jobstatic.de
 trustedsource.org
-privacyportal.onetrust.com
 scorecardresearch.com
+cdn.oaistatic.com
 megabrain.co
 cloudflareinsight.com
 intercom.com
@@ -305,52 +309,8 @@ intercomcdn.com
 hubvisor.io
 nmrodam.com
 chaseherbalpasty.com
-cdn.viowrel.com
-cdn.staticmoly.me
-a.lulucdn.com
-cdn.jsdelivr.net
-cdn.cookielaw.org
-cdn.branch.io
-static.cloudflareinsights.com
-launchpad.privacymanager.io
-launchpad-wrapper.privacymanager.io
-cdn.consentmanager.net
-d.delivery.consentmanager.net
-pop.admpire.com
-a.pub.network
-www.xadsmart.com
-trackersimulator.org
-eviltracker.net
-do-not-tracker.org
-cdn.adsninja.ca
-static.adsafeprotected.com
-btloader.com
-analytics.tiktok.com
-a.ad.gt
-cmp.inmobi.com
-scribe.adforge.io
-77ee068b6863.cdn4.forter.com
-u5lddcsi.xyz
-squirtpresented.com
-mc.yandex.ru
-mushroomreclaimschnapps.com
-vmring.cc
-videocdnshop.com
-tru.am
-f51rm.com
-theetheks.com
-storage.lulu-row1.com
-ptichoolsougn.net
-prd.jwpltx.com
-valnet.sentinelpro.com
-naupsithizeekee.com
-naupsakiwhy.com
-merequartz.com
-holahupa.com
-jeez.jkyawbmyvmjj.top
-www.zpilkesyasa.com
-www.zoiefwqhcaczun.com
-www.piwik.bayern.de
-www.ojgzytrmr.com
-www.cvvczlcg.com
-holahupa.com
+img1.wsimg.com
+afternic.com
+csp.secureserver.net
+ds-aksb-a.akamaihd.net
+
