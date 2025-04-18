@@ -242,6 +242,9 @@ adversni.com
 # Adviva (Specific Media)
 adviva.net
 
+# Google (Doubleclick)
+googleads.g.doubleclick.net
+
 # Rest (Unknown or Smaller Ad Networks)
 te-static.technical-service.net
 script.ioam.de
