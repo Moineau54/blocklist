@@ -224,7 +224,7 @@ imasdk.googleapis.com
 id.google.com
 id.google.de
 firebaselogging-pa.googleapis.com
-ajax.googleapis.com #to test
+
 
 # Tealium
 collect-eu-central-1.tealiumiq.com
