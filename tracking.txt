@@ -21,7 +21,7 @@ telemetry.sdk.inmobi.com
 
 # Hotjar
 <<<<<<< HEAD
-pacman-metrics-live.live.eks.hotjar.com 
+pacman-metrics-live.live.eks.hotjar.com
 static.hotjar.com
 
 # Twilio Inc
@@ -301,7 +301,6 @@ region1.app-analytics-services.com
 logos.jobstatic.de
 trustedsource.org
 scorecardresearch.com
-cdn.oaistatic.com
 megabrain.co
 cloudflareinsight.com
 intercom.com
