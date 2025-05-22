@@ -1,6 +1,9 @@
 # Ziff Davis LLC
 ziffstatic.com
 
+# Adninja
+cdn.adsninja.ca
+
 # Implcit
 implcit.com
 
