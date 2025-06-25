@@ -90,6 +90,7 @@ browser-intake-datadoghq.com
 rum.browser-intake-datadoghq.com
 0.datadog.pool.ntp.org # To test
 logs.browser-intake-datadoghq.com
+8b61d74c.datadoghq.com
 
 # Wunderkind
 tag.wknd.ai
@@ -181,6 +182,8 @@ aax.amazon-adsystem.com
 s.amazon-adsystem.com
 c.amazon-adsystem.com
 images-na.ssl-images-amazon.com
+l4-logs-http-rum-pub-s0-7d264be627ade923.elb.us
+east-1.amazonaws.com
 aan.amazon.com
 
 # Cxense
@@ -294,6 +297,7 @@ cloudflareinsight.com
 
 # Rest
 s-onetag.com
+consent.trustarc.com
 static.chartbeat.com
 cdn.optimizely.com
 ecdn.analysis.fi
