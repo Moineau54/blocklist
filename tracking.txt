@@ -89,6 +89,10 @@ cdn.snigelweb.com
 browser-intake-datadoghq.com
 rum.browser-intake-datadoghq.com
 0.datadog.pool.ntp.org # To test
+logs.browser-intake-datadoghq.com
+
+# Wunderkind
+tag.wknd.ai
 
 # Qualaroo
 cl.qualaroo.com
@@ -289,6 +293,9 @@ btloader.com
 cloudflareinsight.com
 
 # Rest
+s-onetag.com
+static.chartbeat.com
+cdn.optimizely.com
 ecdn.analysis.fi
 btloader.com
 app-analytics-services.com
