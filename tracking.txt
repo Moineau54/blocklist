@@ -209,6 +209,10 @@ graph.facebook.com
 # Qualtrics
 zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com
 
+# trafficjunky
+trafficjunky.net
+media.trafficjunky.net
+
 # Google
 eo2.adtrafficquality.google
 google-analytics.com
