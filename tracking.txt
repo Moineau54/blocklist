@@ -1,3 +1,6 @@
+# GLOBALR LLC
+true.am
+
 # 111% Inc
 log.111percent.net
 
@@ -20,19 +23,7 @@ ashbyhq.com
 telemetry.sdk.inmobi.com
 
 # Hotjar
-<<<<<<< HEAD
 pacman-metrics-live.live.eks.hotjar.com
-static.hotjar.com
-
-# Twilio Inc
-cdn.segment.com
-app.segment.com
-
-# 6sc.co
-j.6sc.co
-=======
-pacman-metrics-live.live.eks.hotjar.com
->>>>>>> 6d4d990 (test)
 
 # Automattic
 gravatar.com
@@ -293,6 +284,10 @@ d11enq2rymy0yl.cloudfront.net
 # Amplitude
 cdn.amplitude.com
 
+# cloudflare
+btloader.com
+cloudflareinsight.com
+
 # Rest
 ecdn.analysis.fi
 btloader.com
@@ -302,7 +297,6 @@ logos.jobstatic.de
 trustedsource.org
 scorecardresearch.com
 megabrain.co
-cloudflareinsight.com
 intercom.com
 intercomcdn.com
 hubvisor.io
@@ -312,4 +306,5 @@ img1.wsimg.com
 afternic.com
 csp.secureserver.net
 ds-aksb-a.akamaihd.net
-
+launchpad.privacymanager.io
+launchpad-wrapper.privacymanager.io
