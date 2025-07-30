@@ -1,6 +1,9 @@
 # GLOBALR LLC
 true.am
 
+# Atlassian
+ixsystems.atlassian.net
+
 # 111% Inc
 log.111percent.net
 
