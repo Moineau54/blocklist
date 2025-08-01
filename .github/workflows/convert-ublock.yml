@@ -2,7 +2,7 @@ name: Convert to uBlock Origin Format
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
     paths:
       - 'advertisement.txt'
       - 'fingerprinting.txt'
