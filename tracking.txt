@@ -4,7 +4,11 @@ true.am
 # Atlassian
 ixsystems.atlassian.net
 
-# 111% Inc
+# MarkMonitor Inc.
+s.go-mpulse.net
+cdn.eu.amplitude.com
+
+# 111% Inc.
 log.111percent.net
 
 # UserReport
@@ -148,6 +152,7 @@ algolia.net
 stats.g.doubleclick.net
 beacons3.gvt2.com
 csi.gstatic.com
+ad.doubleclick.net
 app-measurement.com
 crashlyticsreports-pa.googleapis.com
 firebaseinstallations.googleapis.com
