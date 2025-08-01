@@ -5,6 +5,5 @@ adder.py
 .venv/*
 .vscode/*
 output_domains/*
-*.py
 domain_tester.py
 config.ini
