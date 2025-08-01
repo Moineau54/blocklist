@@ -1,0 +1,399 @@
+! GLOBALR LLC
+||true.am^
+
+
+! 111% Inc
+||log.111percent.net^
+
+
+! UserReport
+||visitanalytics.userreport.com^
+
+
+! TikTok
+||analytics.tiktok.com^
+
+
+! Vungle
+||logs.ads.vungle.com^
+
+
+! Sprig
+||sprig.com^
+
+
+! Ashby
+||ashbyhq.com^
+
+
+! InMobi Pte Ltd
+||telemetry.sdk.inmobi.com^
+
+
+! Hotjar
+||pacman-metrics-live.live.eks.hotjar.com^
+
+
+! Automattic
+||gravatar.com^
+||0.gravatar.com^
+||1.gravatar.com^
+||2.gravatar.com^
+
+
+! Umeng (chinese spyware)
+||alogus.umeng.com^
+||alogsus.umeng.com^
+
+
+
+
+! Microsoft
+||bat.bing.com^
+||eu-office.events.data.microsoft.com # To test^
+||self.events.data.microsoft.com # To test^
+||mobile.events.data.microsoft.com # To test^
+||eu-teams.events.data.microsoft.com # To test^
+||teams.events.data.microsoft.com # To test^
+||eu-mobile.events.data.microsoft.com # To test^
+||edge.microsoft.com^
+||data.microsoft.com ^
+||msftconnecttest.com^
+||azureedge.net^
+||activity.windows.com^
+||bingapis.com^
+||msedge.net^
+||assets.msn.com^
+||data.msn.com^
+
+
+! Github
+||codeload.github.com^
+
+
+! Taboola
+||api.taboola.com^
+
+
+! AT Internet
+||logs1412.xiti.com^
+||logs1238.xiti.com^
+||logs1286.xiti.com^
+||logs1136.xiti.com^
+||logws1360.ati-host.net^
+
+
+! Meet5
+||api.analytics.meet5.net^
+
+
+! Lotame Solutions
+||analytics.rlcdn.com^
+
+
+! Asmodee Digital
+||remote-data.asnapieu.com^
+
+
+! 4DEX
+||script.4dex.io^
+
+
+! Batch
+||via.batch.com^
+||wsmetrics.batch.com^
+
+
+! Snigel
+||cdn.snigelweb.com^
+
+
+! Datadog
+||browser-intake-datadoghq.com^
+||rum.browser-intake-datadoghq.com^
+||0.datadog.pool.ntp.org # To test^
+||logs.browser-intake-datadoghq.com^
+||8b61d74c.datadoghq.com^
+
+
+! Wunderkind
+||tag.wknd.ai^
+
+
+! Qualaroo
+||cl.qualaroo.com^
+
+
+! Visual Website Optimizer
+||dev.visualwebsiteoptimizer.com^
+
+
+! HubSpot
+||js.hs-scripts.com^
+
+
+! Sentry
+||o1358113.ingest.sentry.io^
+||o13027.ingest.sentry.io^
+||browser.sentry-cdn.com^
+
+
+! Wistia
+||fast.wistia.com^
+||pipedream.wistia.com^
+||embed-ssl.wistia.com^
+||distillery.wistia.com^
+
+
+! Parsely
+||api.parsely.com^
+
+
+! Canva
+||telemetry.canva.com^
+
+
+! Quantcast
+||secure.quantserve.com^
+
+
+! OneTrust
+||geolocation.onetrust.com^
+||privacyportal.onetrust.com^
+
+
+! Marketo
+||munchkin.marketo.net^
+
+
+! Apple
+||xp.apple.com^
+||api-adservices.apple.com^
+||notes-analytics-events.apple.com^
+||splunk-hec.apple.com^
+
+
+! Algolia
+||algolia.net^
+
+
+! Google (DoubleClick, Firebase, Crashlytics, Measurement)
+||stats.g.doubleclick.net^
+||beacons3.gvt2.com^
+||csi.gstatic.com^
+||app-measurement.com^
+||crashlyticsreports-pa.googleapis.com^
+||firebaseinstallations.googleapis.com^
+||firebaseremoteconfig.googleapis.com^
+||firebaselogging.googleapis.com^
+||pagead2.googlesyndication.com^
+||beacons.gcp.gvt2.com^
+||beacons.gvt2.com^
+||photosdata-pa.googleapis.com^
+||region1.analytics.google.com^
+||google-analytics.com^
+||region1.google-analytics.com^
+||googleads.g.doubleclick.net^
+||googletagmanager.com^
+||www.googletagmanager.com^
+||gstatic.com^
+||fonts.googleapis.com^
+||googleapis.com^
+
+
+! Cookiebot
+||consent.cookiebot.com^
+
+
+! First Impression
+||ecdn.firstimpression.io^
+
+
+! Outbrain
+||amplify.outbrain.com^
+||widgets.outbrain.com^
+
+
+! Global Multimedia Protocols Group
+||gmpg.org^
+
+
+! Amazon
+||advertising.amazon.co.uk^
+||aax.amazon-adsystem.com^
+||s.amazon-adsystem.com^
+||c.amazon-adsystem.com^
+||images-na.ssl-images-amazon.com^
+||l4-logs-http-rum-pub-s0-7d264be627ade923.elb.us^
+||east-1.amazonaws.com^
+||aan.amazon.com^
+
+
+! Cxense
+||cdn.cxense.com^
+
+
+! INFOnline
+||script.ioam.de^
+
+
+! Twitter / X
+||syndication.twitter.com^
+||static.ads-twitter.com^
+
+
+! ID5
+||id5-sync.com^
+
+
+! Adnami
+||functions.adnami.io^
+
+
+! Meta
+||connect.facebook.net^
+||graph.facebook.com^
+
+
+! Qualtrics
+||zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com^
+
+
+! trafficjunky
+||trafficjunky.net^
+||media.trafficjunky.net^
+
+
+! Google
+||eo2.adtrafficquality.google^
+||google-analytics.com^
+||googleadservices.com^
+||googlesyndication.com^
+||tpc.googlesyndication.com^
+||googletagmanager.com^
+||googletagservices.com^
+||www.googletagservices.com^
+||imasdk.googleapis.com^
+||id.google.com^
+||id.google.de^
+||firebaselogging-pa.googleapis.com^
+
+
+
+
+! Tealium
+||collect-eu-central-1.tealiumiq.com^
+
+
+! OneTrust
+||geolocation.onetrust.com^
+
+
+! Adclk
+||adclk.co^
+||adclk.com^
+
+
+! AdColony
+||adcolony.com^
+
+
+! The Globe and Mail
+||adcounter.theglobeandmail.com^
+
+
+! Adexpert
+||adexpert.cz^
+
+
+! Adfast
+||adfast.net^
+
+
+! Adfront Limited
+||adfront.org^
+
+
+! Adgebra
+||adgebra.co.in^
+
+
+! AUDITION
+||adfarm1.adition.com^
+
+
+! Adform
+||adform.net^
+||adform.org^
+||adformdsp.com^
+||adformdsp.net^
+
+
+! Samsung
+||log-config.samsungacr.com^
+||log-ingestion-eu.samsungacr.com^
+||tos-prod-getdata.samsung-dict.com # To test^
+||tos-dev-getdata.samsung-dict.com # To test^
+||tos-stg-getdata.samsung-dict.com # To test^
+||analytics.samsungknox.com^
+
+
+
+
+! Adjust GmbH
+||analytics.adjust.com^
+
+
+! NHN Corporation
+||api-logncrash.cloud.toast.com^
+
+
+! Wattpad Corp
+||track.wattpad.com # To test^
+
+
+! Clickadu
+||chaseherbalpasty.com^
+
+
+! CloudFront
+||dn6rwwtxa647p.cloudfront.net^
+||d3lqotgbn3npr.cloudfront.net^
+||d15kdpgjg3unno.cloudfront.net^
+||d11enq2rymy0yl.cloudfront.net^
+
+
+! Amplitude
+||cdn.amplitude.com^
+
+
+! cloudflare
+||btloader.com^
+||cloudflareinsight.com^
+
+
+! Rest
+||s-onetag.com^
+||consent.trustarc.com^
+||static.chartbeat.com^
+||cdn.optimizely.com^
+||ecdn.analysis.fi^
+||btloader.com^
+||app-analytics-services.com^
+||region1.app-analytics-services.com^
+||logos.jobstatic.de^
+||trustedsource.org^
+||scorecardresearch.com^
+||megabrain.co^
+||intercom.com^
+||intercomcdn.com^
+||hubvisor.io^
+||nmrodam.com^
+||chaseherbalpasty.com^
+||img1.wsimg.com^
+||afternic.com^
+||csp.secureserver.net^
+||ds-aksb-a.akamaihd.net^
+||launchpad.privacymanager.io^
+||launchpad-wrapper.privacymanager.io^
+||sdk.privacy-center.org^

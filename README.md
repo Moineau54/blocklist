@@ -29,7 +29,7 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [suspicious.txt](suspicious.txt) | contains suspicious domains |
 | [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
 
-## To add to Pi-hole or ublock
+## To add to Pi-hole
 
 ```shell
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/advertisement.txt
@@ -40,6 +40,19 @@ https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry.txt
+```
+
+## To add to Ublock Origins
+
+```shell
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/advertisement_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/malware_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/phishing_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious_ublock.txt
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry_ublock.txt
 ```
 
 ## To anyone wanting to contribute

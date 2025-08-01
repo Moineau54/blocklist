@@ -48,7 +48,8 @@ eu-teams.events.data.microsoft.com # To test
 teams.events.data.microsoft.com # To test
 eu-mobile.events.data.microsoft.com # To test
 edge.microsoft.com
-data.microsoft.com msftconnecttest.com
+data.microsoft.com 
+msftconnecttest.com
 azureedge.net
 activity.windows.com
 bingapis.com
@@ -326,3 +327,4 @@ csp.secureserver.net
 ds-aksb-a.akamaihd.net
 launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
+sdk.privacy-center.org
