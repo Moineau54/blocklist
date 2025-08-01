@@ -1,0 +1,485 @@
+! Ziff Davis LLC
+||ziffstatic.com^
+
+
+! Adninja
+||cdn.adsninja.ca^
+
+
+! Implcit
+||implcit.com^
+
+
+! Omnitag
+||hb-api.omnitagjs.com^
+
+
+! ConnectAd
+||i.connectad.io^
+
+
+! Media.net
+||prebid.media.net^
+
+
+! Snigel
+||cdn.snigelweb.com^
+
+
+! BuySellAds
+||srv.buysellads.com^
+
+
+! PubMatic
+||hbopenbid.pubmatic.com^
+
+
+! OneTag
+||onetag-sys.com^
+
+
+! Rubicon Project
+||fastlane.rubiconproject.com^
+
+
+! Xandr
+||ib.adnxs.com^
+
+
+! OpenX
+||rtb.openx.net^
+
+
+! Smart Adserver
+||prg.smartadserver.com^
+
+
+! ServeNoBild
+||ads.servenobid.com^
+
+
+! E-Planning
+||pbjs.e-planning.net^
+
+
+! Cootlogix
+||exchange.cootlogix.com^
+
+
+! Batch
+||ws.batch.com^
+
+
+! Google
+||adometry.com^
+||admob.com^
+||adwords.google.com^
+||securepubads.g.doubleclick.net^
+||mail-ads.google.com^
+||www.googleadservices.com^
+||googleadservices.com^
+
+
+! Spotify
+||adeventtracker.spotify.com^
+||ads-fa.spotify.com^
+
+
+! AOL
+||adinfo.aol.com^
+||advertising.aol.com^
+
+
+! Microsoft
+||advertising.microsoft.com^
+||ads.msn.com^
+||ads1.msn.com^
+||ads2.msn.com^
+
+
+! Yahoo
+||ads.yahoo.com^
+
+
+! Viber
+||ads.viber.com^
+||ads.aws.viber.com^
+||ads-d.viber.com^
+
+
+! Chaturbate
+||ads.chaturbate.com^
+
+
+! eBay
+||ads.ebay.com^
+
+
+! Criteo
+||gum.criteo.com^
+||bidder.criteo.com^
+||static.criteo.net^
+
+
+! Amazon
+||advertising.amazon.co.uk^
+||c.amazon-adsystem.com^
+
+
+! Adjust
+||adjust.com^
+||adjust.io^
+
+
+! Adform
+||adform.com^
+||adform.net^
+||adform.org^
+||adformdsp.com^
+||adformdsp.net^
+
+
+! Outbrain
+||boot.pbstck.com^
+||amplify.outbrain.com^
+||widgets.outbrain.com^
+
+
+! AdRoll
+||adroll.com^
+
+
+! Adsterra
+||adsterra.com^
+
+
+! AdTech
+||adtech.de^
+||adtechus.com^
+
+
+! Adzerk
+||adzerk.com^
+||adzerk.net^
+
+
+! AdUnity
+||adunity.com^
+||adunity.net^
+
+
+! Adition
+||adition.com^
+||adfarm1.adition.com^
+
+
+! Quisma
+||admax.quisma.com^
+
+
+! Flurry (Yahoo)
+||adlog.flurry.com^
+
+
+! Pandora
+||adserver.pandora.com^
+
+
+! AOL Advertising
+||adsonar.com^
+
+
+! AdScience
+||adscience.nl^
+
+
+! Cookiebot
+||consent.cookiebot.com^
+
+
+! Oracle (AddThis)
+||addthis.com^
+||addthisedge.com^
+
+
+! Xplosion
+||ups.xplosion.de^
+
+
+! Adelphic (Viant)
+||adelphic.net^
+
+
+! Adkernel
+||adkernel.com^
+
+
+! AdMarketplace
+||admarketplace.net^
+
+
+! Admized
+||admized.com^
+
+
+! Admob (Google)
+||admob.com^
+
+
+! Adnxs (AppNexus/Xandr/Microsoft)
+||adnxs.biz^
+||adnxs.com^
+||adnxs.info^
+||adnxs.mobi^
+||adnxs.net^
+||adnxs.nyc^
+||adnxs.org^
+||adnxs.us^
+||adnxtr.com^
+||adnxus.com^
+
+
+! Adobedtm (Adobe)
+||adobedtm.com^
+||adobetag.com^
+
+
+! Adocean (Gemius)
+||adocean.pl^
+
+
+! Adomik
+||adomik.biz^
+||adomik.com^
+||adomik.info^
+||adomik.net^
+||adomik.org^
+
+
+! Kameleoon
+||j7q313hy22.kameleoon.eu^
+
+
+! Piano
+||experience-eu.piano.io^
+
+
+! Adotmob
+||adotmob.com^
+
+
+! Adperfect
+||adperfect.com^
+
+
+! AdprimeMedia
+||adprimemedia.com^
+||adprimemedia.net^
+
+
+! Adroll
+||adroll.com^
+
+
+! Adscale
+||adscale.de^
+
+
+! DoubleVerify
+||pub.doubleverify.com^
+
+
+! OpeCloud
+||adalliance.profiles.tagger.opecloud.co^
+
+
+! AdsWizz (SiriusXM/Pandora)
+||adswizz.com^
+||adswizz.net^
+
+
+! AdTech (AOL/Verizon)
+||adtech.de^
+||adtechus.com^
+
+
+! Adtruth (Experian)
+||adtruth.com^
+
+
+! Adversity Media
+||adversni.com^
+
+
+! Adviva (Specific Media)
+||adviva.net^
+
+
+! Google (Doubleclick)
+||googleads.g.doubleclick.net^
+
+
+! Rest (Unknown or Smaller Ad Networks)
+||te-static.technical-service.net^
+||script.ioam.de^
+||script.ioam.de^
+||12ezo5v60.com^
+||adclk.com-ssl.biz^
+||addnexus.com^
+||addnexus.info^
+||addnexus.net^
+||addnexus.org^
+||addeluxe.jp^
+||addfreestats.com^
+||addmediaclick.com^
+||addnow.com^
+||addoox.net^
+||addtoany.com^
+||adexpert.cz^
+||adfast.net^
+||adfinis-sygroup.ch^
+||adfront.org^
+||adgebra.co.in^
+||adgenie.co.uk^
+||adgiant.io^
+||adgibbon.com^
+||adglare.net^
+||adgrx.com^
+||adinfuse.com^
+||adingo.jp^
+||adio.co^
+||adip.ly^
+||adixo.com^
+||adizio.com^
+||adjug.com^
+||adk2x.com^
+||adkmob.com^
+||adkontekst.pl^
+||adlabsnetworks.com^
+||adlansa.com^
+||adlegend.com^
+||adlibrary.org^
+||adlik.akavita.com^
+||adlooxtracking.com^
+||adlucent.com^
+||adlucent.net^
+||adlucent.org^
+||admailtiser.com^
+||admantx.com^
+||admathhd.com^
+||admatic.com.tr^
+||admaym.com^
+||admedia.com^
+||admediaclick.com^
+||admedo.com^
+||admeld.com^
+||admo.tv^
+||adnet.de^
+||adnexus.com^
+||adnexus.net^
+||adnexus.org^
+||adnico.jp^
+||adnium.com^
+||adnow.com^
+||adpacked.com^
+||adpiano.com^
+||adplace.cz^
+||adplan.cz^
+||adrank.mobi^
+||adrank.net^
+||adready.com^
+||adready.info^
+||adreadytractions.com^
+||adrecreate.com^
+||adrequest.net^
+||adriadigital.si^
+||adrichweb.com^
+||adrise.tv^
+||adrolays.de^
+||adrotate.se^
+||adrsp.net^
+||adrtx.net^
+||adrunr.com^
+||ads-ai.com^
+||ads-creativesyndicator.com^
+||ads-for-apps.com^
+||ads-verify.net^
+||ads.chaturbate.com^
+||ads.clicmanager.fr^
+||ads.diamonds^
+||ads.fineco.it^
+||ads.gold^
+||ads.hearstmags.com^
+||ads.pointroll.com^
+||ads.pureleads.com^
+||ads4apps.net^
+||ads4pubs.com^
+||ads5-adnow.com^
+||adsafe.solocpm.com^
+||adsafeprotected.com^
+||adsafety.net^
+||adsbookie.com^
+||adsby.klikki.com^
+||adscience.nl^
+||adsclean.com^
+||adsegments.imgs.sapo.pt^
+||adsensecustomsearchads.com^
+||adserv.com^
+||adserve.postrelease.com^
+||adsfac.eu^
+||adshole.click^
+||adsignify.net^
+||adsmobi.com^
+||adsnative.com^
+||adsoptimal.com^
+||adspdbl.com^
+||adspeed.net^
+||adspsp.com^
+||adsrv.eacdn.com^
+||adsrvr.org^
+||adsrvs.com^
+||adstheaa.com^
+||adsty.com^
+||adsur.it^
+||adsurity.com^
+||adsurity.de^
+||adsurity.fr^
+||adsurity.nl^
+||adswithsalt.com^
+||adsymptotic.com^
+||adt.traffictrack.de^
+||adtarget.me^
+||adtilt.com^
+||adtoma.com^
+||adtoma.mobi^
+||adtomafusion.net^
+||adtopia.club^
+||adtrack.king.com^
+||adtrak.net^
+||adtraxx.de^
+||adtrue.com^
+||aduoso.com^
+||adupclickfilter.com^
+||adv.abv.bg^
+||adv.satsis.info^
+||advanced-web-analytics.com^
+||advantage.as^
+||adventori.com^
+||adversal.com^
+||advertiserurl.com^
+||adverts.itv.com^
+||advertserve.com^
+||advmedialtd.com^
+||advolution.de^
+||advombat.ru^
+||adxpansion.com^
+||adxpose.com^
+||adxpose.net^
+||adxprts.com^
+||adyard.net^
+||adzhub.com^
+||adzip.co^
+||da.chartboost.com^
+||banhq.com^
+||bellonapotype.com^
+||trialhd.com^
