@@ -2,7 +2,7 @@ name: Convert to uBlock Origin Format
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
     paths:
       - 'advertisement.txt'
       - 'fingerprinting.txt'
@@ -58,6 +58,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull --rebase origin main
         git add *_ublock.txt
         git commit -m "Auto-update uBlock Origin filter files [skip ci]"
         git push
+
