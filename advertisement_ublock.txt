@@ -71,6 +71,7 @@
 
 
 ! Google
+||ad.doubleclick.net^
 ||adometry.com^
 ||admob.com^
 ||adwords.google.com^
