@@ -1,5 +1,7 @@
 # Blocklist
 
+[![Convert to uBlock Origin Format](https://github.com/Moineau54/blocklist/actions/workflows/convert-ublock.yml/badge.svg)](https://github.com/Moineau54/blocklist/actions/workflows/convert-ublock.yml)
+
 ## Index
 
 - [Blocklist](#blocklist)
