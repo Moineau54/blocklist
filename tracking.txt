@@ -323,3 +323,4 @@ csp.secureserver.net
 ds-aksb-a.akamaihd.net
 launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
+sdk.privacy-center.org
