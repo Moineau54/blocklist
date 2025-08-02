@@ -205,6 +205,7 @@
 ||region1.google-analytics.com^
 ||googleads.g.doubleclick.net^
 ||googletagmanager.com^
+||googletagservices.com^
 ||www.googletagmanager.com^
 ||gstatic.com^
 ||fonts.googleapis.com^
