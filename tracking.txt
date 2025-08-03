@@ -172,6 +172,18 @@ www.googletagmanager.com
 gstatic.com
 fonts.googleapis.com
 googleapis.com
+eo2.adtrafficquality.google
+google-analytics.com
+googleadservices.com
+googlesyndication.com
+tpc.googlesyndication.com
+googletagmanager.com
+googletagservices.com
+www.googletagservices.com
+imasdk.googleapis.com
+id.google.com
+id.google.de
+firebaselogging-pa.googleapis.com
 
 # Cookiebot
 consent.cookiebot.com
@@ -222,21 +234,6 @@ zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com
 # trafficjunky
 trafficjunky.net
 media.trafficjunky.net
-
-# Google
-eo2.adtrafficquality.google
-google-analytics.com
-googleadservices.com
-googlesyndication.com
-tpc.googlesyndication.com
-googletagmanager.com
-googletagservices.com
-www.googletagservices.com
-imasdk.googleapis.com
-id.google.com
-id.google.de
-firebaselogging-pa.googleapis.com
-
 
 # Tealium
 collect-eu-central-1.tealiumiq.com
