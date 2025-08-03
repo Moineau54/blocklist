@@ -61,6 +61,7 @@ securepubads.g.doubleclick.net
 mail-ads.google.com
 www.googleadservices.com
 googleadservices.com
+googleads.g.doubleclick.net
 
 # Spotify
 adeventtracker.spotify.com
@@ -248,10 +249,9 @@ adversni.com
 # Adviva (Specific Media)
 adviva.net
 
-# Google (Doubleclick)
-googleads.g.doubleclick.net
 
 # Rest (Unknown or Smaller Ad Networks)
+jads.co
 te-static.technical-service.net
 script.ioam.de
 script.ioam.de
