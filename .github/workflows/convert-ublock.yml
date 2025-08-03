@@ -1,18 +1,6 @@
 name: Convert to uBlock Origin Format
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'advertisement.txt'
-      - 'fingerprinting.txt'
-      - 'malware.txt'
-      - 'phishing.txt'
-      - 'spam.txt'
-      - 'suspicious.txt'
-      - 'telemetry.txt'
-      - 'to_monitor.txt'
-      - 'tracking.txt'
   pull_request:
     branches: [ main ]
     paths:
@@ -63,4 +51,3 @@ jobs:
         git add *_ublock.txt
         git commit -m "Auto-update uBlock Origin filter files [skip ci]" || echo "Nothing to commit"
         git push
-
