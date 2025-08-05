@@ -2,7 +2,16 @@
 ||true.am^
 
 
-! 111% Inc
+! Atlassian
+||ixsystems.atlassian.net^
+
+
+! MarkMonitor Inc.
+||s.go-mpulse.net^
+||cdn.eu.amplitude.com^
+
+
+! 111% Inc.
 ||log.111percent.net^
 
 
@@ -181,6 +190,7 @@
 ||stats.g.doubleclick.net^
 ||beacons3.gvt2.com^
 ||csi.gstatic.com^
+||ad.doubleclick.net^
 ||app-measurement.com^
 ||crashlyticsreports-pa.googleapis.com^
 ||firebaseinstallations.googleapis.com^
@@ -195,10 +205,23 @@
 ||region1.google-analytics.com^
 ||googleads.g.doubleclick.net^
 ||googletagmanager.com^
+||googletagservices.com^
 ||www.googletagmanager.com^
 ||gstatic.com^
 ||fonts.googleapis.com^
 ||googleapis.com^
+||eo2.adtrafficquality.google^
+||google-analytics.com^
+||googleadservices.com^
+||googlesyndication.com^
+||tpc.googlesyndication.com^
+||googletagmanager.com^
+||googletagservices.com^
+||www.googletagservices.com^
+||imasdk.googleapis.com^
+||id.google.com^
+||id.google.de^
+||firebaselogging-pa.googleapis.com^
 
 
 ! Cookiebot
@@ -262,23 +285,6 @@
 ! trafficjunky
 ||trafficjunky.net^
 ||media.trafficjunky.net^
-
-
-! Google
-||eo2.adtrafficquality.google^
-||google-analytics.com^
-||googleadservices.com^
-||googlesyndication.com^
-||tpc.googlesyndication.com^
-||googletagmanager.com^
-||googletagservices.com^
-||www.googletagservices.com^
-||imasdk.googleapis.com^
-||id.google.com^
-||id.google.de^
-||firebaselogging-pa.googleapis.com^
-
-
 
 
 ! Tealium

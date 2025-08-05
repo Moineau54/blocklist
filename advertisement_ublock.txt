@@ -71,6 +71,7 @@
 
 
 ! Google
+||ad.doubleclick.net^
 ||adometry.com^
 ||admob.com^
 ||adwords.google.com^
@@ -78,6 +79,7 @@
 ||mail-ads.google.com^
 ||www.googleadservices.com^
 ||googleadservices.com^
+||googleads.g.doubleclick.net^
 
 
 ! Spotify
@@ -315,11 +317,10 @@
 ||adviva.net^
 
 
-! Google (Doubleclick)
-||googleads.g.doubleclick.net^
 
 
 ! Rest (Unknown or Smaller Ad Networks)
+||jads.co^
 ||te-static.technical-service.net^
 ||script.ioam.de^
 ||script.ioam.de^

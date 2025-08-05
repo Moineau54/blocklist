@@ -47,7 +47,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git fetch origin
-        git rebase origin/main
         git add *_ublock.txt
         git commit -m "Auto-update uBlock Origin filter files [skip ci]" || echo "Nothing to commit"
         git push
