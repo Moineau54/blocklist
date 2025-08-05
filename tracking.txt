@@ -164,6 +164,7 @@ beacons.gvt2.com
 photosdata-pa.googleapis.com
 region1.analytics.google.com
 google-analytics.com
+www.google-analytics.com
 region1.google-analytics.com
 googleads.g.doubleclick.net
 googletagmanager.com
