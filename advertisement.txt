@@ -416,3 +416,4 @@ banhq.com
 bellonapotype.com
 trialhd.com
 wlresources.com
+prm03.wlresources.com
