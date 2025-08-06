@@ -112,6 +112,12 @@ dev.visualwebsiteoptimizer.com
 
 # HubSpot
 js.hs-scripts.com
+hubspotonwebflow.com
+
+# Adobe
+p.typekit.net
+use.typekit.net
+typekit.com
 
 # Sentry
 o1358113.ingest.sentry.io
@@ -226,6 +232,9 @@ id5-sync.com
 # Adnami
 functions.adnami.io
 
+# 6Sense
+j.6sc.co
+
 # Meta
 connect.facebook.net
 graph.facebook.com
@@ -308,6 +317,9 @@ cdn.amplitude.com
 btloader.com
 cloudflareinsight.com
 
+# The Trade Desk
+insight.adsrvr.org
+
 # Rest
 s-onetag.com
 consent.trustarc.com
@@ -333,3 +345,4 @@ ds-aksb-a.akamaihd.net
 launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
 sdk.privacy-center.org
+api.ipify.org
