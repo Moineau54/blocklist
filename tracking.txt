@@ -1,6 +1,8 @@
 # GLOBALR LLC
 true.am
 
+# BrightEdge AutoPilot
+cdn.bc0a.com
 
 # Atlassian
 ixsystems.atlassian.net
