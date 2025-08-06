@@ -2,6 +2,8 @@
 ||true.am^
 
 
+! BrightEdge AutoPilot
+||cdn.bc0a.com^
 
 
 ! Atlassian
@@ -141,6 +143,13 @@
 
 ! HubSpot
 ||js.hs-scripts.com^
+||hubspotonwebflow.com^
+
+
+! Adobe
+||p.typekit.net^
+||use.typekit.net^
+||typekit.com^
 
 
 ! Sentry
@@ -276,6 +285,10 @@
 ||functions.adnami.io^
 
 
+! 6Sense
+||j.6sc.co^
+
+
 ! Meta
 ||connect.facebook.net^
 ||graph.facebook.com^
@@ -381,6 +394,10 @@
 ||cloudflareinsight.com^
 
 
+! The Trade Desk
+||insight.adsrvr.org^
+
+
 ! Rest
 ||s-onetag.com^
 ||consent.trustarc.com^
@@ -406,3 +423,4 @@
 ||launchpad.privacymanager.io^
 ||launchpad-wrapper.privacymanager.io^
 ||sdk.privacy-center.org^
+||api.ipify.org^
