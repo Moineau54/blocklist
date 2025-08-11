@@ -1,6 +1,7 @@
 test/*
 prettify_js.py
 adder.py
+lists.txt
 .env
 .venv/*
 .vscode/*
