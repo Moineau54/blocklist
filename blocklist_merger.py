@@ -40,21 +40,24 @@ def main():
     
     # Read existing domains from output file if it exists
     existing_domains = load_existing_domains(args.output_file)
+    print(f"Loaded {len(existing_domains)} existing domains from {args.output_file}")
     
     # Read additional existing domains if provided
     if args.existing_domains:
-        existing_domains.update(load_existing_domains(args.existing_domains))
+        additional_existing = load_existing_domains(args.existing_domains)
+        existing_domains.update(additional_existing)
+        print(f"Loaded {len(additional_existing)} additional existing domains")
     
     # Read blocklist URLs from input file
     blocklist_urls = load_blocklist_urls(args.input_file)
     
     # Fetch and process all blocklists
     all_domains = fetch_and_clean_domains(blocklist_urls, args.workers, args.timeout)
+    print(f"Fetched {len(all_domains)} total domains from blocklists")
     
     # Remove duplicates and existing domains
     new_domains = all_domains - existing_domains
-    
-    print(f"Found {len(new_domains)} new domains to verify")
+    print(f"Found {len(new_domains)} new unique domains after removing duplicates and existing domains")
     
     # Limit to max new domains
     if len(new_domains) > args.max_new:
@@ -64,7 +67,7 @@ def main():
     # Ping domains to verify they're online (unless skipped)
     if not args.skip_ping:
         verified_domains = verify_domains_online_with_git(new_domains, args.workers, args.timeout, 
-                                                         args.output_file, args.skip_git)
+                                                         args.output_file, args.skip_git, existing_domains)
     else:
         verified_domains = new_domains
         # Write all at once if skipping ping
@@ -104,9 +107,10 @@ def git_commit_push(commit_message: str):
 
 
 def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: float, 
-                                 output_file: str, skip_git: bool) -> Set[str]:
-    """Ping domains to verify they're online with git commits every 20%"""
+                                 output_file: str, skip_git: bool, existing_domains: Set[str]) -> Set[str]:
+    """Ping domains to verify they're online with git commits every 20%, avoiding duplicates"""
     verified_domains = set()
+    written_domains = existing_domains.copy()  # Track all domains written to avoid dupes
     lock = threading.Lock()
     
     domains_list = list(domains)
@@ -130,23 +134,31 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
                 processed_count += 1
                 
                 if result.returncode == 0:
-                    verified_domains.add(domain)
-                    # Write domain immediately to file
-                    write_single_domain_to_file(domain, output_file)
+                    # Double-check domain isn't already written (thread safety)
+                    if domain not in written_domains:
+                        verified_domains.add(domain)
+                        written_domains.add(domain)
+                        # Write domain immediately to file
+                        write_single_domain_to_file(domain, output_file)
+                        print(f"Added verified domain: {domain}")
+                    else:
+                        print(f"Skipped duplicate domain: {domain}")
                 
                 # Check if we've reached a checkpoint (20% interval)
                 if not skip_git and processed_count >= next_checkpoint and processed_count < total_domains:
                     percentage = (processed_count / total_domains) * 100
-                    commit_msg = f"Progress: {processed_count}/{total_domains} domains verified ({percentage:.1f}%)"
+                    verified_count = len(verified_domains)
+                    commit_msg = f"Progress: {processed_count}/{total_domains} domains processed, {verified_count} verified ({percentage:.1f}%)"
                     print(f"\nReached {percentage:.1f}% - performing git operations...")
                     git_commit_push(commit_msg)
                     next_checkpoint += checkpoint_interval
                 
             return result.returncode == 0
             
-        except Exception:
+        except Exception as e:
             with lock:
                 processed_count += 1
+                print(f"Error pinging {domain}: {e}")
             return False
     
     with ThreadPoolExecutor(max_workers=workers) as executor:
@@ -158,7 +170,7 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
     # Final git commit if not skipped
     if not skip_git:
         print("\nFinal git commit...")
-        git_commit_push(f"Completed: {len(verified_domains)} domains verified and added")
+        git_commit_push(f"Completed: {len(verified_domains)} new domains verified and added")
     
     return verified_domains
 
@@ -182,7 +194,10 @@ def load_existing_domains(filename: str) -> Set[str]:
         for line in f:
             domain = line.strip()
             if domain and not domain.startswith('#'):
-                domains.add(domain)
+                # Clean domain to ensure consistent comparison
+                clean_domain_name = clean_domain(domain)
+                if clean_domain_name:
+                    domains.add(clean_domain_name)
     return domains
 
 
@@ -239,7 +254,7 @@ def fetch_and_clean_domains(urls: list, workers: int, timeout: float) -> Set[str
                 line = line.strip()
                 if line and not line.startswith('#'):
                     cleaned = clean_domain(line)
-                    if cleaned and '.' in cleaned:  # Basic domain validation
+                    if cleaned and '.' in cleaned and len(cleaned) > 3:  # Basic domain validation
                         domains.add(cleaned)
             return domains
         except Exception as e:
