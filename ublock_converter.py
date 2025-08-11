@@ -8,7 +8,8 @@ files = [
     "suspicious.txt",
     "telemetry.txt",
     "to_monitor.txt",
-    "tracking.txt"
+    "tracking.txt",
+    "porn.txt"
 ]
 
 for file in files:
