@@ -6,6 +6,8 @@ import time
 import argparse
 from typing import Set, Tuple
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
@@ -94,7 +96,101 @@ def load_existing_domains(input_file: str) -> tuple[Set[str], int]:
     
     return existing_domains, new_entries_count
 
-def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]:
+def download_blocklists_parallel(urls: list, timeout: int, workers: int) -> tuple[Set[str], int, int]:
+    """Download and parse multiple blocklists in parallel"""
+    all_domains = set()
+    total_lines = 0
+    total_valid = 0
+    
+    # Thread-safe counters
+    lock = threading.Lock()
+    
+    def download_single_url(url_info):
+        url, index = url_info
+        try:
+            print(f"[{index+1}/{len(urls)}] Downloading: {url[:60]}...")
+            domains, lines, valid = download_blocklist(url, timeout)
+            
+            with lock:
+                nonlocal total_lines, total_valid
+                domains_before = len(all_domains)
+                all_domains.update(domains)
+                domains_after = len(all_domains)
+                
+                new_unique = domains_after - domains_before
+                duplicates = len(domains) - new_unique
+                
+                total_lines += lines
+                total_valid += valid
+                
+                print(f"[{index+1}/{len(urls)}] Completed:")
+                print(f"  Lines processed: {lines:,}")
+                print(f"  Valid domains found: {valid:,}")
+                print(f"  New unique domains: {new_unique:,}")
+                if duplicates > 0:
+                    print(f"  Duplicates skipped: {duplicates:,}")
+                
+            return domains, lines, valid
+        except Exception as e:
+            print(f"[{index+1}/{len(urls)}] Error downloading {url}: {e}")
+            return set(), 0, 0
+    
+    print(f"Starting parallel download with {workers} workers...")
+    
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        # Submit all download tasks
+        url_tasks = [(url, i) for i, url in enumerate(urls)]
+        futures = {executor.submit(download_single_url, url_info): url_info for url_info in url_tasks}
+        
+        # Wait for completion
+        for future in as_completed(futures):
+            future.result()  # This will raise any exceptions that occurred
+    
+    return all_domains, total_lines, total_valid
+
+def ping_domains_parallel(domains: set, workers: int) -> set:
+    """Ping multiple domains in parallel"""
+    verified_domains = set()
+    domains_list = list(domains)
+    
+    # Thread-safe set and counters
+    lock = threading.Lock()
+    completed_count = [0]  # Use list for mutable reference
+    
+    def ping_single_domain(domain_info):
+        domain, index = domain_info
+        try:
+            print(f"[{index+1}/{len(domains_list)}] Pinging {domain}...", end=" ")
+            success = ping_domain(domain, verbose=False)
+            
+            status = "ONLINE" if success else "OFFLINE"
+            print(status)
+            
+            with lock:
+                completed_count[0] += 1
+                if success:
+                    verified_domains.add(domain)
+                
+            return success
+        except Exception as e:
+            print(f"ERROR: {e}")
+            with lock:
+                completed_count[0] += 1
+            return False
+    
+    print(f"Starting parallel ping verification with {workers} workers...")
+    print(f"Verifying {len(domains_list):,} domains...")
+    
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        # Submit all ping tasks
+        domain_tasks = [(domain, i) for i, domain in enumerate(domains_list)]
+        futures = {executor.submit(ping_single_domain, domain_info): domain_info for domain_info in domain_tasks}
+        
+        # Wait for completion
+        for future in as_completed(futures):
+            future.result()  # This will raise any exceptions that occurred
+    
+    return verified_domains
     """Download and parse a blocklist from URL"""
     domains = set()
     total_lines = 0
@@ -236,6 +332,7 @@ def main():
         parser.add_argument('--timeout', type=int, default=20, help='Request timeout in seconds')
         parser.add_argument('--max-new', type=int, default=1000, help='Maximum number of new domains to add')
         parser.add_argument('--max-file-size', type=int, default=500000, help='Maximum new entries per file before creating new file')
+        parser.add_argument('--workers', type=int, default=10, help='Number of worker threads for downloads and ping verification')
         parser.add_argument('--skip-ping', action='store_true', help='Skip ping verification for new domains')
         parser.add_argument('--no-git', action='store_true', help='Skip git operations')
         args = parser.parse_args()
