@@ -14,6 +14,51 @@ Tool to merge multiple blocklists into one with Git integration and online domai
 Usage: python script.py input_lists.txt output_file.txt --check-online
 """
 
+def run_git_command(command: list, description: str) -> bool:
+    """Run a git command and return success status"""
+    try:
+        print(f"🔄 {description}...")
+        result = subprocess.run(command, capture_output=True, text=True, check=True)
+        if result.stdout.strip():
+            print(f"   {result.stdout.strip()}")
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git {description.lower()} failed: {e.stderr.strip()}")
+        return False
+    except Exception as e:
+        print(f"❌ Error during git {description.lower()}: {e}")
+        return False
+
+def git_operations(output_file: str, list_num: int, total_lists: int, url: str, domain_count: int) -> bool:
+    """Perform git add, commit, pull, and push operations"""
+    
+    # Add the output file
+    if not run_git_command(["git", "add", output_file], "Adding file"):
+        return False
+    
+    # Create commit message
+    commit_msg = f"Update blocklist: processed {list_num}/{total_lists} sources ({domain_count:,} domains)\n\nProcessed: {url[:100]}"
+    
+    # Commit changes
+    if not run_git_command(["git", "commit", "-m", commit_msg], "Committing changes"):
+        # Check if there were no changes to commit
+        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        if not result.stdout.strip():
+            print("   No changes to commit")
+        else:
+            return False
+    
+    # Pull updates from remote
+    if not run_git_command(["git", "pull", "--rebase"], "Pulling updates"):
+        print("⚠️  Pull failed, continuing anyway...")
+    
+    # Push changes
+    if not run_git_command(["git", "push"], "Pushing changes"):
+        return False
+    
+    print("✅ Git operations completed successfully\n")
+    return True
+
 def check_domain_online(domain: str, timeout: int = 5) -> bool:
     """Check if a domain is reachable via HTTP/HTTPS"""
     for protocol in ['https', 'http']:
