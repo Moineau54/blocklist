@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
-Usage: python script.py input_file.txt output_file.txt [--max-new 1000] [--skip-ping]
+Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--skip-ping]
 """
 
 def clean_domain(line: str) -> str:
@@ -149,27 +149,31 @@ def main():
     try:
         # Parse command line arguments
         parser = argparse.ArgumentParser(description='Merge multiple blocklists with ping verification and git integration')
-        parser.add_argument('input_file', help='Input file with existing domains')
+        parser.add_argument('lists_file', help='File containing blocklist URLs to download from')
         parser.add_argument('output_file', help='Output file path for the merged blocklist')
+        parser.add_argument('--existing-domains', help='File with existing domains to merge with (optional)')
         parser.add_argument('--timeout', type=int, default=20, help='Request timeout in seconds')
         parser.add_argument('--max-new', type=int, default=1000, help='Maximum number of new domains to add')
         parser.add_argument('--skip-ping', action='store_true', help='Skip ping verification for new domains')
         parser.add_argument('--no-git', action='store_true', help='Skip git operations')
         args = parser.parse_args()
         
-        input_file = args.input_file
+        lists_file = args.lists_file
         output_file = args.output_file
         
-        # Load existing domains
-        existing_domains = load_existing_domains(input_file)
+        # Load existing domains if specified
+        existing_domains = set()
+        if args.existing_domains:
+            existing_domains = load_existing_domains(args.existing_domains)
+        elif os.path.exists(output_file):
+            print(f"Loading existing domains from output file: {output_file}")
+            existing_domains = load_existing_domains(output_file)
+        else:
+            print("No existing domains file specified, starting fresh")
         
-        # Check for lists.txt
-        lists_file = "lists.txt"
+        # Check for lists file
         if not os.path.exists(lists_file):
-            # Create empty lists.txt
-            with open(lists_file, "w") as f:
-                f.write("# Add blocklist URLs here, one per line\n")
-            print(f"Created {lists_file}. Please add blocklist URLs to this file, one per line.")
+            print(f"Lists file {lists_file} does not exist!")
             return
         
         # Read blocklist URLs
