@@ -57,6 +57,18 @@ https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious_ublock.txt
 https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry_ublock.txt
 ```
 
+### For pornography domains:
+
+#### Pi-hole:
+```shell
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/porn.txt
+```
+
+#### Ublock Origins:
+```shell
+https://github.com/Moineau54/blocklist/raw/refs/heads/main/porn_ulock.txt
+```
+
 ## To anyone wanting to contribute
 
 Feel free to do so. Just use the **dev** branch to push stuff as the **main** branch will only be for the releases.
