@@ -11,7 +11,7 @@ import threading
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
-Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--skip-ping]
+Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--workers 10] [--skip-ping]
 """
 
 def clean_domain(line: str) -> str:
@@ -64,6 +64,34 @@ def ping_domain(domain: str, verbose: bool = True) -> bool:
         if verbose:
             print("TIMEOUT")
         return False
+
+def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]:
+    """Download and parse a blocklist from URL"""
+    domains = set()
+    total_lines = 0
+    valid_domains = 0
+    
+    try:
+        response = requests.get(url, timeout=timeout)
+        
+        if response.status_code == 200:
+            lines = response.text.split("\n")
+            total_lines = len(lines)
+            
+            for line in lines:
+                domain = clean_domain(line)
+                if domain:
+                    domains.add(domain)  # set automatically handles duplicates
+                    valid_domains += 1
+        else:
+            print(f"Failed to download {url}: HTTP {response.status_code}")
+            
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading {url}: {e}")
+    except Exception as e:
+        print(f"Unexpected error processing {url}: {e}")
+    
+    return domains, total_lines, valid_domains
 
 def load_existing_domains(input_file: str) -> tuple[Set[str], int]:
     """Load existing domains from input file and return count of new entries"""
@@ -368,25 +396,13 @@ def main():
         for url in urls:
             print(f"  - {url}")
         
-        # Collect all domains
-        all_downloaded_domains = set()
-        total_lines_processed = 0
-        total_valid_domains = 0
+        print(f"\nUsing {args.workers} worker threads for parallel processing")
         
-        for i, url in enumerate(urls, 1):
-            print(f"\n[{i}/{len(urls)}] Processing blocklist...")
-            domains, lines_count, valid_count = download_blocklist(url, timeout=args.timeout)
-            
-            all_downloaded_domains.update(domains)
-            total_lines_processed += lines_count
-            total_valid_domains += valid_count
-            
-            print(f"  Lines processed: {lines_count:,}")
-            print(f"  Valid domains found: {valid_count:,}")
-            
-            # Brief pause between downloads to be respectful
-            if i < len(urls):
-                time.sleep(1)
+        # Download all blocklists in parallel
+        print(f"\nDownloading {len(urls)} blocklists in parallel...")
+        all_downloaded_domains, total_lines_processed, total_valid_domains = download_blocklists_parallel(
+            urls, args.timeout, args.workers
+        )
         
         # Find new domains
         new_domains = all_downloaded_domains - existing_domains
@@ -400,14 +416,7 @@ def main():
         # Ping verification for new domains
         verified_new_domains = set()
         if not args.skip_ping and new_domains:
-            print(f"\nVerifying {len(new_domains):,} new domains with ping...")
-            
-            for i, domain in enumerate(new_domains, 1):
-                print(f"[{i}/{len(new_domains)}] ", end="")
-                if ping_domain(domain, verbose=True):
-                    verified_new_domains.add(domain)
-                # Small delay to avoid overwhelming the network
-                time.sleep(0.1)
+            verified_new_domains = ping_domains_parallel(new_domains, args.workers)
             
             print(f"\n{len(verified_new_domains):,} domains responded to ping")
             print(f"{len(new_domains) - len(verified_new_domains):,} domains did not respond")
