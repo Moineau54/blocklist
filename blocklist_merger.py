@@ -140,16 +140,16 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
                         written_domains.add(domain)
                         # Write domain immediately to file
                         write_single_domain_to_file(domain, output_file)
-                        print(f"Added verified domain: {domain}")
+                        tqdm.write(f"Added verified domain: {domain}")
                     else:
-                        print(f"Skipped duplicate domain: {domain}")
+                        tqdm.write(f"Skipped duplicate domain: {domain}")
                 
                 # Check if we've reached a checkpoint (20% interval)
                 if not skip_git and processed_count >= next_checkpoint and processed_count < total_domains:
                     percentage = (processed_count / total_domains) * 100
                     verified_count = len(verified_domains)
                     commit_msg = f"Progress: {processed_count}/{total_domains} domains processed, {verified_count} verified ({percentage:.1f}%)"
-                    print(f"\nReached {percentage:.1f}% - performing git operations...")
+                    tqdm.write(f"\nReached {percentage:.1f}% - performing git operations...")
                     git_commit_push(commit_msg)
                     next_checkpoint += checkpoint_interval
                 
@@ -158,7 +158,7 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
         except Exception as e:
             with lock:
                 processed_count += 1
-                print(f"Error pinging {domain}: {e}")
+                tqdm.write(f"Error pinging {domain}: {e}")
             return False
     
     with ThreadPoolExecutor(max_workers=workers) as executor:
@@ -169,7 +169,7 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
     
     # Final git commit if not skipped
     if not skip_git:
-        print("\nFinal git commit...")
+        tqdm.write("\nFinal git commit...")
         git_commit_push(f"Completed: {len(verified_domains)} new domains verified and added")
     
     return verified_domains
