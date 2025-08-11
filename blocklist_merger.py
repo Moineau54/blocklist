@@ -1,4 +1,3 @@
-import requests
 import subprocess
 import os
 import sys
@@ -8,6 +7,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Set, Tuple
 from tqdm import tqdm
+import requests
 
 """
 Tool to merge multiple blocklists into one with Git integration and ping reachability filtering
@@ -77,7 +77,7 @@ def check_domain_online(domain: str, timeout: int = 3) -> bool:
     except (subprocess.TimeoutExpired, subprocess.SubprocessError, Exception):
         return False
 
-def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int = 3) -> Tuple[Set[str], Set[str]]:
+def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int = 3, verbose: bool = False) -> Tuple[Set[str], Set[str]]:
     """Filter domains to only include those that are reachable via ping"""
     online_domains = set()
     offline_domains = set()
@@ -91,21 +91,32 @@ def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int
         }
         
         # Process results with progress bar
+        completed_count = 0
         for future in tqdm(as_completed(future_to_domain), 
                           total=len(domains), 
                           desc="Pinging domains",
                           unit="domains"):
             domain = future_to_domain[future]
+            completed_count += 1
+            
+            # Show current domain being processed
+            tqdm.write(f"🏓 [{completed_count:,}/{len(domains):,}] Checking: {domain}")
+            
             try:
                 is_online = future.result()
                 if is_online:
                     online_domains.add(domain)
+                    if verbose:
+                        tqdm.write(f"   ✅ REACHABLE")
                 else:
                     offline_domains.add(domain)
+                    if verbose:
+                        tqdm.write(f"   ❌ UNREACHABLE")
             except Exception as e:
                 # If check fails, consider domain offline
                 offline_domains.add(domain)
-                tqdm.write(f"Error pinging {domain}: {e}")
+                if verbose:
+                    tqdm.write(f"   ❌ ERROR: {e}")
     
     return online_domains, offline_domains
     """Run a git command and return success status"""
@@ -252,7 +263,8 @@ Examples:
   python script.py lists.txt merged.txt --check-online --git
   python script.py input.txt result.txt --check-online --ping-timeout 2
   python script.py urls.txt final.txt --check-online --check-workers 100
-  python script.py sources.txt output.txt --git
+  python script.py sources.txt output.txt --check-online --verbose
+  python script.py lists.txt merged.txt --git
             """,
             formatter_class=argparse.RawDescriptionHelpFormatter
         )
@@ -268,6 +280,7 @@ Examples:
         parser.add_argument('--ping-timeout', type=int, default=3, help='Ping timeout in seconds')
         parser.add_argument('--check-workers', type=int, default=50, help='Number of concurrent workers for ping checking')
         parser.add_argument('--check-batch-size', type=int, default=1000, help='Process domains in batches for ping checking')
+        parser.add_argument('--verbose', action='store_true', help='Show detailed ping results (reachable/unreachable for each domain)')
         
         args = parser.parse_args()
         
@@ -278,6 +291,10 @@ Examples:
         if args.check_online:
             print("🏓 Ping checking enabled - will verify domain reachability via ICMP ping")
             print(f"   Workers: {args.check_workers}, Timeout: {args.ping_timeout}s")
+            if args.verbose:
+                print("   Verbose mode: Will show detailed results for each domain")
+            else:
+                print("   Quiet mode: Will show domain being checked (use --verbose for detailed results)")
         else:
             print("🏓 Ping checking disabled - all domains will be included")
         
@@ -360,7 +377,7 @@ Examples:
             if args.check_online and len(all_domains) >= args.check_batch_size:
                 print(f"🏓 Pinging {len(all_domains):,} domains for reachability...")
                 current_online_domains, offline_domains = filter_online_domains(
-                    all_domains, args.check_workers, args.ping_timeout
+                    all_domains, args.check_workers, args.ping_timeout, args.verbose
                 )
                 current_offline_count = len(offline_domains)
                 total_offline_domains = current_offline_count
@@ -406,7 +423,7 @@ Examples:
         if args.check_online:
             print(f"\n🏓 Performing final ping check for {len(all_domains):,} total domains...")
             final_online_domains, final_offline_domains = filter_online_domains(
-                all_domains, args.check_workers, args.ping_timeout
+                all_domains, args.check_workers, args.ping_timeout, args.verbose
             )
             final_offline_count = len(final_offline_domains)
             
@@ -480,7 +497,8 @@ Examples:
                 print("🏓 Performing quick ping check on partial results...")
                 partial_online_domains, partial_offline_domains = filter_online_domains(
                     all_domains, min(20, locals().get('args', {}).get('check_workers', 20)), 
-                    locals().get('args', {}).get('ping_timeout', 3)
+                    locals().get('args', {}).get('ping_timeout', 3),
+                    locals().get('args', {}).get('verbose', False)
                 )
                 partial_offline_count = len(partial_offline_domains)
                 print(f"✅ Reachable: {len(partial_online_domains):,}, ❌ Unreachable: {partial_offline_count:,}")
