@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
-Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--skip-ping]
+Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--skip-ping]
 """
 
 def clean_domain(line: str) -> str:
@@ -63,26 +63,36 @@ def ping_domain(domain: str, verbose: bool = True) -> bool:
             print("TIMEOUT")
         return False
 
-def load_existing_domains(input_file: str) -> Set[str]:
-    """Load existing domains from input file"""
+def load_existing_domains(input_file: str) -> tuple[Set[str], int]:
+    """Load existing domains from input file and return count of new entries"""
     existing_domains = set()
+    new_entries_count = 0
     
     if not os.path.exists(input_file):
         print(f"Input file {input_file} does not exist. Starting with empty set.")
-        return existing_domains
+        return existing_domains, 0
     
     try:
         with open(input_file, "r") as f:
             for line in f:
+                # Check for new entries count in header
+                if line.startswith("# New domains added:"):
+                    try:
+                        new_entries_count = int(line.split(":")[1].strip().replace(",", ""))
+                    except (IndexError, ValueError):
+                        pass
+                
                 domain = clean_domain(line)
                 if domain:
                     existing_domains.add(domain)
         
         print(f"Loaded {len(existing_domains):,} existing domains from {input_file}")
+        if new_entries_count > 0:
+            print(f"File contains {new_entries_count:,} new entries from previous runs")
     except Exception as e:
         print(f"Error reading input file {input_file}: {e}")
     
-    return existing_domains
+    return existing_domains, new_entries_count
 
 def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]:
     """Download and parse a blocklist from URL"""
@@ -113,7 +123,78 @@ def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]
     
     return domains, total_lines, valid_domains
 
-def git_operations(output_file: str, new_domains_count: int):
+def generate_next_filename(base_filename: str) -> str:
+    """Generate next filename in sequence (e.g., porn.txt -> porn_001.txt)"""
+    base_path = os.path.dirname(base_filename)
+    base_name = os.path.basename(base_filename)
+    name_without_ext, ext = os.path.splitext(base_name)
+    
+    counter = 1
+    while True:
+        new_name = f"{name_without_ext}_{counter:03d}{ext}"
+        new_path = os.path.join(base_path, new_name)
+        if not os.path.exists(new_path):
+            return new_path
+        counter += 1
+
+def write_domains_to_files(domains: list, base_output_file: str, max_new_per_file: int, existing_new_count: int, urls_count: int) -> list[tuple[str, int]]:
+    """Write domains to files, creating new files when max_new_per_file is reached"""
+    files_written = []
+    
+    # Calculate how many new entries we can add to the current file
+    remaining_capacity = max_new_per_file - existing_new_count
+    
+    if len(domains) <= remaining_capacity:
+        # All domains fit in current file
+        write_single_file(base_output_file, domains, existing_new_count + len(domains), urls_count, len(domains))
+        files_written.append((base_output_file, len(domains)))
+    else:
+        # Need to split across multiple files
+        domains_written = 0
+        current_file = base_output_file
+        
+        while domains_written < len(domains):
+            if current_file == base_output_file:
+                # First file - use remaining capacity
+                domains_to_write = min(remaining_capacity, len(domains) - domains_written)
+                total_new_in_file = existing_new_count + domains_to_write
+            else:
+                # New files - use full capacity
+                domains_to_write = min(max_new_per_file, len(domains) - domains_written)
+                total_new_in_file = domains_to_write
+            
+            # Get domains for this file
+            file_domains = domains[domains_written:domains_written + domains_to_write]
+            
+            # Write file
+            write_single_file(current_file, file_domains, total_new_in_file, urls_count, domains_to_write, is_continuation=(current_file != base_output_file))
+            files_written.append((current_file, domains_to_write))
+            
+            domains_written += domains_to_write
+            
+            # Generate next filename if more domains remain
+            if domains_written < len(domains):
+                current_file = generate_next_filename(base_output_file)
+                print(f"Creating new file: {current_file}")
+    
+    return files_written
+
+def write_single_file(filename: str, domains: list, total_new_count: int, urls_count: int, new_domains_added: int, is_continuation: bool = False):
+    """Write domains to a single file with header"""
+    with open(filename, "w") as f:
+        if is_continuation:
+            f.write("# Continuation blocklist - duplicates removed\n")
+        else:
+            f.write("# Merged blocklist - duplicates removed\n")
+        f.write(f"# Generated from {urls_count} sources\n")
+        f.write(f"# New domains added: {total_new_count:,}\n")
+        f.write(f"# Domains in this file: {len(domains):,}\n")
+        if new_domains_added != len(domains):
+            f.write(f"# New domains added this run: {new_domains_added:,}\n")
+        f.write("\n")
+        
+        for domain in tqdm(domains, desc=f"Writing to {os.path.basename(filename)}"):
+            f.write(domain + "\n")
     """Perform git operations: add, commit, pull, push"""
     try:
         print(f"\n{'='*50}")
@@ -154,6 +235,7 @@ def main():
         parser.add_argument('--existing-domains', help='File with existing domains to merge with (optional)')
         parser.add_argument('--timeout', type=int, default=20, help='Request timeout in seconds')
         parser.add_argument('--max-new', type=int, default=1000, help='Maximum number of new domains to add')
+        parser.add_argument('--max-file-size', type=int, default=500000, help='Maximum new entries per file before creating new file')
         parser.add_argument('--skip-ping', action='store_true', help='Skip ping verification for new domains')
         parser.add_argument('--no-git', action='store_true', help='Skip git operations')
         args = parser.parse_args()
@@ -163,11 +245,12 @@ def main():
         
         # Load existing domains if specified
         existing_domains = set()
+        existing_new_count = 0
         if args.existing_domains:
-            existing_domains = load_existing_domains(args.existing_domains)
+            existing_domains, existing_new_count = load_existing_domains(args.existing_domains)
         elif os.path.exists(output_file):
             print(f"Loading existing domains from output file: {output_file}")
-            existing_domains = load_existing_domains(output_file)
+            existing_domains, existing_new_count = load_existing_domains(output_file)
         else:
             print("No existing domains file specified, starting fresh")
         
@@ -240,40 +323,51 @@ def main():
         final_domains = existing_domains | verified_new_domains
         sorted_domains = sorted(final_domains)
         
+        # Check if we need file rotation
+        will_exceed_limit = existing_new_count + len(verified_new_domains) > args.max_file_size
+        
         # Calculate and display statistics
         print(f"\n{'='*50}")
         print(f"PROCESSING SUMMARY")
         print(f"{'='*50}")
         print(f"Existing domains: {len(existing_domains):,}")
+        print(f"Existing new entries in current file: {existing_new_count:,}")
+        print(f"Max new entries per file: {args.max_file_size:,}")
         print(f"Total lines processed: {total_lines_processed:,}")
         print(f"Valid domains downloaded: {total_valid_domains:,}")
         print(f"New domains found: {len(new_domains):,}")
         if not args.skip_ping:
             print(f"New domains verified online: {len(verified_new_domains):,}")
         print(f"Final unique domains: {len(sorted_domains):,}")
+        if will_exceed_limit:
+            print(f"Will create new file(s) due to size limit")
         
-        # Write to output file
-        print(f"\nWriting {len(sorted_domains):,} unique domains to {output_file}...")
-        with open(output_file, "w") as f:
-            f.write("# Merged blocklist - duplicates removed\n")
-            f.write(f"# Generated from {len(urls)} sources\n")
-            f.write(f"# Existing domains: {len(existing_domains):,}\n")
-            f.write(f"# New domains added: {len(verified_new_domains):,}\n")
-            f.write(f"# Total unique domains: {len(sorted_domains):,}\n")
-            if not args.skip_ping:
-                f.write(f"# New domains verified online: {len(verified_new_domains):,}\n")
-            f.write("\n")
+        # Write to output file(s)
+        if len(verified_new_domains) > 0:
+            print(f"\nWriting {len(sorted_domains):,} unique domains to file(s)...")
+            files_written = write_domains_to_files(
+                sorted_domains, 
+                output_file, 
+                args.max_file_size, 
+                existing_new_count, 
+                len(urls)
+            )
             
-            for domain in tqdm(sorted_domains, desc="Writing domains"):
-                f.write(domain + "\n")
-        
-        print(f"Successfully wrote {len(sorted_domains):,} unique domains to {output_file}")
-        print(f"   Added {len(verified_new_domains):,} new verified domains")
-        
-        # Perform git operations unless disabled
-        if not args.no_git and len(verified_new_domains) > 0:
-            git_operations(output_file, len(verified_new_domains))
-        elif len(verified_new_domains) == 0:
+            total_files = len(files_written)
+            total_new_added = sum(count for _, count in files_written)
+            
+            print(f"Successfully wrote to {total_files} file(s)")
+            for filepath, count in files_written:
+                print(f"  {os.path.basename(filepath)}: {count:,} new domains")
+            print(f"Total new domains added: {total_new_added:,}")
+            
+            # Perform git operations unless disabled
+            if not args.no_git:
+                git_operations(files_written)
+        else:
+            print("No new domains to write.")
+            
+        if len(verified_new_domains) == 0:
             print("No new domains to commit.")
         
     except KeyboardInterrupt:
@@ -283,6 +377,7 @@ def main():
             final_domains = existing_domains | verified_new_domains
             sorted_domains = sorted(final_domains)
             
+            # Save to single file for interruption case
             with open(output_file, "w") as f:
                 f.write("# Partial merged blocklist (interrupted)\n")
                 f.write(f"# Existing domains: {len(existing_domains):,}\n")
