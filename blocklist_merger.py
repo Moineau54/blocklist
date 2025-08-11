@@ -5,14 +5,29 @@ import sys
 import time
 import argparse
 from typing import Set, Tuple
-from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
+
+# Rich console imports
+from rich.console import Console
+from rich.text import Text
+from rich.progress import (
+    Progress, 
+    SpinnerColumn, 
+    TextColumn, 
+    BarColumn, 
+    TaskProgressColumn,
+    TimeRemainingColumn,
+    MofNCompleteColumn
+)
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
 Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--workers 10] [--skip-ping] [--skip-git]
 """
+
+# Initialize Rich console
+console = Console()
 
 def main():
     parser = argparse.ArgumentParser(description='tests domains on blocklists to make a new blocklist')
@@ -40,29 +55,29 @@ def main():
     
     # Read existing domains from output file if it exists
     existing_domains = load_existing_domains(args.output_file)
-    print(f"Loaded {len(existing_domains)} existing domains from {args.output_file}")
+    console.print(f"📁 Loaded {len(existing_domains)} existing domains from {args.output_file}", style="bold blue")
     
     # Read additional existing domains if provided
     if args.existing_domains:
         additional_existing = load_existing_domains(args.existing_domains)
         existing_domains.update(additional_existing)
-        print(f"Loaded {len(additional_existing)} additional existing domains")
+        console.print(f"📁 Loaded {len(additional_existing)} additional existing domains", style="bold blue")
     
     # Read blocklist URLs from input file
     blocklist_urls = load_blocklist_urls(args.input_file)
     
     # Fetch and process all blocklists
     all_domains = fetch_and_clean_domains(blocklist_urls, args.workers, args.timeout)
-    print(f"Fetched {len(all_domains)} total domains from blocklists")
+    console.print(f"🌐 Fetched {len(all_domains)} total domains from blocklists", style="bold blue")
     
     # Remove duplicates and existing domains
     new_domains = all_domains - existing_domains
-    print(f"Found {len(new_domains)} new unique domains after removing duplicates and existing domains")
+    console.print(f"🔍 Found {len(new_domains)} new unique domains after removing duplicates and existing domains", style="bold blue")
     
     # Limit to max new domains
     if len(new_domains) > args.max_new:
         new_domains = set(list(new_domains)[:args.max_new])
-        print(f"Limited to {args.max_new} domains")
+        console.print(f"⚖️ Limited to {args.max_new} domains", style="bold blue")
     
     # Ping domains to verify they're online (unless skipped)
     if not args.skip_ping:
@@ -75,7 +90,7 @@ def main():
         if not args.skip_git:
             git_commit_push(f"Added {len(verified_domains)} domains (ping skipped)")
     
-    print(f"Added {len(verified_domains)} verified domains to {args.output_file}")
+    console.print(f"🎉 Added {len(verified_domains)} verified domains to {args.output_file}", style="bold green")
 
 
 def git_commit_push(commit_message: str):
@@ -83,27 +98,27 @@ def git_commit_push(commit_message: str):
     try:
         # Git add
         subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
-        print("Git add completed")
+        console.print("✓ Git add completed", style="bold green")
         
         # Git commit
         subprocess.run(['git', 'commit', '-m', commit_message], check=True, capture_output=True)
-        print(f"Git commit completed: {commit_message}")
+        console.print(f"✓ Git commit completed: {commit_message}", style="bold green")
         
         # Git pull
         result = subprocess.run(['git', 'pull'], capture_output=True, text=True)
         if result.returncode != 0:
-            print(f"Git pull warning: {result.stderr}")
+            console.print(f"⚠ Git pull warning: {result.stderr}", style="red")
         else:
-            print("Git pull completed")
+            console.print("✓ Git pull completed", style="bold green")
         
         # Git push
         subprocess.run(['git', 'push'], check=True, capture_output=True)
-        print("Git push completed")
+        console.print("✓ Git push completed", style="bold green")
         
     except subprocess.CalledProcessError as e:
-        print(f"Git operation failed: {e}")
+        console.print(f"❌ Git operation failed: {e}", style="red")
     except Exception as e:
-        print(f"Git error: {e}")
+        console.print(f"❌ Git error: {e}", style="red")
 
 
 def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: float, 
@@ -121,55 +136,71 @@ def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: flo
     next_checkpoint = checkpoint_interval
     processed_count = 0
     
-    def ping_domain(domain):
-        nonlocal processed_count, next_checkpoint
+    # Create Rich progress bar
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TaskProgressColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        transient=False
+    ) as progress:
         
-        try:
-            # Simple ping using subprocess
-            result = subprocess.run(['ping', '-c', '1', '-W', str(int(timeout * 1000)), domain], 
-                                  capture_output=True, timeout=timeout + 1)
-            
-            with lock:
-                nonlocal processed_count
-                processed_count += 1
-                
-                if result.returncode == 0:
-                    # Double-check domain isn't already written (thread safety)
-                    if domain not in written_domains:
-                        verified_domains.add(domain)
-                        written_domains.add(domain)
-                        # Write domain immediately to file
-                        write_single_domain_to_file(domain, output_file)
-                        tqdm.write(f"Added verified domain: {domain}")
-                    else:
-                        tqdm.write(f"Skipped duplicate domain: {domain}")
-                
-                # Check if we've reached a checkpoint (20% interval)
-                if not skip_git and processed_count >= next_checkpoint and processed_count < total_domains:
-                    percentage = (processed_count / total_domains) * 100
-                    verified_count = len(verified_domains)
-                    commit_msg = f"Progress: {processed_count}/{total_domains} domains processed, {verified_count} verified ({percentage:.1f}%)"
-                    tqdm.write(f"\nReached {percentage:.1f}% - performing git operations...")
-                    git_commit_push(commit_msg)
-                    next_checkpoint += checkpoint_interval
-                
-            return result.returncode == 0
-            
-        except Exception as e:
-            with lock:
-                processed_count += 1
-                tqdm.write(f"Error pinging {domain}: {e}")
-            return False
-    
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = [executor.submit(ping_domain, domain) for domain in domains_list]
+        task = progress.add_task("Verifying domains", total=total_domains)
         
-        for future in tqdm(as_completed(futures), total=len(domains_list), desc="Verifying domains"):
-            future.result()
+        def ping_domain(domain):
+            nonlocal processed_count, next_checkpoint
+            
+            try:
+                # Simple ping using subprocess
+                result = subprocess.run(['ping', '-c', '1', '-W', str(int(timeout * 1000)), domain], 
+                                      capture_output=True, timeout=timeout + 1)
+                
+                with lock:
+                    nonlocal processed_count
+                    processed_count += 1
+                    progress.update(task, advance=1)
+                    
+                    if result.returncode == 0:
+                        # Double-check domain isn't already written (thread safety)
+                        if domain not in written_domains:
+                            verified_domains.add(domain)
+                            written_domains.add(domain)
+                            # Write domain immediately to file
+                            write_single_domain_to_file(domain, output_file)
+                            progress.console.print(f"✓ Added verified domain: {domain}", style="bold green")
+                        else:
+                            progress.console.print(f"⚠ Skipped duplicate domain: {domain}", style="bold blue")
+                    
+                    # Check if we've reached a checkpoint (20% interval)
+                    if not skip_git and processed_count >= next_checkpoint and processed_count < total_domains:
+                        percentage = (processed_count / total_domains) * 100
+                        verified_count = len(verified_domains)
+                        commit_msg = f"Progress: {processed_count}/{total_domains} domains processed, {verified_count} verified ({percentage:.1f}%)"
+                        progress.console.print(f"\n🔄 Reached {percentage:.1f}% - performing git operations...", style="bold blue")
+                        git_commit_push(commit_msg)
+                        next_checkpoint += checkpoint_interval
+                    
+                return result.returncode == 0
+                
+            except Exception as e:
+                with lock:
+                    processed_count += 1
+                    progress.update(task, advance=1)
+                    progress.console.print(f"❌ Error pinging {domain}: {e}", style="red")
+                return False
+        
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = [executor.submit(ping_domain, domain) for domain in domains_list]
+            
+            for future in as_completed(futures):
+                future.result()
     
     # Final git commit if not skipped
     if not skip_git:
-        tqdm.write("\nFinal git commit...")
+        console.print("\n🔄 Final git commit...", style="bold blue")
         git_commit_push(f"Completed: {len(verified_domains)} new domains verified and added")
     
     return verified_domains
@@ -258,15 +289,30 @@ def fetch_and_clean_domains(urls: list, workers: int, timeout: float) -> Set[str
                         domains.add(cleaned)
             return domains
         except Exception as e:
-            print(f"Error fetching {url}: {e}")
+            console.print(f"❌ Error fetching {url}: {e}", style="red")
             return set()
     
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        future_to_url = {executor.submit(fetch_blocklist, url): url for url in urls}
+    # Create Rich progress bar for fetching
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TaskProgressColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        transient=False
+    ) as progress:
         
-        for future in tqdm(as_completed(future_to_url), total=len(urls), desc="Fetching blocklists"):
-            domains = future.result()
-            all_domains.update(domains)
+        task = progress.add_task("Fetching blocklists", total=len(urls))
+        
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            future_to_url = {executor.submit(fetch_blocklist, url): url for url in urls}
+            
+            for future in as_completed(future_to_url):
+                domains = future.result()
+                all_domains.update(domains)
+                progress.update(task, advance=1)
     
     return all_domains
 
