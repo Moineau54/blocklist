@@ -13,6 +13,7 @@ on:
       - 'telemetry.txt'
       - 'to_monitor.txt'
       - 'tracking.txt'
+      - 'porn.txt'
 
 jobs:
   convert-blocklists:
