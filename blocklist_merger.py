@@ -11,493 +11,257 @@ import threading
 
 """
 Tool to merge multiple blocklists into one with ping verification and git integration
-Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--workers 10] [--skip-ping]
+Usage: python script.py lists_file.txt output_file.txt [--existing-domains existing.txt] [--max-new 1000] [--max-file-size 500000] [--workers 10] [--skip-ping] [--skip-git]
 """
 
-def clean_domain(line: str) -> str:
-    """Clean and extract domain from various blocklist formats"""
-    domain = line.strip()
+def main():
+    parser = argparse.ArgumentParser(description='tests domains on blocklists to make a new blocklist')
     
-    # Skip comments and empty lines
-    if not domain or domain.startswith("#") or domain.startswith("!"):
-        return ""
+    # Required arguments
+    parser.add_argument('input_file', help='File containing URLs of blocklists to merge')
+    parser.add_argument('output_file', help='Output file for the merged blocklist')
     
-    # Handle different prefixes
-    prefixes_to_remove = ["0.0.0.0 ", "127.0.0.1 ", "||"]
-    for prefix in prefixes_to_remove:
-        if domain.startswith(prefix):
-            domain = domain[len(prefix):]
-            break
+    # Optional arguments
+    parser.add_argument('--workers', '-w', type=int, default=10,
+                       help='Number of worker threads (default: 10)')
+    parser.add_argument('--timeout', '-t', type=float, default=5.0,
+                       help='Timeout in seconds for domain checks (default: 5.0)')
+    parser.add_argument('--existing-domains', help='File with existing domains to exclude')
+    parser.add_argument('--max-new', type=int, default=1000,
+                       help='Maximum number of new domains to add (default: 1000)')
+    parser.add_argument('--max-file-size', type=int, default=500000,
+                       help='Maximum file size in bytes (default: 500000)')
+    parser.add_argument('--skip-ping', action='store_true',
+                       help='Skip ping verification of domains')
+    parser.add_argument('--skip-git', action='store_true',
+                       help='Skip git operations')
     
-    # Remove suffixes
-    if "^" in domain:
-        domain = domain.split("^")[0]
+    args = parser.parse_args()
     
-    # Take only the first part if there are spaces
-    if " " in domain:
-        domain = domain.split(" ")[0]
+    # Read existing domains from output file if it exists
+    existing_domains = load_existing_domains(args.output_file)
     
-    # Basic domain validation
-    domain = domain.strip()
-    if domain and "." in domain and not domain.startswith("."):
-        return domain.lower()  # Normalize to lowercase
+    # Read additional existing domains if provided
+    if args.existing_domains:
+        existing_domains.update(load_existing_domains(args.existing_domains))
     
-    return ""
-
-def ping_domain(domain: str, verbose: bool = True) -> bool:
-    """Check if domain is online using ping"""
-    try:
-        # Use ping -c 1 (Linux/Mac) or ping -n 1 (Windows)
-        cmd = ["ping", "-c", "1", domain] if os.name != 'nt' else ["ping", "-n", "1", domain]
-        
-        if verbose:
-            print(f"Pinging {domain}...", end=" ")
-        
-        result = subprocess.run(cmd, capture_output=True, timeout=5)
-        success = result.returncode == 0
-        
-        if verbose:
-            print("ONLINE" if success else "OFFLINE")
-            
-        return success
-    except (subprocess.TimeoutExpired, subprocess.SubprocessError):
-        if verbose:
-            print("TIMEOUT")
-        return False
-
-def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]:
-    """Download and parse a blocklist from URL"""
-    domains = set()
-    total_lines = 0
-    valid_domains = 0
+    # Read blocklist URLs from input file
+    blocklist_urls = load_blocklist_urls(args.input_file)
     
-    try:
-        response = requests.get(url, timeout=timeout)
-        
-        if response.status_code == 200:
-            lines = response.text.split("\n")
-            total_lines = len(lines)
-            
-            for line in lines:
-                domain = clean_domain(line)
-                if domain:
-                    domains.add(domain)  # set automatically handles duplicates
-                    valid_domains += 1
-        else:
-            print(f"Failed to download {url}: HTTP {response.status_code}")
-            
-    except requests.exceptions.RequestException as e:
-        print(f"Error downloading {url}: {e}")
-    except Exception as e:
-        print(f"Unexpected error processing {url}: {e}")
+    # Fetch and process all blocklists
+    all_domains = fetch_and_clean_domains(blocklist_urls, args.workers, args.timeout)
     
-    return domains, total_lines, valid_domains
-
-def load_existing_domains(input_file: str) -> tuple[Set[str], int]:
-    """Load existing domains from input file and return count of new entries"""
-    existing_domains = set()
-    new_entries_count = 0
+    # Remove duplicates and existing domains
+    new_domains = all_domains - existing_domains
     
-    if not os.path.exists(input_file):
-        print(f"Input file {input_file} does not exist. Starting with empty set.")
-        return existing_domains, 0
+    print(f"Found {len(new_domains)} new domains to verify")
     
-    try:
-        with open(input_file, "r") as f:
-            for line in f:
-                # Check for new entries count in header
-                if line.startswith("# New domains added:"):
-                    try:
-                        new_entries_count = int(line.split(":")[1].strip().replace(",", ""))
-                    except (IndexError, ValueError):
-                        pass
-                
-                domain = clean_domain(line)
-                if domain:
-                    existing_domains.add(domain)
-        
-        print(f"Loaded {len(existing_domains):,} existing domains from {input_file}")
-        if new_entries_count > 0:
-            print(f"File contains {new_entries_count:,} new entries from previous runs")
-    except Exception as e:
-        print(f"Error reading input file {input_file}: {e}")
+    # Limit to max new domains
+    if len(new_domains) > args.max_new:
+        new_domains = set(list(new_domains)[:args.max_new])
+        print(f"Limited to {args.max_new} domains")
     
-    return existing_domains, new_entries_count
-
-def download_blocklists_parallel(urls: list, timeout: int, workers: int) -> tuple[Set[str], int, int]:
-    """Download and parse multiple blocklists in parallel"""
-    all_domains = set()
-    total_lines = 0
-    total_valid = 0
-    
-    # Thread-safe counters
-    lock = threading.Lock()
-    
-    def download_single_url(url_info):
-        url, index = url_info
-        try:
-            print(f"[{index+1}/{len(urls)}] Downloading: {url[:60]}...")
-            domains, lines, valid = download_blocklist(url, timeout)
-            
-            with lock:
-                nonlocal total_lines, total_valid
-                domains_before = len(all_domains)
-                all_domains.update(domains)
-                domains_after = len(all_domains)
-                
-                new_unique = domains_after - domains_before
-                duplicates = len(domains) - new_unique
-                
-                total_lines += lines
-                total_valid += valid
-                
-                print(f"[{index+1}/{len(urls)}] Completed:")
-                print(f"  Lines processed: {lines:,}")
-                print(f"  Valid domains found: {valid:,}")
-                print(f"  New unique domains: {new_unique:,}")
-                if duplicates > 0:
-                    print(f"  Duplicates skipped: {duplicates:,}")
-                
-            return domains, lines, valid
-        except Exception as e:
-            print(f"[{index+1}/{len(urls)}] Error downloading {url}: {e}")
-            return set(), 0, 0
-    
-    print(f"Starting parallel download with {workers} workers...")
-    
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        # Submit all download tasks
-        url_tasks = [(url, i) for i, url in enumerate(urls)]
-        futures = {executor.submit(download_single_url, url_info): url_info for url_info in url_tasks}
-        
-        # Wait for completion
-        for future in as_completed(futures):
-            future.result()  # This will raise any exceptions that occurred
-    
-    return all_domains, total_lines, total_valid
-
-def ping_domains_parallel(domains: set, workers: int) -> set:
-    """Ping multiple domains in parallel"""
-    verified_domains = set()
-    domains_list = list(domains)
-    
-    # Thread-safe set and counters
-    lock = threading.Lock()
-    completed_count = [0]  # Use list for mutable reference
-    
-    def ping_single_domain(domain_info):
-        domain, index = domain_info
-        try:
-            print(f"[{index+1}/{len(domains_list)}] Pinging {domain}...", end=" ")
-            success = ping_domain(domain, verbose=False)
-            
-            status = "ONLINE" if success else "OFFLINE"
-            print(status)
-            
-            with lock:
-                completed_count[0] += 1
-                if success:
-                    verified_domains.add(domain)
-                
-            return success
-        except Exception as e:
-            print(f"ERROR: {e}")
-            with lock:
-                completed_count[0] += 1
-            return False
-    
-    print(f"Starting parallel ping verification with {workers} workers...")
-    print(f"Verifying {len(domains_list):,} domains...")
-    
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        # Submit all ping tasks
-        domain_tasks = [(domain, i) for i, domain in enumerate(domains_list)]
-        futures = {executor.submit(ping_single_domain, domain_info): domain_info for domain_info in domain_tasks}
-        
-        # Wait for completion
-        for future in as_completed(futures):
-            future.result()  # This will raise any exceptions that occurred
-    
-    return verified_domains
-    """Download and parse a blocklist from URL"""
-    domains = set()
-    total_lines = 0
-    valid_domains = 0
-    
-    try:
-        print(f"Downloading: {url[:60]}...")
-        response = requests.get(url, timeout=timeout)
-        
-        if response.status_code == 200:
-            lines = response.text.split("\n")
-            total_lines = len(lines)
-            
-            for line in tqdm(lines, desc="Processing lines", leave=False):
-                domain = clean_domain(line)
-                if domain:
-                    domains.add(domain)  # set automatically handles duplicates
-                    valid_domains += 1
-        else:
-            print(f"Failed to download {url}: HTTP {response.status_code}")
-            
-    except requests.exceptions.RequestException as e:
-        print(f"Error downloading {url}: {e}")
-    except Exception as e:
-        print(f"Unexpected error processing {url}: {e}")
-    
-    return domains, total_lines, valid_domains
-
-def generate_next_filename(base_filename: str) -> str:
-    """Generate next filename in sequence (e.g., porn.txt -> porn_001.txt)"""
-    base_path = os.path.dirname(base_filename)
-    base_name = os.path.basename(base_filename)
-    name_without_ext, ext = os.path.splitext(base_name)
-    
-    counter = 1
-    while True:
-        new_name = f"{name_without_ext}_{counter:03d}{ext}"
-        new_path = os.path.join(base_path, new_name)
-        if not os.path.exists(new_path):
-            return new_path
-        counter += 1
-
-def write_domains_to_files(domains: list, base_output_file: str, max_new_per_file: int, existing_new_count: int, urls_count: int) -> list[tuple[str, int]]:
-    """Write domains to files, creating new files when max_new_per_file is reached"""
-    files_written = []
-    
-    # Calculate how many new entries we can add to the current file
-    remaining_capacity = max_new_per_file - existing_new_count
-    
-    if len(domains) <= remaining_capacity:
-        # All domains fit in current file
-        write_single_file(base_output_file, domains, existing_new_count + len(domains), urls_count, len(domains))
-        files_written.append((base_output_file, len(domains)))
+    # Ping domains to verify they're online (unless skipped)
+    if not args.skip_ping:
+        verified_domains = verify_domains_online_with_git(new_domains, args.workers, args.timeout, 
+                                                         args.output_file, args.skip_git)
     else:
-        # Need to split across multiple files
-        domains_written = 0
-        current_file = base_output_file
-        
-        while domains_written < len(domains):
-            if current_file == base_output_file:
-                # First file - use remaining capacity
-                domains_to_write = min(remaining_capacity, len(domains) - domains_written)
-                total_new_in_file = existing_new_count + domains_to_write
-            else:
-                # New files - use full capacity
-                domains_to_write = min(max_new_per_file, len(domains) - domains_written)
-                total_new_in_file = domains_to_write
-            
-            # Get domains for this file
-            file_domains = domains[domains_written:domains_written + domains_to_write]
-            
-            # Write file
-            write_single_file(current_file, file_domains, total_new_in_file, urls_count, domains_to_write, is_continuation=(current_file != base_output_file))
-            files_written.append((current_file, domains_to_write))
-            
-            domains_written += domains_to_write
-            
-            # Generate next filename if more domains remain
-            if domains_written < len(domains):
-                current_file = generate_next_filename(base_output_file)
-                print(f"Creating new file: {current_file}")
+        verified_domains = new_domains
+        # Write all at once if skipping ping
+        write_domains_to_file(verified_domains, args.output_file)
+        if not args.skip_git:
+            git_commit_push(f"Added {len(verified_domains)} domains (ping skipped)")
     
-    return files_written
+    print(f"Added {len(verified_domains)} verified domains to {args.output_file}")
 
-def write_single_file(filename: str, domains: list, total_new_count: int, urls_count: int, new_domains_added: int, is_continuation: bool = False):
-    """Write domains to a single file with header"""
-    with open(filename, "w") as f:
-        if is_continuation:
-            f.write("# Continuation blocklist - duplicates removed\n")
-        else:
-            f.write("# Merged blocklist - duplicates removed\n")
-        f.write(f"# Generated from {urls_count} sources\n")
-        f.write(f"# New domains added: {total_new_count:,}\n")
-        f.write(f"# Domains in this file: {len(domains):,}\n")
-        if new_domains_added != len(domains):
-            f.write(f"# New domains added this run: {new_domains_added:,}\n")
-        f.write("\n")
-        
-        for domain in tqdm(domains, desc=f"Writing to {os.path.basename(filename)}"):
-            f.write(domain + "\n")
-    """Perform git operations: add, commit, pull, push"""
+
+def git_commit_push(commit_message: str):
+    """Perform git add, commit, pull, and push operations"""
     try:
-        print(f"\n{'='*50}")
-        print("PERFORMING GIT OPERATIONS")
-        print(f"{'='*50}")
-        
         # Git add
-        print("Adding output file to git...")
-        subprocess.run(["git", "add", output_file], check=True)
+        subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
+        print("Git add completed")
         
         # Git commit
-        commit_message = f"Update blocklist: added {new_domains_count:,} new domains"
-        print(f"Committing changes: {commit_message}")
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        subprocess.run(['git', 'commit', '-m', commit_message], check=True, capture_output=True)
+        print(f"Git commit completed: {commit_message}")
         
         # Git pull
-        print("Pulling latest changes...")
-        subprocess.run(["git", "pull"], check=True)
+        result = subprocess.run(['git', 'pull'], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"Git pull warning: {result.stderr}")
+        else:
+            print("Git pull completed")
         
         # Git push
-        print("Pushing changes...")
-        subprocess.run(["git", "push"], check=True)
-        
-        print("Git operations completed successfully")
+        subprocess.run(['git', 'push'], check=True, capture_output=True)
+        print("Git push completed")
         
     except subprocess.CalledProcessError as e:
         print(f"Git operation failed: {e}")
-        print("You may need to resolve conflicts manually or check git status")
-    except FileNotFoundError:
-        print("Git command not found. Make sure git is installed and in PATH")
-
-def main():
-    try:
-        # Parse command line arguments
-        parser = argparse.ArgumentParser(description='Merge multiple blocklists with ping verification and git integration')
-        parser.add_argument('lists_file', help='File containing blocklist URLs to download from')
-        parser.add_argument('output_file', help='Output file path for the merged blocklist')
-        parser.add_argument('--existing-domains', help='File with existing domains to merge with (optional)')
-        parser.add_argument('--timeout', type=int, default=20, help='Request timeout in seconds')
-        parser.add_argument('--max-new', type=int, default=1000, help='Maximum number of new domains to add')
-        parser.add_argument('--max-file-size', type=int, default=500000, help='Maximum new entries per file before creating new file')
-        parser.add_argument('--workers', type=int, default=10, help='Number of worker threads for downloads and ping verification')
-        parser.add_argument('--skip-ping', action='store_true', help='Skip ping verification for new domains')
-        parser.add_argument('--no-git', action='store_true', help='Skip git operations')
-        args = parser.parse_args()
-        
-        lists_file = args.lists_file
-        output_file = args.output_file
-        
-        # Load existing domains if specified
-        existing_domains = set()
-        existing_new_count = 0
-        if args.existing_domains:
-            existing_domains, existing_new_count = load_existing_domains(args.existing_domains)
-        elif os.path.exists(output_file):
-            print(f"Loading existing domains from output file: {output_file}")
-            existing_domains, existing_new_count = load_existing_domains(output_file)
-        else:
-            print("No existing domains file specified, starting fresh")
-        
-        # Check for lists file
-        if not os.path.exists(lists_file):
-            print(f"Lists file {lists_file} does not exist!")
-            return
-        
-        # Read blocklist URLs
-        with open(lists_file, "r") as f:
-            urls = [line.strip() for line in f if line.strip() and not line.strip().startswith("#")]
-        
-        if not urls:
-            print(f"No URLs found in {lists_file}. Please add some blocklist URLs.")
-            return
-        
-        print(f"Found {len(urls)} blocklist URLs:")
-        for url in urls:
-            print(f"  - {url}")
-        
-        print(f"\nUsing {args.workers} worker threads for parallel processing")
-        
-        # Download all blocklists in parallel
-        print(f"\nDownloading {len(urls)} blocklists in parallel...")
-        all_downloaded_domains, total_lines_processed, total_valid_domains = download_blocklists_parallel(
-            urls, args.timeout, args.workers
-        )
-        
-        # Find new domains
-        new_domains = all_downloaded_domains - existing_domains
-        print(f"\nFound {len(new_domains):,} new domains (not in existing set)")
-        
-        # Limit new domains if specified
-        if len(new_domains) > args.max_new:
-            print(f"Limiting to {args.max_new:,} new domains as specified")
-            new_domains = set(list(new_domains)[:args.max_new])
-        
-        # Ping verification for new domains
-        verified_new_domains = set()
-        if not args.skip_ping and new_domains:
-            verified_new_domains = ping_domains_parallel(new_domains, args.workers)
-            
-            print(f"\n{len(verified_new_domains):,} domains responded to ping")
-            print(f"{len(new_domains) - len(verified_new_domains):,} domains did not respond")
-        else:
-            if args.skip_ping:
-                print("Skipping ping verification as requested")
-            verified_new_domains = new_domains
-        
-        # Combine existing and new verified domains
-        final_domains = existing_domains | verified_new_domains
-        sorted_domains = sorted(final_domains)
-        
-        # Check if we need file rotation
-        will_exceed_limit = existing_new_count + len(verified_new_domains) > args.max_file_size
-        
-        # Calculate and display statistics
-        print(f"\n{'='*50}")
-        print(f"PROCESSING SUMMARY")
-        print(f"{'='*50}")
-        print(f"Existing domains: {len(existing_domains):,}")
-        print(f"Existing new entries in current file: {existing_new_count:,}")
-        print(f"Max new entries per file: {args.max_file_size:,}")
-        print(f"Total lines processed: {total_lines_processed:,}")
-        print(f"Valid domains downloaded: {total_valid_domains:,}")
-        print(f"New domains found: {len(new_domains):,}")
-        if not args.skip_ping:
-            print(f"New domains verified online: {len(verified_new_domains):,}")
-        print(f"Final unique domains: {len(sorted_domains):,}")
-        if will_exceed_limit:
-            print(f"Will create new file(s) due to size limit")
-        
-        # Write to output file(s)
-        if len(verified_new_domains) > 0:
-            print(f"\nWriting {len(sorted_domains):,} unique domains to file(s)...")
-            files_written = write_domains_to_files(
-                sorted_domains, 
-                output_file, 
-                args.max_file_size, 
-                existing_new_count, 
-                len(urls)
-            )
-            
-            total_files = len(files_written)
-            total_new_added = sum(count for _, count in files_written)
-            
-            print(f"Successfully wrote to {total_files} file(s)")
-            for filepath, count in files_written:
-                print(f"  {os.path.basename(filepath)}: {count:,} new domains")
-            print(f"Total new domains added: {total_new_added:,}")
-            
-            # Perform git operations unless disabled
-            if not args.no_git:
-                git_operations(files_written)
-        else:
-            print("No new domains to write.")
-            
-        if len(verified_new_domains) == 0:
-            print("No new domains to commit.")
-        
-    except KeyboardInterrupt:
-        print("\nOperation interrupted by user")
-        if 'existing_domains' in locals() and 'verified_new_domains' in locals():
-            print("Saving partial results...")
-            final_domains = existing_domains | verified_new_domains
-            sorted_domains = sorted(final_domains)
-            
-            # Save to single file for interruption case
-            with open(output_file, "w") as f:
-                f.write("# Partial merged blocklist (interrupted)\n")
-                f.write(f"# Existing domains: {len(existing_domains):,}\n")
-                f.write(f"# New domains added before interruption: {len(verified_new_domains):,}\n")
-                f.write(f"# Total domains: {len(sorted_domains):,}\n")
-                f.write("\n")
-                for domain in sorted_domains:
-                    f.write(domain + "\n")
-            
-            print(f"Saved {len(sorted_domains):,} unique domains to {output_file}")
-            print(f"   ({len(verified_new_domains):,} new domains were added)")
     except Exception as e:
-        print(f"An error occurred: {e}")
-        sys.exit(1)
+        print(f"Git error: {e}")
+
+
+def verify_domains_online_with_git(domains: Set[str], workers: int, timeout: float, 
+                                 output_file: str, skip_git: bool) -> Set[str]:
+    """Ping domains to verify they're online with git commits every 20%"""
+    verified_domains = set()
+    lock = threading.Lock()
+    
+    domains_list = list(domains)
+    total_domains = len(domains_list)
+    
+    # Calculate 20% intervals
+    checkpoint_interval = max(1, total_domains // 5)  # Every 20%
+    next_checkpoint = checkpoint_interval
+    processed_count = 0
+    
+    def ping_domain(domain):
+        nonlocal processed_count, next_checkpoint
+        
+        try:
+            # Simple ping using subprocess
+            result = subprocess.run(['ping', '-c', '1', '-W', str(int(timeout * 1000)), domain], 
+                                  capture_output=True, timeout=timeout + 1)
+            
+            with lock:
+                nonlocal processed_count
+                processed_count += 1
+                
+                if result.returncode == 0:
+                    verified_domains.add(domain)
+                    # Write domain immediately to file
+                    write_single_domain_to_file(domain, output_file)
+                
+                # Check if we've reached a checkpoint (20% interval)
+                if not skip_git and processed_count >= next_checkpoint and processed_count < total_domains:
+                    percentage = (processed_count / total_domains) * 100
+                    commit_msg = f"Progress: {processed_count}/{total_domains} domains verified ({percentage:.1f}%)"
+                    print(f"\nReached {percentage:.1f}% - performing git operations...")
+                    git_commit_push(commit_msg)
+                    next_checkpoint += checkpoint_interval
+                
+            return result.returncode == 0
+            
+        except Exception:
+            with lock:
+                processed_count += 1
+            return False
+    
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(ping_domain, domain) for domain in domains_list]
+        
+        for future in tqdm(as_completed(futures), total=len(domains_list), desc="Verifying domains"):
+            future.result()
+    
+    # Final git commit if not skipped
+    if not skip_git:
+        print("\nFinal git commit...")
+        git_commit_push(f"Completed: {len(verified_domains)} domains verified and added")
+    
+    return verified_domains
+
+
+def write_single_domain_to_file(domain: str, filename: str):
+    """Append a single domain to output file"""
+    with open(filename, 'a') as f:
+        f.write(f"{domain}\n")
+
+
+def load_existing_domains(filename: str) -> Set[str]:
+    """Load existing domains from file, create file if it doesn't exist"""
+    if not os.path.exists(filename):
+        # Create empty file
+        with open(filename, 'w') as f:
+            pass
+        return set()
+    
+    domains = set()
+    with open(filename, 'r') as f:
+        for line in f:
+            domain = line.strip()
+            if domain and not domain.startswith('#'):
+                domains.add(domain)
+    return domains
+
+
+def load_blocklist_urls(filename: str) -> list:
+    """Load blocklist URLs from input file"""
+    urls = []
+    with open(filename, 'r') as f:
+        for line in f:
+            url = line.strip()
+            if url and not url.startswith('#'):
+                urls.append(url)
+    return urls
+
+
+def clean_domain(line: str) -> str:
+    """Clean domain line by removing prefixes like 0.0.0.0, 127.0.0.1, ||, and unwanted characters like ^"""
+    line = line.strip()
+    
+    # Skip comments
+    if line.startswith('#'):
+        return ''
+    
+    # Remove common prefixes
+    prefixes = ['0.0.0.0 ', '127.0.0.1 ', '||', '|']
+    for prefix in prefixes:
+        if line.startswith(prefix):
+            line = line[len(prefix):]
+    
+    # Remove trailing characters and suffixes
+    line = line.split('^')[0]  # Remove uBlock origin suffix
+    line = line.split(' ')[0]  # Remove comments
+    line = line.split('\t')[0]  # Remove tabs
+    line = line.split('#')[0]  # Remove inline comments
+    
+    # Remove any remaining unwanted characters
+    unwanted_chars = ['^', '$', '*', '/', '?']
+    for char in unwanted_chars:
+        line = line.replace(char, '')
+    
+    return line.strip()
+
+
+def fetch_and_clean_domains(urls: list, workers: int, timeout: float) -> Set[str]:
+    """Fetch domains from all blocklist URLs and clean them"""
+    all_domains = set()
+    
+    def fetch_blocklist(url):
+        try:
+            response = requests.get(url, timeout=timeout)
+            response.raise_for_status()
+            
+            domains = set()
+            for line in response.text.splitlines():
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    cleaned = clean_domain(line)
+                    if cleaned and '.' in cleaned:  # Basic domain validation
+                        domains.add(cleaned)
+            return domains
+        except Exception as e:
+            print(f"Error fetching {url}: {e}")
+            return set()
+    
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_to_url = {executor.submit(fetch_blocklist, url): url for url in urls}
+        
+        for future in tqdm(as_completed(future_to_url), total=len(urls), desc="Fetching blocklists"):
+            domains = future.result()
+            all_domains.update(domains)
+    
+    return all_domains
+
+
+def write_domains_to_file(domains: Set[str], filename: str):
+    """Append new domains to output file"""
+    with open(filename, 'a') as f:
+        for domain in sorted(domains):
+            f.write(f"{domain}\n")
+
 
 if __name__ == "__main__":
     main()
