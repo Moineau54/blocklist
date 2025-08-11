@@ -10,7 +10,7 @@ from typing import Set, Tuple
 from tqdm import tqdm
 
 """
-Tool to merge multiple blocklists into one with Git integration and online domain filtering
+Tool to merge multiple blocklists into one with Git integration and ping reachability filtering
 Usage: python script.py input_lists.txt output_file.txt --check-online
 """
 
@@ -59,23 +59,26 @@ def git_operations(output_file: str, list_num: int, total_lists: int, url: str, 
     print("✅ Git operations completed successfully\n")
     return True
 
-def check_domain_online(domain: str, timeout: int = 5) -> bool:
-    """Check if a domain is reachable via HTTP/HTTPS"""
-    for protocol in ['https', 'http']:
-        try:
-            response = requests.head(f"{protocol}://{domain}", 
-                                   timeout=timeout, 
-                                   allow_redirects=True,
-                                   headers={'User-Agent': 'Mozilla/5.0 (blocklist-checker)'})
-            # Accept any response that isn't a server error
-            if response.status_code < 500:
-                return True
-        except (requests.exceptions.RequestException, Exception):
-            continue
-    return False
+def check_domain_online(domain: str, timeout: int = 3) -> bool:
+    """Check if a domain is reachable via ping"""
+    try:
+        # Determine ping command based on OS
+        if os.name == 'nt':  # Windows
+            ping_cmd = ['ping', '-n', '1', '-w', str(timeout * 1000), domain]
+        else:  # Unix/Linux/macOS
+            ping_cmd = ['ping', '-c', '1', '-W', str(timeout), domain]
+        
+        # Run ping command
+        result = subprocess.run(ping_cmd, capture_output=True, text=True, timeout=timeout + 2)
+        
+        # Check if ping was successful
+        return result.returncode == 0
+            
+    except (subprocess.TimeoutExpired, subprocess.SubprocessError, Exception):
+        return False
 
-def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int = 5) -> Tuple[Set[str], Set[str]]:
-    """Filter domains to only include those that are reachable"""
+def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int = 3) -> Tuple[Set[str], Set[str]]:
+    """Filter domains to only include those that are reachable via ping"""
     online_domains = set()
     offline_domains = set()
     
@@ -90,7 +93,7 @@ def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int
         # Process results with progress bar
         for future in tqdm(as_completed(future_to_domain), 
                           total=len(domains), 
-                          desc="Checking domains",
+                          desc="Pinging domains",
                           unit="domains"):
             domain = future_to_domain[future]
             try:
@@ -102,7 +105,7 @@ def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int
             except Exception as e:
                 # If check fails, consider domain offline
                 offline_domains.add(domain)
-                tqdm.write(f"Error checking {domain}: {e}")
+                tqdm.write(f"Error pinging {domain}: {e}")
     
     return online_domains, offline_domains
     """Run a git command and return success status"""
@@ -151,7 +154,7 @@ def git_operations(output_file: str, list_num: int, total_lists: int, url: str, 
 
 def write_blocklist_file(output_file: str, domains: Set[str], sources_count: int, 
                         total_lines: int, total_valid: int, list_num: int = None, total_lists: int = None,
-                        offline_count: int = 0, online_check_enabled: bool = False):
+                        offline_count: int = 0, ping_check_enabled: bool = False):
     """Write domains to output file with metadata"""
     sorted_domains = sorted(domains)
     total_duplicates = total_valid - len(sorted_domains) - offline_count
@@ -165,9 +168,9 @@ def write_blocklist_file(output_file: str, domains: Set[str], sources_count: int
         f.write(f"# Total lines processed: {total_lines:,}\n")
         f.write(f"# Valid domains found: {total_valid:,}\n")
         f.write(f"# Duplicates removed: {total_duplicates:,}\n")
-        if online_check_enabled:
-            f.write(f"# Online connectivity check: ENABLED\n")
-            f.write(f"# Offline domains filtered: {offline_count:,}\n")
+        if ping_check_enabled:
+            f.write(f"# Ping reachability check: ENABLED\n")
+            f.write(f"# Unreachable domains filtered: {offline_count:,}\n")
         f.write(f"# Final unique domains: {len(sorted_domains):,}\n")
         if total_duplicates > 0:
             f.write(f"# Deduplication rate: {(total_duplicates/total_valid*100):.1f}%\n")
@@ -247,9 +250,9 @@ Examples:
   python script.py urls.txt blocklist.txt
   python script.py sources.txt output.txt --check-online
   python script.py lists.txt merged.txt --check-online --git
-  python script.py input.txt result.txt --check-online --connection-timeout 3
+  python script.py input.txt result.txt --check-online --ping-timeout 2
   python script.py urls.txt final.txt --check-online --check-workers 100
-  python script.py sources.txt output.txt --git --no-git
+  python script.py sources.txt output.txt --git
             """,
             formatter_class=argparse.RawDescriptionHelpFormatter
         )
@@ -261,10 +264,10 @@ Examples:
         
         # Online checking options
         parser.add_argument('--check-online', action='store_true', 
-                          help='Check if domains are reachable via HTTP/HTTPS before including them')
-        parser.add_argument('--connection-timeout', type=int, default=5, help='Connection timeout in seconds for online checking')
-        parser.add_argument('--check-workers', type=int, default=50, help='Number of concurrent workers for online checking')
-        parser.add_argument('--check-batch-size', type=int, default=1000, help='Process domains in batches for online checking')
+                          help='Check if domains are reachable via ping before including them')
+        parser.add_argument('--ping-timeout', type=int, default=3, help='Ping timeout in seconds')
+        parser.add_argument('--check-workers', type=int, default=50, help='Number of concurrent workers for ping checking')
+        parser.add_argument('--check-batch-size', type=int, default=1000, help='Process domains in batches for ping checking')
         
         args = parser.parse_args()
         
@@ -273,10 +276,10 @@ Examples:
         
         # Validate online checking
         if args.check_online:
-            print("🌐 Online checking enabled - will verify domain connectivity via HTTP/HTTPS")
-            print(f"   Workers: {args.check_workers}, Timeout: {args.connection_timeout}s")
+            print("🏓 Ping checking enabled - will verify domain reachability via ICMP ping")
+            print(f"   Workers: {args.check_workers}, Timeout: {args.ping_timeout}s")
         else:
-            print("🌐 Online checking disabled - all domains will be included")
+            print("🏓 Ping checking disabled - all domains will be included")
         
         # Check if we're in a git repository and determine git usage
         use_git = False
@@ -355,16 +358,16 @@ Examples:
             current_offline_count = 0
             
             if args.check_online and len(all_domains) >= args.check_batch_size:
-                print(f"🔍 Checking {len(all_domains):,} domains for online status...")
+                print(f"🏓 Pinging {len(all_domains):,} domains for reachability...")
                 current_online_domains, offline_domains = filter_online_domains(
-                    all_domains, args.check_workers, args.connection_timeout
+                    all_domains, args.check_workers, args.ping_timeout
                 )
                 current_offline_count = len(offline_domains)
                 total_offline_domains = current_offline_count
                 
-                print(f"  ✅ Online domains: {len(current_online_domains):,}")
-                print(f"  ❌ Offline domains: {current_offline_count:,}")
-                print(f"  📊 Online rate: {(len(current_online_domains)/len(all_domains)*100):.1f}%")
+                print(f"  ✅ Reachable domains: {len(current_online_domains):,}")
+                print(f"  ❌ Unreachable domains: {current_offline_count:,}")
+                print(f"  📊 Reachable rate: {(len(current_online_domains)/len(all_domains)*100):.1f}%")
             
             # Write updated file after each list
             current_domains, current_duplicates = write_blocklist_file(
@@ -401,15 +404,15 @@ Examples:
         final_offline_count = total_offline_domains
         
         if args.check_online:
-            print(f"\n🔍 Performing final online check for {len(all_domains):,} total domains...")
+            print(f"\n🏓 Performing final ping check for {len(all_domains):,} total domains...")
             final_online_domains, final_offline_domains = filter_online_domains(
-                all_domains, args.check_workers, args.connection_timeout
+                all_domains, args.check_workers, args.ping_timeout
             )
             final_offline_count = len(final_offline_domains)
             
-            print(f"✅ Final online domains: {len(final_online_domains):,}")
-            print(f"❌ Final offline domains: {final_offline_count:,}")
-            print(f"📊 Final online rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
+            print(f"✅ Final reachable domains: {len(final_online_domains):,}")
+            print(f"❌ Final unreachable domains: {final_offline_count:,}")
+            print(f"📊 Final reachable rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
         
         # Final summary
         sorted_domains = sorted(final_online_domains)
@@ -425,11 +428,11 @@ Examples:
         print(f"Unique domains after dedup: {len(all_domains):,}")
         
         if args.check_online:
-            print(f"Online connectivity check: ENABLED")
-            print(f"Offline domains filtered: {final_offline_count:,}")
-            print(f"Online rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
+            print(f"Ping reachability check: ENABLED")
+            print(f"Unreachable domains filtered: {final_offline_count:,}")
+            print(f"Reachable rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
         
-        print(f"Final unique online domains: {len(sorted_domains):,}")
+        print(f"Final unique reachable domains: {len(sorted_domains):,}")
         
         if total_valid_domains > 0:
             total_reduction = total_valid_domains - len(sorted_domains)
@@ -474,13 +477,13 @@ Examples:
             partial_offline_count = 0
             
             if locals().get('args', {}).get('check_online', False):
-                print("🔍 Performing quick online check on partial results...")
+                print("🏓 Performing quick ping check on partial results...")
                 partial_online_domains, partial_offline_domains = filter_online_domains(
                     all_domains, min(20, locals().get('args', {}).get('check_workers', 20)), 
-                    locals().get('args', {}).get('connection_timeout', 5)
+                    locals().get('args', {}).get('ping_timeout', 3)
                 )
                 partial_offline_count = len(partial_offline_domains)
-                print(f"✅ Online: {len(partial_online_domains):,}, ❌ Offline: {partial_offline_count:,}")
+                print(f"✅ Reachable: {len(partial_online_domains):,}, ❌ Unreachable: {partial_offline_count:,}")
             
             # Write partial results
             partial_domains, partial_duplicates = write_blocklist_file(
@@ -489,14 +492,14 @@ Examples:
                 locals().get('total_lines_processed', 0),
                 locals().get('total_valid_domains', 0),
                 offline_count=partial_offline_count,
-                online_check_enabled=locals().get('args', {}).get('check_online', False)
+                ping_check_enabled=locals().get('args', {}).get('check_online', False)
             )
             
-            print(f"💾 Saved {partial_domains:,} unique online domains to {output_file}")
+            print(f"💾 Saved {partial_domains:,} unique reachable domains to {output_file}")
             if partial_duplicates > 0:
                 print(f"   🗑️  {partial_duplicates:,} duplicates were removed")
             if partial_offline_count > 0:
-                print(f"   🚫 {partial_offline_count:,} offline domains filtered")
+                print(f"   🏓 {partial_offline_count:,} unreachable domains filtered")
             print(f"   📋 Source: {locals().get('input_file', 'unknown')} (partial)")
             
             # Final git commit if enabled and we're in a git repo
