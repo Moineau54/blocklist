@@ -1,6 +1,6 @@
 # Partial merged blocklist (interrupted)
-# Existing domains: 0
-# New domains added before interruption: 5
+# Existing domains: 5
+# New domains added before interruption: 0
 # Total domains: 5
 
 impeccableliberalcredentials.blogspot.co.ke
