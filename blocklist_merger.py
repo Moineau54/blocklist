@@ -4,15 +4,62 @@ import os
 import sys
 import time
 import argparse
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Set, Tuple
 from tqdm import tqdm
 
 """
-Tool to merge multiple blocklists into one with Git integration
-Usage: python script.py output_file.txt
+Tool to merge multiple blocklists into one with Git integration and online domain filtering
+Usage: python script.py input_lists.txt output_file.txt --check-online
 """
 
-def run_git_command(command: list, description: str) -> bool:
+def check_domain_online(domain: str, timeout: int = 5) -> bool:
+    """Check if a domain is reachable via HTTP/HTTPS"""
+    for protocol in ['https', 'http']:
+        try:
+            response = requests.head(f"{protocol}://{domain}", 
+                                   timeout=timeout, 
+                                   allow_redirects=True,
+                                   headers={'User-Agent': 'Mozilla/5.0 (blocklist-checker)'})
+            # Accept any response that isn't a server error
+            if response.status_code < 500:
+                return True
+        except (requests.exceptions.RequestException, Exception):
+            continue
+    return False
+
+def filter_online_domains(domains: Set[str], max_workers: int = 50, timeout: int = 5) -> Tuple[Set[str], Set[str]]:
+    """Filter domains to only include those that are reachable"""
+    online_domains = set()
+    offline_domains = set()
+    
+    # Create thread pool for concurrent checking
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Submit all domain checks
+        future_to_domain = {
+            executor.submit(check_domain_online, domain, timeout): domain 
+            for domain in domains
+        }
+        
+        # Process results with progress bar
+        for future in tqdm(as_completed(future_to_domain), 
+                          total=len(domains), 
+                          desc="Checking domains",
+                          unit="domains"):
+            domain = future_to_domain[future]
+            try:
+                is_online = future.result()
+                if is_online:
+                    online_domains.add(domain)
+                else:
+                    offline_domains.add(domain)
+            except Exception as e:
+                # If check fails, consider domain offline
+                offline_domains.add(domain)
+                tqdm.write(f"Error checking {domain}: {e}")
+    
+    return online_domains, offline_domains
     """Run a git command and return success status"""
     try:
         print(f"🔄 {description}...")
@@ -58,10 +105,11 @@ def git_operations(output_file: str, list_num: int, total_lists: int, url: str, 
     return True
 
 def write_blocklist_file(output_file: str, domains: Set[str], sources_count: int, 
-                        total_lines: int, total_valid: int, list_num: int = None, total_lists: int = None):
+                        total_lines: int, total_valid: int, list_num: int = None, total_lists: int = None,
+                        offline_count: int = 0, online_check_enabled: bool = False):
     """Write domains to output file with metadata"""
     sorted_domains = sorted(domains)
-    total_duplicates = total_valid - len(sorted_domains)
+    total_duplicates = total_valid - len(sorted_domains) - offline_count
     
     with open(output_file, "w") as f:
         if list_num and total_lists:
@@ -72,6 +120,9 @@ def write_blocklist_file(output_file: str, domains: Set[str], sources_count: int
         f.write(f"# Total lines processed: {total_lines:,}\n")
         f.write(f"# Valid domains found: {total_valid:,}\n")
         f.write(f"# Duplicates removed: {total_duplicates:,}\n")
+        if online_check_enabled:
+            f.write(f"# Online connectivity check: ENABLED\n")
+            f.write(f"# Offline domains filtered: {offline_count:,}\n")
         f.write(f"# Final unique domains: {len(sorted_domains):,}\n")
         if total_duplicates > 0:
             f.write(f"# Deduplication rate: {(total_duplicates/total_valid*100):.1f}%\n")
@@ -144,14 +195,43 @@ def download_blocklist(url: str, timeout: int = 20) -> tuple[Set[str], int, int]
 def main():
     try:
         # Parse command line arguments
-        parser = argparse.ArgumentParser(description='Merge multiple blocklists into one file with Git integration')
+        parser = argparse.ArgumentParser(
+            description='Merge multiple blocklists into one file with Git integration and online filtering',
+            epilog="""
+Examples:
+  python script.py urls.txt blocklist.txt
+  python script.py sources.txt output.txt --check-online
+  python script.py lists.txt merged.txt --check-online --git
+  python script.py input.txt result.txt --check-online --connection-timeout 3
+  python script.py urls.txt final.txt --check-online --check-workers 100
+  python script.py sources.txt output.txt --git --no-git
+            """,
+            formatter_class=argparse.RawDescriptionHelpFormatter
+        )
+        parser.add_argument('input_file', help='Input file containing blocklist URLs (one per line)')
         parser.add_argument('output_file', help='Output file path for the merged blocklist')
         parser.add_argument('--timeout', type=int, default=20, help='Request timeout in seconds')
         parser.add_argument('--git', action='store_true', help='Enable Git operations after each list')
         parser.add_argument('--no-git', action='store_true', help='Disable Git operations (default if not in git repo)')
+        
+        # Online checking options
+        parser.add_argument('--check-online', action='store_true', 
+                          help='Check if domains are reachable via HTTP/HTTPS before including them')
+        parser.add_argument('--connection-timeout', type=int, default=5, help='Connection timeout in seconds for online checking')
+        parser.add_argument('--check-workers', type=int, default=50, help='Number of concurrent workers for online checking')
+        parser.add_argument('--check-batch-size', type=int, default=1000, help='Process domains in batches for online checking')
+        
         args = parser.parse_args()
         
+        input_file = args.input_file
         output_file = args.output_file
+        
+        # Validate online checking
+        if args.check_online:
+            print("🌐 Online checking enabled - will verify domain connectivity via HTTP/HTTPS")
+            print(f"   Workers: {args.check_workers}, Timeout: {args.connection_timeout}s")
+        else:
+            print("🌐 Online checking disabled - all domains will be included")
         
         # Check if we're in a git repository and determine git usage
         use_git = False
@@ -174,31 +254,34 @@ def main():
         else:
             print("🔧 Git operations disabled")
         
-        # Check for lists.txt
-        lists_file = "lists.txt"
-        if not os.path.exists(lists_file):
-            # Create empty lists.txt
-            with open(lists_file, "w") as f:
-                f.write("# Add blocklist URLs here, one per line\n")
-            print(f"Created {lists_file}. Please add blocklist URLs to this file, one per line.")
+        # Check for input file
+        if not os.path.exists(input_file):
+            print(f"❌ Input file '{input_file}' not found.")
+            print(f"Create {input_file} and add blocklist URLs, one per line.")
+            print("Example content:")
+            print("# Add blocklist URLs here, one per line")
+            print("https://somehost.com/blocklist.txt")
+            print("https://example.com/ads.txt")
             return
         
         # Read blocklist URLs
-        with open(lists_file, "r") as f:
+        with open(input_file, "r") as f:
             urls = [line.strip() for line in f if line.strip() and not line.strip().startswith("#")]
         
         if not urls:
-            print(f"No URLs found in {lists_file}. Please add some blocklist URLs.")
+            print(f"❌ No URLs found in {input_file}. Please add some blocklist URLs.")
+            print("Lines starting with # are treated as comments and ignored.")
             return
         
-        print(f"Found {len(urls)} blocklist URLs:")
-        for url in urls:
-            print(f"  - {url}")
+        print(f"📋 Found {len(urls)} blocklist URLs in {input_file}:")
+        for i, url in enumerate(urls, 1):
+            print(f"  {i}. {url}")
         
         # Collect all domains with incremental Git operations
         all_domains = set()
         total_lines_processed = 0
         total_valid_domains = 0
+        total_offline_domains = 0
         failed_git_operations = 0
         
         for i, url in enumerate(urls, 1):
@@ -222,10 +305,26 @@ def main():
             if duplicates_found > 0:
                 print(f"  Duplicates skipped: {duplicates_found:,}")
             
+            # Perform online checking if enabled and we have enough domains for a batch
+            current_online_domains = all_domains
+            current_offline_count = 0
+            
+            if args.check_online and len(all_domains) >= args.check_batch_size:
+                print(f"🔍 Checking {len(all_domains):,} domains for online status...")
+                current_online_domains, offline_domains = filter_online_domains(
+                    all_domains, args.check_workers, args.connection_timeout
+                )
+                current_offline_count = len(offline_domains)
+                total_offline_domains = current_offline_count
+                
+                print(f"  ✅ Online domains: {len(current_online_domains):,}")
+                print(f"  ❌ Offline domains: {current_offline_count:,}")
+                print(f"  📊 Online rate: {(len(current_online_domains)/len(all_domains)*100):.1f}%")
+            
             # Write updated file after each list
             current_domains, current_duplicates = write_blocklist_file(
-                output_file, all_domains, len(urls), total_lines_processed, 
-                total_valid_domains, i, len(urls)
+                output_file, current_online_domains, len(urls), total_lines_processed, 
+                total_valid_domains, i, len(urls), current_offline_count, args.check_online
             )
             
             print(f"📝 Updated {output_file} with {current_domains:,} total unique domains")
@@ -252,9 +351,24 @@ def main():
                 print(f"⏳ Waiting 2 seconds before next download...")
                 time.sleep(2)
         
+        # Perform final online checking if enabled and we haven't done a recent check
+        final_online_domains = all_domains
+        final_offline_count = total_offline_domains
+        
+        if args.check_online:
+            print(f"\n🔍 Performing final online check for {len(all_domains):,} total domains...")
+            final_online_domains, final_offline_domains = filter_online_domains(
+                all_domains, args.check_workers, args.connection_timeout
+            )
+            final_offline_count = len(final_offline_domains)
+            
+            print(f"✅ Final online domains: {len(final_online_domains):,}")
+            print(f"❌ Final offline domains: {final_offline_count:,}")
+            print(f"📊 Final online rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
+        
         # Final summary
-        sorted_domains = sorted(all_domains)
-        total_duplicates_removed = total_valid_domains - len(sorted_domains)
+        sorted_domains = sorted(final_online_domains)
+        total_duplicates_removed = total_valid_domains - len(all_domains)  # Duplicates only
         
         print(f"\n{'='*60}")
         print(f"FINAL PROCESSING SUMMARY")
@@ -263,8 +377,19 @@ def main():
         print(f"Total lines processed: {total_lines_processed:,}")
         print(f"Valid domains found: {total_valid_domains:,}")
         print(f"Duplicates removed: {total_duplicates_removed:,}")
-        print(f"Final unique domains: {len(sorted_domains):,}")
-        print(f"Deduplication rate: {(total_duplicates_removed/total_valid_domains*100):.1f}%" if total_valid_domains > 0 else "0%")
+        print(f"Unique domains after dedup: {len(all_domains):,}")
+        
+        if args.check_online:
+            print(f"Online connectivity check: ENABLED")
+            print(f"Offline domains filtered: {final_offline_count:,}")
+            print(f"Online rate: {(len(final_online_domains)/len(all_domains)*100):.1f}%")
+        
+        print(f"Final unique online domains: {len(sorted_domains):,}")
+        
+        if total_valid_domains > 0:
+            total_reduction = total_valid_domains - len(sorted_domains)
+            reduction_rate = (total_reduction / total_valid_domains * 100)
+            print(f"Total reduction: {total_reduction:,} domains ({reduction_rate:.1f}%)")
         
         if use_git:
             if failed_git_operations == 0:
@@ -274,17 +399,22 @@ def main():
         
         # Write final version of the file
         final_domains, final_duplicates = write_blocklist_file(
-            output_file, all_domains, len(urls), total_lines_processed, total_valid_domains
+            output_file, final_online_domains, len(urls), total_lines_processed, 
+            total_valid_domains, offline_count=final_offline_count, check_method=check_method
         )
         
-        print(f"\n✅ Final blocklist written to {output_file}")
-        print(f"   📊 {final_domains:,} unique domains")
-        print(f"   🗑️  {final_duplicates:,} duplicates removed")
+        print(f"✅ Final blocklist written to {output_file}")
+        print(f"   📊 {final_domains:,} unique online domains")
+        print(f"   🗑️  {total_duplicates_removed:,} duplicates removed")
+        if check_method != 'none':
+            print(f"   🚫 {final_offline_count:,} offline domains filtered")
+        print(f"   📋 Source: {input_file} ({len(urls)} URLs)")
         
         # Final git commit if enabled
         if use_git:
             print(f"\n🔄 Creating final commit...")
-            final_commit_msg = f"Final blocklist update: {final_domains:,} domains from {len(urls)} sources"
+            commit_suffix = f" (online-only)" if check_method != 'none' else ""
+            final_commit_msg = f"Final blocklist update: {final_domains:,} domains from {len(urls)} sources{commit_suffix}"
             if run_git_command(["git", "add", output_file], "Adding final file"):
                 if run_git_command(["git", "commit", "-m", final_commit_msg], "Final commit"):
                     run_git_command(["git", "push"], "Final push")
@@ -293,20 +423,36 @@ def main():
         print("\n⚠️  Operation interrupted by user")
         if 'all_domains' in locals() and all_domains:
             print("💾 Saving partial results...")
-            sorted_domains = sorted(all_domains)
-            duplicates_removed = locals().get('total_valid_domains', 0) - len(sorted_domains)
+            
+            # If online checking was enabled, perform quick check on collected domains
+            partial_online_domains = all_domains
+            partial_offline_count = 0
+            
+            if locals().get('args', {}).get('check_online', False):
+                print("🔍 Performing quick online check on partial results...")
+                partial_online_domains, partial_offline_domains = filter_online_domains(
+                    all_domains, min(20, locals().get('args', {}).get('check_workers', 20)), 
+                    locals().get('args', {}).get('connection_timeout', 5)
+                )
+                partial_offline_count = len(partial_offline_domains)
+                print(f"✅ Online: {len(partial_online_domains):,}, ❌ Offline: {partial_offline_count:,}")
             
             # Write partial results
             partial_domains, partial_duplicates = write_blocklist_file(
-                output_file, all_domains, 
+                output_file, partial_online_domains, 
                 locals().get('i', 0),  # Number of lists processed so far
                 locals().get('total_lines_processed', 0),
-                locals().get('total_valid_domains', 0)
+                locals().get('total_valid_domains', 0),
+                offline_count=partial_offline_count,
+                online_check_enabled=locals().get('args', {}).get('check_online', False)
             )
             
-            print(f"💾 Saved {partial_domains:,} unique domains to {output_file}")
+            print(f"💾 Saved {partial_domains:,} unique online domains to {output_file}")
             if partial_duplicates > 0:
                 print(f"   🗑️  {partial_duplicates:,} duplicates were removed")
+            if partial_offline_count > 0:
+                print(f"   🚫 {partial_offline_count:,} offline domains filtered")
+            print(f"   📋 Source: {locals().get('input_file', 'unknown')} (partial)")
             
             # Final git commit if enabled and we're in a git repo
             if locals().get('use_git', False):
