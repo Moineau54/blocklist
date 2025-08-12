@@ -1,36 +1,55 @@
 name: Convert to uBlock Origin Format
 
 on:
+  # Run after cleanup workflow completes
+  workflow_run:
+    workflows: ["Cleanup Exception Domains"]
+    types:
+      - completed
+    branches: [ main ]
+  
+  # Also run on direct changes to the converter script
   pull_request:
     branches: [ main ]
     paths:
-      - 'advertisement.txt'
-      - 'fingerprinting.txt'
-      - 'malware.txt'
-      - 'phishing.txt'
-      - 'spam.txt'
-      - 'suspicious.txt'
-      - 'telemetry.txt'
-      - 'to_monitor.txt'
-      - 'tracking.txt'
-      - 'porn.txt'
+      - 'ublock_converter.py'
+  
+  # Allow manual triggering
+  workflow_dispatch:
 
 jobs:
   convert-blocklists:
     runs-on: ubuntu-latest
+    # For workflow_run: only run if cleanup succeeded
+    # For other triggers: always run
+    if: |
+      github.event_name != 'workflow_run' || 
+      github.event.workflow_run.conclusion == 'success'
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        # Check out the actual PR branch, not the merge commit
-        ref: ${{ github.head_ref }}
+        # Choose the correct ref based on trigger type
+        ref: |
+          ${{
+            github.event_name == 'workflow_run' && github.event.workflow_run.head_branch ||
+            github.head_ref
+          }}
     
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+    
+    - name: Display trigger info
+      run: |
+        echo "Workflow triggered by: ${{ github.event_name }}"
+        if [ "${{ github.event_name }}" == "workflow_run" ]; then
+          echo "Previous workflow: ${{ github.event.workflow_run.name }}"
+          echo "Previous workflow conclusion: ${{ github.event.workflow_run.conclusion }}"
+        fi
     
     - name: Run conversion script
       run: python ublock_converter.py
@@ -40,8 +59,11 @@ jobs:
       run: |
         if [ -n "$(git status --porcelain)" ]; then
           echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Files changed:"
+          git status --porcelain
         else
           echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No uBlock files were modified"
         fi
     
     - name: Commit and push changes
@@ -52,3 +74,11 @@ jobs:
         git add *_ublock.txt
         git commit -m "Auto-update uBlock Origin filter files [skip ci]" || echo "Nothing to commit"
         git push origin HEAD
+    
+    - name: Summary
+      run: |
+        if [ "${{ steps.verify-changed-files.outputs.changed }}" == "true" ]; then
+          echo "✅ uBlock Origin conversion completed with changes"
+        else
+          echo "✅ uBlock Origin conversion completed - no changes needed"
+        fi
