@@ -323,6 +323,7 @@ cloudflareinsight.com
 insight.adsrvr.org
 
 # Rest
+statconter.com
 s-onetag.com
 consent.trustarc.com
 static.chartbeat.com
