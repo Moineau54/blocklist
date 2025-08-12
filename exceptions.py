@@ -6,8 +6,6 @@ exceptions_domains = [
 lists = [
     "advertisement.txt",
     "fingerprinting.txt",
-    "list2.txt",
-    "lists.txt",
     "malware.txt",
     "output.txt",
     "phishing.txt",
