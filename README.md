@@ -88,3 +88,6 @@ domain (no https://)
 # Company owning the domain
 domain (no https://)
 ```
+
+## For false positives
+In case of a false positive, feel free to contact me or create an issue.
