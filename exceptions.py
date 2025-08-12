@@ -7,7 +7,6 @@ lists = [
     "advertisement.txt",
     "fingerprinting.txt",
     "malware.txt",
-    "output.txt",
     "phishing.txt",
     "porn.txt",
     "spam.txt",
