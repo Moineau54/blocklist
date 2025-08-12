@@ -1,0 +1,66 @@
+name: Cleanup Exception Domains
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'advertisement.txt'
+      - 'fingerprinting.txt'
+      - 'malware.txt'
+      - 'phishing.txt'
+      - 'spam.txt'
+      - 'suspicious.txt'
+      - 'telemetry.txt'
+      - 'to_monitor.txt'
+      - 'tracking.txt'
+      - 'porn.txt'
+      - 'exceptions.py'
+
+jobs:
+  cleanup-exceptions:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # Check out the actual PR branch, not the merge commit
+        ref: ${{ github.head_ref }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Run exceptions cleanup script
+      run: python exceptions.py
+    
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Files changed:"
+          git status --porcelain
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No files were modified"
+        fi
+    
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add *.txt
+        git commit -m "Auto-cleanup: Remove exception domains from blocklists [skip ci]"
+        git push origin HEAD
+    
+    - name: Summary
+      run: |
+        if [ "${{ steps.verify-changed-files.outputs.changed }}" == "true" ]; then
+          echo "✅ Exception domains cleanup completed with changes"
+        else
+          echo "✅ Exception domains cleanup completed - no changes needed"
+        fi
