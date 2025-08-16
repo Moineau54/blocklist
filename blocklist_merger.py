@@ -287,10 +287,10 @@ def clean_domain(line: str) -> str:
         return ''
     
     # Remove common prefixes
-    prefixes = ['0.0.0.0 ', '127.0.0.1 ', '||', '|']
+    prefixes = ['0.0.0.0 ', '127.0.0.1 ', '||', '|', '.']
     for prefix in prefixes:
         if line.startswith(prefix):
-            line = line[len(prefix):]
+            line = line[len(prefix):].strip()
     
     # Remove trailing characters and suffixes
     line = line.split('^')[0]  # Remove uBlock origin suffix
