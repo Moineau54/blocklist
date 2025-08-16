@@ -30,6 +30,7 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [fingerprinting.txt](fingerprinting.txt) | contains fingerprinting domains |
 | [suspicious.txt](suspicious.txt) | contains suspicious domains |
 | [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
+| [porn.txt](porn.txt) | contains porn website domains |
 
 ## To add to Pi-hole
 
