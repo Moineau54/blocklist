@@ -8,3 +8,4 @@
 ! image boards
 ||4chan.org^
 ||8kun.top^
+||soyjak.st^
