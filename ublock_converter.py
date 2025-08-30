@@ -9,7 +9,8 @@ files = [
     "telemetry.txt",
     "to_monitor.txt",
     "tracking.txt",
-    "porn.txt"
+    "porn.txt",
+    "forums.txt"
 ]
 
 for file in files:
