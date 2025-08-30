@@ -324,6 +324,7 @@ cloudflareinsight.com
 insight.adsrvr.org
 
 # Rest
+minerva.devices.a2z.com
 statconter.com
 s-onetag.com
 consent.trustarc.com
