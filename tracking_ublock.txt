@@ -401,7 +401,9 @@
 
 
 ! Rest
+||minerva.devices.a2z.com^
 ||statconter.com^
+||c.statcounter.com^
 ||s-onetag.com^
 ||consent.trustarc.com^
 ||static.chartbeat.com^
@@ -418,6 +420,7 @@
 ||intercomcdn.com^
 ||hubvisor.io^
 ||nmrodam.com^
+||reveal.clearbit.com^
 ||chaseherbalpasty.com^
 ||img1.wsimg.com^
 ||afternic.com^
@@ -427,5 +430,7 @@
 ||launchpad-wrapper.privacymanager.io^
 ||sdk.privacy-center.org^
 ||api.ipify.org^
+
+
 
 
