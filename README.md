@@ -30,43 +30,44 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [fingerprinting.txt](fingerprinting.txt) | contains fingerprinting domains |
 | [suspicious.txt](suspicious.txt) | contains suspicious domains |
 | [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
+| [porn.txt](porn.txt) | contains porn website domains |
 
 ## To add to Pi-hole
 
 ```shell
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/advertisement.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/malware.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/phishing.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/advertisement.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/malware.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/phishing.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/spam.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry.txt
 ```
 
 ## To add to Ublock Origins
 
 ```shell
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/advertisement_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/malware_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/phishing_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/spam_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/tracking_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/fingerprinting_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/suspicious_ublock.txt
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/telemetry_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/advertisement_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/malware_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/phishing_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/spam_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
 ```
 
 ### For pornography domains:
 
 #### Pi-hole:
 ```shell
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/porn.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn.txt
 ```
 
 #### Ublock Origins:
 ```shell
-https://github.com/Moineau54/blocklist/raw/refs/heads/main/porn_ulock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn_ulock.txt
 ```
 
 ## To anyone wanting to contribute
