@@ -31,6 +31,7 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [suspicious.txt](suspicious.txt) | contains suspicious domains |
 | [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
 | [porn.txt](porn.txt) | contains porn website domains |
+| [forums.txt](forums.txt) | contains the domains of forums harmful to children |
 
 ## To add to Pi-hole
 
@@ -67,7 +68,21 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn.txt
 
 #### Ublock Origins:
 ```shell
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn_ulock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn_ublock.txt
+```
+
+### Others:
+
+#### Forums:
+
+##### Pi-hole:
+```shell
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/forums.txt
+```
+
+##### Ublock Origins:
+```shell
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/forums_ublock.txt
 ```
 
 ## To anyone wanting to contribute
