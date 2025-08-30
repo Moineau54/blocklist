@@ -399,6 +399,7 @@
 
 
 ! Rest
+||statconter.com^
 ||s-onetag.com^
 ||consent.trustarc.com^
 ||static.chartbeat.com^
@@ -424,3 +425,11 @@
 ||launchpad-wrapper.privacymanager.io^
 ||sdk.privacy-center.org^
 ||api.ipify.org^
+
+
+
+
+
+
+
+
