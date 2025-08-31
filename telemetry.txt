@@ -30,11 +30,3 @@ static.cloudflareinsights.com
 www.google-analytics.com
 google-analytics.com
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
-
-
