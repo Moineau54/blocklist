@@ -161,6 +161,12 @@ algolia.net
 # Google (DoubleClick, Firebase, Crashlytics, Measurement)
 stats.g.doubleclick.net
 beacons3.gvt2.com
+beacons5.gvt3.com
+beacons5.gvt2.com
+beacons4.gvt2.com
+beacons2.gvt2.com
+beacons.gvt2.com
+beacons.gcp.gvt2.com
 csi.gstatic.com
 ad.doubleclick.net
 app-measurement.com
@@ -353,6 +359,7 @@ launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
 sdk.privacy-center.org
 api.ipify.org
+
 
 
 
