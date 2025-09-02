@@ -36,15 +36,8 @@
 ||google-analytics.com^
 
 
-
-
-||<<<<<<< HEAD^
-||=======^
-
-
-
-
-||>>>>>>> main^
+! Ubuntu telemetry
+||connectivity-check.ubuntu.com^
 
 
 
