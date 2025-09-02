@@ -33,5 +33,3 @@ google-analytics.com
 # Ubuntu telemetry
 connectivity-check.ubuntu.com
 
-
-
