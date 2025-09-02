@@ -1,12 +1,12 @@
 name: Convert to uBlock Origin Format
 
 on:
-  # Run after cleanup workflow completes
+  # Run after cleanup workflow completes (both on main and PR branches)
   workflow_run:
     workflows: ["Cleanup Exception Domains"]
     types:
       - completed
-    branches: [ main ]
+    # Remove the branches restriction to allow it to run on any branch
   
   # Also run on direct changes to the converter script
   pull_request:
@@ -35,7 +35,8 @@ jobs:
         ref: |
           ${{
             github.event_name == 'workflow_run' && github.event.workflow_run.head_branch ||
-            github.head_ref
+            github.head_ref ||
+            github.ref
           }}
     
     - name: Set up Python
@@ -46,9 +47,12 @@ jobs:
     - name: Display trigger info
       run: |
         echo "Workflow triggered by: ${{ github.event_name }}"
+        echo "Current branch: ${{ github.ref }}"
+        echo "Head ref: ${{ github.head_ref }}"
         if [ "${{ github.event_name }}" == "workflow_run" ]; then
           echo "Previous workflow: ${{ github.event.workflow_run.name }}"
           echo "Previous workflow conclusion: ${{ github.event.workflow_run.conclusion }}"
+          echo "Previous workflow head branch: ${{ github.event.workflow_run.head_branch }}"
         fi
     
     - name: Run conversion script
@@ -73,7 +77,15 @@ jobs:
         git config --local user.name "GitHub Action"
         git add *_ublock.txt
         git commit -m "Auto-update uBlock Origin filter files [skip ci]" || echo "Nothing to commit"
-        git push origin HEAD
+        
+        # Push to the correct branch based on the trigger
+        if [ "${{ github.event_name }}" == "workflow_run" ]; then
+          # For workflow_run, push to the head branch from the triggering workflow
+          git push origin HEAD:${{ github.event.workflow_run.head_branch }}
+        else
+          # For other triggers (PR, manual), push to HEAD
+          git push origin HEAD
+        fi
     
     - name: Summary
       run: |
