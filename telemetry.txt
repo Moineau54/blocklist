@@ -30,3 +30,6 @@ static.cloudflareinsights.com
 www.google-analytics.com
 google-analytics.com
 
+# Ubuntu telemetry
+connectivity-check.ubuntu.com
+
