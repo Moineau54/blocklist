@@ -40,7 +40,3 @@
 ||connectivity-check.ubuntu.com^
 
 
-
-
-
-
