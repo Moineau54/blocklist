@@ -220,6 +220,8 @@ advertising.amazon.co.uk
 aax.amazon-adsystem.com
 s.amazon-adsystem.com
 c.amazon-adsystem.com
+config.aps.amazon-adsystem.com
+client.aps.amazon-adsystem.com
 images-na.ssl-images-amazon.com
 l4-logs-http-rum-pub-s0-7d264be627ade923.elb.us
 east-1.amazonaws.com
@@ -359,4 +361,6 @@ launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
 sdk.privacy-center.org
 api.ipify.org
-
+js.appboycdn.com
+dpm.demdex.net
+radar.cedexis.com
