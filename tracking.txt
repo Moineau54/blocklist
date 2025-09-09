@@ -56,7 +56,7 @@ eu-teams.events.data.microsoft.com # To test
 teams.events.data.microsoft.com # To test
 eu-mobile.events.data.microsoft.com # To test
 edge.microsoft.com
-data.microsoft.com 
+data.microsoft.com
 msftconnecttest.com
 azureedge.net
 activity.windows.com
