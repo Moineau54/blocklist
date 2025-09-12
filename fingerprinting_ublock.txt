@@ -3,3 +3,5 @@
 ||static.trafficjunky.com^
 ||fpnpmcdn.net^
 ||a-cdn.claude.a^
+||merchantpool1.linkedin.com^
+||li.protechts.net^
