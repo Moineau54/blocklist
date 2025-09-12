@@ -364,3 +364,6 @@ api.ipify.org
 js.appboycdn.com
 dpm.demdex.net
 radar.cedexis.com
+ads.blogherads.com
+cdn.p-n.io
+static.hotjar.com
