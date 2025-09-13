@@ -1,3 +1,6 @@
+# Moniker
+events.ads.vungle.com
+
 # Ziff Davis LLC
 ziffstatic.com
 
