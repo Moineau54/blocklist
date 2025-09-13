@@ -1,3 +1,5 @@
+# Kameleoon
+n1ux7flhug.kameleoon.io
 
 # GLOBALR LLC
 true.am
@@ -357,6 +359,7 @@ img1.wsimg.com
 afternic.com
 csp.secureserver.net
 ds-aksb-a.akamaihd.net
+e74259.dsca.akamaiedge.net
 launchpad.privacymanager.io
 launchpad-wrapper.privacymanager.io
 sdk.privacy-center.org
