@@ -447,3 +447,4 @@
 ||ads.blogherads.com^
 ||cdn.p-n.io^
 ||static.hotjar.com^
+||eventtracking.hubapi.com^
