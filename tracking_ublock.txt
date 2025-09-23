@@ -448,3 +448,4 @@
 ||cdn.p-n.io^
 ||static.hotjar.com^
 ||eventtracking.hubapi.com^
+||js.live.net^
