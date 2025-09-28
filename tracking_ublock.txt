@@ -418,6 +418,9 @@
 ||consent.trustarc.com^
 ||static.chartbeat.com^
 ||cdn.optimizely.com^
+||*.cdn.optimizely.com^
+||cdn3.optimizely.com^
+||a26669750187.cdn.optimizely.com^
 ||ecdn.analysis.fi^
 ||btloader.com^
 ||app-analytics-services.com^
