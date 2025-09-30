@@ -1,6 +1,7 @@
 exceptions_domains = [
     "youtube.com",
     "reddit.com",
+    "x.com",
     "example.com" # example
 ]
 lists = [
