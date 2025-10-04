@@ -1,3 +1,9 @@
+! Mgnite Inc / Rubicon Project / Telaria
+||prebid-server.rubiconproject.com^
+||fastlane.rubiconproject.com^
+||eus.rubiconproject.com^
+
+
 ! Kameleoon
 ||n1ux7flhug.kameleoon.io^
 
@@ -452,3 +458,25 @@
 ||static.hotjar.com^
 ||eventtracking.hubapi.com^
 ||js.live.net^
+||seg.ad.gt^
+||a.ad.gt^
+||cdn-gl.imrworldwide.com^
+||elb.the-ozone-project.com^
+||hbopenbid.pubmatic.com^
+||ads.pubmatic.com^
+||s.seedtag.com^
+||tlx.3lift.com^
+||eb2.3lift.com^
+||g2.gumgum.com^
+||ib.adnxs.com^
+||prebid.media.net^
+||rtb.openx.net^
+||htbl.casalemediacom^
+||ads.servenobid.com^
+||public.servenobid.com^
+||sd.scorecardresearch.com^
+||js-sec.indexww.com^
+||acdn.adnxs.com^
+||u.openx.net^
+
+
