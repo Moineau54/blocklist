@@ -478,5 +478,10 @@
 ||js-sec.indexww.com^
 ||acdn.adnxs.com^
 ||u.openx.net^
+||faves.grow.me^
+||cdn.brandmetrics.com^
+||cdn.confiant-integrations.net^
+||a.teads.tv^
+||cdn.permutive.com^
 
 
