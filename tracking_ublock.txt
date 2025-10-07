@@ -418,6 +418,7 @@
 
 ! Rest
 ||minerva.devices.a2z.com^
+||5aa25954e40ffb18984989b59487dfe054549e213a2e64a12187f8deb5a4cb5.us-east-1.prod.service.minerva.devices.a2z.com^
 ||statconter.com^
 ||c.statcounter.com^
 ||s-onetag.com^
@@ -478,5 +479,10 @@
 ||js-sec.indexww.com^
 ||acdn.adnxs.com^
 ||u.openx.net^
+||faves.grow.me^
+||cdn.brandmetrics.com^
+||cdn.confiant-integrations.net^
+||a.teads.tv^
+||cdn.permutive.com^
 
 
