@@ -10,7 +10,8 @@ files = [
     "to_monitor.txt",
     "tracking.txt",
     "porn.txt",
-    "forums.txt"
+    "forums.txt",
+    "csam.txt"
 ]
 
 for file in files:
