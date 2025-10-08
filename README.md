@@ -44,6 +44,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking.t
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam.txt
 ```
 
 ## To add to Ublock Origins
@@ -57,6 +58,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking_u
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam_ublock.txt
 ```
 
 ### For pornography domains:
