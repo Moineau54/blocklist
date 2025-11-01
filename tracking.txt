@@ -208,6 +208,7 @@ imasdk.googleapis.com
 id.google.com
 id.google.de
 firebaselogging-pa.googleapis.com
+encrypted-tbn0.gstatic.com
 
 # Cookiebot
 consent.cookiebot.com
