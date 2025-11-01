@@ -9,6 +9,9 @@ n1ux7flhug.kameleoon.io
 # GLOBALR LLC
 true.am
 
+# Mozilla
+mc.prod.ads.prod.webservices.mozgcp.net
+
 # BrightEdge AutoPilot
 cdn.bc0a.com
 

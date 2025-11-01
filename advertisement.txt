@@ -1,6 +1,9 @@
 # Moniker
 events.ads.vungle.com
 
+# Mozilla
+mc.prod.ads.prod.webservices.mozgcp.net
+
 # Ziff Davis LLC
 ziffstatic.com
 
