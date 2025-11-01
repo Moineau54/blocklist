@@ -40,3 +40,5 @@
 ||connectivity-check.ubuntu.com^
 
 
+! Avast
+||analytics.ff.avast.com^
