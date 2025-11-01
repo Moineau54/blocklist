@@ -420,10 +420,4 @@ bellonapotype.com
 trialhd.com
 wlresources.com
 prm03.wlresources.com
-
-
-
-
-
-
-
+secure-api.notifadz.com
