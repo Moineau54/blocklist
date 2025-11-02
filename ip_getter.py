@@ -171,7 +171,7 @@ for file in files:
                 if result.returncode == 0:
                     ips = extract_ips(result.stdout)
                     if ips:
-                        print(f"  {domain} -> {', '.join(ips)}")
+                        print(f"  {domain} --> {', '.join(ips)}")
                         all_ips.extend(ips)
                     else:
                         print(f"  {domain} -> No public IPs found")
