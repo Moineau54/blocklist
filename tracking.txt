@@ -111,6 +111,9 @@ cdn.snigelweb.com
 browser-intake-datadoghq.com
 rum.browser-intake-datadoghq.com
 0.datadog.pool.ntp.org # To test
+1.datadog.pool.ntp.org
+2.datadog.pool.ntp.org
+3.datadog.pool.ntp.org
 logs.browser-intake-datadoghq.com
 8b61d74c.datadoghq.com
 
