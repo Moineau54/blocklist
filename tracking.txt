@@ -478,3 +478,8 @@ api.uca.cloud.unity3d.com
 t.appsflyer.com
 adserver.snapads.com
 supersonicads-a.akamaihd.net
+adlog.flurry.com
+events3.adcolony.com
+e.crashlytics.com
+engine.mobileapptracking.com
+adservice.google.de
