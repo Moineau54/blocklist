@@ -418,3 +418,18 @@ cdn.confiant-integrations.net
 a.teads.tv
 cdn.permutive.com
 
+api.gameanalytics.com
+ads.mopub.com
+www.leanplum.com
+api.branch.io
+med.heyzap.com
+ads.twitter.com
+log.musical.ly
+leanplum.com
+securepubads.g.doubleclick.net
+app.adjust.com
+ade.googlesyndication.com
+tr.snapchat.com
+ssl.google-analytics.com
+m.quantcount.com
+rt.applovin.com
