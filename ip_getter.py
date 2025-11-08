@@ -5,23 +5,29 @@ from rich.console import Console
 from rich.text import Text
 import time
 import os
+import argparse
 
 class Lookup():
-    def __init__(self):
+    def __init__(self, arg):
         self.dns_query = Nslookup(dns_servers=["9.9.9.9", "194.242.2.2"], verbose=False, tcp=False) # uses Quad9 and mullvad dns
-        self.default_files = [
-            "advertisement.txt",
-            "csam.txt",
-            "fingerprinting.txt",
-            "forums.txt",
-            "malware.txt",
-            "porn.txt",
-            "spam.txt",
-            "suspicious.txt",
-            "telemetry.txt",
-            "to_monitor.txt",
-            "tracking.txt"
-        ]
+        if arg == "None":
+            self.default_files = [
+                "advertisement.txt",
+                "csam.txt",
+                "fingerprinting.txt",
+                "forums.txt",
+                "malware.txt",
+                "porn.txt",
+                "spam.txt",
+                "suspicious.txt",
+                "telemetry.txt",
+                "to_monitor.txt",
+                "tracking.txt"
+            ]
+        else:
+            self.default_files = [
+                arg
+            ]
         self.ip_files = self.get_ip_files()
         self.domain_list_file_content = []
         self.ip_list_file_content = []
@@ -66,6 +72,7 @@ class Lookup():
             file_task = progress.add_task("Processing files", total=len(self.default_files))
             
             for file_name in self.default_files:
+                self.console.print(f"[bold cyan]Processing {file_name}[/bold cyan]")
                 index = self.default_files.index(file_name)
                 ip_file_name = self.ip_files[index]
                 self.get_file_content(file_name, ip_file_name)
@@ -115,6 +122,12 @@ class Lookup():
 
                 time.sleep(1)
 
-lookup = Lookup()
+parser = argparse.ArgumentParser(description='Your script description')
+parser.add_argument('-f', '--file', type=str, help='Name of the file to process')
+args = parser.parse_args()
+if args.file:
+    lookup = Lookup(arg=args.file)
+else:
+    lookup = Lookup(arg="None")
 
 lookup.run()
