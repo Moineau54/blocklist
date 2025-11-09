@@ -1,26 +1,70 @@
-51.124.78.146
+
+# asimov-win.settings.data.microsoft.com.akadns.net
+20.73.194.208
+
+# db5.vortex.data.microsoft.com.akadns.net
 40.77.226.250
-13.69.116.108
-135.233.45.222
+
+# eu.vortex-win.data.microsoft.com
+13.69.116.104
+
+# geo.vortex.data.microsoft.com.akadns.net
+40.77.226.250
+
+# oca.telemetry.microsoft.com
+135.234.160.244
+
+# settings-win.data.microsoft.com
 40.127.240.158
-20.189.173.7
-104.208.16.92
-52.182.141.62
-104.18.22.19
+
+# us.vortex-win.data.microsoft.com
+13.89.179.8
+
+# v10-win.vortex.data.microsoft.com.akadns.net
+20.189.173.3
+
+# v10.vortex-win.data.microsoft.com
+52.182.143.211
+
+# vortex-win-sandbox.data.microsoft.com
+20.189.173.0
+
+# incoming.telemetry.mozilla.org
+34.120.208.123
+
+# copilot-telemetry.githubusercontent.com
+140.82.112.21
+
+# telemetry.individual.githubcopilot.com
+140.82.114.21
+
+# w3.org
 104.18.23.19
-2606:4700::
-185.125.190.98
-91.189.91.48
-91.189.91.49
-91.189.91.96
+104.18.22.19
+
+# static.cloudflareinsights.com
+104.16.80.73
+104.16.79.73
+
+# www.google-analytics.com
+142.250.186.110
+
+# google-analytics.com
+142.250.185.196
+
+# connectivity-check.ubuntu.com
 91.189.91.97
-91.189.91.98
-185.125.190.17
-185.125.190.18
-185.125.190.48
 185.125.190.49
-185.125.190.96
+91.189.91.48
+185.125.190.98
 185.125.190.97
-2620:2d:4002:1::
-2001:67c:1562::
-2620:2d:4000:1::
+91.189.91.49
+185.125.190.18
+91.189.91.98
+185.125.190.96
+91.189.91.96
+185.125.190.17
+185.125.190.48
+
+# analytics.ff.avast.com
+34.117.223.223
