@@ -8,3 +8,4 @@ lists.txt
 output_domains/*
 domain_tester.py
 config.ini
+test.py
