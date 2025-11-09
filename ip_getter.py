@@ -9,7 +9,7 @@ import argparse
 
 class Lookup():
     def __init__(self, arg):
-        self.dns_query = Nslookup(dns_servers=["9.9.9.9", "194.242.2.2"], verbose=False, tcp=False) # uses Quad9 and mullvad dns
+        self.dns_query = Nslookup(dns_servers=["9.9.9.9", "9.9.9.10", "194.242.2.2"], verbose=False, tcp=False) # uses Quad9 and mullvad dns
         if arg == "None":
             self.default_files = [
                 "advertisement.txt",
