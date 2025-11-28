@@ -11,7 +11,8 @@ files = [
     "tracking.txt",
     "porn.txt",
     "forums.txt",
-    "csam.txt"
+    "csam.txt",
+    "zoophilia.txt"
 ]
 
 for file in files:

@@ -46192,3 +46192,5 @@ darnobedienceupscale.com
 
 th.bing.com
 static.doubleclick.net
+vg02.met.vgwort.de
+js-agent.newrelic.com
