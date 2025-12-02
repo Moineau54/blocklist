@@ -32,6 +32,8 @@ This is a blocklist repo for tools like [Pi-hole](https://docs.pi-hole.net/) and
 | [telemetry.txt](telemetry.txt) | contains domains used for telemetry |
 | [porn.txt](porn.txt) | contains porn website domains |
 | [forums.txt](forums.txt) | contains the domains of forums harmful to children |
+| [csam.txt](csam.txt) | sites that may contain (no checked) or do contain csam and have been reported to the police (for example: the french police on their online plattform) |
+| [zoophilia.txt](zoophilia.txt) | sites that contain zoophilic content and have been reported |
 
 ## To add to Pi-hole
 
@@ -45,6 +47,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprin
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia.txt
 ```
 
 ## To add to Ublock Origins
@@ -59,6 +62,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprin
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia.txt
 ```
 
 ### For pornography domains:
