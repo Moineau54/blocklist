@@ -49,7 +49,7 @@ func NewLookup(file string) *Lookup {
 			resolver: &net.Resolver{
 				PreferGo: true,
 				Dial: func(ctx context.Context, network, address string) (net.Conn, error) {
-					dns := []string{"9.9.9.9:53", "9.9.9.10:53", "194.242.2.2:443"}
+					dns := []string{"9.9.9.9:443", "9.9.9.10:53", "194.242.2.2:443"}
 					d := net.Dialer{}
 					return d.DialContext(ctx, "udp", dns[time.Now().UnixNano()%3])
 				},
