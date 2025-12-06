@@ -62,7 +62,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprin
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam_ublock.txt
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia_ublock.txt
 ```
 
 ### For pornography domains:
