@@ -48,6 +48,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn.txt
 ```
 
 ## To add to Ublock Origins
@@ -63,17 +64,6 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia_ublock.txt
-```
-
-### For pornography domains:
-
-#### Pi-hole:
-```shell
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn.txt
-```
-
-#### Ublock Origins:
-```shell
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn_ublock.txt
 ```
 
