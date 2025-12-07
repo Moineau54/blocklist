@@ -216,6 +216,7 @@
 
 
 ! Google (DoubleClick, Firebase, Crashlytics, Measurement)
+||android-context-data.googleapis.com^
 ||stats.g.doubleclick.net^
 ||beacons3.gvt2.com^
 ||beacons5.gvt3.com^
