@@ -2,14 +2,13 @@ package main
 
 import (
 	"bufio"
-	"context"
 	"flag"
 	"fmt"
-	"net"
 	"os"
 	"strings"
-	"time"
+	"sync"
 
+	"github.com/miekg/dns"
 	"github.com/schollz/progressbar/v3"
 )
 
@@ -18,12 +17,10 @@ type Lookup struct {
 	ipFiles               []string
 	domainListFileContent []string
 	ipListFileContent     []string
-	resolver              *net.Resolver
 }
 
 func NewLookup(file string) *Lookup {
 	var defaultFiles []string
-
 	if file == "None" {
 		defaultFiles = []string{
 			"advertisement.txt",
@@ -42,18 +39,9 @@ func NewLookup(file string) *Lookup {
 	} else {
 		defaultFiles = []string{file}
 	}
-
 	return &Lookup{
 		defaultFiles: defaultFiles,
 			ipFiles:      buildIPFiles(defaultFiles),
-			resolver: &net.Resolver{
-				PreferGo: true,
-				Dial: func(ctx context.Context, network, address string) (net.Conn, error) {
-					dns := []string{"9.9.9.9:443", "9.9.9.10:53", "194.242.2.2:443"}
-					d := net.Dialer{}
-					return d.DialContext(ctx, "udp", dns[time.Now().UnixNano()%3])
-				},
-			},
 	}
 }
 
@@ -72,36 +60,42 @@ func (l *Lookup) loadFileContent(domainFile, ipFile string) error {
 			os.WriteFile(path, []byte{}, 0644)
 		}
 	}
-
 	touch(domainFile)
 	touch(ipFile)
-
 	// Load domain file
 	domainData, err := os.ReadFile(domainFile)
 	if err != nil {
 		return err
 	}
 	l.domainListFileContent = strings.Split(string(domainData), "\n")
-
 	// Load IP file
 	ipData, err := os.ReadFile(ipFile)
 	if err != nil {
 		return err
 	}
 	l.ipListFileContent = strings.Split(string(ipData), "\n")
-
 	return nil
 }
 
-func (l *Lookup) dnsLookup(domain string) ([]string, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancel()
-
-	ips, err := l.resolver.LookupHost(ctx, domain)
-	if err != nil {
-		return []string{}, nil // treat errors as no-IP (like Python)
+func dnsLookup(domain string, dnsServers []string) ([]string, error) {
+	var ips []string
+	c := new(dns.Client)
+	for _, server := range dnsServers {
+		m := new(dns.Msg)
+		m.SetQuestion(dns.Fqdn(domain), dns.TypeA)
+		r, _, err := c.Exchange(m, server+":53")
+		if err != nil {
+			continue
+		}
+		if r.Rcode != dns.RcodeSuccess {
+			continue
+		}
+		for _, ans := range r.Answer {
+			if a, ok := ans.(*dns.A); ok {
+				ips = append(ips, a.A.String())
+			}
+		}
 	}
-
 	return ips, nil
 }
 
@@ -120,49 +114,61 @@ func (l *Lookup) run() {
 					  progressbar.OptionSetPredictTime(false),
 					  progressbar.OptionShowCount(),
 	)
-
+	dnsServers := []string{"9.9.9.9", "9.9.9.10", "194.242.2.2"}
 	for i, fileName := range l.defaultFiles {
 		fmt.Printf("\n[ Processing %s ]\n", fileName)
-
 		ipFile := l.ipFiles[i]
 		l.loadFileContent(fileName, ipFile)
-
 		domainBar := progressbar.NewOptions(len(l.domainListFileContent),
 						    progressbar.OptionSetDescription(fmt.Sprintf("Processing %s", fileName)),
 						    progressbar.OptionSetPredictTime(false),
 						    progressbar.OptionShowCount(),
 		)
-
 		f, err := os.OpenFile(ipFile, os.O_APPEND|os.O_WRONLY, 0644)
 		if err != nil {
 			fmt.Println("Error creating ip file:", err)
 			continue
 		}
 		writer := bufio.NewWriter(f)
-
+		var wg sync.WaitGroup
+		sem := make(chan struct{}, 20) // limit concurrent goroutines
+		var mu sync.Mutex
 		for _, domain := range l.domainListFileContent {
 			domain = strings.TrimSpace(domain)
 			if domain == "" || strings.HasPrefix(domain, "#") {
 				domainBar.Add(1)
 				continue
 			}
-
-			ips, _ := l.dnsLookup(domain)
-
-			if len(ips) == 0 {
-				fmt.Printf("[ - ] No IPs found for %s\n", domain)
-			} else {
+			// Remove comments (anything after #)
+			if idx := strings.Index(domain, "#"); idx != -1 {
+				domain = strings.TrimSpace(domain[:idx])
+			}
+			if domain == "" {
+				domainBar.Add(1)
+				continue
+			}
+			wg.Add(1)
+			go func(domain string) {
+				defer wg.Done()
+				sem <- struct{}{}
+				defer func() { <-sem }()
+				ips, _ := dnsLookup(domain, dnsServers)
+				if len(ips) == 0 {
+					fmt.Printf("[ - ] No IPs found for %s\n", domain)
+					domainBar.Add(1)
+					return
+				}
+				mu.Lock()
+				defer mu.Unlock()
 				newIPs := 0
 				for _, ip := range ips {
 					if !contains(l.ipListFileContent, ip) {
 						newIPs++
 					}
 				}
-
 				if newIPs > 0 {
 					writer.WriteString("\n# " + domain + "\n")
 					l.ipListFileContent = append(l.ipListFileContent, "# "+domain)
-
 					for _, ip := range ips {
 						if !contains(l.ipListFileContent, ip) {
 							writer.WriteString(ip + "\n")
@@ -170,27 +176,22 @@ func (l *Lookup) run() {
 							fmt.Printf("[ + ] %s for %s added to %s\n", ip, domain, ipFile)
 						}
 					}
-
 				} else {
 					fmt.Printf("[ * ] No new IPs for %s\n", domain)
 				}
-			}
-
-			writer.Flush()
-			domainBar.Add(1)
-			time.Sleep(100 * time.Microsecond)
+				domainBar.Add(1)
+			}(domain)
 		}
-
+		wg.Wait()
+		writer.Flush()
 		f.Close()
 		fileBar.Add(1)
-		time.Sleep(1 * time.Second)
 	}
 }
 
 func main() {
 	filePtr := flag.String("f", "None", "Name of the file to process")
 	flag.Parse()
-
 	lookup := NewLookup(*filePtr)
 	lookup.run()
 }
