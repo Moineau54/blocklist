@@ -42,3 +42,7 @@
 
 ! Avast
 ||analytics.ff.avast.com^
+
+
+! Duckduckgo
+||improving.duckduckgo.com^
