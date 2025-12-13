@@ -127,11 +127,11 @@ def clean_domain(line: str) -> str:
     line = line.strip()
 
     # Skip comments
-    if line.startswith('#'):
+    if line.startswith(('#', "!")):
         return ''
     
     # Remove unwanted prefixes and characters
-    prefixes = ['0.0.0.0 ', '127.0.0.1 ', '||', '|', '.', '*.']
+    prefixes = ['0.0.0.0 ', '127.0.0.1 ', '||', '|', '.', '*.', '@@', "::1"]
     for prefix in prefixes:
         if line.startswith(prefix):
             line = line[len(prefix):].strip()
