@@ -103,3 +103,6 @@ domain (no https://)
 
 ## For false positives
 In case of a false positive, feel free to contact me or create an issue.
+
+#### Is it okay to implement content from other blocklists
+Yes it is, as long as you follow their licences. I made, with the help of ai, scripts to merge remote blocklists to any any of the lists in this repo. Just verify that the scripts can handle properly the content in the remote blocklists.
