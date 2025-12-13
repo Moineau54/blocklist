@@ -68,3 +68,46 @@
 
 # analytics.ff.avast.com
 34.117.223.223
+
+# oca.telemetry.microsoft.com
+135.234.160.246
+
+# copilot-telemetry.githubusercontent.com
+140.82.112.22
+140.82.113.22
+
+# improving.duckduckgo.com
+52.142.124.215
+40.114.177.156
+
+# google-analytics.com
+142.250.185.68
+142.251.141.100
+
+# www.google-analytics.com
+216.58.206.46
+216.58.206.78
+
+# telemetry.individual.githubcopilot.com
+140.82.114.22
+
+# v10.vortex-win.data.microsoft.com
+104.208.16.88
+13.69.109.131
+
+# settings-win.data.microsoft.com
+51.104.136.2
+
+# vortex-win-sandbox.data.microsoft.com
+20.50.201.194
+
+# v10-win.vortex.data.microsoft.com.akadns.net
+52.182.143.209
+
+# us.vortex-win.data.microsoft.com
+104.208.16.90
+20.189.173.2
+
+# eu.vortex-win.data.microsoft.com
+40.79.141.154
+20.50.201.204
