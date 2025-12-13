@@ -27,13 +27,13 @@ func NewLookup(file string) *Lookup {
 			"fingerprinting.txt",
 			"forums.txt",
 			"malware.txt",
-			"porn.txt",
 			"spam.txt",
 			"suspicious.txt",
 			"telemetry.txt",
 			"to_monitor.txt",
 			"tracking.txt",
 			"zoophilia.txt",
+			"porn.txt",
 		}
 	} else {
 		defaultFiles = []string{file}
