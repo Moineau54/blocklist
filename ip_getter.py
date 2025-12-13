@@ -13,7 +13,6 @@ class Lookup():
         if arg == "None":
             self.default_files = [
                 "advertisement.txt",
-                "csam.txt",
                 "fingerprinting.txt",
                 "forums.txt",
                 "malware.txt",
