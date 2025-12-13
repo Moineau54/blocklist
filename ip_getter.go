@@ -24,7 +24,6 @@ func NewLookup(file string) *Lookup {
 	if file == "None" {
 		defaultFiles = []string{
 			"advertisement.txt",
-			"csam.txt",
 			"fingerprinting.txt",
 			"forums.txt",
 			"malware.txt",

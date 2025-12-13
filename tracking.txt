@@ -189,6 +189,7 @@ crashlyticsreports-pa.googleapis.com
 firebaseinstallations.googleapis.com
 firebaseremoteconfig.googleapis.com
 firebaselogging.googleapis.com
+fundingchoicesmessages.google.com
 pagead2.googlesyndication.com
 beacons.gcp.gvt2.com
 beacons.gvt2.com
@@ -363,6 +364,7 @@ s-onetag.com
 consent.trustarc.com
 static.chartbeat.com
 cdn.optimizely.com
+logx.optimizely.com
 *.cdn.optimizely.com
 cdn3.optimizely.com
 a26669750187.cdn.optimizely.com
