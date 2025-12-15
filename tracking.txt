@@ -190,6 +190,7 @@ crashlyticsreports-pa.googleapis.com
 firebaseinstallations.googleapis.com
 firebaseremoteconfig.googleapis.com
 firebaselogging.googleapis.com
+optimizationguide-pa.googleapis.com
 fundingchoicesmessages.google.com
 pagead2.googlesyndication.com
 beacons.gcp.gvt2.com
@@ -363,6 +364,7 @@ statconter.com
 c.statcounter.com
 s-onetag.com
 consent.trustarc.com
+js.hsforms.net
 static.chartbeat.com
 cdn.optimizely.com
 logx.optimizely.com
@@ -378,6 +380,8 @@ trustedsource.org
 scorecardresearch.com
 megabrain.co
 intercom.com
+tools.luckyorange.com
+js.driftt.com
 intercomcdn.com
 hubvisor.io
 nmrodam.com
