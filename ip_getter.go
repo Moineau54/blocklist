@@ -19,28 +19,10 @@ type Lookup struct {
 	ipListFileContent     []string
 }
 
-func NewLookup(file string) *Lookup {
-	var defaultFiles []string
-	if file == "None" {
-		defaultFiles = []string{
-			"advertisement.txt",
-			"fingerprinting.txt",
-			"forums.txt",
-			"malware.txt",
-			"spam.txt",
-			"suspicious.txt",
-			"telemetry.txt",
-			"to_monitor.txt",
-			"tracking.txt",
-			"zoophilia.txt",
-			"porn.txt",
-		}
-	} else {
-		defaultFiles = []string{file}
-	}
+func NewLookup(files []string) *Lookup {
 	return &Lookup{
-		defaultFiles: defaultFiles,
-			ipFiles:      buildIPFiles(defaultFiles),
+		defaultFiles: files,
+			ipFiles:      buildIPFiles(files),
 	}
 }
 
@@ -126,63 +108,57 @@ func (l *Lookup) run(workers int) {
 			continue
 		}
 		writer := bufio.NewWriter(f)
-		domains := make(chan string, workers)
 		var wg sync.WaitGroup
+		sem := make(chan struct{}, workers)
 		var mu sync.Mutex
-		// Start workers
-		for w := 0; w < workers; w++ {
+		for _, domain := range l.domainListFileContent {
+			domain = strings.TrimSpace(domain)
+			if domain == "" || strings.HasPrefix(domain, "#") {
+				domainBar.Add(1)
+				continue
+			}
+			if idx := strings.Index(domain, "#"); idx != -1 {
+				domain = strings.TrimSpace(domain[:idx])
+			}
+			if domain == "" {
+				domainBar.Add(1)
+				continue
+			}
 			wg.Add(1)
-			go func() {
+			go func(domain string) {
 				defer wg.Done()
-				for domain := range domains {
-					domain = strings.TrimSpace(domain)
-					if domain == "" || strings.HasPrefix(domain, "#") {
-						domainBar.Add(1)
-						continue
+				sem <- struct{}{}
+				defer func() { <-sem }()
+				ips, _ := dnsLookup(domain, dnsServers)
+				if len(ips) == 0 {
+					fmt.Printf("[ - ] No IPs found for %s\n", domain)
+					domainBar.Add(1)
+					return
+				}
+				mu.Lock()
+				defer mu.Unlock()
+				newIPs := 0
+				for _, ip := range ips {
+					if !contains(l.ipListFileContent, ip) {
+						newIPs++
 					}
-					if idx := strings.Index(domain, "#"); idx != -1 {
-						domain = strings.TrimSpace(domain[:idx])
-					}
-					if domain == "" {
-						domainBar.Add(1)
-						continue
-					}
-					ips, _ := dnsLookup(domain, dnsServers)
-					if len(ips) == 0 {
-						fmt.Printf("[ - ] No IPs found for %s\n", domain)
-						domainBar.Add(1)
-						continue
-					}
-					mu.Lock()
-					newIPs := 0
+				}
+				if newIPs > 0 {
+					writer.WriteString("\n# " + domain + "\n")
+					l.ipListFileContent = append(l.ipListFileContent, "# "+domain)
 					for _, ip := range ips {
 						if !contains(l.ipListFileContent, ip) {
-							newIPs++
+							writer.WriteString(ip + "\n")
+							l.ipListFileContent = append(l.ipListFileContent, ip)
+							fmt.Printf("[ + ] %s for %s added to %s\n", ip, domain, ipFile)
 						}
 					}
-					if newIPs > 0 {
-						writer.WriteString("\n# " + domain + "\n")
-						l.ipListFileContent = append(l.ipListFileContent, "# "+domain)
-						for _, ip := range ips {
-							if !contains(l.ipListFileContent, ip) {
-								writer.WriteString(ip + "\n")
-								l.ipListFileContent = append(l.ipListFileContent, ip)
-								fmt.Printf("[ + ] %s for %s added to %s\n", ip, domain, ipFile)
-							}
-						}
-					} else {
-						fmt.Printf("[ * ] No new IPs for %s\n", domain)
-					}
-					mu.Unlock()
-					domainBar.Add(1)
+				} else {
+					fmt.Printf("[ * ] No new IPs for %s\n", domain)
 				}
-			}()
+				domainBar.Add(1)
+			}(domain)
 		}
-		// Feed domains to workers
-		for _, domain := range l.domainListFileContent {
-			domains <- domain
-		}
-		close(domains)
 		wg.Wait()
 		writer.Flush()
 		f.Close()
@@ -191,9 +167,29 @@ func (l *Lookup) run(workers int) {
 }
 
 func main() {
-	filePtr := flag.String("f", "None", "Name of the file to process")
-	workersPtr := flag.Int("w", 5, "Number of worker goroutines")
+	filePtr := flag.String("f", "None", "Name of the file(s) to process (space-separated, or 'None' for default list)")
+	workersPtr := flag.Int("w", 20, "Number of workers (goroutines) to use")
 	flag.Parse()
-	lookup := NewLookup(*filePtr)
+
+	var files []string
+	if *filePtr == "None" {
+		files = []string{
+			"advertisement.txt",
+			"fingerprinting.txt",
+			"forums.txt",
+			"malware.txt",
+			"spam.txt",
+			"suspicious.txt",
+			"telemetry.txt",
+			"to_monitor.txt",
+			"tracking.txt",
+			"zoophilia.txt",
+			"porn.txt",
+		}
+	} else {
+		files = strings.Fields(*filePtr)
+	}
+
+	lookup := NewLookup(files)
 	lookup.run(*workersPtr)
 }
