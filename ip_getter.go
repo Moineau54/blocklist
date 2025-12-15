@@ -53,7 +53,6 @@ func buildIPFiles(files []string) []string {
 }
 
 func (l *Lookup) loadFileContent(domainFile, ipFile string) error {
-	// Ensure files exist
 	touch := func(path string) {
 		if _, err := os.Stat(path); os.IsNotExist(err) {
 			os.WriteFile(path, []byte{}, 0644)
@@ -61,13 +60,11 @@ func (l *Lookup) loadFileContent(domainFile, ipFile string) error {
 	}
 	touch(domainFile)
 	touch(ipFile)
-	// Load domain file
 	domainData, err := os.ReadFile(domainFile)
 	if err != nil {
 		return err
 	}
 	l.domainListFileContent = strings.Split(string(domainData), "\n")
-	// Load IP file
 	ipData, err := os.ReadFile(ipFile)
 	if err != nil {
 		return err
@@ -107,7 +104,7 @@ func contains(list []string, item string) bool {
 	return false
 }
 
-func (l *Lookup) run() {
+func (l *Lookup) run(workers int) {
 	fileBar := progressbar.NewOptions(len(l.defaultFiles),
 					  progressbar.OptionSetDescription("Processing files"),
 					  progressbar.OptionSetPredictTime(false),
@@ -129,58 +126,63 @@ func (l *Lookup) run() {
 			continue
 		}
 		writer := bufio.NewWriter(f)
+		domains := make(chan string, workers)
 		var wg sync.WaitGroup
-		sem := make(chan struct{}, 20) // limit concurrent goroutines
 		var mu sync.Mutex
-		for _, domain := range l.domainListFileContent {
-			domain = strings.TrimSpace(domain)
-			if domain == "" || strings.HasPrefix(domain, "#") {
-				domainBar.Add(1)
-				continue
-			}
-			// Remove comments (anything after #)
-			if idx := strings.Index(domain, "#"); idx != -1 {
-				domain = strings.TrimSpace(domain[:idx])
-			}
-			if domain == "" {
-				domainBar.Add(1)
-				continue
-			}
+		// Start workers
+		for w := 0; w < workers; w++ {
 			wg.Add(1)
-			go func(domain string) {
+			go func() {
 				defer wg.Done()
-				sem <- struct{}{}
-				defer func() { <-sem }()
-				ips, _ := dnsLookup(domain, dnsServers)
-				if len(ips) == 0 {
-					fmt.Printf("[ - ] No IPs found for %s\n", domain)
-					domainBar.Add(1)
-					return
-				}
-				mu.Lock()
-				defer mu.Unlock()
-				newIPs := 0
-				for _, ip := range ips {
-					if !contains(l.ipListFileContent, ip) {
-						newIPs++
+				for domain := range domains {
+					domain = strings.TrimSpace(domain)
+					if domain == "" || strings.HasPrefix(domain, "#") {
+						domainBar.Add(1)
+						continue
 					}
-				}
-				if newIPs > 0 {
-					writer.WriteString("\n# " + domain + "\n")
-					l.ipListFileContent = append(l.ipListFileContent, "# "+domain)
+					if idx := strings.Index(domain, "#"); idx != -1 {
+						domain = strings.TrimSpace(domain[:idx])
+					}
+					if domain == "" {
+						domainBar.Add(1)
+						continue
+					}
+					ips, _ := dnsLookup(domain, dnsServers)
+					if len(ips) == 0 {
+						fmt.Printf("[ - ] No IPs found for %s\n", domain)
+						domainBar.Add(1)
+						continue
+					}
+					mu.Lock()
+					newIPs := 0
 					for _, ip := range ips {
 						if !contains(l.ipListFileContent, ip) {
-							writer.WriteString(ip + "\n")
-							l.ipListFileContent = append(l.ipListFileContent, ip)
-							fmt.Printf("[ + ] %s for %s added to %s\n", ip, domain, ipFile)
+							newIPs++
 						}
 					}
-				} else {
-					fmt.Printf("[ * ] No new IPs for %s\n", domain)
+					if newIPs > 0 {
+						writer.WriteString("\n# " + domain + "\n")
+						l.ipListFileContent = append(l.ipListFileContent, "# "+domain)
+						for _, ip := range ips {
+							if !contains(l.ipListFileContent, ip) {
+								writer.WriteString(ip + "\n")
+								l.ipListFileContent = append(l.ipListFileContent, ip)
+								fmt.Printf("[ + ] %s for %s added to %s\n", ip, domain, ipFile)
+							}
+						}
+					} else {
+						fmt.Printf("[ * ] No new IPs for %s\n", domain)
+					}
+					mu.Unlock()
+					domainBar.Add(1)
 				}
-				domainBar.Add(1)
-			}(domain)
+			}()
 		}
+		// Feed domains to workers
+		for _, domain := range l.domainListFileContent {
+			domains <- domain
+		}
+		close(domains)
 		wg.Wait()
 		writer.Flush()
 		f.Close()
@@ -190,7 +192,8 @@ func (l *Lookup) run() {
 
 func main() {
 	filePtr := flag.String("f", "None", "Name of the file to process")
+	workersPtr := flag.Int("w", 5, "Number of worker goroutines")
 	flag.Parse()
 	lookup := NewLookup(*filePtr)
-	lookup.run()
+	lookup.run(*workersPtr)
 }
