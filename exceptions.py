@@ -3,7 +3,9 @@ exceptions_domains = [
     "reddit.com",
     "x.com",
     "example.com", # example
-    "patreon.com"
+    "patreon.com",
+    "localhost",
+    "127.0.0.1"
 ]
 lists = [
     "advertisement.txt",
