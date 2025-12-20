@@ -34,6 +34,7 @@
 ! Google
 ||www.google-analytics.com^
 ||google-analytics.com^
+||firebase-settings.crashlytics.com^
 
 
 ! Ubuntu telemetry
@@ -46,3 +47,16 @@
 
 ! Duckduckgo
 ||improving.duckduckgo.com^
+
+
+! Amplitude
+||api.lab.amplitude.com^
+||api2.amplitude.com^
+
+
+! FunctionalSoftware / Sentry
+||o1069899.sentry.io^
+
+
+! IDBLLC
+||ipinfo.io^
