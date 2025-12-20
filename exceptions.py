@@ -6,6 +6,7 @@ exceptions_domains = [
     "patreon.com",
     "127.0.0.1",
     "localhost"
+]
 
 lists = [
     "advertisement.txt",
