@@ -4,9 +4,9 @@ exceptions_domains = [
     "x.com",
     "example.com", # example
     "patreon.com",
-    "localhost",
-    "127.0.0.1"
-]
+    "127.0.0.1",
+    "localhost"
+
 lists = [
     "advertisement.txt",
     "fingerprinting.txt",
