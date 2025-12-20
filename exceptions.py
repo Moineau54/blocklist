@@ -5,7 +5,8 @@ exceptions_domains = [
     "example.com", # example
     "patreon.com",
     "127.0.0.1",
-    "localhost"
+    "localhost",
+    "codeload.github.com"
 ]
 
 lists = [
