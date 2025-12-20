@@ -6,20 +6,23 @@ exceptions_domains = [
     "patreon.com",
     "127.0.0.1",
     "localhost"
-]
+
 lists = [
     "advertisement.txt",
     "fingerprinting.txt",
     "malware.txt",
     "phishing.txt",
-    "porn.txt",
     "spam.txt",
     "suspicious.txt",
     "telemetry.txt",
     "to_monitor.txt",
-    "tracking.txt"
+    "tracking.txt",
+    "porn.txt",
+    "zoophilia.txt",
+    "csam.txt"
 ]
 for list_ in lists:
+    print(f"verifying {list_} for exceptions")
     content = []
     end_content = []
     with open(list_, "r") as f:
