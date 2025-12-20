@@ -78,7 +78,7 @@ assets.msn.com
 data.msn.com
 
 # Github
-codeload.github.com
+
 
 # Taboola
 api.taboola.com
