@@ -2400,3 +2400,9 @@ zimpolo.com
 zkustats.ziraatkatilim.com.tr
 zpbpenn.com
 zz.bdstatic.com
+checkip.eu-west-1.prod.check-ip.aws.a2z.com
+sdk-config.kameleoon.eu
+
+spl.zeotap.com
+hiram.iad-03.braze.com
+sdk.privacy-center.org
