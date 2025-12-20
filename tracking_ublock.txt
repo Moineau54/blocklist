@@ -168,12 +168,16 @@
 ! Adobe
 ||p.typekit.net^
 ||use.typekit.net^
+||cc-api-data.adobe.io^
 ||typekit.com^
 
 
-! Sentry
+! FunctionalSoftware / Sentry
 ||o1358113.ingest.sentry.io^
 ||o13027.ingest.sentry.io^
+||o1069899.ingest.sentry.io^
+||o1118521.ingest.sentry.io^
+||o1118521.ingest.us.sentry.io^
 ||browser.sentry-cdn.com^
 
 
@@ -218,6 +222,8 @@
 
 ! Google (DoubleClick, Firebase, Crashlytics, Measurement)
 ||android-context-data.googleapis.com^
+||googleoptimize.com^
+||connectivitycheck.gstatic.com^
 ||stats.g.doubleclick.net^
 ||beacons3.gvt2.com^
 ||beacons5.gvt3.com^
@@ -267,6 +273,7 @@
 ||encrypted-tbn2.gstatic.com^
 ||encrypted-tbn3.gstatic.com^
 ||phonedeviceverification-pa.googleapis.com^
+||crashlyticsreports-pa.googleapis.com^
 
 
 ! Cookiebot
@@ -327,10 +334,12 @@
 ! Meta
 ||connect.facebook.net^
 ||graph.facebook.com^
+||web.facebook.com^
 
 
 ! Qualtrics
 ||zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com^
+||zn0lxkzethotizctx-bahn.siteintercept.qualtrics.com^
 
 
 ! trafficjunky
@@ -344,6 +353,7 @@
 
 ! OneTrust
 ||geolocation.onetrust.com^
+||mobile-data.onetrust.io^
 
 
 ! Adclk
@@ -435,6 +445,7 @@
 
 ! Rest
 ||poweredby.jads.co^
+||cdn.privacy-mgmt.com^
 ||www.clarity.ms^
 ||lcdn.tsyndicate.com^
 ||minerva.devices.a2z.com^
@@ -12172,7 +12183,6 @@
 ||cdn.net.dz.jumia.com^
 ||lp.hol15.demoamericas275.adobe.com^
 ||previousplayground.com^
-||googleoptimize.com^
 ||fpc.choosemylo.com^
 ||sc.locator-rbs.co.uk^
 ||cmp.netzwelt.de^
