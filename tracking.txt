@@ -2211,7 +2211,6 @@ paleleaf.com
 datadog-service.mvfglobal.com
 travel.stage.x.unikoom.com
 hello.ola.app
-logs.netflix.com
 absys.web.de
 stats.toiletmap.org.uk
 analytics.gazeta.pl
