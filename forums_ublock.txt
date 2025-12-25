@@ -1,0 +1,16 @@
+! Will contain the domains of forums linked to blackmail, harassment, hacking and more illegal or nefarious stuff
+
+
+! hacker forums
+||xss.is ^
+
+
+! image boards
+||4chan.org^
+||8kun.top^
+||soyjak.st^
+||soybooru.com^
+||endchan.net^
+||endchancxfbnrfgauuxlztwlckytq7rgeo5v6pc2zd4nyqo3khfam4ad.onion^
+||derpibooru.org^
+||furbooru.org^
