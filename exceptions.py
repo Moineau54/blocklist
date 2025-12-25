@@ -6,7 +6,8 @@ exceptions_domains = [
     "patreon.com",
     "127.0.0.1",
     "localhost",
-    "codeload.github.com"
+    "codeload.github.com",
+    "api.chess.com" # for chess.com to work
 ]
 
 lists = [
