@@ -199,9 +199,7 @@ csi.gstatic.com
 ad.doubleclick.net
 app-measurement.com
 crashlyticsreports-pa.googleapis.com
-
-# firebaseinstallations.googleapis.com 
-#testing to try enabling app updates on google playstore
+# firebaseinstallations.googleapis.com #testing to try enabling app updates on google playstore
 firebaseremoteconfig.googleapis.com
 firebaselogging.googleapis.com
 optimizationguide-pa.googleapis.com
