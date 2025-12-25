@@ -8,7 +8,6 @@ import (
 	"strings"
 )
 
-// ANSI color helpers
 const (
 	Green  = "\033[1;32m"
 	Yellow = "\033[1;33m"
@@ -25,22 +24,19 @@ func processFile(filename string) error {
 	var lines []string
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
+		// Preserve newline like Python readlines()
 		lines = append(lines, scanner.Text()+"\n")
 	}
-
 	if err := scanner.Err(); err != nil {
 		return err
 	}
 
 	fmt.Printf("%s%s %d lines to process%s\n", Green, filename, len(lines), Reset)
 
-	// Clear the file
+	// Clear file
 	if err := os.WriteFile(filename, []byte(""), 0644); err != nil {
 		return err
 	}
-
-	seen := make(map[string]bool)
-	uniqueCount := 0
 
 	outFile, err := os.OpenFile(filename, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
@@ -51,15 +47,19 @@ func processFile(filename string) error {
 	writer := bufio.NewWriter(outFile)
 	defer writer.Flush()
 
+	seen := make(map[string]bool)
+	uniqueCount := 0
+
 	for i, line := range lines {
-		trimmed := strings.TrimSpace(line)
-		if trimmed != "" && !seen[line] {
+		// Empty or whitespace-only lines are always written
+		if strings.TrimSpace(line) == "" {
+			_, _ = writer.WriteString(line)
+		} else if !seen[line] {
 			seen[line] = true
 			uniqueCount++
 			_, _ = writer.WriteString(line)
 		}
 
-		// Simple progress output
 		fmt.Printf("\rProcessing %s... %d/%d", filename, i+1, len(lines))
 	}
 
