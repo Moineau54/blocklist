@@ -185,8 +185,13 @@ func extractDomains(data string) []string {
 func cleanDomain(line string) string {
 	line = strings.TrimSpace(line)
 
+	// Ensure that the line doesn't start with a dot
+	if len(line) > 0 && line[0] == '.' {
+		return ""
+	}
+
 	// Remove prefixes but DO NOT remove "." entirely
-	prefixes := []string{"0.0.0.0 ", "127.0.0.1 ", "||", "|", "*. "}
+	prefixes := []string{"0.0.0.0 ", "127.0.0.1 ", "||", "|", "*. ", "local=/", "."}
 	for _, p := range prefixes {
 		if strings.HasPrefix(line, p) {
 			line = strings.TrimPrefix(line, p)
@@ -199,9 +204,11 @@ func cleanDomain(line string) string {
 	parts := strings.Split(line, "#")
 	line = parts[0]
 
+	// Clean up various unwanted characters
 	line = strings.SplitN(line, "^", 2)[0]
 	line = strings.SplitN(line, " ", 2)[0]
 	line = strings.SplitN(line, "\t", 2)[0]
+	line = strings.SplitN(line, "/", 2)[0]
 
 	// Remove invalid characters but *not dots*
 	unwanted := []string{"^", "$", "*", "/", "?"}
@@ -212,8 +219,11 @@ func cleanDomain(line string) string {
 	return strings.TrimSpace(line)
 }
 
+
+
 func writeDomainsToFile(filename string) error {
-	f, err := os.Create(filename)
+	// Open the file in append mode, create it if it doesn't exist
+	f, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return err
 	}
@@ -222,7 +232,8 @@ func writeDomainsToFile(filename string) error {
 	domainList := make([]string, 0, len(allDomains))
 
 	for d := range allDomains {
-		if d != "" {
+		// Check for leading dot and special characters
+		if d != "" && !strings.HasPrefix(d, ".") && !containsSpecialChars(d) {
 			domainList = append(domainList, d)
 		}
 	}
@@ -230,6 +241,7 @@ func writeDomainsToFile(filename string) error {
 	sort.Strings(domainList)
 
 	for _, domain := range domainList {
+		// Write each valid domain followed by a newline
 		if _, err := f.WriteString(domain + "\n"); err != nil {
 			return err
 		}
@@ -237,3 +249,10 @@ func writeDomainsToFile(filename string) error {
 
 	return nil
 }
+
+
+// Helper function to check for special characters
+func containsSpecialChars(domain string) bool {
+	return strings.Contains(domain, "#") || strings.Contains(domain, "!")
+}
+
