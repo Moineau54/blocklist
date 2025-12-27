@@ -1,3 +1,5 @@
+
+
 ! Windows Telemetry
 ||alpha.telemetry.microsoft.com^
 ||asimov-win.settings.data.microsoft.com.akadns.net^
@@ -22,8 +24,6 @@
 ! Github
 ||copilot-telemetry.githubusercontent.com^
 ||telemetry.individual.githubcopilot.com^
-
-
 ||w3.org^
 
 
