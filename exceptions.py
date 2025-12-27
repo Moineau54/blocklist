@@ -7,7 +7,8 @@ exceptions_domains = [
     "127.0.0.1",
     "localhost",
     "codeload.github.com",
-    "api.chess.com" # for chess.com to work
+    "api.chess.com", # for chess.com to work
+    "client-metrics-cf.chess.com" # to test
 ]
 
 lists = [
