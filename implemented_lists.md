@@ -19,3 +19,13 @@
         - hagezi-tracker-webos
         - hagezi-tracker-windows
         - hagezi-tracker-xiamomi
+
+- [tigthor/NSA-CIA-Blocklist](https://github.com/tigthor/NSA-CIA-Blocklist)
+    - [LICENSE](https://github.com/tigthor/NSA-CIA-Blocklist/raw/refs/heads/main/LICENSE)
+    - Blocklist merged (into tracking.txt):
+        - Canvas font fingerprinting.txt
+        - audio fingerprinting pages.txt
+        - canvas fingerprinting pages.txt
+        - trackers.txt
+        - webrtc tracking.txt
+        - HOSTS
