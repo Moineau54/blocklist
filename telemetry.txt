@@ -48,4 +48,3 @@ api2.amplitude.com
 o1069899.sentry.io
 
 # IDBLLC
-ipinfo.io
