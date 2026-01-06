@@ -12,7 +12,8 @@ exceptions_domains = [
     "today",
     "255.255.255.255",
     "broadcasthost",
-    "localdomain"
+    "localdomain",
+    "ipinfo.io"
 ]
 
 lists = [
