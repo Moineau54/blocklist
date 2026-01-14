@@ -86570,7 +86570,6 @@
 ||cruisemaven.com^
 ||cruiseradio.net^
 ||crumbsandchaos.net^
-||crunchbase.com^
 ||crunchertronics.com^
 ||crunchybeachmama.com^
 ||crushads.com^
@@ -118217,7 +118216,6 @@
 ||cruisemaven.com^
 ||cruiseradio.net^
 ||crumbsandchaos.net^
-||crunchbase.com^
 ||crunchertronics.com^
 ||crunchybeachmama.com^
 ||crushads.com^

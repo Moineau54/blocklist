@@ -13,7 +13,8 @@ exceptions_domains = [
     "255.255.255.255",
     "broadcasthost",
     "localdomain",
-    "ipinfo.io"
+    "ipinfo.io",
+    "crunchbase.com"
 ]
 
 lists = [
