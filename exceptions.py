@@ -14,7 +14,8 @@ exceptions_domains = [
     "broadcasthost",
     "localdomain",
     "ipinfo.io",
-    "crunchbase.com"
+    "crunchbase.com",
+    "ft.com",
 ]
 
 lists = [
