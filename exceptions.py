@@ -2,13 +2,13 @@ exceptions_domains = [
     "youtube.com",
     "reddit.com",
     "x.com",
-    "example.com", # example
+    "example.com",  # example
     "patreon.com",
     "127.0.0.1",
     "localhost",
     "codeload.github.com",
-    "api.chess.com", # for chess.com to work
-    "client-metrics-cf.chess.com", # to test
+    "api.chess.com",  # for chess.com to work
+    "client-metrics-cf.chess.com",  # to test
     "today",
     "255.255.255.255",
     "broadcasthost",
@@ -30,7 +30,7 @@ lists = [
     "tracking.txt",
     "porn.txt",
     "zoophilia.txt",
-    "csam.txt"
+    "csam.txt",
 ]
 for list_ in lists:
     print(f"verifying {list_} for exceptions")
@@ -38,14 +38,23 @@ for list_ in lists:
     end_content = []
     with open(list_, "r") as f:
         content = f.read().split("\n")
-    
+
     for i, line in enumerate(content):
-        if line not in exceptions_domains:
-            if i == len(content) - 1 and line == "":
-                end_content.append(line)
-            else:
-                end_content.append(line + "\n")
-    
+        if (
+            line.__contains__(".")
+            or line.__contains__("#")
+            or line == "\n"
+            or line == ""
+        ):
+            if line.strip() not in exceptions_domains:
+                if line == "":
+                    end_content.append("\n")
+                else:
+                    if line.__contains__("#") or line.__contains__("."):
+                        end_content.append(
+                            f"{line.replace('http://', '').replace('https://', '')}\n"
+                        )
+
     with open(list_, "w") as f:
         for line_to_write in end_content:
             f.write(line_to_write)

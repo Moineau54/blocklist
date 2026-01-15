@@ -61,13 +61,13 @@ alogsus.umeng.com
 
 # Microsoft
 bat.bing.com
-eu-office.events.data.microsoft.com 
+eu-office.events.data.microsoft.com
 # To test
-self.events.data.microsoft.com 
-mobile.events.data.microsoft.com 
-eu-teams.events.data.microsoft.com 
-teams.events.data.microsoft.com 
-eu-mobile.events.data.microsoft.com 
+self.events.data.microsoft.com
+mobile.events.data.microsoft.com
+eu-teams.events.data.microsoft.com
+teams.events.data.microsoft.com
+eu-mobile.events.data.microsoft.com
 edge.microsoft.com
 data.microsoft.com
 msftconnecttest.com
@@ -112,7 +112,7 @@ cdn.snigelweb.com
 # Datadog
 browser-intake-datadoghq.com
 rum.browser-intake-datadoghq.com
-0.datadog.pool.ntp.org 
+0.datadog.pool.ntp.org
 1.datadog.pool.ntp.org
 2.datadog.pool.ntp.org
 3.datadog.pool.ntp.org
@@ -321,9 +321,9 @@ adformdsp.net
 # Samsung
 log-config.samsungacr.com
 log-ingestion-eu.samsungacr.com
-tos-prod-getdata.samsung-dict.com 
-tos-dev-getdata.samsung-dict.com 
-tos-stg-getdata.samsung-dict.com 
+tos-prod-getdata.samsung-dict.com
+tos-dev-getdata.samsung-dict.com
+tos-stg-getdata.samsung-dict.com
 analytics.samsungknox.com
 
 # Adjust GmbH
@@ -333,7 +333,7 @@ analytics.adjust.com
 api-logncrash.cloud.toast.com
 
 # Wattpad Corp
-track.wattpad.com 
+track.wattpad.com
 
 # Clickadu
 chaseherbalpasty.com
@@ -150362,3 +150362,5 @@ zylpfood.com
 zyzzcentral.ru
 zzlt.cn
 zzword.com
+
+
