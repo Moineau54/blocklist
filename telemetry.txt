@@ -17,7 +17,6 @@ vortex-win-sandbox.data.microsoft.com
 
 # Mozilla
 incoming.telemetry.mozilla.org
-
 # Github
 copilot-telemetry.githubusercontent.com
 telemetry.individual.githubcopilot.com
@@ -46,5 +45,6 @@ api2.amplitude.com
 
 # FunctionalSoftware / Sentry
 o1069899.sentry.io
-
 # IDBLLC
+
+
