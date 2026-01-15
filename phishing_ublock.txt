@@ -581,7 +581,6 @@
 ||energy-kannshi.com^
 ||ortomecania.com^
 ||lajabuguena.com^
-||parrilladelnato^
 ||web.app^
 ||educadavinci.org^
 ||infomail3.firebaseapp.com^
@@ -894,5 +893,7 @@
 ||onlineporno.fun^
 ||pixelrush4.top^
 ||luckybreeze.pro^
+
+
 
 

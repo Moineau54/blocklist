@@ -19,8 +19,6 @@
 
 ! Mozilla
 ||incoming.telemetry.mozilla.org^
-
-
 ! Github
 ||copilot-telemetry.githubusercontent.com^
 ||telemetry.individual.githubcopilot.com^
@@ -56,6 +54,8 @@
 
 ! FunctionalSoftware / Sentry
 ||o1069899.sentry.io^
-
-
 ! IDBLLC
+
+
+
+
