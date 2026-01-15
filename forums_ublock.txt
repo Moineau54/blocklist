@@ -4,7 +4,7 @@
 
 
 ! hacker forums
-||xss.is ^
+||xss.is^
 
 
 ! image boards
