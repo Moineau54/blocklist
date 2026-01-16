@@ -355,6 +355,7 @@ cloudflareinsight.com
 insight.adsrvr.org
 
 # Rest
+uk-script.dotmetrics.net
 poweredby.jads.co
 cdn.privacy-mgmt.com
 www.clarity.ms
@@ -378,6 +379,7 @@ region1.app-analytics-services.com
 logos.jobstatic.de
 trustedsource.org
 scorecardresearch.com
+sb.scorecardresearch.com
 megabrain.co
 intercom.com
 tools.luckyorange.com
@@ -150362,5 +150364,6 @@ zylpfood.com
 zyzzcentral.ru
 zzlt.cn
 zzword.com
+
 
 
