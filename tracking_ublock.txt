@@ -432,6 +432,7 @@
 
 
 ! Rest
+||uk-script.dotmetrics.net^
 ||poweredby.jads.co^
 ||cdn.privacy-mgmt.com^
 ||www.clarity.ms^
@@ -455,6 +456,7 @@
 ||logos.jobstatic.de^
 ||trustedsource.org^
 ||scorecardresearch.com^
+||sb.scorecardresearch.com^
 ||megabrain.co^
 ||intercom.com^
 ||tools.luckyorange.com^
@@ -150439,6 +150441,8 @@
 ||zyzzcentral.ru^
 ||zzlt.cn^
 ||zzword.com^
+
+
 
 
 
