@@ -161,6 +161,9 @@ telemetry.canva.com
 # Quantcast
 secure.quantserve.com
 
+# AnnounceKit LLC
+announcekit.co
+
 # OneTrust
 geolocation.onetrust.com
 privacyportal.onetrust.com
@@ -150364,6 +150367,7 @@ zylpfood.com
 zyzzcentral.ru
 zzlt.cn
 zzword.com
+
 
 
 
