@@ -16,6 +16,9 @@ exceptions_domains = [
     "ipinfo.io",
     "crunchbase.com",
     "ft.com",
+    "aol.com",
+    "guce.aol.com",
+    "search.aol.com",
 ]
 
 lists = [
@@ -31,6 +34,7 @@ lists = [
     "porn.txt",
     "zoophilia.txt",
     "csam.txt",
+    "forums.txt",
 ]
 for list_ in lists:
     print(f"verifying {list_} for exceptions")
@@ -46,6 +50,7 @@ for list_ in lists:
             or line == "\n"
             or line == ""
         ):
+            line = line.replace("https://","").replace("http://","")
             if line.strip() not in exceptions_domains:
                 if line == "":
                     end_content.append("\n")
