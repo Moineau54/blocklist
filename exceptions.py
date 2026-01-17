@@ -63,10 +63,13 @@ for filename in lists:
             # Split inline comment
             if "#" in line and not line.startswith("#"):
                 domain, comment = line.split("#", 1)
-                domain = domain.strip()
+                if domain.__contains__("."):
+                    domain = domain.strip()
                 comment = comment.strip()
             else:
-                domain, comment = line, None
+                if line.__contains__("."):
+                    domain, comment = line, None
+                
 
             # Normalize domain
             domain = domain.replace("https://", "").replace("http://", "").strip()
