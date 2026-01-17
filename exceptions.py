@@ -1,14 +1,14 @@
-exceptions_domains = [
+exceptions_domains = {
     "youtube.com",
     "reddit.com",
     "x.com",
-    "example.com",  # example
+    "example.com",
     "patreon.com",
     "127.0.0.1",
     "localhost",
     "codeload.github.com",
-    "api.chess.com",  # for chess.com to work
-    "client-metrics-cf.chess.com",  # to test
+    "api.chess.com",
+    "client-metrics-cf.chess.com",
     "today",
     "255.255.255.255",
     "broadcasthost",
@@ -19,7 +19,7 @@ exceptions_domains = [
     "aol.com",
     "guce.aol.com",
     "search.aol.com",
-]
+}
 
 lists = [
     "advertisement.txt",
@@ -36,30 +36,55 @@ lists = [
     "csam.txt",
     "forums.txt",
 ]
-for list_ in lists:
-    print(f"verifying {list_} for exceptions")
-    content = []
-    end_content = []
-    with open(list_, "r") as f:
-        content = f.read().split("\n")
 
-    for i, line in enumerate(content):
-        if (
-            line.__contains__(".")
-            or line.__contains__("#")
-            or line == "\n"
-            or line == ""
-        ):
-            line = line.replace("https://","").replace("http://","")
-            if line.strip() not in exceptions_domains:
-                if line == "":
-                    end_content.append("\n")
-                else:
-                    if line.__contains__("#") or line.__contains__("."):
-                        end_content.append(
-                            f"{line.replace('http://', '').replace('https://', '')}\n"
-                        )
+for filename in lists:
+    print(f"verifying {filename} for exceptions")
 
-    with open(list_, "w") as f:
-        for line_to_write in end_content:
-            f.write(line_to_write)
+    output = []
+    last_was_blank = True
+
+    with open(filename, "r") as f:
+        for raw in f:
+            line = raw.strip()
+
+            # Preserve blank lines
+            if not line or line == "":
+                last_was_blank = True
+                continue
+
+            # Full-line comment
+            if line.startswith("#"):
+                if last_was_blank:
+                    output.append("")
+                output.append(line)
+                last_was_blank = False
+                continue
+
+            # Split inline comment
+            if "#" in line and not line.startswith("#"):
+                domain, comment = line.split("#", 1)
+                domain = domain.strip()
+                comment = comment.strip()
+            else:
+                domain, comment = line, None
+
+            # Normalize domain
+            domain = domain.replace("https://", "").replace("http://", "").strip()
+
+            if domain in exceptions_domains:
+                continue
+
+            # Insert comment block if needed
+            if comment:
+                if not last_was_blank:
+                    output.append("")
+                output.append(f"# {comment}")
+                last_was_blank = False
+
+            # Write domain
+            output.append(domain)
+            last_was_blank = False
+
+    # Write back safely
+    with open(filename, "w") as f:
+        f.write("\n".join(output).rstrip() + "\n")
