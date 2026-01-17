@@ -200,6 +200,10 @@
 ||secure.quantserve.com^
 
 
+! AnnounceKit LLC
+||announcekit.co^
+
+
 ! OneTrust
 ||geolocation.onetrust.com^
 ||privacyportal.onetrust.com^
@@ -150441,9 +150445,3 @@
 ||zyzzcentral.ru^
 ||zzlt.cn^
 ||zzword.com^
-
-
-
-
-
-

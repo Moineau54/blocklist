@@ -10,7 +10,6 @@
 
 ! Mozilla
 ||img.getpocket.cdn.mozilla.net^
-||content-signature-2.cdn.mozilla.net^
 
 
 ! Microsoft
