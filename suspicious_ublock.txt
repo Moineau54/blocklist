@@ -10,7 +10,6 @@
 
 ! Mozilla
 ||img.getpocket.cdn.mozilla.net^
-||content-signature-2.cdn.mozilla.net^
 
 
 ! Microsoft
@@ -33,5 +32,7 @@
 ||x1.c.lencr.org^
 ||sabhvpdj.jyelrgom.dat.app.pio.pay.ovippmail.ad.suppovippmail.ad.support.app.fbd.s.s-web-preprod.powerappspornruga.uvdqisk.ma.smed-secure.updrisk.s.fbdart.appmail.ad.support.app.fbdisk.ma.thrivedeskdocs.com^
 ||aefd.nelreports.net^
+
+
 
 
