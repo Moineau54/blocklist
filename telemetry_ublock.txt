@@ -1,5 +1,7 @@
 
 
+
+
 ! Windows Telemetry
 ||alpha.telemetry.microsoft.com^
 ||asimov-win.settings.data.microsoft.com.akadns.net^
@@ -56,4 +58,6 @@
 
 ! FunctionalSoftware / Sentry
 ||o1069899.sentry.io^
+
+
 ! IDBLLC
