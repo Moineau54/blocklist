@@ -29,3 +29,30 @@
         - trackers.txt
         - webrtc tracking.txt
         - HOSTS
+
+- [easylist/easylist]
+    - Blocklist merged:
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_abp.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_acton.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_ad-ebis.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_adobe.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_at-internet.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_branch.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_commanders-act.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_criteo.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_dataunlocker.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_eulerian.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_ingenious-technologies.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_lead-forensics.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_np6.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_oracle.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_otto.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_plausible.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_tracedock.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_webtrekk.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_cname_wizaly.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_international.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_specific_perimeterx.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers_admiral.txt
+        - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers_general.txt

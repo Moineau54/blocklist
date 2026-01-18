@@ -46,33 +46,27 @@ for filename in lists:
     with open(filename, "r") as f:
         for raw in f:
             line = raw.strip()
-
-            # Preserve blank lines
-            if not line or line == "":
+            # Preserve blank lines and full-line comments
+            if not line:
                 last_was_blank = True
+                output.append("")  # Append blank line explicitly
                 continue
 
-            # Full-line comment
             if line.startswith("#"):
                 if last_was_blank:
-                    output.append("")
+                    output.append("")  # Add a blank line before comments
                 output.append(line)
                 last_was_blank = False
                 continue
 
-            # Split inline comment
-            if "#" in line and not line.startswith("#"):
-                domain, comment = line.split("#", 1)
-                if domain.__contains__("."):
-                    domain = domain.strip()
-                comment = comment.strip()
+            # Handle inline comments and normalize domain
+            if "#" in line:
+                domain, comment = map(str.strip, line.split("#", 1))
             else:
-                if line.__contains__("."):
-                    domain, comment = line, None
-                
+                domain, comment = line, None
 
             # Normalize domain
-            domain = domain.replace("https://", "").replace("http://", "").strip()
+            domain = domain.lower().replace("https://", "").replace("http://", "")
 
             if domain in exceptions_domains:
                 continue
@@ -83,11 +77,31 @@ for filename in lists:
                     output.append("")
                 output.append(f"# {comment}")
                 last_was_blank = False
-
-            # Write domain
+                
+            # Append the domain
             output.append(domain)
             last_was_blank = False
 
+    # Remove duplicates while retaining order
+    seen = set()
+    output_ = []
+    line = ""
+    for line in output:
+        if line != "":
+            if line and line not in seen:
+                seen.add(line)
+                output_.append(line)
+        else:
+            output_.append(line)
+
     # Write back safely
+    line = ""
     with open(filename, "w") as f:
-        f.write("\n".join(output).rstrip() + "\n")
+        for line in output_:
+            if line != "":
+                if line.startswith("#"):
+                    f.write(f"\n\n{line}")
+                else:
+                    f.write(f"\n{line}")
+                
+
