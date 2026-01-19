@@ -1,28 +1,11 @@
-exceptions_domains = {
-    "youtube.com",
-    "reddit.com",
-    "x.com",
-    "example.com",
-    "patreon.com",
-    "127.0.0.1",
-    "localhost",
-    "codeload.github.com",
-    "api.chess.com",
-    "client-metrics-cf.chess.com",
-    "today",
-    "255.255.255.255",
-    "broadcasthost",
-    "localdomain",
-    "ipinfo.io",
-    "crunchbase.com",
-    "ft.com",
-    "aol.com",
-    "guce.aol.com",
-    "search.aol.com",
-    "github.com",
-    "yandex.com",
-    "yandex.ru"
-}
+exceptions_domains = {}
+
+with open("exceptions/exceptions.txt", "r") as f:
+    exceptions_domains = f.readlines()
+
+for domain in exceptions_domains:
+    index_ = exceptions_domains.index(domain)
+    exceptions_domains[index_] = domain.strip()
 
 lists = [
     "advertisement.txt",
@@ -80,7 +63,7 @@ for filename in lists:
                     output.append("")
                 output.append(f"# {comment}")
                 last_was_blank = False
-                
+
             # Append the domain
             output.append(domain)
             last_was_blank = False
@@ -106,5 +89,3 @@ for filename in lists:
                     f.write(f"\n\n{line}")
                 else:
                     f.write(f"\n{line}")
-                
-
