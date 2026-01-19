@@ -120731,7 +120731,6 @@
 ||yachtingnetwork.it^
 ||yahoo.co.jp^
 ||yandex.fr^
-||yandex.ru^
 ||yeti.com^
 ||youku.com^
 ||ytn.co.kr^

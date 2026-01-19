@@ -19,7 +19,9 @@ exceptions_domains = {
     "aol.com",
     "guce.aol.com",
     "search.aol.com",
-    "github.com"
+    "github.com",
+    "yandex.com",
+    "yandex.ru"
 }
 
 lists = [
