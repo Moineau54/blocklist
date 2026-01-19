@@ -25,3 +25,4 @@ duckduckgo.com
 googlechromelabs.github.io
 search.brave.com
 startpage.com
+zed.dev
