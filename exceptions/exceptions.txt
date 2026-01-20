@@ -30,3 +30,4 @@ zed.dev
 neocities.org
 shadowlibraries.neocities.org
 linkedin.com
+wikipedia.org
