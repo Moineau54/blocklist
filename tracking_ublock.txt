@@ -1,71 +1,54 @@
 
 
-
-
 ! Mgnite Inc / Rubicon Project / Telaria
 ||prebid-server.rubiconproject.com^
 ||fastlane.rubiconproject.com^
 ||eus.rubiconproject.com^
 
-
 ! Kameleoon
 ||n1ux7flhug.kameleoon.io^
 ||eu-data-processor-loadbalanced-failover.kameleoon.io^
 
-
 ! GLOBALR LLC
 ||true.am^
-
 
 ! Mozilla
 ||mc.prod.ads.prod.webservices.mozgcp.net^
 
-
 ! BrightEdge AutoPilot
 ||cdn.bc0a.com^
 
-
 ! Atlassian
 ||ixsystems.atlassian.net^
-
 
 ! MarkMonitor Inc.
 ||s.go-mpulse.net^
 ||cdn.eu.amplitude.com^
 
-
 ! 111% Inc.
 ||log.111percent.net^
-
 
 ! UserReport
 ||visitanalytics.userreport.com^
 
-
 ! TikTok
 ||analytics.tiktok.com^
-
 
 ! Vungle
 ||logs.ads.vungle.com^
 
-
 ! Sprig
 ||sprig.com^
 
-
 ! Ashby
 ||ashbyhq.com^
-
 
 ! InMobi Pte Ltd
 ||cmp.inmobi.com^
 ||telemetry.sdk.inmobi.com^
 
-
 ! Hotjar
 ||pacman-metrics-live.live.eks.hotjar.com^
-
 
 ! Automattic
 ||gravatar.com^
@@ -73,16 +56,13 @@
 ||1.gravatar.com^
 ||2.gravatar.com^
 
-
 ! Umeng (chinese spyware)
 ||alogus.umeng.com^
 ||alogsus.umeng.com^
 
-
 ! Microsoft
 ||bat.bing.com^
 ||eu-office.events.data.microsoft.com^
-
 
 ! To test
 ||self.events.data.microsoft.com^
@@ -100,13 +80,10 @@
 ||assets.msn.com^
 ||data.msn.com^
 
-
 ! Github
-
 
 ! Taboola
 ||api.taboola.com^
-
 
 ! AT Internet
 ||logs1412.xiti.com^
@@ -115,31 +92,24 @@
 ||logs1136.xiti.com^
 ||logws1360.ati-host.net^
 
-
 ! Meet5
 ||api.analytics.meet5.net^
-
 
 ! Lotame Solutions
 ||analytics.rlcdn.com^
 
-
 ! Asmodee Digital
 ||remote-data.asnapieu.com^
 
-
 ! 4DEX
 ||script.4dex.io^
-
 
 ! Batch
 ||via.batch.com^
 ||wsmetrics.batch.com^
 
-
 ! Snigel
 ||cdn.snigelweb.com^
-
 
 ! Datadog
 ||browser-intake-datadoghq.com^
@@ -151,30 +121,24 @@
 ||logs.browser-intake-datadoghq.com^
 ||8b61d74c.datadoghq.com^
 
-
 ! Wunderkind
 ||tag.wknd.ai^
-
 
 ! Qualaroo
 ||cl.qualaroo.com^
 
-
 ! Visual Website Optimizer
 ||dev.visualwebsiteoptimizer.com^
-
 
 ! HubSpot
 ||js.hs-scripts.com^
 ||hubspotonwebflow.com^
-
 
 ! Adobe
 ||p.typekit.net^
 ||use.typekit.net^
 ||cc-api-data.adobe.io^
 ||typekit.com^
-
 
 ! FunctionalSoftware / Sentry
 ||o1358113.ingest.sentry.io^
@@ -184,38 +148,30 @@
 ||o1118521.ingest.us.sentry.io^
 ||browser.sentry-cdn.com^
 
-
 ! Wistia
 ||fast.wistia.com^
 ||pipedream.wistia.com^
 ||embed-ssl.wistia.com^
 ||distillery.wistia.com^
 
-
 ! Parsely
 ||api.parsely.com^
-
 
 ! Canva
 ||telemetry.canva.com^
 
-
 ! Quantcast
 ||secure.quantserve.com^
 
-
 ! AnnounceKit LLC
 ||announcekit.co^
-
 
 ! OneTrust
 ||geolocation.onetrust.com^
 ||privacyportal.onetrust.com^
 
-
 ! Marketo
 ||munchkin.marketo.net^
-
 
 ! Apple
 ||xp.apple.com^
@@ -223,10 +179,8 @@
 ||notes-analytics-events.apple.com^
 ||splunk-hec.apple.com^
 
-
 ! Algolia
 ||algolia.net^
-
 
 ! Google (DoubleClick, Firebase, Crashlytics, Measurement)
 ||android-context-data.googleapis.com^
@@ -244,7 +198,6 @@
 ||ad.doubleclick.net^
 ||app-measurement.com^
 ||crashlyticsreports-pa.googleapis.com^
-
 
 ! firebaseinstallations.googleapis.com !testing to try enabling app updates on google playstore
 ||firebaseremoteconfig.googleapis.com^
@@ -279,23 +232,18 @@
 ||encrypted-tbn3.gstatic.com^
 ||phonedeviceverification-pa.googleapis.com^
 
-
 ! Cookiebot
 ||consent.cookiebot.com^
 
-
 ! First Impression
 ||ecdn.firstimpression.io^
-
 
 ! Outbrain
 ||amplify.outbrain.com^
 ||widgets.outbrain.com^
 
-
 ! Global Multimedia Protocols Group
 ||gmpg.org^
-
 
 ! Amazon
 ||advertising.amazon.co.uk^
@@ -309,92 +257,72 @@
 ||east-1.amazonaws.com^
 ||aan.amazon.com^
 
-
 ! Cxense
 ||cdn.cxense.com^
 
-
 ! INFOnline
 ||script.ioam.de^
-
 
 ! Twitter / X
 ||syndication.twitter.com^
 ||static.ads-twitter.com^
 
-
 ! ID5
 ||id5-sync.com^
-
 
 ! Adnami
 ||functions.adnami.io^
 
-
 ! 6Sense
 ||j.6sc.co^
-
 
 ! Meta
 ||connect.facebook.net^
 ||graph.facebook.com^
 ||web.facebook.com^
 
-
 ! Qualtrics
 ||zn38dmhas0tmzqqj0-rnd.siteintercept.qualtrics.com^
 ||zn0lxkzethotizctx-bahn.siteintercept.qualtrics.com^
-
 
 ! trafficjunky
 ||trafficjunky.net^
 ||media.trafficjunky.net^
 
-
 ! Tealium
 ||collect-eu-central-1.tealiumiq.com^
 ||mobile-data.onetrust.io^
-
 
 ! Adclk
 ||adclk.co^
 ||adclk.com^
 
-
 ! AdColony
 ||adcolony.com^
-
 
 ! The Globe and Mail
 ||adcounter.theglobeandmail.com^
 
-
 ! Adexpert
 ||adexpert.cz^
-
 
 ! Adfast
 ||adfast.net^
 
-
 ! Adfront Limited
 ||adfront.org^
-
 
 ! Adgebra
 ||adgebra.co.in^
 
-
 ! AUDITION
 ||adfarm1.adition.com^
-
 
 ! Adform
 ||adform.net^
 ||adform.org^
 ||adformdsp.com^
 ||adformdsp.net^
-
 
 ! Samsung
 ||log-config.samsungacr.com^
@@ -404,22 +332,17 @@
 ||tos-stg-getdata.samsung-dict.com^
 ||analytics.samsungknox.com^
 
-
 ! Adjust GmbH
 ||analytics.adjust.com^
-
 
 ! NHN Corporation
 ||api-logncrash.cloud.toast.com^
 
-
 ! Wattpad Corp
 ||track.wattpad.com^
 
-
 ! Clickadu
 ||chaseherbalpasty.com^
-
 
 ! CloudFront
 ||dn6rwwtxa647p.cloudfront.net^
@@ -427,19 +350,15 @@
 ||d15kdpgjg3unno.cloudfront.net^
 ||d11enq2rymy0yl.cloudfront.net^
 
-
 ! Amplitude
 ||cdn.amplitude.com^
-
 
 ! cloudflare
 ||btloader.com^
 ||cloudflareinsight.com^
 
-
 ! The Trade Desk
 ||insight.adsrvr.org^
-
 
 ! Rest
 ||uk-script.dotmetrics.net^
