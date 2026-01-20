@@ -27,3 +27,4 @@ stackoverflow.com
 search.brave.com
 startpage.com
 zed.dev
+neocities.org
