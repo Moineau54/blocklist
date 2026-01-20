@@ -24,8 +24,6 @@
 ! MarkMonitor Inc.
 ||s.go-mpulse.net^
 ||cdn.eu.amplitude.com^
-
-! 111% Inc.
 ||log.111percent.net^
 
 ! UserReport
@@ -120512,7 +120510,6 @@
 ||thekitchn.com^
 ||theporn.cc^
 ||therealreal.com^
-||third-party,xmlhttprequest,domain=opensubtitles.org^
 ||tianxun.com^
 ||tijd.be^
 ||tiltonbots.com^

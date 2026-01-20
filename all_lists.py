@@ -28,7 +28,8 @@ for file in lists:
         lines = f.readlines()
 
     for line in track(lines):
-        if line != "" or not line.startswith("#"):
+        line = line.strip()
+        if line != '' and not line.startswith("#"):
             if line.strip() not in parsed_entries:
                 if line.strip().__contains__("http"):
                     parsed_entries.add(
@@ -38,11 +39,17 @@ for file in lists:
                     parsed_entries.add(line.strip())
 
 
-sorted(parsed_entries)
+entry_array = []
+entry_array.extend(parsed_entries)
+# for entry in track(parsed_entries, description="reordering entries"):
+#     if entry.strip() not in entry_array:
+#         entry_array.append(entry.strip)
+
+entry_array.sort()
 
 with open("all_lists.txt", "a") as f:
     for entry in track(
-        parsed_entries, description="writing all entries to all_lists.txt"
+        entry_array, description="writing all entries to all_lists.txt"
     ):
         if entry != "":
             f.write(f"\n{entry}")
