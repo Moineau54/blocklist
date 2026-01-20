@@ -30,3 +30,7 @@ zed.dev
 neocities.org
 shadowlibraries.neocities.org
 linkedin.com
+wikipedia.org
+annas-archive.li
+www.youtube.com
+invidious.jing.rocks
