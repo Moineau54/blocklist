@@ -1,7 +1,5 @@
 
 
-
-
 ! Windows Telemetry
 ||alpha.telemetry.microsoft.com^
 ||asimov-win.settings.data.microsoft.com.akadns.net^
@@ -18,46 +16,36 @@
 ||v10.vortex-win.data.microsoft.com^
 ||vortex-win-sandbox.data.microsoft.com^
 
-
 ! Mozilla
 ||incoming.telemetry.mozilla.org^
-
 
 ! Github
 ||copilot-telemetry.githubusercontent.com^
 ||telemetry.individual.githubcopilot.com^
 ||w3.org^
 
-
 ! Cloudflare
 ||static.cloudflareinsights.com^
-
 
 ! Google
 ||www.google-analytics.com^
 ||google-analytics.com^
 ||firebase-settings.crashlytics.com^
 
-
 ! Ubuntu telemetry
 ||connectivity-check.ubuntu.com^
-
 
 ! Avast
 ||analytics.ff.avast.com^
 
-
 ! Duckduckgo
 ||improving.duckduckgo.com^
-
 
 ! Amplitude
 ||api.lab.amplitude.com^
 ||api2.amplitude.com^
 
-
 ! FunctionalSoftware / Sentry
 ||o1069899.sentry.io^
-
 
 ! IDBLLC

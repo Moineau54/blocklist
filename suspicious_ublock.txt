@@ -1,30 +1,22 @@
 
 
-
-
 ! Sprig.com
 ||api.sprig.com^
-
 
 ! RevenueCat
 ||api.revenuecat.com^
 
-
 ! Mozilla
 ||img.getpocket.cdn.mozilla.net^
-
 
 ! Microsoft
 ||in.appcenter.ms^
 
-
 ! Adobe
 ||dpm.demdex.net^
 
-
 ! Yahoo / AOL
 ||opencdnbdv6.jomodns.com^
-
 
 ! Unknown
 ||rr3---sn-8xgn5uxa-4g5z.gvt1.com^
