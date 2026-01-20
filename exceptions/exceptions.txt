@@ -37,3 +37,4 @@ invidious.jing.rocks
 adguard.com
 www.redditstatic.com
 redditstatic.com
+redditmedia.com
