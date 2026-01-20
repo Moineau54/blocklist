@@ -120052,8 +120052,6 @@ hotpads.com
 houstonchronicle.com
 hoyoverse.com
 hs.fi
-http:
-https:
 huuto.net
 i-cable.com
 i-tm.com.tw
@@ -120294,7 +120292,6 @@ pg.totaaltv.nl
 piccy.info
 piccy.org.ua
 pigeonkit.com
-ping,third-party
 pinkoi.com
 pipeline.balkstercourant.nl
 pipeline.dvhn.nl
