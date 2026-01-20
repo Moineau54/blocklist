@@ -119727,8 +119727,7 @@ zs2.rz.rwth-aachen.de0.0.0.1
 55bbs.com
 591.com.tw
 9game.cn
-@@||bam.nr-data.net
-@@||js-agent.newrelic.com
+bam.nr-data.net
 a.n11.com
 aachener-zeitung.de
 ab.g.globo
