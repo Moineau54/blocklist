@@ -37,7 +37,7 @@ for filename in track(lists, description="verifying blocklistst for exceptions")
             if raw != "\n":
                 line = raw.strip()
                 if line.__contains__(".") or line.startswith("#"):
-                    if not line.__contains__("127.0.0.1"):
+                    if not line.__contains__("127.0.0.1") and not line.__contains__("=") and not line.__contains__("%"):
                         # Preserve blank lines and full-line comments
                         if not line:
                             last_was_blank = True
