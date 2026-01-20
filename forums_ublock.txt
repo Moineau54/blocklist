@@ -1,13 +1,9 @@
 
 
-
-
 ! Will contain the domains of forums linked to blackmail, harassment, hacking and more illegal or nefarious stuff
-
 
 ! hacker forums
 ||xss.is^
-
 
 ! image boards
 ||4chan.org^
