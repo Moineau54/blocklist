@@ -34,3 +34,4 @@ wikipedia.org
 annas-archive.li
 www.youtube.com
 invidious.jing.rocks
+adguard.com
