@@ -54,7 +54,7 @@ for filename in lists:
                         if "#" in line:
                             domain, comment = map(str.strip, line.split("#", 1))
                         else:
-                            domain, comment = line, None
+                            domain, comment = line.replace("@@||", "").replace("||", ""), None
 
                         # Normalize domain
                         domain = domain.lower().replace("https://", "").replace("http://", "")

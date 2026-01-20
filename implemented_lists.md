@@ -56,3 +56,15 @@
         - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers.txt
         - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers_admiral.txt
         - https://github.com/easylist/easylist/raw/refs/heads/master/easyprivacy/easyprivacy_trackingservers_general.txt
+
+- [jerryn70/GoodbyeAds](https://github.com/jerryn70/GoodbyeAds?tab=readme-ov-file)
+    - [LICENSE](https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/LICENSE)
+    - Blocklist merged:
+        - https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Apple-AdBlock.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Huawei-AdBlock.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-LeEco-Extension.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Samsung-AdBlock.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Spotify-AdBlock.txt
+        - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Xiaomi-Extension.txt
+
