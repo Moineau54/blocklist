@@ -1,3 +1,4 @@
+from rich.progress import track
 
 files = [
     "advertisement.txt",
@@ -12,17 +13,16 @@ files = [
     "porn.txt",
     "forums.txt",
     "csam.txt",
-    "zoophilia.txt"
+    "zoophilia.txt",
 ]
 
-for file in files:
+for file in track(files, description="creating uBlock compatible blocklists"):
     base_name = file.split(".")[0]
-    print(f"processing {file}")
     ublock_origins_file = f"{base_name}_ublock.txt"
 
     with open(file, "r") as f:
         lines = f.readlines()
-    
+
     content = ""
     with open(ublock_origins_file, "w") as file_ublock:
         file_ublock.write("")
@@ -30,12 +30,13 @@ for file in files:
         if line.startswith("#"):
             content = line.replace("#", "!")
         elif line != "\n":
-            content = f"||{line.replace("\n", "")}^\n"
+            content = f"||{line.replace('\n', '')}^\n"
         else:
             content = line + "\n"
-        
+
         with open(ublock_origins_file, "a") as file_ublock_content:
             file_ublock_content.write(content)
     print(f"created {ublock_origins_file}")
+
 
 print("done")

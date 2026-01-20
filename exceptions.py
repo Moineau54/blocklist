@@ -1,3 +1,5 @@
+from rich.progress import track
+
 exceptions_domains = {}
 
 with open("exceptions/exceptions.txt", "r") as f:
@@ -23,7 +25,8 @@ lists = [
     "forums.txt",
 ]
 
-for filename in lists:
+
+for filename in track(lists, description="verifying blocklistst for exceptions"):
     print(f"verifying {filename} for exceptions")
 
     output = []
