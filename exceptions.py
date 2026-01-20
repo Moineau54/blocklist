@@ -36,42 +36,43 @@ for filename in track(lists, description="verifying blocklistst for exceptions")
         for raw in f:
             if raw != "\n":
                 line = raw.strip()
-                if line != '' or not line.__contains__("127.0.0.1"):
-                    # Preserve blank lines and full-line comments
-                    if not line:
-                        last_was_blank = True
-                        output.append("")  # Append blank line explicitly
-                        continue
+                if line.__contains__(".") or line.startswith("#"):
+                    if not line.__contains__("127.0.0.1"):
+                        # Preserve blank lines and full-line comments
+                        if not line:
+                            last_was_blank = True
+                            output.append("")  # Append blank line explicitly
+                            continue
 
-                    if line.startswith("#"):
-                        if last_was_blank:
-                            output.append("")  # Add a blank line before comments
-                        output.append(line)
+                        if line.startswith("#"):
+                            if last_was_blank:
+                                output.append("")  # Add a blank line before comments
+                            output.append(line)
+                            last_was_blank = False
+                            continue
+
+                        # Handle inline comments and normalize domain
+                        if "#" in line:
+                            domain, comment = map(str.strip, line.split("#", 1))
+                        else:
+                            domain, comment = line, None
+
+                        # Normalize domain
+                        domain = domain.lower().replace("https://", "").replace("http://", "")
+
+                        if domain in exceptions_domains:
+                            continue
+
+                        # Insert comment block if needed
+                        if comment:
+                            if not last_was_blank:
+                                output.append("")
+                            output.append(f"# {comment}")
+                            last_was_blank = False
+
+                        # Append the domain
+                        output.append(domain)
                         last_was_blank = False
-                        continue
-
-                    # Handle inline comments and normalize domain
-                    if "#" in line:
-                        domain, comment = map(str.strip, line.split("#", 1))
-                    else:
-                        domain, comment = line, None
-
-                    # Normalize domain
-                    domain = domain.lower().replace("https://", "").replace("http://", "")
-
-                    if domain in exceptions_domains:
-                        continue
-
-                    # Insert comment block if needed
-                    if comment:
-                        if not last_was_blank:
-                            output.append("")
-                        output.append(f"# {comment}")
-                        last_was_blank = False
-
-                    # Append the domain
-                    output.append(domain)
-                    last_was_blank = False
 
     # Remove duplicates while retaining order
     seen = set()
