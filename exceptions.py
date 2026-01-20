@@ -27,7 +27,6 @@ lists = [
 
 
 for filename in lists:
-
     output = []
     last_was_blank = True
 
@@ -36,7 +35,11 @@ for filename in lists:
             if raw != "\n":
                 line = raw.strip()
                 if line.__contains__(".") or line.startswith("#"):
-                    if not line.__contains__("127.0.0.1") and not line.__contains__("=") and not line.__contains__("%"):
+                    if (
+                        not line.__contains__("127.0.0.1")
+                        and not line.__contains__("=")
+                        and not line.__contains__("%")
+                    ):
                         # Preserve blank lines and full-line comments
                         if not line:
                             last_was_blank = True
@@ -54,10 +57,17 @@ for filename in lists:
                         if "#" in line:
                             domain, comment = map(str.strip, line.split("#", 1))
                         else:
-                            domain, comment = line.replace("@@||", "").replace("||", ""), None
+                            domain, comment = (
+                                line.replace("@@||", "").replace("||", ""),
+                                None,
+                            )
 
                         # Normalize domain
-                        domain = domain.lower().replace("https://", "").replace("http://", "")
+                        domain = (
+                            domain.lower()
+                            .replace("https://", "")
+                            .replace("http://", "")
+                        )
 
                         if domain in exceptions_domains:
                             continue
@@ -87,7 +97,6 @@ for filename in lists:
     line = ""
     with open(filename, "w") as f:
         for line in output_:
-
             if line.startswith("#"):
                 f.write(f"\n\n{line}")
             else:
