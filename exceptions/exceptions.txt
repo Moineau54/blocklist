@@ -24,3 +24,6 @@ yandex.ru
 duckduckgo.com
 googlechromelabs.github.io
 stackoverflow.com
+search.brave.com
+startpage.com
+zed.dev
