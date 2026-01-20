@@ -1,4 +1,3 @@
-import rich
 from rich.progress import track
 
 lists = [
@@ -29,7 +28,7 @@ for file in lists:
 
     for line in track(lines):
         line = line.strip()
-        if line != '' and not line.startswith("#"):
+        if line != "" and not line.startswith("#"):
             if line.strip() not in parsed_entries:
                 if line.strip().__contains__("http"):
                     parsed_entries.add(
@@ -48,8 +47,6 @@ entry_array.extend(parsed_entries)
 entry_array.sort()
 
 with open("all_lists.txt", "a") as f:
-    for entry in track(
-        entry_array, description="writing all entries to all_lists.txt"
-    ):
+    for entry in track(entry_array, description="writing all entries to all_lists.txt"):
         if entry != "":
             f.write(f"\n{entry}")
