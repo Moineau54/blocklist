@@ -26,14 +26,13 @@ lists = [
 ]
 
 
-for filename in track(lists, description="verifying blocklistst for exceptions"):
-    print(f"verifying {filename} for exceptions")
+for filename in lists:
 
     output = []
     last_was_blank = True
 
     with open(filename, "r") as f:
-        for raw in f:
+        for raw in track(f, description=f"verifying {filename} for exceptions"):
             if raw != "\n":
                 line = raw.strip()
                 if line.__contains__(".") or line.startswith("#"):

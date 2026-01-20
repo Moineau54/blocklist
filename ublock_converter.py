@@ -17,7 +17,7 @@ files = [
     "all_lists.txt"
 ]
 
-for file in track(files, description="creating uBlock compatible blocklists"):
+for file in files:
     base_name = file.split(".")[0]
     ublock_origins_file = f"{base_name}_ublock.txt"
 
@@ -27,7 +27,7 @@ for file in track(files, description="creating uBlock compatible blocklists"):
     content = ""
     with open(ublock_origins_file, "w") as file_ublock:
         file_ublock.write("")
-    for line in lines:
+    for line in track(lines, description=f"creating ublock blocklist for: {file}"):
         line = line.strip()
         if line != "":
             if line.startswith("#"):
