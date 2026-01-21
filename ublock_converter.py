@@ -14,7 +14,7 @@ files = [
     "forums.txt",
     "csam.txt",
     "zoophilia.txt",
-    "all_lists.txt"
+    "all_lists.txt",
 ]
 
 for file in files:
@@ -30,12 +30,14 @@ for file in files:
     for line in track(lines, description=f"creating ublock blocklist for: {file}"):
         line = line.strip()
         if line != "":
-            if line.startswith("#"):
+            if line.startswith("#") and not line.startswith("##"):
                 content = line.strip().replace("#", "!")
                 content = f"\n\n{content}"
-            else:
+            elif not line.startswith("##"):
                 content = line.strip()
                 content = f"\n||{content}^"
+            elif line.startswith("##"):
+                content = f"\n{line.strip()}"
 
             with open(ublock_origins_file, "a") as file_ublock_content:
                 file_ublock_content.write(content)

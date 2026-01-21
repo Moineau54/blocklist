@@ -28,7 +28,7 @@ for file in lists:
 
     for line in track(lines):
         line = line.strip()
-        if line != "" and not line.startswith("#"):
+        if line != "" and not line.startswith("#") and not line.__contains__("##"):
             if line.strip() not in parsed_entries:
                 if line.strip().__contains__("http"):
                     parsed_entries.add(
@@ -36,6 +36,10 @@ for file in lists:
                     )
                 else:
                     parsed_entries.add(line.strip())
+        elif line.__contains__("##"):
+            parsed_entries.add(
+                line.strip()
+            )
 
 
 entry_array = []

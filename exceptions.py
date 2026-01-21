@@ -39,6 +39,7 @@ for filename in lists:
                         not line.__contains__("127.0.0.1")
                         and not line.__contains__("=")
                         and not line.__contains__("%")
+                        or line.startswith("##")
                     ):
                         # Preserve blank lines and full-line comments
                         if not line:
@@ -46,7 +47,7 @@ for filename in lists:
                             output.append("")  # Append blank line explicitly
                             continue
 
-                        if line.startswith("#"):
+                        if line.startswith("#") and not line.__contains__("##"):
                             if last_was_blank:
                                 output.append("")  # Add a blank line before comments
                             output.append(line)
@@ -54,7 +55,7 @@ for filename in lists:
                             continue
 
                         # Handle inline comments and normalize domain
-                        if "#" in line:
+                        if "#" in line and not line.__contains__("##"):
                             domain, comment = map(str.strip, line.split("#", 1))
                         else:
                             domain, comment = (
@@ -97,7 +98,7 @@ for filename in lists:
     line = ""
     with open(filename, "w") as f:
         for line in output_:
-            if line.startswith("#"):
+            if line.startswith("#") and not line.__contains__("##"):
                 f.write(f"\n\n{line}")
             else:
                 f.write(f"\n{line}")
