@@ -43,3 +43,5 @@ dev.to
 api.kleinanzeigen.de
 news.google.com
 www.google.com
+collector.github.com
+
