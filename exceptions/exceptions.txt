@@ -42,3 +42,4 @@ s.yimg.com
 dev.to
 api.kleinanzeigen.de
 news.google.com
+www.google.com
