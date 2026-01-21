@@ -41,3 +41,4 @@ redditmedia.com
 s.yimg.com
 dev.to
 api.kleinanzeigen.de
+news.google.com
