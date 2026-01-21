@@ -190,6 +190,7 @@
 ||ybar-mcdn-report.wc.yahoodns.net^
 ||ybar-aubby4ei84report.wc.yahoodns.net^
 ||cerebro-dns-report.wc.yahoodns.net^
+||3p-udc.yahoo.com^
 
 ! Google (DoubleClick, Firebase, Crashlytics, Measurement)
 ||android-context-data.googleapis.com^
@@ -19787,7 +19788,6 @@
 ||branch.spaceback.me^
 ||a8cv.pre-sana.com^
 ||bumpydevelopment.com^
-||3p-udc.yahoo.com^
 ||app.insight.cision.com^
 ||secure.insightfulcloudintuition.com^
 ||sync.rambler.ru^
