@@ -38,3 +38,4 @@ adguard.com
 www.redditstatic.com
 redditstatic.com
 redditmedia.com
+s.yimg.com
