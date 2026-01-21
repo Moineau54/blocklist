@@ -180,6 +180,17 @@ splunk-hec.apple.com
 # Algolia
 algolia.net
 
+# Yahoo
+edge-mcdn.secure.yahoo.com
+v-aubby4ei84.wc.yahoodns.net
+v-cxe3qzz22r.wc.yahoodns.net
+v-bc22bfg1h3.wc.yahoodns.net
+ybar-cxe3qzz22rreport.wc.yahoodns.net
+ybar-bc22bfg1h3report.wc.yahoodns.net
+ybar-mcdn-report.wc.yahoodns.net
+ybar-aubby4ei84report.wc.yahoodns.net
+cerebro-dns-report.wc.yahoodns.net
+
 # Google (DoubleClick, Firebase, Crashlytics, Measurement)
 android-context-data.googleapis.com
 googleoptimize.com
