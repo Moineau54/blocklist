@@ -38,6 +38,7 @@ adguard.com
 www.redditstatic.com
 redditstatic.com
 redditmedia.com
+<<<<<<< HEAD
 guce.aol.com
 search.aol.com
 search.yahoo.com
@@ -59,3 +60,9 @@ chromedriver.storage.googleapis.com
 nowsecure.nl
 example.com
 bot.incolumitas.com
+s.yimg.com
+dev.to
+api.kleinanzeigen.de
+news.google.com
+www.google.com
+collector.github.com
