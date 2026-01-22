@@ -67,5 +67,10 @@ news.google.com
 www.google.com
 collector.github.com
 yt3.googleusercontent.com
+
 # testing youtube music
 lh3.googleusercontent.com
+
+# for Youtube
+yt3.googleusercontent.com
+voutubei.googleapis.com
