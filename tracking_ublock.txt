@@ -119804,7 +119804,6 @@
 ||b.px-cdn.net^
 ||babyblog.ru^
 ||bachecaannunci.it^
-||baidu.com^
 ||baitoru.com^
 ||bankinter.com^
 ||barks.jp^
