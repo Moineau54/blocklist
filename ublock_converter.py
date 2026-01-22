@@ -15,6 +15,7 @@ files = [
     "csam.txt",
     "zoophilia.txt",
     "all_lists.txt",
+    "exceptions/exceptions.txt",
 ]
 
 for file in files:
@@ -34,8 +35,12 @@ for file in files:
                 content = line.strip().replace("#", "!")
                 content = f"\n\n{content}"
             elif not line.startswith("##"):
-                content = line.strip()
-                content = f"\n||{content}^"
+                if not file == "exceptions/exceptions.txt":
+                    content = line.strip()
+                    content = f"\n||{content}^"
+                else:
+                    content = line.strip()
+                    content = f"\n@@||{content}^"
             elif line.startswith("##"):
                 content = f"\n{line.strip()}"
 
