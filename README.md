@@ -81,6 +81,17 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/forums.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/forums_ublock.txt
 ```
 
+#### Whitelists:
+
+##### Pi-hole:
+```
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/exceptions/exceptions.txt
+```
+
+##### Ublock Origins:
+```
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/exceptions/exceptions_ublock.txt
+```
 ## To anyone wanting to contribute
 
 Feel free to do so. Just use the **dev** branch to push stuff as the **main** branch will only be for the releases.

@@ -18,6 +18,9 @@ dpm.demdex.net
 # Yahoo / AOL
 opencdnbdv6.jomodns.com
 
+# Amazon
+normandy.tombstone.experimenter.prod.webservices.mozgcp.net
+
 # Unknown
 rr3---sn-8xgn5uxa-4g5z.gvt1.com
 www.goooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com
