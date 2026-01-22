@@ -1,4 +1,5 @@
 
+@@||baidu.com^
 @@||youtube.com^
 @@||reddit.com^
 @@||x.com^
