@@ -241,6 +241,8 @@
 ||encrypted-tbn2.gstatic.com^
 ||encrypted-tbn3.gstatic.com^
 ||phonedeviceverification-pa.googleapis.com^
+||cse.google.com^
+||clients1.google.com^
 
 ! Cookiebot
 ||consent.cookiebot.com^
