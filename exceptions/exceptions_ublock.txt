@@ -71,3 +71,7 @@
 
 ! testing youtube music
 @@||lh3.googleusercontent.com^
+
+! for Youtube
+@@||yt3.googleusercontent.com^
+@@||voutubei.googleapis.com^
