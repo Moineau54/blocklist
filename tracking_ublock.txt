@@ -241,6 +241,8 @@
 ||encrypted-tbn2.gstatic.com^
 ||encrypted-tbn3.gstatic.com^
 ||phonedeviceverification-pa.googleapis.com^
+||cse.google.com^
+||clients1.google.com^
 
 ! Cookiebot
 ||consent.cookiebot.com^
@@ -119804,7 +119806,6 @@
 ||b.px-cdn.net^
 ||babyblog.ru^
 ||bachecaannunci.it^
-||baidu.com^
 ||baitoru.com^
 ||bankinter.com^
 ||barks.jp^
