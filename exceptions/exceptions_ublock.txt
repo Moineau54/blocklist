@@ -1,4 +1,5 @@
 
+@@||fingerprint.dev^
 @@||fingerprint.com^
 @@||baidu.com^
 @@||youtube.com^
