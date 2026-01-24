@@ -1,4 +1,7 @@
 
+@@||perimeterx.net^
+@@||fingerprint.dev^
+@@||fingerprint.com^
 @@||baidu.com^
 @@||youtube.com^
 @@||reddit.com^
