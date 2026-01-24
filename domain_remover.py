@@ -51,7 +51,11 @@ args = parser.parse_args()
 
 domains_to_remove = set()
 if args.list:
-    files = [f"{args.list}"]
+    if args.list.__contains__(".txt"):
+        files = [f"{args.list}"]
+    else:
+        print("Wrong file type. Please use a .txt file")
+        sys.exit()
 if not args.domain == None or not args.file_path == None:
     if not args.file_path == None:
         for file in files:
