@@ -1,5 +1,8 @@
 
 
+# Fluidpay
+app.fluidplay.com
+
 # Mgnite Inc / Rubicon Project / Telaria
 prebid-server.rubiconproject.com
 fastlane.rubiconproject.com
