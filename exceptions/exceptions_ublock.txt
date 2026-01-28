@@ -1,5 +1,9 @@
 
 @@||athena.archive.org^
+@@||lnkd.in^
+@@||media.licdn.com^
+@@||mail.yahoo.com^
+@@||web.whatsapp.com^
 @@||perimeterx.net^
 @@||fingerprint.dev^
 @@||fingerprint.com^
