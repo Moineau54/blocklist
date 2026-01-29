@@ -1,3 +1,4 @@
+medium.com
 play-lh.googleusercontent.com
 play.googleapis.com # to download apps from playstore
 darkreader.org
