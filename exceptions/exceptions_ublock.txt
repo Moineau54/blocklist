@@ -1,4 +1,14 @@
 
+@@||play-lh.googleusercontent.com^
+@@||play.googleapis.com # to download apps from playstore^
+@@||darkreader.org^
+@@||youtubei.googleapis.com^
+@@||android.googleapis.com^
+@@||athena.archive.org^
+@@||lnkd.in^
+@@||media.licdn.com^
+@@||mail.yahoo.com^
+@@||web.whatsapp.com^
 @@||perimeterx.net^
 @@||fingerprint.dev^
 @@||fingerprint.com^
