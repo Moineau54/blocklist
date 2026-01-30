@@ -1,4 +1,6 @@
 
+@@||twitter.com^
+@@||cloudflare.com^
 @@||list-manage.com^
 @@||medium.com^
 @@||play-lh.googleusercontent.com^
