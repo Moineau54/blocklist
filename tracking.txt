@@ -60563,7 +60563,6 @@ liquidad.narrowcastmedia.com
 lisa-us.gbc.criteo.com
 lisa.res.gbc.criteo.com
 lisaag.gbc.criteo.com
-list-manage.com
 list-unsubscribe.eservice.emarsys.net
 listing.yahoo-net.jp
 lists-cab.gbc.criteo.com
