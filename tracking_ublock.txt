@@ -114232,7 +114232,6 @@
 ||fsrs.gov^
 ||fswg.gov^
 ||ftbelknap-nsn.gov^
-||ftc.gov^
 ||ftccomplaintassistant.gov^
 ||ftcefile.gov^
 ||ftp.hyunwoo.co.kr^
