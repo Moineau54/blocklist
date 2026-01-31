@@ -1,3 +1,6 @@
+ftc.gov
+shop.vgn.de
+redirector.googlevideo.com
 twitter.com
 cloudflare.com
 list-manage.com
