@@ -1,51 +1,51 @@
 
 
 ! Windows Telemetry
-||alpha.telemetry.microsoft.com^
-||asimov-win.settings.data.microsoft.com.akadns.net^
-||db5-eap.settings-win.data.microsoft.com.akadns.net^
-||db5.settings-win.data.microsoft.com.akadns.net^
-||db5.vortex.data.microsoft.com.akadns.net^
-||eu.vortex-win.data.microsoft.com^
-||geo.settings-win.data.microsoft.com.akadns.net^
-||geo.vortex.data.microsoft.com.akadns.net^
-||oca.telemetry.microsoft.com^
-||settings-win.data.microsoft.com^
-||us.vortex-win.data.microsoft.com^
-||v10-win.vortex.data.microsoft.com.akadns.net^
-||v10.vortex-win.data.microsoft.com^
-||vortex-win-sandbox.data.microsoft.com^
+||alpha.telemetry.microsoft.com^$important
+||asimov-win.settings.data.microsoft.com.akadns.net^$important
+||db5-eap.settings-win.data.microsoft.com.akadns.net^$important
+||db5.settings-win.data.microsoft.com.akadns.net^$important
+||db5.vortex.data.microsoft.com.akadns.net^$important
+||eu.vortex-win.data.microsoft.com^$important
+||geo.settings-win.data.microsoft.com.akadns.net^$important
+||geo.vortex.data.microsoft.com.akadns.net^$important
+||oca.telemetry.microsoft.com^$important
+||settings-win.data.microsoft.com^$important
+||us.vortex-win.data.microsoft.com^$important
+||v10-win.vortex.data.microsoft.com.akadns.net^$important
+||v10.vortex-win.data.microsoft.com^$important
+||vortex-win-sandbox.data.microsoft.com^$important
 
 ! Mozilla
-||incoming.telemetry.mozilla.org^
+||incoming.telemetry.mozilla.org^$important
 
 ! Github
-||copilot-telemetry.githubusercontent.com^
-||telemetry.individual.githubcopilot.com^
-||w3.org^
+||copilot-telemetry.githubusercontent.com^$important
+||telemetry.individual.githubcopilot.com^$important
+||w3.org^$important
 
 ! Cloudflare
-||static.cloudflareinsights.com^
+||static.cloudflareinsights.com^$important
 
 ! Google
-||www.google-analytics.com^
-||google-analytics.com^
-||firebase-settings.crashlytics.com^
+||www.google-analytics.com^$important
+||google-analytics.com^$important
+||firebase-settings.crashlytics.com^$important
 
 ! Ubuntu telemetry
-||connectivity-check.ubuntu.com^
+||connectivity-check.ubuntu.com^$important
 
 ! Avast
-||analytics.ff.avast.com^
+||analytics.ff.avast.com^$important
 
 ! Duckduckgo
-||improving.duckduckgo.com^
+||improving.duckduckgo.com^$important
 
 ! Amplitude
-||api.lab.amplitude.com^
-||api2.amplitude.com^
+||api.lab.amplitude.com^$important
+||api2.amplitude.com^$important
 
 ! FunctionalSoftware / Sentry
-||o1069899.sentry.io^
+||o1069899.sentry.io^$important
 
 ! IDBLLC
