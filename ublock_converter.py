@@ -37,7 +37,7 @@ for file in files:
             elif not line.startswith("##"):
                 if not file == "exceptions/exceptions.txt":
                     content = line.strip()
-                    content = f"\n||{content}^"
+                    content = f"\n||{content}^$important"
                 else:
                     content = line.strip()
                     content = f"\n@@||{content}^"
