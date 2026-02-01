@@ -1,3 +1,8 @@
+github-production-user-asset-6210df.s3.amazonaws.com
+manifest.googlevideo.com
+ebaystatic.com
+rr2---sn-8xgn5uxa-4g5z.googlevideo.com
+rr2---sn-8xgn5uxa-4g56.googlevideo.com
 ftc.gov
 shop.vgn.de
 redirector.googlevideo.com

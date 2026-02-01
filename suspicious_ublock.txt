@@ -1,33 +1,33 @@
 
 
 ! Sprig.com
-||api.sprig.com^
+||api.sprig.com^$important
 
 ! RevenueCat
-||api.revenuecat.com^
+||api.revenuecat.com^$important
 
 ! Mozilla
-||img.getpocket.cdn.mozilla.net^
+||img.getpocket.cdn.mozilla.net^$important
 
 ! Microsoft
-||in.appcenter.ms^
+||in.appcenter.ms^$important
 
 ! Adobe
-||dpm.demdex.net^
+||dpm.demdex.net^$important
 
 ! Yahoo / AOL
-||opencdnbdv6.jomodns.com^
+||opencdnbdv6.jomodns.com^$important
 
 ! Amazon
-||normandy.tombstone.experimenter.prod.webservices.mozgcp.net^
+||normandy.tombstone.experimenter.prod.webservices.mozgcp.net^$important
 
 ! Unknown
-||rr3---sn-8xgn5uxa-4g5z.gvt1.com^
-||www.goooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com^
-||ninawertz.pl^
-||d-manp2.c-ij.com^
-||x1.c.lencr.org^
-||sabhvpdj.jyelrgom.dat.app.pio.pay.ovippmail.ad.suppovippmail.ad.support.app.fbd.s.s-web-preprod.powerappspornruga.uvdqisk.ma.smed-secure.updrisk.s.fbdart.appmail.ad.support.app.fbdisk.ma.thrivedeskdocs.com^
-||aefd.nelreports.net^
-||skinnycrawlinglax.com^
-||9c3ed890-2a30-4880-ad79-af68126c7a1e-netseer-ipaddr-assoc.xy.fbcdn.net^
+||rr3---sn-8xgn5uxa-4g5z.gvt1.com^$important
+||www.goooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com^$important
+||ninawertz.pl^$important
+||d-manp2.c-ij.com^$important
+||x1.c.lencr.org^$important
+||sabhvpdj.jyelrgom.dat.app.pio.pay.ovippmail.ad.suppovippmail.ad.support.app.fbd.s.s-web-preprod.powerappspornruga.uvdqisk.ma.smed-secure.updrisk.s.fbdart.appmail.ad.support.app.fbdisk.ma.thrivedeskdocs.com^$important
+||aefd.nelreports.net^$important
+||skinnycrawlinglax.com^$important
+||9c3ed890-2a30-4880-ad79-af68126c7a1e-netseer-ipaddr-assoc.xy.fbcdn.net^$important
