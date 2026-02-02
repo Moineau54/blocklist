@@ -1,3 +1,7 @@
+do-not-tracker.org #used by eff
+eviltracker.net # used by eff for coveryourtracks
+trackersimulator.org # used by eff for coveryourtracks
+amiunique.org
 github-production-user-asset-6210df.s3.amazonaws.com
 manifest.googlevideo.com
 ebaystatic.com
