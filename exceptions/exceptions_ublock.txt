@@ -1,6 +1,6 @@
 
-@@||eviltracker.net # used by eff for coveryourtracks^
-@@||trackersimulator.org # used by eff for coveryourtracks^
+@@||eviltracker.net^ ! used by eff for coveryourtracks
+@@||trackersimulator.org^ ! used by eff for coveryourtracks
 @@||amiunique.org^
 @@||github-production-user-asset-6210df.s3.amazonaws.com^
 @@||manifest.googlevideo.com^
@@ -15,7 +15,7 @@
 @@||list-manage.com^
 @@||medium.com^
 @@||play-lh.googleusercontent.com^
-@@||play.googleapis.com # to download apps from playstore^
+@@||play.googleapis.com^ ! to download apps from playstore
 @@||darkreader.org^
 @@||youtubei.googleapis.com^
 @@||android.googleapis.com^
