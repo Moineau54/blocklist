@@ -1,6 +1,7 @@
 from rich.progress import track
 
 files = [
+    "exceptions/exceptions.txt",
     "advertisement.txt",
     "fingerprinting.txt",
     "malware.txt",
@@ -15,7 +16,6 @@ files = [
     "csam.txt",
     "zoophilia.txt",
     "all_lists.txt",
-    "exceptions/exceptions.txt",
 ]
 
 for file in files:
@@ -40,7 +40,14 @@ for file in files:
                     content = f"\n||{content}^$important"
                 else:
                     content = line.strip()
-                    content = f"\n@@||{content}^"
+                    if content.__contains__("# "):
+                        if content.startswith("# "):
+                            content = f"!{content}"
+                        elif content.__contains__(" # "):
+                            content = f"\n@@||{content.replace(" # ", "^ ! ")}"
+                    else:
+                        content = f"\n@@||{content}^"
+
             elif line.startswith("##"):
                 content = f"\n{line.strip()}"
 
