@@ -1,4 +1,5 @@
 
+@@||searchenginejournal.com^
 @@||teams.cloud.microsoft^ ! microsoft teams
 @@||do-not-tracker.org #used by eff^
 @@||eviltracker.net^ ! used by eff for coveryourtracks
