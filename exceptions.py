@@ -11,6 +11,7 @@ for domain in exceptions_domains:
 
 lists = [
     "advertisement.txt",
+    "socials.txt",
     "fingerprinting.txt",
     "malware.txt",
     "phishing.txt",
