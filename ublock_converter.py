@@ -6,6 +6,7 @@ files = [
     "fingerprinting.txt",
     "malware.txt",
     "phishing.txt",
+    "socials.txt",
     "spam.txt",
     "suspicious.txt",
     "telemetry.txt",
