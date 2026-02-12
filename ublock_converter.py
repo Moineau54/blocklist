@@ -45,9 +45,9 @@ for file in files:
                         if content.startswith("# "):
                             content = f"!{content}"
                         elif content.__contains__(" # "):
-                            content = f"\n@@||{content.replace(" # ", "^ ! ")}"
+                            content = f"\n@@||{content.replace(" # ", "^$important ! ")}"
                     else:
-                        content = f"\n@@||{content}^"
+                        content = f"\n@@||{content}^$important"
 
             elif line.startswith("##"):
                 content = f"\n{line.strip()}"
