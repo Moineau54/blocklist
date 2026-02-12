@@ -57,7 +57,7 @@ search.aol.com
 github.com
 yandex.com
 yandex.ru
-duckduckgo.com
+# duckduckgo.com
 googlechromelabs.github.io
 stackoverflow.com
 search.brave.com

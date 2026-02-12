@@ -61,7 +61,8 @@
 @@||github.com
 @@||yandex.com
 @@||yandex.ru
-@@||duckduckgo.com
+
+! duckduckgo.com
 @@||googlechromelabs.github.io
 @@||stackoverflow.com
 @@||search.brave.com
@@ -86,6 +87,7 @@
 @@||e86303.dscx.akamaiedge.net
 @@||global3.l7.search.ystg1.b.yahoo.com
 @@||prod-rotation-v2.guce.aws.oath.cloud
+@@||duckduckgo.com
 @@||googlechromelabs.github.io/chrome-for-testing/
 @@||storage.googleapis.com/chrome-for-testing-public/
 @@||storage.googleapis.com
