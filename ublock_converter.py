@@ -56,7 +56,7 @@ for file in files:
                             domain = content.split(" # ")[0]
                             content = f"\n! {comment}\n@@||{domain}"
                     else:
-                        content = f"\n@@||{content}^$important"
+                        content = f"\n@@||{content}"
 
             elif line.startswith("##"):
                 content = f"\n{line.strip()}"
