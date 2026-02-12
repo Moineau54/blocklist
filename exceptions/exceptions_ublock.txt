@@ -3,10 +3,13 @@
 @@||fc.yahoo.com^$important
 @@||microsoft.com^$important
 @@||searchenginejournal.com^$important
-@@||teams.cloud.microsoft^$important ! microsoft teams
+! microsoft teams
+@@||teams.cloud.microsoft
 @@||do-not-tracker.org #used by eff^$important
-@@||eviltracker.net^$important ! used by eff for coveryourtracks
-@@||trackersimulator.org^$important ! used by eff for coveryourtracks
+! used by eff for coveryourtracks
+@@||eviltracker.net
+! used by eff for coveryourtracks
+@@||trackersimulator.org
 @@||amiunique.org^$important
 @@||github-production-user-asset-6210df.s3.amazonaws.com^$important
 @@||manifest.googlevideo.com^$important
@@ -21,7 +24,8 @@
 @@||list-manage.com^$important
 @@||medium.com^$important
 @@||play-lh.googleusercontent.com^$important
-@@||play.googleapis.com^$important ! to download apps from playstore
+! to download apps from playstore
+@@||play.googleapis.com
 @@||darkreader.org^$important
 @@||youtubei.googleapis.com^$important
 @@||android.googleapis.com^$important
@@ -74,8 +78,6 @@
 @@||www.redditstatic.com^$important
 @@||redditstatic.com^$important
 @@||redditmedia.com^$important
-@@||guce.aol.com^$important
-@@||search.aol.com^$important
 @@||search.yahoo.com^$important
 @@||guce.yahoo.com^$important
 @@||www.bing.com^$important
@@ -84,16 +86,11 @@
 @@||e86303.dscx.akamaiedge.net^$important
 @@||global3.l7.search.ystg1.b.yahoo.com^$important
 @@||prod-rotation-v2.guce.aws.oath.cloud^$important
-@@||yandex.com^$important
-@@||yandex.ru^$important
-@@||duckduckgo.com^$important
-@@||googlechromelabs.github.io^$important
 @@||googlechromelabs.github.io/chrome-for-testing/^$important
 @@||storage.googleapis.com/chrome-for-testing-public/^$important
 @@||storage.googleapis.com^$important
 @@||chromedriver.storage.googleapis.com^$important
 @@||nowsecure.nl^$important
-@@||example.com^$important
 @@||bot.incolumitas.com^$important
 @@||s.yimg.com^$important
 @@||dev.to^$important
