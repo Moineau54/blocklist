@@ -21,6 +21,9 @@
 ! Amazon
 ||normandy.tombstone.experimenter.prod.webservices.mozgcp.net^$important
 
+! Google
+||csi.gstatic.com^$important
+
 ! Unknown
 ||rr3---sn-8xgn5uxa-4g5z.gvt1.com^$important
 ||www.goooooooooooooooooooooooooooooooooooooooooooooooooooooooooogle.com^$important

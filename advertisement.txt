@@ -1,5 +1,8 @@
 
 
+# Confiant
+cdn.confiant-integrations.net
+
 # Yandex
 yandex.ru/adfox/
 
@@ -71,6 +74,9 @@ exchange.cootlogix.com
 
 # Batch
 ws.batch.com
+
+# Zeotap
+spl.zeotap.com
 
 # Google
 ad.doubleclick.net
@@ -275,6 +281,7 @@ adversni.com
 adviva.net
 
 # Rest (Unknown or Smaller Ad Networks)
+api.revenuecat.com
 banners.adfox.ru
 jads.co
 te-static.technical-service.net
