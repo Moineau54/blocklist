@@ -76,10 +76,14 @@ func main() {
 
 	defaultFiles := []string{
 		"advertisement.txt",
+		"all_lists.txt",
+		"csam.txt",
 		"fingerprinting.txt",
 		"forums.txt",
 		"malware.txt",
 		"porn.txt",
+		"phishing.txt",
+		"socials.txt",
 		"spam.txt",
 		"suspicious.txt",
 		"telemetry.txt",
