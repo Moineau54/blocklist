@@ -26,35 +26,45 @@ for file in files:
     with open(file, "r") as f:
         lines = f.readlines()
 
-    content = ""
+    seen_lines = set()
     with open(ublock_origins_file, "w") as file_ublock:
-        file_ublock.write("")
-    for line in track(lines, description=f"creating ublock blocklist for: {file}"):
+        file_ublock.write("")  # Clear the file before writing
+
+    for line in track(lines, description=f"Creating uBlock blocklist for: {file}"):
         line = line.strip()
-        if line != "":
+        if line != "" and line not in seen_lines:
+            seen_lines.add(line)  # Add the line to the set to avoid duplicates
+
             if line.startswith("#") and not line.startswith("##"):
-                content = line.strip().replace("#", "!")
+                content = line.replace("#", "!")
                 content = f"\n\n{content}"
+
             elif not line.startswith("##"):
-                if not file == "exceptions/exceptions.txt":
+                if file != "exceptions/exceptions.txt":
                     content = line.strip()
-                    content = f"\n||{content}^$important"
+                    if content.startswith("# "):
+                        content = f"! {content}"
+                    else:
+                        content = f"\n||{content}^$important"
                 else:
                     content = line.strip()
-                    if content.__contains__("# "):
+                    if "# " in content:
                         if content.startswith("# "):
                             content = f"!{content}"
-                        elif content.__contains__(" # "):
-                            content = f"\n@@||{content.replace(" # ", "^ ! ")}"
+                        else:
+                            comment = content.split(" # ")[1]
+                            domain = content.split(" # ")[0]
+                            content = f"\n! {comment}\n@@||{domain}"
                     else:
-                        content = f"\n@@||{content}^"
+                        content = f"\n@@||{content}"
 
             elif line.startswith("##"):
                 content = f"\n{line.strip()}"
 
+            # Write the constructed content to the output file
             with open(ublock_origins_file, "a") as file_ublock_content:
                 file_ublock_content.write(content)
-    print(f"created {ublock_origins_file}")
 
+    print(f"Created {ublock_origins_file}")
 
-print("done")
+print("Done")
