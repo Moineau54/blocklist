@@ -1,4 +1,22 @@
 
+@@||tracker.openbittorrent.com
+@@||9.rarbg.to
+@@||coppersurfer.tk
+@@||exodus.desync.com
+@@||explodie.org
+@@||ipv4.tracker.harry.lu
+@@||opentracker.i2p.rocks
+@@||p4p.arenabg.com
+@@||tracker.coppersurfer.tk
+@@||tracker.cyberia.is
+@@||tracker.internetwarriors.net
+@@||tracker.leechers-paradise.org
+@@||tracker.opentrackr.org
+@@||tracker.pirateparty.gr
+@@||qbittorrent.org
+@@||tracker.tiny-vps.com
+@@||tracker.torrent.eu.org
+@@||tracker.zer0day.to
 @@||archive.today
 @@||weakpass.com
 @@||fc.yahoo.com
