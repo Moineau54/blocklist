@@ -5,7 +5,6 @@ exodus.desync.com
 explodie.org
 ipv4.tracker.harry.lu
 opentracker.i2p.rocks
-p4p.arenabg.com
 tracker.coppersurfer.tk
 tracker.cyberia.is
 tracker.internetwarriors.net

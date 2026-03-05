@@ -6,7 +6,6 @@
 @@||explodie.org
 @@||ipv4.tracker.harry.lu
 @@||opentracker.i2p.rocks
-@@||p4p.arenabg.com
 @@||tracker.coppersurfer.tk
 @@||tracker.cyberia.is
 @@||tracker.internetwarriors.net
@@ -27,6 +26,7 @@
 @@||open.lolicon.eu
 @@||open.touki.ru.php
 @@||p4p.arenabg.ch
+@@||p4p.arenabg.com
 @@||pow7.com
 @@||retracker.gorcomnet.ru
 @@||retracker.krs-ix.ru
