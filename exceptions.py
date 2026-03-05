@@ -13,6 +13,7 @@ lists = [
     "advertisement.txt",
     "socials.txt",
     "fingerprinting.txt",
+    "gambling.txt",
     "malware.txt",
     "phishing.txt",
     "spam.txt",

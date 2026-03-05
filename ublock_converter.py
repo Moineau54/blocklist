@@ -4,6 +4,7 @@ files = [
     "exceptions/exceptions.txt",
     "advertisement.txt",
     "fingerprinting.txt",
+    "gambling.txt",
     "malware.txt",
     "phishing.txt",
     "socials.txt",

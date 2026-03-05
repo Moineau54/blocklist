@@ -3,6 +3,7 @@ from rich.progress import track
 lists = [
     "advertisement.txt",
     "fingerprinting.txt",
+    "gambling.txt",
     "malware.txt",
     "phishing.txt",
     "spam.txt",
