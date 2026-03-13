@@ -26,6 +26,7 @@ ixsystems.atlassian.net
 
 # MarkMonitor Inc.
 s.go-mpulse.net
+s2.go-mpulse.net
 cdn.eu.amplitude.com
 log.111percent.net
 
