@@ -1,4 +1,5 @@
 
+@@||steamstatic.com
 @@||steampowered.com
 @@||store.steampowered.com
 @@||9animetv.to
