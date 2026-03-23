@@ -1,4 +1,5 @@
 
+@@||ip-api.com
 @@||steamstatic.com
 @@||steampowered.com
 @@||store.steampowered.com
