@@ -1,4 +1,5 @@
 
+@@||api.github.com
 @@||ip-api.com
 @@||steamstatic.com
 @@||steampowered.com
