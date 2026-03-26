@@ -1,3 +1,4 @@
+click.discord.com
 api.github.com
 ip-api.com
 steamstatic.com
