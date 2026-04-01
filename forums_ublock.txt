@@ -4,6 +4,8 @@
 
 ! hacker forums
 ||xss.is^$important
+||hackforums.net^$important
+||darkforums.io^$important
 
 ! image boards
 ||4chan.org^$important

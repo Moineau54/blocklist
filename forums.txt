@@ -4,6 +4,8 @@
 
 # hacker forums
 xss.is
+hackforums.net
+darkforums.io
 
 # image boards
 4chan.org
