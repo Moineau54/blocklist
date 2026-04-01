@@ -1,3 +1,4 @@
+img.chefkoch-cdn.de
 api.ipify.org
 click.discord.com
 api.github.com
