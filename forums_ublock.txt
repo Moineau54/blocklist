@@ -6,6 +6,9 @@
 ||xss.is^$important
 ||hackforums.net^$important
 ||darkforums.io^$important
+||breachforums.bf^$important
+||breachforums.to^$important
+||breachforums.hn^$important
 
 ! image boards
 ||4chan.org^$important

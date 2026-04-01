@@ -6,6 +6,9 @@
 xss.is
 hackforums.net
 darkforums.io
+breachforums.bf
+breachforums.to
+breachforums.hn
 
 # image boards
 4chan.org
