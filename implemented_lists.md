@@ -68,3 +68,7 @@
         - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Spotify-AdBlock.txt
         - https://github.com/jerryn70/GoodbyeAds/raw/refs/heads/master/Extension/GoodbyeAds-Xiaomi-Extension.txt
 
+- [ddCeka/cekalist](https://github.com/ddCeka/cekalist)
+    - [LICENSE](https://github.com/ddCeka/cekalist/blob/master/LICENSE)
+    - Blocklist merged:
+        - https://raw.githubusercontent.com/ddCeka/cekalist/refs/heads/master/Pornografi.txt
