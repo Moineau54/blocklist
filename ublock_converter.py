@@ -16,7 +16,9 @@ files = [
     "porn.txt",
     "forums.txt",
     "csam.txt",
+    "gore.txt",
     "zoophilia.txt",
+    "incest.txt",
     "all_lists.txt",
 ]
 

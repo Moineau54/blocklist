@@ -22,7 +22,9 @@ class Lookup():
                 "telemetry.txt",
                 "to_monitor.txt",
                 "tracking.txt",
-                "zoophilia.txt"
+                "zoophilia.txt",
+                "gore.txt",
+                "incest.txt"
             ]
         else:
             self.default_files = [
