@@ -11,6 +11,8 @@
 ||discord.com/x66heuknxh^$important
 ||discord.com/8g3xrwp6bz^$important
 ||forum.map-union.org^$important
+||map-union.org^$important
+||www.map-union.org^$important
 ||mapcommunity.org^$important
 ||herlittlegirl.blogspot.cl^$important
 
