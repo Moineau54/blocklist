@@ -14,6 +14,8 @@ lists = [
     "porn.txt",
     "zoophilia.txt",
     "csam.txt",
+    "gore.txt",
+    "incest.txt",
     "forums.txt",
 ]
 
