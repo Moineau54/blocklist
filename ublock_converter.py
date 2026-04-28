@@ -3,6 +3,7 @@ from rich.progress import track
 files = [
     "exceptions/exceptions.txt",
     "advertisement.txt",
+    "ai_girlfriend_chatbots.txt",
     "fingerprinting.txt",
     "gambling.txt",
     "malware.txt",
@@ -19,6 +20,7 @@ files = [
     "gore.txt",
     "zoophilia.txt",
     "incest.txt",
+    "ncii.txt",
     "all_lists.txt",
 ]
 

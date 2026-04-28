@@ -13,6 +13,7 @@ lists = [
     "advertisement.txt",
     "socials.txt",
     "fingerprinting.txt",
+    "ai_girlfriend_chatbots.txt",
     "gambling.txt",
     "malware.txt",
     "phishing.txt",
@@ -26,7 +27,8 @@ lists = [
     "csam.txt",
     "forums.txt",
     "gore.txt",
-    "incest.txt"
+    "incest.txt",
+    "ncii.txt",
 ]
 
 
