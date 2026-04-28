@@ -20,6 +20,7 @@ files = [
     "gore.txt",
     "zoophilia.txt",
     "incest.txt",
+    "ncii.txt",
     "all_lists.txt",
 ]
 

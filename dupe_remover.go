@@ -91,6 +91,7 @@ func main() {
 		"to_monitor.txt",
 		"tracking.txt",
 		"zoophilia.txt",
+		"ncii.txt",
 		
 	}
 

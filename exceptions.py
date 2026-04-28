@@ -27,7 +27,8 @@ lists = [
     "csam.txt",
     "forums.txt",
     "gore.txt",
-    "incest.txt"
+    "incest.txt",
+    "ncii.txt",
 ]
 
 
