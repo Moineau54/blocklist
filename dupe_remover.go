@@ -77,6 +77,7 @@ func main() {
 	defaultFiles := []string{
 		"advertisement.txt",
 		"all_lists.txt",
+		"ai_girlfriend_chatbots.txt",
 		"csam.txt",
 		"fingerprinting.txt",
 		"forums.txt",
