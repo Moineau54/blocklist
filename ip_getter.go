@@ -185,6 +185,7 @@ func main() {
 			"tracking.txt",
 			"zoophilia.txt",
 			"porn.txt",
+			"ai_girlfriend_chatbots.txt",
 		}
 	} else {
 		files = strings.Fields(*filePtr)
