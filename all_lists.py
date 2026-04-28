@@ -16,6 +16,7 @@ lists = [
     "csam.txt",
     "gore.txt",
     "incest.txt",
+    "ncii.txt",
     "forums.txt",
 ]
 
