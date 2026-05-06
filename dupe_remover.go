@@ -92,7 +92,8 @@ func main() {
 		"tracking.txt",
 		"zoophilia.txt",
 		"ncii.txt",
-		
+		"incest.txt",
+		"ai_girlfriend_chatbots.txt",
 	}
 
 	if *fileFlag != "" {
