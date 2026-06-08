@@ -1,5 +1,8 @@
 
 
+# Hubspot
+hubs.li
+
 # Confiant
 cdn.confiant-integrations.net
 
