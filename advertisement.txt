@@ -20,6 +20,7 @@ mc.prod.ads.prod.webservices.mozgcp.net
 contile-images.services.mozilla.com
 spocs.getpocket.com
 ads.mozilla.org
+ads-img.mozilla.org
 
 # Ziff Davis LLC
 ziffstatic.com
