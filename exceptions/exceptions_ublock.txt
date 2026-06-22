@@ -1,4 +1,6 @@
 
+@@||washingtonpost.com
+@@||lifehacker.com
 @@||dzen.ru
 @@||img.chefkoch-cdn.de
 @@||api.ipify.org
