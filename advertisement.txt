@@ -16185,7 +16185,6 @@ ads-iad2.adsymptotic.com
 ads-icl.googleusercontent.com
 ads-image.production-public.tubi.io
 ads-img-al.xhscdn.com
-ads-img.mozilla.org
 ads-interfaces.sc-cdn.net
 ads-intl.everesttech.net
 ads-ios-sdk.ogury.co
