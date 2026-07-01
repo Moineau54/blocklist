@@ -92565,7 +92565,6 @@ linksprotection.com
 linksynergy.com
 linuxadictos.com
 linuxbsdos.com
-linuxconfig.org
 linuxhospital.com
 linuxtoday.com
 lion.tmall.com
