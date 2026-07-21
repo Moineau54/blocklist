@@ -1,4 +1,3 @@
-
 *.cdn.optimizely.com
 ------0-01vpnedf0-0002d-admin-nocnocnoc-us-uforms.gbc.criteo.com
 ------0-01vpnedf0-0002d-admin-vpsw-us-us.gbc.criteo.com
