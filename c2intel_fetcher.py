@@ -15,7 +15,9 @@ FEEDS = {
     "7day": "domainC2s-filter-abused.csv",
     "7day-unfiltered": "domainC2s.csv",
     "30day": "domainC2s-30day-filter-abused.csv",
+    "30day-unfiltered": "domainC2s-30day.csv",
     "90day": "domainC2s-90day-filter-abused.csv",
+    "90day-unfiltered": "domainC2s-90day.csv",
 }
 
 
@@ -76,8 +78,8 @@ def main():
         "--windows",
         nargs="+",
         choices=FEEDS.keys(),
-        default=["7day", "7day-unfiltered", "90day"],
-        help="Feed time windows to fetch and merge (default: 7day 7day-unfiltered 90day)",
+        default=["7day", "7day-unfiltered", "30day", "30day-unfiltered", "90day", "90day-unfiltered"],
+        help="Feed time windows to fetch and merge (default: all windows, filtered and unfiltered)",
     )
     parser.add_argument(
         "--output", default="malware.txt", help="Output file (default: malware.txt)"
