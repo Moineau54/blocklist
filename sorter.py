@@ -1,7 +1,7 @@
 from pathlib import Path
 
-src = Path("zoophilia.txt")
-dst = Path("zoophilia.txt")
+src = Path("to_block_bydefault.txt")
+dst = Path("to_block_bydefault.txt")
 
 # read, dedupe with a set, sort, and write
 with src.open("r", encoding="utf-8") as f:

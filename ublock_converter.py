@@ -16,11 +16,7 @@ files = [
     "tracking.txt",
     "porn.txt",
     "forums.txt",
-    "csam.txt",
-    "gore.txt",
-    "zoophilia.txt",
-    "incest.txt",
-    "ncii.txt",
+    "to_block_bydefault.txt",
     "all_lists.txt",
 ]
 
