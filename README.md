@@ -46,8 +46,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking.t
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry.txt
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam.txt
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/to_block_bydefault.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn.txt
 ```
 
@@ -62,8 +61,7 @@ https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/tracking_u
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/fingerprinting_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/suspicious_ublock.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/telemetry_ublock.txt
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/csam_ublock.txt
-https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/zoophilia_ublock.txt
+https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/to_block_bydefault.txt
 https://raw.githubusercontent.com/Moineau54/blocklist/refs/heads/main/porn_ublock.txt
 ```
 
