@@ -1,5 +1,8 @@
 
 
+# Hubspot
+hubs.li
+
 # Confiant
 cdn.confiant-integrations.net
 
@@ -17,6 +20,7 @@ mc.prod.ads.prod.webservices.mozgcp.net
 contile-images.services.mozilla.com
 spocs.getpocket.com
 ads.mozilla.org
+ads-img.mozilla.org
 
 # Ziff Davis LLC
 ziffstatic.com
@@ -281,6 +285,7 @@ adversni.com
 adviva.net
 
 # Rest (Unknown or Smaller Ad Networks)
+cbrop.com
 api.revenuecat.com
 banners.adfox.ru
 jads.co
@@ -16181,7 +16186,6 @@ ads-iad2.adsymptotic.com
 ads-icl.googleusercontent.com
 ads-image.production-public.tubi.io
 ads-img-al.xhscdn.com
-ads-img.mozilla.org
 ads-interfaces.sc-cdn.net
 ads-intl.everesttech.net
 ads-ios-sdk.ogury.co
