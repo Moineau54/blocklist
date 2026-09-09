@@ -1886,6 +1886,7 @@
 ||julyjail.club^$important
 ||jungsforum.net^$important
 ||justteenporn.net^$important
+||k9lady.com^$important
 ||k9monster.net^$important
 ||katitube.com^$important
 ||katporn.com^$important
@@ -3979,6 +3980,7 @@
 ||zooweb.site^$important
 ||zoowg.org^$important
 ||zoowiki.zetapin.de^$important
+||zoox18.com^$important
 ||zooxhamster.com^$important
 ||zooxmania.top^$important
 ||zooxnxx.shop^$important
