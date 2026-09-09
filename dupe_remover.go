@@ -78,7 +78,7 @@ func main() {
 		"advertisement.txt",
 		"all_lists.txt",
 		"ai_girlfriend_chatbots.txt",
-		"csam.txt",
+		"to_block_bydefault.txt",
 		"fingerprinting.txt",
 		"forums.txt",
 		"malware.txt",
@@ -90,9 +90,6 @@ func main() {
 		"telemetry.txt",
 		"to_monitor.txt",
 		"tracking.txt",
-		"zoophilia.txt",
-		"ncii.txt",
-		"incest.txt",
 		"ai_girlfriend_chatbots.txt",
 	}
 

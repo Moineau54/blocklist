@@ -12,11 +12,7 @@ lists = [
     "to_monitor.txt",
     "tracking.txt",
     "porn.txt",
-    "zoophilia.txt",
-    "csam.txt",
-    "gore.txt",
-    "incest.txt",
-    "ncii.txt",
+    "to_block_bydefault.txt",
     "forums.txt",
 ]
 
