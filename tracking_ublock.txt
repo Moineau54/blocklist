@@ -26295,7 +26295,6 @@
 ||cookie.myamerigas.com^$important
 ||cookie.solutions.desertfinancial.com^$important
 ||cookie.sync.usonar.jp^$important
-||cookieandkate.com^$important
 ||cookiedoughandovenmitt.com^$important
 ||cookiejar.atea.no^$important
 ||cookielesstargeting.info^$important
