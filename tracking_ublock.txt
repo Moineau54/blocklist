@@ -53638,7 +53638,6 @@
 ||kosheronabudget.com^$important
 ||kost-jogja.com^$important
 ||kotakmahindrabank.tt.omtrdc.net^$important
-||kotaku.com^$important
 ||kotisivukone.com^$important
 ||kotisivukone.fi^$important
 ||kotopoulathanasis.openapp.link^$important
