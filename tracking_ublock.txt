@@ -26295,7 +26295,6 @@
 ||cookie.myamerigas.com^$important
 ||cookie.solutions.desertfinancial.com^$important
 ||cookie.sync.usonar.jp^$important
-||cookieandkate.com^$important
 ||cookiedoughandovenmitt.com^$important
 ||cookiejar.atea.no^$important
 ||cookielesstargeting.info^$important
@@ -53639,7 +53638,6 @@
 ||kosheronabudget.com^$important
 ||kost-jogja.com^$important
 ||kotakmahindrabank.tt.omtrdc.net^$important
-||kotaku.com^$important
 ||kotisivukone.com^$important
 ||kotisivukone.fi^$important
 ||kotopoulathanasis.openapp.link^$important
@@ -61122,7 +61120,6 @@
 ||marlborough-ma.gov^$important
 ||marlin.logs.roku.com^$important
 ||marlownh.gov^$important
-||marmiton.org^$important
 ||maroaillinois.gov^$important
 ||marocain.biz^$important
 ||maroon5.com^$important
