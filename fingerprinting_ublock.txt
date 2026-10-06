@@ -1,13 +1,13 @@
 
+||a-cdn.claude.a^$important
+||adobe.tt.omtrdc.net^$important
+||cdn.adsafeprotected.com^$important
+||dpm.demdex.net^$important
+||fpnpmcdn.net^$important
+||googleads.g.doubleclick.net^$important
+||li.protechts.net^$important
+||merchantpool1.linkedin.com^$important
+||pagead2.googlesyndication.com^$important
 ||pixel.adsafeprotected.com^$important
 ||static.adsafeprotected.com^$important
 ||static.trafficjunky.com^$important
-||fpnpmcdn.net^$important
-||a-cdn.claude.a^$important
-||merchantpool1.linkedin.com^$important
-||li.protechts.net^$important
-||cdn.adsafeprotected.com^$important
-||googleads.g.doubleclick.net^$important
-||adobe.tt.omtrdc.net^$important
-||dpm.demdex.net^$important
-||pagead2.googlesyndication.com^$important
