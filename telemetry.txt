@@ -1,51 +1,39 @@
-
-
+# Amplitude
+# Avast
+# Cloudflare
+# Duckduckgo
+# FunctionalSoftware / Sentry
+# Github
+# Google
+# IDBLLC
+# Mozilla
+# Ubuntu telemetry
 # Windows Telemetry
 alpha.telemetry.microsoft.com
+analytics.ff.avast.com
+api.lab.amplitude.com
+api2.amplitude.com
 asimov-win.settings.data.microsoft.com.akadns.net
+connectivity-check.ubuntu.com
+copilot-telemetry.githubusercontent.com
 db5-eap.settings-win.data.microsoft.com.akadns.net
 db5.settings-win.data.microsoft.com.akadns.net
 db5.vortex.data.microsoft.com.akadns.net
 eu.vortex-win.data.microsoft.com
+firebase-settings.crashlytics.com
 geo.settings-win.data.microsoft.com.akadns.net
 geo.vortex.data.microsoft.com.akadns.net
+google-analytics.com
+improving.duckduckgo.com
+incoming.telemetry.mozilla.org
+o1069899.sentry.io
 oca.telemetry.microsoft.com
 settings-win.data.microsoft.com
+static.cloudflareinsights.com
+telemetry.individual.githubcopilot.com
 us.vortex-win.data.microsoft.com
 v10-win.vortex.data.microsoft.com.akadns.net
 v10.vortex-win.data.microsoft.com
 vortex-win-sandbox.data.microsoft.com
-
-# Mozilla
-incoming.telemetry.mozilla.org
-
-# Github
-copilot-telemetry.githubusercontent.com
-telemetry.individual.githubcopilot.com
 w3.org
-
-# Cloudflare
-static.cloudflareinsights.com
-
-# Google
 www.google-analytics.com
-google-analytics.com
-firebase-settings.crashlytics.com
-
-# Ubuntu telemetry
-connectivity-check.ubuntu.com
-
-# Avast
-analytics.ff.avast.com
-
-# Duckduckgo
-improving.duckduckgo.com
-
-# Amplitude
-api.lab.amplitude.com
-api2.amplitude.com
-
-# FunctionalSoftware / Sentry
-o1069899.sentry.io
-
-# IDBLLC
