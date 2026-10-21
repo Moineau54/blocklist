@@ -1,26 +1,4 @@
 
-
-! Amplitude
-
-! Avast
-
-! Cloudflare
-
-! Duckduckgo
-
-! FunctionalSoftware / Sentry
-
-! Github
-
-! Google
-
-! IDBLLC
-
-! Mozilla
-
-! Ubuntu telemetry
-
-! Windows Telemetry
 ||alpha.telemetry.microsoft.com^$important
 ||analytics.ff.avast.com^$important
 ||api.lab.amplitude.com^$important
