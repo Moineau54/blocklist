@@ -277966,6 +277966,7 @@
 ||booru.eu^$important
 ||booru.foalcon.com^$important
 ||booru.io^$important
+||booru.mapsupport.de^$important
 ||booru.org^$important
 ||booru.sugall.com^$important
 ||booru.vercel.app^$important
@@ -1214697,6 +1214698,7 @@
 ||whitewater-wi.gov^$important
 ||whitewebpinklink.pro^$important
 ||whitewnmxu.live^$important
+||whitewomen.dog^$important
 ||whitfaggra.pro^$important
 ||whitingwi.gov^$important
 ||whitireia.ac.nz^$important
@@ -1227790,6 +1227792,7 @@
 ||xhacked.com^$important
 ||xhackfacebook.com^$important
 ||xhai.dnawelcome.sbs^$important
+||xhais.love^$important
 ||xhammmster.fr^$important
 ||xhamster.animalsexfree.shop^$important
 ||xhamster.dirtyzooporn.shop^$important
