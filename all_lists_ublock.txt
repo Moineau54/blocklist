@@ -943142,6 +943142,7 @@
 ||mapquuest.com^$important
 ||mapreduce-job-process.vercel.app^$important
 ||maprequiredduplicate.com^$important
+||mapresources.info^$important
 ||mapress.tv^$important
 ||maprimeadaptgouv.fr^$important
 ||maps-da.us.gbc.criteo.com^$important

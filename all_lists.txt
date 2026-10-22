@@ -1,3 +1,4 @@
+
 ## litelm hack
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 *.cdn.optimizely.com
@@ -943141,6 +943142,7 @@ mapquestt.com
 mapquuest.com
 mapreduce-job-process.vercel.app
 maprequiredduplicate.com
+mapresources.info
 mapress.tv
 maprimeadaptgouv.fr
 maps-da.us.gbc.criteo.com
