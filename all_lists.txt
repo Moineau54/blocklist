@@ -1,4 +1,3 @@
-
 ## litelm hack
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 *.cdn.optimizely.com
@@ -981754,7 +981753,6 @@ nas.gddsw.top
 nas.yeroses.com
 nas01-zoller.direct.quickconnect.to
 nas064gjgfebvbutebbtakethisasitisbhfdnmn.duckdns.org
-nasa.gov
 nasa.r2cloudhikepoo2.shop
 nasa138.com
 nasabonebolango.com

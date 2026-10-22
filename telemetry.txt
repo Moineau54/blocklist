@@ -1,4 +1,3 @@
-
 alpha.telemetry.microsoft.com
 analytics.ff.avast.com
 api.lab.amplitude.com

@@ -1,4 +1,3 @@
-
 *.cdn.optimizely.com
 ------0-01vpnedf0-0002d-admin-nocnocnoc-us-uforms.gbc.criteo.com
 ------0-01vpnedf0-0002d-admin-vpsw-us-us.gbc.criteo.com
@@ -78095,7 +78094,6 @@ narutobase.net
 narutogetspot.com
 narutoshippudenvf.com
 narvasamary.com
-nasa.gov
 nascardigital.tt.omtrdc.net
 nascardigitalsap.hb-api.omtrdc.net
 nascardigitalsap.hb.omtrdc.net

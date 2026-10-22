@@ -981754,7 +981754,6 @@
 ||nas.yeroses.com^$important
 ||nas01-zoller.direct.quickconnect.to^$important
 ||nas064gjgfebvbutebbtakethisasitisbhfdnmn.duckdns.org^$important
-||nasa.gov^$important
 ||nasa.r2cloudhikepoo2.shop^$important
 ||nasa138.com^$important
 ||nasabonebolango.com^$important

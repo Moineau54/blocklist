@@ -78095,7 +78095,6 @@
 ||narutogetspot.com^$important
 ||narutoshippudenvf.com^$important
 ||narvasamary.com^$important
-||nasa.gov^$important
 ||nascardigital.tt.omtrdc.net^$important
 ||nascardigitalsap.hb-api.omtrdc.net^$important
 ||nascardigitalsap.hb.omtrdc.net^$important
