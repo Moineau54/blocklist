@@ -859526,7 +859526,6 @@
 ||itcareerworld.com^$important
 ||itceo.com^$important
 ||itcgalilei.it^$important
-||itch.io^$important
 ||itchatgpt.space^$important
 ||itchegg.tumblr.com^$important
 ||itchinglikely.com^$important

@@ -584518,7 +584518,6 @@
 ||itc-for-you.com^$important
 ||itcanneverbetoobig.tumblr.com^$important
 ||itcgalilei.it^$important
-||itch.io^$important
 ||itchegg.tumblr.com^$important
 ||itchlive.com^$important
 ||itchporn.com^$important
