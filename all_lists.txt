@@ -1,3 +1,4 @@
+
 ## litelm hack
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 *.cdn.optimizely.com
@@ -859525,7 +859526,6 @@ itcapprog.top
 itcareerworld.com
 itceo.com
 itcgalilei.it
-itch.io
 itchatgpt.space
 itchegg.tumblr.com
 itchinglikely.com

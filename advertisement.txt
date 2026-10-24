@@ -1,3 +1,4 @@
+
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 0-02.net
 0.avmarket.rs
