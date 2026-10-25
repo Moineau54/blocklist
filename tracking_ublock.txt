@@ -30581,7 +30581,6 @@
 ||devops.bcava.gbc.criteo.com^$important
 ||devops.tt.omtrdc.net^$important
 ||devops0-cafw4cuaifsvnlnjqzehy0dk.cab.gbc.criteo.com^$important
-||devopscube.com^$important
 ||devopsemailvision.net.daraz.com^$important
 ||devotionalclicks.amazingfacts.org^$important
 ||devryuniversity.tt.omtrdc.net^$important
@@ -125124,7 +125123,6 @@
 ||zeh4.holaislascanarias.com^$important
 ||zeirishi.net.daraz.com^$important
 ||zeit01.webtrekk.net^$important
-||zeldadungeon.net^$important
 ||zelle.odencat.com^$important
 ||zelmanassociates.actonservice.com^$important
 ||zelten.fritz-berger.de^$important

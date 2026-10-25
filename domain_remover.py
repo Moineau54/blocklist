@@ -7,7 +7,7 @@ import sys
 
 files = [
     "advertisement.txt",
-    "csam.txt",
+    "to_block_bydefault.txt",
     "fingerprinting.txt",
     "forums.txt",
     "malware.txt",
@@ -17,11 +17,7 @@ files = [
     "suspicious.txt",
     "telemetry.txt",
     "to_monitor.txt",
-    "tracking.txt",
-    "zoophilia.txt",
-    "gore.txt",
-    "incest.txt",
-    "ncii.txt",
+    "tracking.txt"
 ]
 
 

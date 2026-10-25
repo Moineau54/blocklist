@@ -476109,7 +476109,6 @@
 ||devops.tt.omtrdc.net^$important
 ||devops0-cafw4cuaifsvnlnjqzehy0dk.cab.gbc.criteo.com^$important
 ||devopschatgpt.com^$important
-||devopscube.com^$important
 ||devopsdeviants.com^$important
 ||devopsemailvision.net.daraz.com^$important
 ||devopsexam.com^$important
@@ -943141,6 +943140,7 @@
 ||mapquuest.com^$important
 ||mapreduce-job-process.vercel.app^$important
 ||maprequiredduplicate.com^$important
+||mapresources.info^$important
 ||mapress.tv^$important
 ||maprimeadaptgouv.fr^$important
 ||maps-da.us.gbc.criteo.com^$important
@@ -1238722,7 +1238722,6 @@
 ||zel.cash^$important
 ||zelandorithica.click^$important
 ||zelaro.top^$important
-||zeldadungeon.net^$important
 ||zeleader.com^$important
 ||zelena-mriya.com.ua^$important
 ||zelenlodge.com^$important

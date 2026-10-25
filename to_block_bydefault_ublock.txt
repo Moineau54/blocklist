@@ -1997,6 +1997,7 @@
 ||map-union.org^$important
 ||map-wiki.com^$important
 ||mapcommunity.org^$important
+||mapresources.info^$important
 ||mapsupport.de^$important
 ||mareanimaltube.cyou^$important
 ||masha.net.ru^$important
