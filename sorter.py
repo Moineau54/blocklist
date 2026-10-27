@@ -14,7 +14,8 @@ sources:  list['Path'] = [
     Path('telemetry.txt'),
     Path('to_block_bydefault.txt'),
     Path('to_monitor.txt'),
-    Path('tracking.txt')
+    Path('tracking.txt'),
+    Path('exceptions/exceptions.txt')
 ]
 for src in sources:
     # read, dedupe with a set, sort, and write
