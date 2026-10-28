@@ -45178,7 +45178,6 @@ google-analytics-cn.com
 google-analytics.com
 google-bidout-d.openx.net
 google-csr31.net.daraz.com
-google.com
 google.pluto7.com
 google.ru
 googleads.g.doubleclick.net
