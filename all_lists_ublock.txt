@@ -773180,6 +773180,7 @@
 ||herligflirt.com^$important
 ||herlimit.com^$important
 ||herlipsrpink.com^$important
+||herlittlebit.com^$important
 ||herlittleboytoy.tumblr.com^$important
 ||herlittlegirl.blogspot.cl^$important
 ||herlittlegirl.blogspot.co.nz^$important
@@ -1159531,7 +1159532,6 @@
 ||think.vyond.com^$important
 ||thinkablerice.com^$important
 ||thinkbright.site^$important
-||thinkbroadband.com^$important
 ||thinkchatgpt.com^$important
 ||thinkcomputers.org^$important
 ||thinkcontra.com^$important
