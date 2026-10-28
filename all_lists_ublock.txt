@@ -726861,7 +726861,6 @@
 ||google.chrome-download.net^$important
 ||google.co.nz^$important
 ||google.co.tz^$important
-||google.com^$important
 ||google.com.br^$important
 ||google.com.co^$important
 ||google.com.cy^$important

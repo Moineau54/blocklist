@@ -45179,7 +45179,6 @@
 ||google-analytics.com^$important
 ||google-bidout-d.openx.net^$important
 ||google-csr31.net.daraz.com^$important
-||google.com^$important
 ||google.pluto7.com^$important
 ||google.ru^$important
 ||googleads.g.doubleclick.net^$important
