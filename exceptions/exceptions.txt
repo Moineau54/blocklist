@@ -1,6 +1,3 @@
-# duckduckgo.com
-# for Youtube
-# testing youtube music
 127.0.0.1
 255.255.255.255
 9.rarbg.com
@@ -37,6 +34,8 @@ coppersurfer.tk
 crunchbase.com
 darkreader.org
 dev.to
+dns.google
+dns.quad9.net
 do-not-tracker.org #used by eff
 dzen.ru
 e86303.dscx.akamaiedge.net
