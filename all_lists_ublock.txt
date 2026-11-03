@@ -1,5 +1,8 @@
 
+## fake domains (aitm)
 ## litelm hack
+## resolved ip (parking)
+## smb c2/exfil ips
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 ||*.cdn.optimizely.com^$important
 ||------0-01vpnedf0-0002d-admin-nocnocnoc-us-uforms.gbc.criteo.com^$important
@@ -20764,6 +20767,7 @@
 ||24-zoll-monitor-test-2021.klimafuechse.de^$important
 ||24-zoll-monitor.de^$important
 ||24.0prichpe7ch.ru^$important
+||24.9.51.94^$important
 ||24.allhen.online^$important
 ||24.co.at^$important
 ||24.eu^$important
@@ -25855,6 +25859,7 @@
 ||35.168.147.213^$important
 ||35.175.38.64^$important
 ||35.194.188.37^$important
+||35.214.56.2^$important
 ||35.45.1c32.ip4.static.sl-reverse.com^$important
 ||350-aer-820.mktoresp.com^$important
 ||350-oko-721.mktoresp.com^$important
@@ -26896,6 +26901,7 @@
 ||38-5.gbc.criteo.com^$important
 ||38-zoll-in-cm.photo-bauer.de^$important
 ||38.180.96.244^$important
+||38.9.8.78^$important
 ||38.ap2thsh0pk.ru^$important
 ||38.fr^$important
 ||38.to^$important
@@ -34629,6 +34635,7 @@
 ||5-zeta-blond.vercel.app^$important
 ||5.188.62.36^$important
 ||5.2003811.xyz^$important
+||5.45.121.106^$important
 ||5.45.123.44^$important
 ||5.79.71.205^$important
 ||5.79.71.225^$important
@@ -620441,6 +620448,7 @@
 ||fluorescenttody.pro^$important
 ||fluorion-xendic.net^$important
 ||fluorionxendic.com^$important
+||fluoriterefrectory.info^$important
 ||fluorocarbonsypf.info^$important
 ||fluorpurwa.pro^$important
 ||fluporn.com^$important
@@ -986461,6 +986469,7 @@
 ||news.ottobremer.org^$important
 ||news.paylife.at^$important
 ||news.petage.com^$important
+||news.pieset.co^$important
 ||news.pinnaclesys.com^$important
 ||news.piquadro.com^$important
 ||news.plndenergia.xyz^$important
@@ -1185065,6 +1185074,7 @@
 ||updates.feedinfo.com^$important
 ||updates.fisgloval.com^$important
 ||updates.gaylordhotels.com^$important
+||updates.microsoft.com^$important
 ||updates.mintylinux.com^$important
 ||updates.peer2profit.app^$important
 ||updates.thunderbird.net^$important
@@ -1216032,6 +1216042,8 @@
 ||windows.checkfedexexp.com^$important
 ||windows.ddns.me^$important
 ||windows.envisionfonddulac.net^$important
+||windows.network.troubleshooter.com^$important
+||windows.system.update.com^$important
 ||windows.trojan.ghostpulse^$important
 ||windows10-11.duckdns.org^$important
 ||windows101tricks.com^$important

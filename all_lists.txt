@@ -1,5 +1,8 @@
 
+## fake domains (aitm)
 ## litelm hack
+## resolved ip (parking)
+## smb c2/exfil ips
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
 *.cdn.optimizely.com
 ------0-01vpnedf0-0002d-admin-nocnocnoc-us-uforms.gbc.criteo.com
@@ -20764,6 +20767,7 @@
 24-zoll-monitor-test-2021.klimafuechse.de
 24-zoll-monitor.de
 24.0prichpe7ch.ru
+24.9.51.94
 24.allhen.online
 24.co.at
 24.eu
@@ -25855,6 +25859,7 @@
 35.168.147.213
 35.175.38.64
 35.194.188.37
+35.214.56.2
 35.45.1c32.ip4.static.sl-reverse.com
 350-aer-820.mktoresp.com
 350-oko-721.mktoresp.com
@@ -26896,6 +26901,7 @@
 38-5.gbc.criteo.com
 38-zoll-in-cm.photo-bauer.de
 38.180.96.244
+38.9.8.78
 38.ap2thsh0pk.ru
 38.fr
 38.to
@@ -34629,6 +34635,7 @@
 5-zeta-blond.vercel.app
 5.188.62.36
 5.2003811.xyz
+5.45.121.106
 5.45.123.44
 5.79.71.205
 5.79.71.225
@@ -620441,6 +620448,7 @@ fluorescenttapir.pro
 fluorescenttody.pro
 fluorion-xendic.net
 fluorionxendic.com
+fluoriterefrectory.info
 fluorocarbonsypf.info
 fluorpurwa.pro
 fluporn.com
@@ -986461,6 +986469,7 @@ news.optikunited.org
 news.ottobremer.org
 news.paylife.at
 news.petage.com
+news.pieset.co
 news.pinnaclesys.com
 news.piquadro.com
 news.plndenergia.xyz
@@ -1185065,6 +1185074,7 @@ updates.conexpoconagg.com
 updates.feedinfo.com
 updates.fisgloval.com
 updates.gaylordhotels.com
+updates.microsoft.com
 updates.mintylinux.com
 updates.peer2profit.app
 updates.thunderbird.net
@@ -1216032,6 +1216042,8 @@ windows.bcava.gbc.criteo.com
 windows.checkfedexexp.com
 windows.ddns.me
 windows.envisionfonddulac.net
+windows.network.troubleshooter.com
+windows.system.update.com
 windows.trojan.ghostpulse
 windows10-11.duckdns.org
 windows101tricks.com
