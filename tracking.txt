@@ -31674,7 +31674,6 @@ dns.east3.247realmedia.com
 dns.edu.cn
 dns.ernet.in
 dns.fz.fj.cn
-dns.google
 dns.google.com
 dns.guangzhou.gd.cn
 dns.hfut.edu.cn
@@ -31707,7 +31706,6 @@ dns.ns2.edgecastcdn.net
 dns.octor.com
 dns.ovh.net
 dns.princeton.edu
-dns.quad9.net
 dns.qz.fj.cn
 dns.rsadvnet.it
 dns.seed.net.tw

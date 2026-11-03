@@ -31675,7 +31675,6 @@
 ||dns.edu.cn^$important
 ||dns.ernet.in^$important
 ||dns.fz.fj.cn^$important
-||dns.google^$important
 ||dns.google.com^$important
 ||dns.guangzhou.gd.cn^$important
 ||dns.hfut.edu.cn^$important
@@ -31708,7 +31707,6 @@
 ||dns.octor.com^$important
 ||dns.ovh.net^$important
 ||dns.princeton.edu^$important
-||dns.quad9.net^$important
 ||dns.qz.fj.cn^$important
 ||dns.rsadvnet.it^$important
 ||dns.seed.net.tw^$important
