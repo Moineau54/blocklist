@@ -1,5 +1,4 @@
 
-## fake domains (aitm)
 ## litelm hack
 ## resolved ip (parking)
 ## smb c2/exfil ips
@@ -920167,7 +920166,6 @@ leboncoiin.fr
 leboncoij.fr
 leboncoimn.fr
 leboncoin-fr.eu
-leboncoin.fr
 leboncoinai.fr
 leboncoincer.fr
 leboncoinchronopost.fr
