@@ -342332,6 +342332,7 @@
 ||centroautismo.com^$important
 ||centroautomotivovaz.com.br^$important
 ||centrobanner.sexy.easyincontro.com^$important
+||centrocspupdate.com^$important
 ||centrodedermatologiademonterrey.com^$important
 ||centrodehentai.blogspot.com^$important
 ||centrodeidioma.com^$important
@@ -470707,6 +470708,7 @@
 ||derupscirr.pro^$important
 ||deruzma.phpbbx.de^$important
 ||derv1n.de5per5eem.ru^$important
+||dervasopssec.com^$important
 ||dervinko.biz^$important
 ||derviporno.com^$important
 ||derwaldfeuchter.de^$important
@@ -920167,7 +920169,6 @@
 ||leboncoij.fr^$important
 ||leboncoimn.fr^$important
 ||leboncoin-fr.eu^$important
-||leboncoin.fr^$important
 ||leboncoinai.fr^$important
 ||leboncoincer.fr^$important
 ||leboncoinchronopost.fr^$important
@@ -999052,6 +999053,7 @@
 ||ocsimples.top^$important
 ||ocskcmkyomeymkqi.xyz^$important
 ||ocskcqkwqieksoeq.xyz^$important
+||ocsp-atomsecure.com^$important
 ||ocsp-reloads.com^$important
 ||ocspdep.com^$important
 ||ocsqaqsmiqysecka.xyz^$important
@@ -1089353,6 +1089355,7 @@
 ||securitymetrics.com^$important
 ||securitynetflix.fr^$important
 ||securitynowdetectedsecured.top^$important
+||securityocspdev.com^$important
 ||securityone-eg.com^$important
 ||securityportal-cb.com^$important
 ||securityprotectioninternet.top^$important

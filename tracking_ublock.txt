@@ -55357,7 +55357,6 @@
 ||leblogdelili.fr^$important
 ||leblogtvnews.com^$important
 ||lebonbuzz.net^$important
-||leboncoin.fr^$important
 ||lebtpm.co-medical.com^$important
 ||lebuteur.tn^$important
 ||lechia.gda.pl^$important
