@@ -1,4 +1,5 @@
 
+## c&c servers
 ## fake domains (aitm)
 ## litelm hack
 ## resolved ip (parking)
@@ -262035,6 +262036,7 @@
 ||blockrisex.dhrak.com^$important
 ||blockrisex.dqeju.com^$important
 ||blockrisex.dsaql.com^$important
+||blockrockgelato.com^$important
 ||blockroocn.gbc.criteo.com^$important
 ||blockroster.net^$important
 ||blockrunc.top^$important
@@ -780030,6 +780032,7 @@
 ||hitherineditadowly.cfd^$important
 ||hitherintheshitter.tumblr.com^$important
 ||hithertofunding.com^$important
+||hithitfish.com^$important
 ||hithomemovies.com^$important
 ||hithot.free.fr^$important
 ||hithycofa.com^$important
