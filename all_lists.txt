@@ -23,6 +23,9 @@
 ---az1862820-0001es-0-0-gc001d1fmx1rbmqrxrr.gbc.criteo.com
 ---az1862820-0001es-0-0002.gbc.criteo.com
 ---az1862820-0001es-0002du-0-0-gc0010-0-v5.gbc.criteo.com
+/www/media/afr.php
+/www/media/asyncspc.php
+/www/media/script.php
 0----q.tumblr.com
 0--liamariejohnson--0.nedrobin.net
 0-0-adult-superstore.com
@@ -1214615,6 +1214618,7 @@ white-eyes.com
 white-life-bl.info
 white-life.info
 white-vantage.com
+white-wolf-media.com
 white.nqyf-7.ru
 whiteangelcameonearthwithgodsignformegod.duckdns.org
 whitebarsunlight.top

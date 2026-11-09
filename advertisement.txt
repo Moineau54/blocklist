@@ -1,4 +1,7 @@
 ##.ytwadtextimageviewmodelhost.ytwadtextimageviewmodelhostdarkbackground domain=www.youtube.com
+/www/media/afr.php
+/www/media/asyncspc.php
+/www/media/script.php
 0-02.net
 0.avmarket.rs
 0.fls.doubleclick.net
@@ -160103,6 +160106,7 @@ whistlingwentwool.com
 whitauckikrah.net
 white-advantage.pro
 white-eyes.com
+white-wolf-media.com
 whiteboxdigital.ru
 whiteclick.biz
 whitedescription.pro
