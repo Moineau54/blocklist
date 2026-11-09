@@ -36232,7 +36232,6 @@
 ||eternalmangas.com^$important
 ||etgaad.smartphoto.be^$important
 ||etgkbu.unieuro.it^$important
-||eth.llamarpc.com^$important
 ||etherealbamboo.com^$important
 ||ethereallagoon.com^$important
 ||etherealpinnacle.com^$important
