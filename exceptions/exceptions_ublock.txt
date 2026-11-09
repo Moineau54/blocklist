@@ -21,6 +21,7 @@
 @@||bing.com
 @@||bot.incolumitas.com
 @@||broadcasthost
+@@||bsc-dataseed.binance.org
 @@||bt.henbt.com
 @@||bt.pusacg.org
 @@||bt2.careland.com.cn
@@ -44,6 +45,7 @@
 @@||eddie4.nl
 @@||edge.gycpi.b.yahoodns.net
 @@||enigmasoftware.com
+@@||eth.llamarpc.com
 ! used by eff for coveryourtracks
 @@||eviltracker.net
 @@||example.com

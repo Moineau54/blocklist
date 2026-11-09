@@ -20,6 +20,7 @@ baidu.com
 bing.com
 bot.incolumitas.com
 broadcasthost
+bsc-dataseed.binance.org
 bt.henbt.com
 bt.pusacg.org
 bt2.careland.com.cn
@@ -43,6 +44,7 @@ ebaystatic.com
 eddie4.nl
 edge.gycpi.b.yahoodns.net
 enigmasoftware.com
+eth.llamarpc.com
 eviltracker.net # used by eff for coveryourtracks
 example.com
 exodus.desync.com

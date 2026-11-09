@@ -12389,6 +12389,7 @@
 ||167-172-227-16.cprapid.com^$important
 ||167-eit-370.mktoresp.com^$important
 ||167.235.163.216^$important
+||167.88.172.225^$important
 ||167.99.249.47^$important
 ||167030.measurementapi.com^$important
 ||16704.engine.mobileapptracking.com^$important
@@ -293480,7 +293481,6 @@
 ||bsbslove.com^$important
 ||bsbstonersex.tumblr.com^$important
 ||bsbtransex.com^$important
-||bsc-dataseed.binance.org^$important
 ||bsc-dataseed3.defitbit.io^$important
 ||bsc.eulerian.com^$important
 ||bsc.eulerian.eu^$important
@@ -565561,7 +565561,6 @@
 ||eth-up.gift^$important
 ||eth-xxx-bot.pages.dev^$important
 ||eth.1emxk8.icu^$important
-||eth.llamarpc.com^$important
 ||eth.pp.ua^$important
 ||eth132.xyz^$important
 ||eth175.xyz^$important
@@ -1233150,6 +1233149,7 @@
 ||yeezyslides.fr^$important
 ||yeezysofficiel.eu.com^$important
 ||yeezyspascher.fr^$important
+||yeezytiger.com^$important
 ||yefeji-carema.site^$important
 ||yefepa-zebatu.pics^$important
 ||yefktd.avito.ru^$important
