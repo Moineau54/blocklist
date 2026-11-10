@@ -1023853,6 +1023853,7 @@
 ||outlook-web-access-79541c.webflow.io^$important
 ||outlook.bcava.gbc.criteo.com^$important
 ||outlook.efile-sharepoint.info^$important
+||outlook.live^$important
 ||outlook.optumseragamaglas-ouns.cloud^$important
 ||outlook.phd^$important
 ||outlook.pm^$important

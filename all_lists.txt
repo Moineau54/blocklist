@@ -1023853,6 +1023853,7 @@ outlook-weather.com
 outlook-web-access-79541c.webflow.io
 outlook.bcava.gbc.criteo.com
 outlook.efile-sharepoint.info
+outlook.live
 outlook.optumseragamaglas-ouns.cloud
 outlook.phd
 outlook.pm
