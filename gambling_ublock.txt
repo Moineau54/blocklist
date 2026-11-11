@@ -160,6 +160,7 @@
 ||myannuaire.com^$important
 ||nnzz008zx212.tzwlsk.com^$important
 ||onlinecasinosspelen.com^$important
+||outlook.live^$important
 ||sexezoom.com^$important
 ||startbewijs.nl^$important
 ||startclub.nl^$important

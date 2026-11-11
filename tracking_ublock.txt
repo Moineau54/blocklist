@@ -119573,7 +119573,6 @@
 ||vploadbalancer.b2bmktg.com^$important
 ||vpmc.122.2o7.net^$important
 ||vpmdiq.propertyfinder.qa^$important
-||vpn-api.proton.me^$important
 ||vpn-da0mail.gbc.criteo.com^$important
 ||vpn-da1-lj.gbc.criteo.com^$important
 ||vpn-da1-us.gbc.criteo.com^$important

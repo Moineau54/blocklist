@@ -1023853,6 +1023853,7 @@
 ||outlook-web-access-79541c.webflow.io^$important
 ||outlook.bcava.gbc.criteo.com^$important
 ||outlook.efile-sharepoint.info^$important
+||outlook.live^$important
 ||outlook.optumseragamaglas-ouns.cloud^$important
 ||outlook.phd^$important
 ||outlook.pm^$important
@@ -1205354,7 +1205355,6 @@
 ||vpmmj-iaaaa-aaaag-at44a-cai.icp0.io^$important
 ||vpmo3wk7dfshar.org^$important
 ||vpn-access.site^$important
-||vpn-api.proton.me^$important
 ||vpn-da0mail.gbc.criteo.com^$important
 ||vpn-da1-lj.gbc.criteo.com^$important
 ||vpn-da1-us.gbc.criteo.com^$important
