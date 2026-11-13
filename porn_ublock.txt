@@ -86322,7 +86322,6 @@
 ||anicosplaylove.com^$important
 ||aniday.cjb.net^$important
 ||anidb.info^$important
-||anidex.info^$important
 ||anidex.moe^$important
 ||anidub.pro^$important
 ||anie69.de^$important
