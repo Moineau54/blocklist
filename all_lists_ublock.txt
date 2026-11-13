@@ -576908,7 +576908,6 @@
 ||extratorrent.cc^$important
 ||extratorrent.com^$important
 ||extratorrent.si^$important
-||extratorrent.st^$important
 ||extratorrentonline.com^$important
 ||extratorrents.ch^$important
 ||extratorrents.cm^$important
