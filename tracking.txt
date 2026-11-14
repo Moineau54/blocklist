@@ -17167,6 +17167,7 @@ axp.yourerie.com
 axpjcp.tennis-point.co.uk
 axsgroup.tt.omtrdc.net
 axxomovies.org
+ay.delivery
 aydinpost.com
 aydtkb.pikabu.ru
 ayearofslowcooking.com
@@ -85740,6 +85741,7 @@ opsinternalcomms.aboutamazon.com
 opsmail.creativereview.co.uk
 opsveda.actonservice.com
 opt.delta.com
+optable.co
 optemais.com.br
 opti-digital.com
 opticien24.eulerian.net
@@ -89437,6 +89439,7 @@ privacy.us.criteo.com
 privacy.us5.us.criteo.com
 privacy.us5.vip.prod.criteo.com
 privacyfriendly.netlify.app
+privacymanager.io
 privacyoptout.zoominformation.com
 privacyportal.onetrust.com
 privadovpn.postaffiliatepro.com
@@ -89546,6 +89549,7 @@ prod.us-east-1.cxm-bcn.publisher-services.amazon.dev
 prod.us-east-1.forester.a2z.com
 prod.us-west-2.forester.a2z.com
 prod.us.gbc.criteo.com
+prod.weatherfx.com
 prod.www.eulerian.net
 prodbcava.gbc.criteo.com
 prodejher.cz

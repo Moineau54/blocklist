@@ -109705,6 +109705,7 @@ prod.tracking.refinitiv.com
 prod.uidapi.com
 prod.untd.com
 prod.us-east-1.cxm-bcn.publisher-services.amazon.dev
+prod.weatherfx.com
 prodalet.ru
 prodigiouseducation.com
 proditor.sparda.de
@@ -116916,6 +116917,7 @@ rubensfleur.cfd
 rubereroot.qpon
 rubestdealfinder.com
 rubicon.wellsfargo.com
+rubiconproject.com
 rubird.ru
 rubmdu.top
 rubrafoz.com
@@ -138203,6 +138205,7 @@ static.n0v2cdn.com
 static.nasrev.com
 static.nebulaads.com
 static.newchallenges-rtb.com
+static.newsbreak.com
 static.notgoingtouni.co.uk
 static.onelyandbegan.org
 static.osalta.eu
@@ -159078,6 +159081,7 @@ weasonszymite.qpon
 weather-analytics-events.apple.com
 weather-analytics-events.news.apple-dns.net
 weather-community-drcn.weather.dbankcloud.cn
+weather.com/api/v1/p/redux-dal
 weathermimish.qpon
 weatherplllatform.com
 weavekidnapfreaky.com

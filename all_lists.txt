@@ -1048545,6 +1048545,7 @@ privacyform.com
 privacyfriendly.netlify.app
 privacyhelpage2025.site
 privacymails.space
+privacymanager.io
 privacymps.merchantprocessorsolutions.com
 privacynetwork.autos
 privacynetworksafe.autos
@@ -1049128,6 +1049129,7 @@ prod.us-east-1.cxm-bcn.publisher-services.amazon.dev
 prod.us-east-1.forester.a2z.com
 prod.us-west-2.forester.a2z.com
 prod.us.gbc.criteo.com
+prod.weatherfx.com
 prod.www.eulerian.net
 prod22.clab.fr
 prodabldex.com
@@ -1129539,6 +1129541,7 @@ static.nasrev.com
 static.nebulaads.com
 static.net.daraz.com
 static.newchallenges-rtb.com
+static.newsbreak.com
 static.nl3.eu.criteo.net
 static.nl3.vip.prod.criteo.net
 static.notgoingtouni.co.uk
@@ -1210051,6 +1210054,7 @@ weather-genius.com
 weather-messaging.com
 weather.cm
 weather.com.cn
+weather.com/api/v1/p/redux-dal
 weather.gov
 weatherbugbrowserbar.mywebsearch.com
 weatherdatahub.org

@@ -109706,6 +109706,7 @@
 ||prod.uidapi.com^$important
 ||prod.untd.com^$important
 ||prod.us-east-1.cxm-bcn.publisher-services.amazon.dev^$important
+||prod.weatherfx.com^$important
 ||prodalet.ru^$important
 ||prodigiouseducation.com^$important
 ||proditor.sparda.de^$important
@@ -116917,6 +116918,7 @@
 ||rubereroot.qpon^$important
 ||rubestdealfinder.com^$important
 ||rubicon.wellsfargo.com^$important
+||rubiconproject.com^$important
 ||rubird.ru^$important
 ||rubmdu.top^$important
 ||rubrafoz.com^$important
@@ -138204,6 +138206,7 @@
 ||static.nasrev.com^$important
 ||static.nebulaads.com^$important
 ||static.newchallenges-rtb.com^$important
+||static.newsbreak.com^$important
 ||static.notgoingtouni.co.uk^$important
 ||static.onelyandbegan.org^$important
 ||static.osalta.eu^$important
@@ -159079,6 +159082,7 @@
 ||weather-analytics-events.apple.com^$important
 ||weather-analytics-events.news.apple-dns.net^$important
 ||weather-community-drcn.weather.dbankcloud.cn^$important
+||weather.com/api/v1/p/redux-dal^$important
 ||weathermimish.qpon^$important
 ||weatherplllatform.com^$important
 ||weavekidnapfreaky.com^$important

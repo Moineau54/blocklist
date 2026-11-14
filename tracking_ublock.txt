@@ -17168,6 +17168,7 @@
 ||axpjcp.tennis-point.co.uk^$important
 ||axsgroup.tt.omtrdc.net^$important
 ||axxomovies.org^$important
+||ay.delivery^$important
 ||aydinpost.com^$important
 ||aydtkb.pikabu.ru^$important
 ||ayearofslowcooking.com^$important
@@ -85741,6 +85742,7 @@
 ||opsmail.creativereview.co.uk^$important
 ||opsveda.actonservice.com^$important
 ||opt.delta.com^$important
+||optable.co^$important
 ||optemais.com.br^$important
 ||opti-digital.com^$important
 ||opticien24.eulerian.net^$important
@@ -89438,6 +89440,7 @@
 ||privacy.us5.us.criteo.com^$important
 ||privacy.us5.vip.prod.criteo.com^$important
 ||privacyfriendly.netlify.app^$important
+||privacymanager.io^$important
 ||privacyoptout.zoominformation.com^$important
 ||privacyportal.onetrust.com^$important
 ||privadovpn.postaffiliatepro.com^$important
@@ -89547,6 +89550,7 @@
 ||prod.us-east-1.forester.a2z.com^$important
 ||prod.us-west-2.forester.a2z.com^$important
 ||prod.us.gbc.criteo.com^$important
+||prod.weatherfx.com^$important
 ||prod.www.eulerian.net^$important
 ||prodbcava.gbc.criteo.com^$important
 ||prodejher.cz^$important
