@@ -65471,6 +65471,7 @@
 ||accounts.crystaltrust-capital.com^$important
 ||accounts.doubleclick.net^$important
 ||accounts.efficencient.digital^$important
+||accounts.google.com^$important
 ||accounts.letsdoeit.com^$important
 ||accounts.m365.1drive.zip^$important
 ||accounts.marketwebb.click^$important
@@ -334298,6 +334299,7 @@
 ||cdn.justindianpornx.com^$important
 ||cdn.justporno.me^$important
 ||cdn.juzgadorama.it.com^$important
+||cdn.jwplayer.com^$important
 ||cdn.kadinguzelligi.com^$important
 ||cdn.kaizenplatform.net^$important
 ||cdn.karpatzi.com^$important
@@ -809245,6 +809247,7 @@
 ||hq1m7wt.com^$important
 ||hq1qhbh2.tmypdrvtnl.com^$important
 ||hq24x7.com^$important
+||hq2zc2zefnwmg3wcm.ay.delivery^$important
 ||hq3dart.com^$important
 ||hq3dbdsm.com^$important
 ||hq3dcomics.blogspot.al^$important
@@ -821785,6 +821788,7 @@
 ||id.grcuc.net^$important
 ||id.greatxass.com^$important
 ||id.greatxgirl.com^$important
+||id.h2.stay22.com^$important
 ||id.hentai-cosplays.com^$important
 ||id.hentai-img.com^$important
 ||id.hotbeautypic.com^$important
@@ -894639,6 +894643,7 @@
 ||k.nu-96.ru^$important
 ||k.o-554.ru^$important
 ||k.ou-86.ru^$important
+||k.p-n.io^$important
 ||k.pf6o2.ru^$important
 ||k.q210u.ru^$important
 ||k.q6t4u.ru^$important
@@ -993105,6 +993110,7 @@
 ||nr-brg-zollweger.elektroloma.com^$important
 ||nr-data.net^$important
 ||nr-data.noelleeming.co.nz^$important
+||nr-events.taboola.com^$important
 ||nr-holdings.xyz^$important
 ||nr-js.imaios.com^$important
 ||nr.bidderstack.com^$important
@@ -1048539,6 +1048545,7 @@
 ||privacyfriendly.netlify.app^$important
 ||privacyhelpage2025.site^$important
 ||privacymails.space^$important
+||privacymanager.io^$important
 ||privacymps.merchantprocessorsolutions.com^$important
 ||privacynetwork.autos^$important
 ||privacynetworksafe.autos^$important
@@ -1049122,6 +1049129,7 @@
 ||prod.us-east-1.forester.a2z.com^$important
 ||prod.us-west-2.forester.a2z.com^$important
 ||prod.us.gbc.criteo.com^$important
+||prod.weatherfx.com^$important
 ||prod.www.eulerian.net^$important
 ||prod22.clab.fr^$important
 ||prodabldex.com^$important
@@ -1079703,6 +1079711,7 @@
 ||s.vss.sh^$important
 ||s.vucko.co^$important
 ||s.vws4brkfst.com^$important
+||s.w-x.co^$important
 ||s.w5j7z0.ru^$important
 ||s.wagoda.ru^$important
 ||s.waterloochronicle.ca^$important
@@ -1122313,6 +1122322,7 @@
 ||ssl.o.webmd.com^$important
 ||ssl.o.webmdrx.com^$important
 ||ssl.o.youembody.com^$important
+||ssl.p.jwpcdn.com^$important
 ||ssl.proxiware.io^$important
 ||ssl.proxiware.org^$important
 ||ssl.pstatic.net^$important
@@ -1129531,6 +1129541,7 @@
 ||static.nebulaads.com^$important
 ||static.net.daraz.com^$important
 ||static.newchallenges-rtb.com^$important
+||static.newsbreak.com^$important
 ||static.nl3.eu.criteo.net^$important
 ||static.nl3.vip.prod.criteo.net^$important
 ||static.notgoingtouni.co.uk^$important
@@ -1131278,6 +1131289,7 @@
 ||stay-secured-online.com^$important
 ||stay-virus-free.com^$important
 ||stay.lottehotel.com^$important
+||stay22.com^$important
 ||stayaction.com^$important
 ||stayarchaicsuperstitious.com^$important
 ||stayathomeclasses.com^$important
@@ -1210042,6 +1210054,7 @@
 ||weather-messaging.com^$important
 ||weather.cm^$important
 ||weather.com.cn^$important
+||weather.com/api/v1/p/redux-dal^$important
 ||weather.gov^$important
 ||weatherbugbrowserbar.mywebsearch.com^$important
 ||weatherdatahub.org^$important
@@ -1223788,6 +1223801,7 @@
 ||www.star-cntr-5.com^$important
 ||www.statcounter.com^$important
 ||www.stats.spflow.com^$important
+||www.stay22.com^$important
 ||www.step555.ru^$important
 ||www.stephens-laughlin.com^$important
 ||www.stop-sign.com^$important

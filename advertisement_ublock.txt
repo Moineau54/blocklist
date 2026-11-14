@@ -12986,6 +12986,7 @@
 ||accounts-analyticsapp.paytm.com^$important
 ||accounts-meta-events.outsideonline.com^$important
 ||accounts.doubleclick.net^$important
+||accounts.google.com^$important
 ||accounts.petametrics.com^$important
 ||accounts.teads.tv^$important
 ||accountsdoor.com^$important
@@ -39999,6 +40000,7 @@
 ||cdn.jkpes.com^$important
 ||cdn.js.fpaudience.com^$important
 ||cdn.jst.ai^$important
+||cdn.jwplayer.com^$important
 ||cdn.kaizenplatform.net^$important
 ||cdn.karpatzi.com^$important
 ||cdn.kelpo.cloud^$important
@@ -40042,6 +40044,7 @@
 ||cdn.optmn.cloud^$important
 ||cdn.optoutadvertising.com^$important
 ||cdn.ovqds.com^$important
+||cdn.p-n.io^$important
 ||cdn.particularaudience.com^$important
 ||cdn.permutive.com^$important
 ||cdn.personare.com.br^$important
@@ -41982,6 +41985,7 @@
 ||client-telemetry-preauth.hingeprod.net^$important
 ||client-telemetry.hingeprod.net^$important
 ||client-telemetry.roblox.com^$important
+||client.aps.amazon-adsystem.com^$important
 ||client.botchk.net^$important
 ||client.midosoo.com^$important
 ||client.perimeterx.net^$important
@@ -43362,6 +43366,7 @@
 ||confidentialitydefensetshirt.com^$important
 ||confidescoffs.cfd^$important
 ||config.appjolt.com^$important
+||config.aps.amazon-adsystem.com^$important
 ||config.bdheaventouch.xyz^$important
 ||config.best4flooring.co.uk^$important
 ||config.chsmarttv.com^$important
@@ -54994,6 +54999,7 @@
 ||dsyrogvoyrsrl.space^$important
 ||dszdtt.drawelry.com^$important
 ||dszpyfbiywceq.website^$important
+||dt.adsafeprotected.com^$important
 ||dt.afvalbakdirect.nl^$important
 ||dt.alemi-zurich.com^$important
 ||dt.babysonly.de^$important
@@ -58271,6 +58277,7 @@
 ||entia.site^$important
 ||enticekakkak.qpon^$important
 ||entiremain.com^$important
+||entitlements.jwplayer.com^$important
 ||entjgcr.com^$important
 ||entlyhavebed.org^$important
 ||entrance79.top^$important
@@ -73953,6 +73960,7 @@
 ||hq.handiquilter.com^$important
 ||hq.ussportshq.com.au^$important
 ||hq1.appsflyer.com^$important
+||hq2zc2zefnwmg3wcm.ay.delivery^$important
 ||hq6vcivuykjjih.cfd^$important
 ||hqbaanqvcscwl.space^$important
 ||hqdmdsnhbhk.xyz^$important
@@ -75119,6 +75127,7 @@
 ||id.camilakurdian.com^$important
 ||id.crwdcntrl.net^$important
 ||id.db4devs.com.br^$important
+||id.h2.stay22.com^$important
 ||id.idnkt78.com^$important
 ||id5-sync.com^$important
 ||idaaypeljhbyrwu.net^$important
@@ -76108,6 +76117,7 @@
 ||images.stanleyhealthcare.sbdinc.com^$important
 ||images.swiss-equestrian.ch^$important
 ||images.tableau.com^$important
+||images.taboola.com^$important
 ||images.uhealthsystem.miami.edu^$important
 ||images.ultipro.ultimatesoftware.com^$important
 ||images.uni.une.edu.au^$important
@@ -76144,6 +76154,7 @@
 ||imap.dpsl.net^$important
 ||imapi-sg.isnssdk.com^$important
 ||imarker.ru^$important
+||imasdk.googleapis.com^$important
 ||imata.signetlondon.com^$important
 ||imbandptoses.world^$important
 ||imbedsclopped.qpon^$important
@@ -81123,6 +81134,7 @@
 ||k.laredoute.pt^$important
 ||k.laredoute.ru^$important
 ||k.laredoute.se^$important
+||k.p-n.io^$important
 ||k.streamrail.com^$important
 ||k.total.fr^$important
 ||k.truffaut.com^$important
@@ -101184,6 +101196,7 @@
 ||nqzvxx.naturekind.co.kr^$important
 ||nr-beacon.movingimage.com^$important
 ||nr-data.net^$important
+||nr-events.taboola.com^$important
 ||nr.bidderstack.com^$important
 ||nr.static.mmcdn.com^$important
 ||nr.taboola.com^$important
@@ -109200,6 +109213,7 @@
 ||prd-collector-anon.playbuzz.com^$important
 ||prd-collector-platform.ex.co^$important
 ||prd.api.bleacherreport.com^$important
+||prd.jwpltx.com^$important
 ||prdqdbzquveuz.online^$important
 ||prdredir.com^$important
 ||prdwebcollector.ruetracking.com^$important
@@ -109692,6 +109706,7 @@
 ||prod.uidapi.com^$important
 ||prod.untd.com^$important
 ||prod.us-east-1.cxm-bcn.publisher-services.amazon.dev^$important
+||prod.weatherfx.com^$important
 ||prodalet.ru^$important
 ||prodigiouseducation.com^$important
 ||proditor.sparda.de^$important
@@ -116903,6 +116918,7 @@
 ||rubereroot.qpon^$important
 ||rubestdealfinder.com^$important
 ||rubicon.wellsfargo.com^$important
+||rubiconproject.com^$important
 ||rubird.ru^$important
 ||rubmdu.top^$important
 ||rubrafoz.com^$important
@@ -132808,6 +132824,7 @@
 ||ssl.o.vitals.com^$important
 ||ssl.o.webmdrx.com^$important
 ||ssl.o.youembody.com^$important
+||ssl.p.jwpcdn.com^$important
 ||ssl.proxiware.io^$important
 ||ssl.proxiware.org^$important
 ||ssl.sc.amc.devk.de^$important
@@ -138189,6 +138206,7 @@
 ||static.nasrev.com^$important
 ||static.nebulaads.com^$important
 ||static.newchallenges-rtb.com^$important
+||static.newsbreak.com^$important
 ||static.notgoingtouni.co.uk^$important
 ||static.onelyandbegan.org^$important
 ||static.osalta.eu^$important
@@ -139495,6 +139513,7 @@
 ||stautsoarsoaw.net^$important
 ||stawhaithimp.net^$important
 ||stax.kr^$important
+||stay22.com^$important
 ||stayaction.com^$important
 ||stayarchaicsuperstitious.com^$important
 ||stayclockwise.com^$important
@@ -159063,6 +159082,7 @@
 ||weather-analytics-events.apple.com^$important
 ||weather-analytics-events.news.apple-dns.net^$important
 ||weather-community-drcn.weather.dbankcloud.cn^$important
+||weather.com/api/v1/p/redux-dal^$important
 ||weathermimish.qpon^$important
 ||weatherplllatform.com^$important
 ||weavekidnapfreaky.com^$important
@@ -161797,6 +161817,7 @@
 ||www.stape.aslocacoes.com^$important
 ||www.statcounter.com^$important
 ||www.stats.spflow.com^$important
+||www.stay22.com^$important
 ||www.step555.ru^$important
 ||www.support.jolchobi.in^$important
 ||www.tamgrt.com^$important

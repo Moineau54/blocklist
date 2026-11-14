@@ -12986,6 +12986,7 @@ accountorgeats.help
 accounts-analyticsapp.paytm.com
 accounts-meta-events.outsideonline.com
 accounts.doubleclick.net
+accounts.google.com
 accounts.petametrics.com
 accounts.teads.tv
 accountsdoor.com
@@ -39999,6 +40000,7 @@ cdn.jhoncj.com
 cdn.jkpes.com
 cdn.js.fpaudience.com
 cdn.jst.ai
+cdn.jwplayer.com
 cdn.kaizenplatform.net
 cdn.karpatzi.com
 cdn.kelpo.cloud
@@ -40042,6 +40044,7 @@ cdn.onthe.io
 cdn.optmn.cloud
 cdn.optoutadvertising.com
 cdn.ovqds.com
+cdn.p-n.io
 cdn.particularaudience.com
 cdn.permutive.com
 cdn.personare.com.br
@@ -41982,6 +41985,7 @@ client-sdk.hackle.io
 client-telemetry-preauth.hingeprod.net
 client-telemetry.hingeprod.net
 client-telemetry.roblox.com
+client.aps.amazon-adsystem.com
 client.botchk.net
 client.midosoo.com
 client.perimeterx.net
@@ -43362,6 +43366,7 @@ confidencetalks.com
 confidentialitydefensetshirt.com
 confidescoffs.cfd
 config.appjolt.com
+config.aps.amazon-adsystem.com
 config.bdheaventouch.xyz
 config.best4flooring.co.uk
 config.chsmarttv.com
@@ -54994,6 +54999,7 @@ dsyilztilhief.space
 dsyrogvoyrsrl.space
 dszdtt.drawelry.com
 dszpyfbiywceq.website
+dt.adsafeprotected.com
 dt.afvalbakdirect.nl
 dt.alemi-zurich.com
 dt.babysonly.de
@@ -58271,6 +58277,7 @@ enthusiastictemper.com
 entia.site
 enticekakkak.qpon
 entiremain.com
+entitlements.jwplayer.com
 entjgcr.com
 entlyhavebed.org
 entrance79.top
@@ -73953,6 +73960,7 @@ hpzvitkflstxx.website
 hq.handiquilter.com
 hq.ussportshq.com.au
 hq1.appsflyer.com
+hq2zc2zefnwmg3wcm.ay.delivery
 hq6vcivuykjjih.cfd
 hqbaanqvcscwl.space
 hqdmdsnhbhk.xyz
@@ -75119,6 +75127,7 @@ id-visitors.com
 id.camilakurdian.com
 id.crwdcntrl.net
 id.db4devs.com.br
+id.h2.stay22.com
 id.idnkt78.com
 id5-sync.com
 idaaypeljhbyrwu.net
@@ -76108,6 +76117,7 @@ images.ssbusiness.samsung.com
 images.stanleyhealthcare.sbdinc.com
 images.swiss-equestrian.ch
 images.tableau.com
+images.taboola.com
 images.uhealthsystem.miami.edu
 images.ultipro.ultimatesoftware.com
 images.uni.une.edu.au
@@ -76144,6 +76154,7 @@ imamateblithe.cfd
 imap.dpsl.net
 imapi-sg.isnssdk.com
 imarker.ru
+imasdk.googleapis.com
 imata.signetlondon.com
 imbandptoses.world
 imbedsclopped.qpon
@@ -81123,6 +81134,7 @@ k.laredoute.es
 k.laredoute.pt
 k.laredoute.ru
 k.laredoute.se
+k.p-n.io
 k.streamrail.com
 k.total.fr
 k.truffaut.com
@@ -101184,6 +101196,7 @@ nqyuel589fq5.esgrounding.com
 nqzvxx.naturekind.co.kr
 nr-beacon.movingimage.com
 nr-data.net
+nr-events.taboola.com
 nr.bidderstack.com
 nr.static.mmcdn.com
 nr.taboola.com
@@ -109200,6 +109213,7 @@ prd-collector-anon.ex.co
 prd-collector-anon.playbuzz.com
 prd-collector-platform.ex.co
 prd.api.bleacherreport.com
+prd.jwpltx.com
 prdqdbzquveuz.online
 prdredir.com
 prdwebcollector.ruetracking.com
@@ -109692,6 +109706,7 @@ prod.tracking.refinitiv.com
 prod.uidapi.com
 prod.untd.com
 prod.us-east-1.cxm-bcn.publisher-services.amazon.dev
+prod.weatherfx.com
 prodalet.ru
 prodigiouseducation.com
 proditor.sparda.de
@@ -116903,6 +116918,7 @@ rubensfleur.cfd
 rubereroot.qpon
 rubestdealfinder.com
 rubicon.wellsfargo.com
+rubiconproject.com
 rubird.ru
 rubmdu.top
 rubrafoz.com
@@ -132808,6 +132824,7 @@ ssl.o.univadis.it
 ssl.o.vitals.com
 ssl.o.webmdrx.com
 ssl.o.youembody.com
+ssl.p.jwpcdn.com
 ssl.proxiware.io
 ssl.proxiware.org
 ssl.sc.amc.devk.de
@@ -138189,6 +138206,7 @@ static.n0v2cdn.com
 static.nasrev.com
 static.nebulaads.com
 static.newchallenges-rtb.com
+static.newsbreak.com
 static.notgoingtouni.co.uk
 static.onelyandbegan.org
 static.osalta.eu
@@ -139495,6 +139513,7 @@ staussoocoaftoo.net
 stautsoarsoaw.net
 stawhaithimp.net
 stax.kr
+stay22.com
 stayaction.com
 stayarchaicsuperstitious.com
 stayclockwise.com
@@ -159063,6 +159082,7 @@ weasonszymite.qpon
 weather-analytics-events.apple.com
 weather-analytics-events.news.apple-dns.net
 weather-community-drcn.weather.dbankcloud.cn
+weather.com/api/v1/p/redux-dal
 weathermimish.qpon
 weatherplllatform.com
 weavekidnapfreaky.com
@@ -161797,6 +161817,7 @@ www.stadiumstage.com
 www.stape.aslocacoes.com
 www.statcounter.com
 www.stats.spflow.com
+www.stay22.com
 www.step555.ru
 www.support.jolchobi.in
 www.tamgrt.com
