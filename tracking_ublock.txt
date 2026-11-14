@@ -93650,6 +93650,7 @@
 ||s.vi-serve.com^$important
 ||s.vibe.co^$important
 ||s.vucko.co^$important
+||s.w-x.co^$important
 ||s.waterloochronicle.ca^$important
 ||s.wayfair.com^$important
 ||s.wellandtribune.ca^$important
