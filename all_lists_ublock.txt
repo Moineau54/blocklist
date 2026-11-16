@@ -189448,10 +189448,8 @@
 ||autoscout24.be.d1.sc.omtrdc.net^$important
 ||autoscout24.be.ssl.d1.sc.omtrdc.net^$important
 ||autoscout24.bg.d1.sc.omtrdc.net^$important
-||autoscout24.de^$important
 ||autoscout24.de.d1.sc.omtrdc.net^$important
 ||autoscout24.de.ssl.d1.sc.omtrdc.net^$important
-||autoscout24.fr^$important
 ||autoscout24.nl.d1.sc.omtrdc.net^$important
 ||autoscout24.pl.d1.sc.omtrdc.net^$important
 ||autoscout24.se.d1.sc.omtrdc.net^$important
@@ -998562,6 +998560,7 @@
 ||obsessionphrases.com^$important
 ||obsessvr.com^$important
 ||obseu.netgreencolumn.com^$important
+||obseu.seroundprince.com^$important
 ||obsidianabysswaits.pro^$important
 ||obsidiandawn.com^$important
 ||obsidianechoes.shop^$important

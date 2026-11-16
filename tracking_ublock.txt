@@ -16824,8 +16824,6 @@
 ||autorevue.cz^$important
 ||autosactual.com^$important
 ||autoscout24.112.2o7.net^$important
-||autoscout24.de^$important
-||autoscout24.fr^$important
 ||autosecurite.com^$important
 ||autosite.com^$important
 ||autosoft.cz^$important

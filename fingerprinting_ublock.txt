@@ -7,6 +7,7 @@
 ||googleads.g.doubleclick.net^$important
 ||li.protechts.net^$important
 ||merchantpool1.linkedin.com^$important
+||obseu.seroundprince.com^$important
 ||pagead2.googlesyndication.com^$important
 ||pixel.adsafeprotected.com^$important
 ||static.adsafeprotected.com^$important
