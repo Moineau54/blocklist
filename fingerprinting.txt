@@ -6,6 +6,7 @@ fpnpmcdn.net
 googleads.g.doubleclick.net
 li.protechts.net
 merchantpool1.linkedin.com
+obseu.seroundprince.com
 pagead2.googlesyndication.com
 pixel.adsafeprotected.com
 static.adsafeprotected.com

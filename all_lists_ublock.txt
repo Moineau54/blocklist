@@ -998560,6 +998560,7 @@
 ||obsessionphrases.com^$important
 ||obsessvr.com^$important
 ||obseu.netgreencolumn.com^$important
+||obseu.seroundprince.com^$important
 ||obsidianabysswaits.pro^$important
 ||obsidiandawn.com^$important
 ||obsidianechoes.shop^$important
