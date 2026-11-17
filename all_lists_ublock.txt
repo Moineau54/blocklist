@@ -140831,6 +140831,7 @@
 ||analytics.creem.com^$important
 ||analytics.crowdkeep.com^$important
 ||analytics.crownblockdallas.com^$important
+||analytics.cube-digital.media^$important
 ||analytics.cyrillus.be^$important
 ||analytics.cyrillus.ch^$important
 ||analytics.cyrillus.com^$important
@@ -154836,6 +154837,7 @@
 ||api-eu.bidmachine.io^$important
 ||api-eu.cleverpush.com^$important
 ||api-eu.gameanalytics.com^$important
+||api-eu.mixpanel.com^$important
 ||api-eu1.hubapi.com^$important
 ||api-exc.hiaiabc.com^$important
 ||api-exp.dfs.uk^$important
@@ -323237,6 +323239,7 @@
 ||carbohydratebuffetwatches.com^$important
 ||carbomolco.pro^$important
 ||carbon-bonsai-621.appspot.com^$important
+||carbon-cdn.ccgateway.net^$important
 ||carbon-chems.com^$important
 ||carbon-vertrieb.com^$important
 ||carbon38.com^$important
@@ -442264,6 +442267,7 @@
 ||d-cem.com^$important
 ||d-ceramic.ru^$important
 ||d-class-personnel-9837.tumblr.com^$important
+||d-code.liadm.com^$important
 ||d-codepages.com^$important
 ||d-collect.jennifersoft.com^$important
 ||d-collector.jennifersoft.com^$important
@@ -516912,6 +516916,7 @@
 ||e.bondagevalley.cc^$important
 ||e.cdngeek.com^$important
 ||e.channelexco.com^$important
+||e.clarity.ms^$important
 ||e.cloudsecurityalliance.org^$important
 ||e.coka.la^$important
 ||e.comedycentralporn.com^$important
@@ -524355,6 +524360,7 @@
 ||edge.truistmomentum.com^$important
 ||edge.truistsecurities.com^$important
 ||edge.tt.omtrdc.net^$important
+||edge.venatusmedia.com^$important
 ||edge.virginplus.ca^$important
 ||edge.vironafashion.com^$important
 ||edge.vr.de^$important
@@ -616220,6 +616226,7 @@
 ||fkzlot.giftmind.shop^$important
 ||fkzmvsmbnblvu.life^$important
 ||fkzoptometrists.co.za^$important
+||fl-cdn2.contentabc.com^$important
 ||fl-nit.tumblr.com^$important
 ||fl-postaoffice.com^$important
 ||fl.7s9r.ir^$important
@@ -700321,6 +700328,7 @@
 ||geo.ngtv.io^$important
 ||geo.perezhilton.com^$important
 ||geo.play.it^$important
+||geo.privacymanager.io^$important
 ||geo.query.yahoo.com^$important
 ||geo.settings-win.data.microsoft.com.akadns.net^$important
 ||geo.settings.data.microsoft.com.akadns.net^$important
@@ -718654,6 +718662,7 @@
 ||go.aerocompact.com^$important
 ||go.aerzen-usa.com^$important
 ||go.afa.org^$important
+||go.affec.tv^$important
 ||go.affiliatesleague.com^$important
 ||go.affiliatetakeover.com^$important
 ||go.affiliationcloud.com^$important
@@ -760513,6 +760522,7 @@
 ||hb.tt.omtrdc.net^$important
 ||hb.undertone.com^$important
 ||hb.vhsrv.com^$important
+||hb.vntsm.com^$important
 ||hb.wi9ik.ru^$important
 ||hb.yahoo.net^$important
 ||hb.yu5k.ru^$important
@@ -894579,6 +894589,7 @@
 ||k.c646a.ru^$important
 ||k.calledelregalo.es^$important
 ||k.cdn-748.ru^$important
+||k.clarity.ms^$important
 ||k.cocooncenter.com^$important
 ||k.cpc-8-u.ru^$important
 ||k.cryptobase.icu^$important
@@ -924520,6 +924531,7 @@
 ||link.roveworld.xyz^$important
 ||link.ru^$important
 ||link.rubicon.com^$important
+||link.rubiconproject.com^$important
 ||link.ruhgu.com^$important
 ||link.saba.edu^$important
 ||link.saganworks.com^$important
@@ -996950,6 +996962,10 @@
 ||o4089.marbletug.ru^$important
 ||o40d17vln.com^$important
 ||o44e59aio5jk9q.org^$important
+||o4507529654173696.ingest.de.sentry.io^$important
+||o4508211284606976.ingest.us.sentry.io^$important
+||o4509816303976448.ingest.us.sentry.io^$important
+||o4511504952786944.ingest.us.sentry.io^$important
 ||o45vbngfupiq2u6qyxl.cfd^$important
 ||o46.843.mytemp.website^$important
 ||o4brb-iiaaa-aaaaj-qnnfq-cai.icp0.io^$important
@@ -1025229,6 +1025245,7 @@
 ||p.c34uu.ru^$important
 ||p.cab.ua^$important
 ||p.circaworks.com^$important
+||p.clarity.ms^$important
 ||p.classroombookings.com^$important
 ||p.codio.com^$important
 ||p.connorgp.com^$important
@@ -1030953,6 +1030970,7 @@
 ||pazzenovel.pro^$important
 ||pb-hofmann-es.eulerian.net^$important
 ||pb-hofmann-pt.eulerian.net^$important
+||pb-ing-02.ccgateway.net^$important
 ||pb.adriver.ru^$important
 ||pb.bi.gitv.tv^$important
 ||pb.com^$important
@@ -1048955,6 +1048973,7 @@
 ||probtc.org^$important
 ||probtn.com^$important
 ||proc-dotgov.us^$important
+||proc.ad.cpe.dotomi.com^$important
 ||procadiffr.pro^$important
 ||procainsip.pro^$important
 ||procalotti.pro^$important
@@ -1054206,6 +1054225,7 @@
 ||puzzlingfall.com^$important
 ||puzzlingfoxhound.pro^$important
 ||pv-telegrem.top^$important
+||pv-track.venatus.com^$important
 ||pv.2f8-2.ru^$important
 ||pv.3e7u.ru^$important
 ||pv.5sv1g.ru^$important
@@ -1079465,6 +1079485,7 @@
 ||s.lybrae.nl^$important
 ||s.madamegermaine.com^$important
 ||s.magikflame.com^$important
+||s.magsrv.com^$important
 ||s.makolper.com^$important
 ||s.maldex.be^$important
 ||s.mannabag.it^$important
@@ -1079529,6 +1079550,7 @@
 ||s.optidigital.com^$important
 ||s.oralblow.com^$important
 ||s.orangeville.com^$important
+||s.orbsrv.com^$important
 ||s.osann.de^$important
 ||s.ourwindsor.ca^$important
 ||s.outreachmagic.io^$important
@@ -1086678,6 +1086700,7 @@
 ||scrippshgtvpro.112.2o7.net^$important
 ||scrippsrecipezaar.112.2o7.net^$important
 ||script-ad.mobadme.jp^$important
+||script-api.ccgateway.net^$important
 ||script-bd.baixing.net^$important
 ||script-hotjar.com^$important
 ||script-sh.d2cdm.jp^$important
@@ -1086708,6 +1086731,7 @@
 ||scriptproxy.pie.net.pk^$important
 ||scripts-ads.s3.ir-thr-at1.arvanstorage.com^$important
 ||scripts-repo.reelevant.com^$important
+||scripts.clarity.ms^$important
 ||scripts.cleverwebserver.com^$important
 ||scripts.dadata.com.br^$important
 ||scripts.host.bannerflow.com^$important
@@ -1088329,6 +1088353,7 @@
 ||secure.cart8draw.com^$important
 ||secure.cast9half.com^$important
 ||secure.cavy9soho.com^$important
+||secure.cdn.fastclick.net^$important
 ||secure.check.beautyestetique24.com^$important
 ||secure.check.beautypro365.com^$important
 ||secure.check.fitstore365.com^$important
@@ -1139991,6 +1140016,7 @@
 ||sync.bruno.wine^$important
 ||sync.clearnview.com^$important
 ||sync.colossusssp.com^$important
+||sync.crwdcntrl.net^$important
 ||sync.da.us.gbc.criteo.com^$important
 ||sync.dareck.it.com^$important
 ||sync.fox.com^$important
@@ -1186314,6 +1186340,7 @@
 ||us-ads.gbc.criteo.com^$important
 ||us-affiliate.gbc.criteo.com^$important
 ||us-amrkps.com^$important
+||us-assets.i.posthog.com^$important
 ||us-auth-robinhod.webflow.io^$important
 ||us-bank-cancel-transaction.com^$important
 ||us-battie.net^$important
@@ -1197158,6 +1197185,7 @@
 ||vc-safetys.org^$important
 ||vc.5-rt.ru^$important
 ||vc.ad.lgsmartad.com^$important
+||vc.hotjar.io^$important
 ||vc.kunwersachdev.com^$important
 ||vc.rogosie4.ru^$important
 ||vc.rompishvariola.com^$important
@@ -1197209,6 +1197237,7 @@
 ||vcegpu.libas.com.tr^$important
 ||vcegsisugrwd.bid^$important
 ||vceilinichego.ru^$important
+||vceiulduuzdlisqfmdmd.supabase.co^$important
 ||vcej.zizilove.ru.com^$important
 ||vcejwt.omneo.ru.com^$important
 ||vcejxz.interiors.fr^$important

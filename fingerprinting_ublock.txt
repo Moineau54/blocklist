@@ -5,6 +5,7 @@
 ||dpm.demdex.net^$important
 ||fpnpmcdn.net^$important
 ||googleads.g.doubleclick.net^$important
+||jsc.mgid.com^$important
 ||li.protechts.net^$important
 ||merchantpool1.linkedin.com^$important
 ||obseu.seroundprince.com^$important

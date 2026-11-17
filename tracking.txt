@@ -13246,6 +13246,7 @@ analytics.cosmopolitanmag.com.tr
 analytics.cpf.gov.sg
 analytics.crazygames.com
 analytics.crowdkeep.com
+analytics.cube-digital.media
 analytics.cyrillus.be
 analytics.cyrillus.ch
 analytics.cyrillus.com
@@ -14296,6 +14297,7 @@ api-engagement.bloomreach.com
 api-erica.pannon.hu
 api-esp.piano.io
 api-eu.cleverpush.com
+api-eu.mixpanel.com
 api-eu1.hubapi.com
 api-exp.dfs.uk
 api-exponea.csob.sk
@@ -32942,6 +32944,7 @@ e.amcham.be
 e.anheuser-busch.com
 e.beckmancoulter.com
 e.channelexco.com
+e.clarity.ms
 e.cloudsecurityalliance.org
 e.crashlytics.com
 e.crazy-tricks.com
@@ -53297,6 +53300,7 @@ k.brandalley.co.nl
 k.brandalley.de
 k.brandalley.es
 k.brandalley.fr
+k.clarity.ms
 k.cocooncenter.com
 k.da.us.gbc.criteo.com
 k.dnsdelegation.io
@@ -81725,6 +81729,10 @@ o3gxzoewxl1x.cp.zomro.com
 o400cab.gbc.criteo.com
 o400da.us.gbc.criteo.com
 o403-fed.gbc.criteo.com
+o4507529654173696.ingest.de.sentry.io
+o4508211284606976.ingest.us.sentry.io
+o4509816303976448.ingest.us.sentry.io
+o4511504952786944.ingest.us.sentry.io
 o552333.ingest.sentry.io
 o68c.sfr.fr
 o8.hyatt.com
@@ -86277,6 +86285,7 @@ p.aty.sohu.com
 p.brid.tv
 p.cab.ua
 p.circaworks.com
+p.clarity.ms
 p.classroombookings.com
 p.codio.com
 p.connorgp.com
@@ -95567,12 +95576,14 @@ script-tutorials.com
 script.4dex.io
 script.ac
 script.crazyegg.com
+script.hotjar.com
 script.ioam.de
 scripte-monster.de
 scriptgenerator.net
 scriptlance.com
 scriptnulledthemes.net
 scriptnuts.com
+scripts.clarity.ms
 scripts.dadata.com.br
 scripts.opti-digital.com
 scripts.psyma.com
@@ -105105,6 +105116,7 @@ squirrelmail.fed.gbc.criteo.com
 squishybears.com
 sqydhw.tmall.com
 sr-ad-lgsmartad-com.aws-prd.net
+sr-client-cfg.amplitude.com
 sr.ad.lgsmartad.com
 sr.lgsmartad.com
 sr59t7wbx5.claricelin.com
@@ -114280,6 +114292,7 @@ tr4.mailperf.com
 tr5.mailperf.com
 tr5.mperf.com
 tr6.mperf.com
+tr6.snapchat.com
 trabajarporelmundo.org
 trabajo.gbc.criteo.com
 trac.roomster.com
@@ -117536,6 +117549,7 @@ us-2-cafw4cuaifsvnlnjqzehy2dk.gbc.criteo.com
 us-ad-lgsmartad-com.aws-prd.net
 us-ads.gbc.criteo.com
 us-affiliate.gbc.criteo.com
+us-assets.i.posthog.com
 us-behavior.apitd.net
 us-book.gbc.criteo.com
 us-cafw5cuaifsvnlnjqzehy0dk.gbc.criteo.com
@@ -118586,6 +118600,7 @@ vbyoyg.couturecandy.com
 vc-0-cafw4cuaifsvnlnjqzehy0dk.cab.gbc.criteo.com
 vc-ad-lgsmartad-com.aws-prd.net
 vc.ad.lgsmartad.com
+vc.hotjar.io
 vcbela.com
 vcf.gov
 vch.eulerian.net

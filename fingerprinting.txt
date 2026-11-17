@@ -4,6 +4,7 @@ cdn.adsafeprotected.com
 dpm.demdex.net
 fpnpmcdn.net
 googleads.g.doubleclick.net
+jsc.mgid.com
 li.protechts.net
 merchantpool1.linkedin.com
 obseu.seroundprince.com

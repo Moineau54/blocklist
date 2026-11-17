@@ -13247,6 +13247,7 @@
 ||analytics.cpf.gov.sg^$important
 ||analytics.crazygames.com^$important
 ||analytics.crowdkeep.com^$important
+||analytics.cube-digital.media^$important
 ||analytics.cyrillus.be^$important
 ||analytics.cyrillus.ch^$important
 ||analytics.cyrillus.com^$important
@@ -14297,6 +14298,7 @@
 ||api-erica.pannon.hu^$important
 ||api-esp.piano.io^$important
 ||api-eu.cleverpush.com^$important
+||api-eu.mixpanel.com^$important
 ||api-eu1.hubapi.com^$important
 ||api-exp.dfs.uk^$important
 ||api-exponea.csob.sk^$important
@@ -32943,6 +32945,7 @@
 ||e.anheuser-busch.com^$important
 ||e.beckmancoulter.com^$important
 ||e.channelexco.com^$important
+||e.clarity.ms^$important
 ||e.cloudsecurityalliance.org^$important
 ||e.crashlytics.com^$important
 ||e.crazy-tricks.com^$important
@@ -53298,6 +53301,7 @@
 ||k.brandalley.de^$important
 ||k.brandalley.es^$important
 ||k.brandalley.fr^$important
+||k.clarity.ms^$important
 ||k.cocooncenter.com^$important
 ||k.da.us.gbc.criteo.com^$important
 ||k.dnsdelegation.io^$important
@@ -81726,6 +81730,10 @@
 ||o400cab.gbc.criteo.com^$important
 ||o400da.us.gbc.criteo.com^$important
 ||o403-fed.gbc.criteo.com^$important
+||o4507529654173696.ingest.de.sentry.io^$important
+||o4508211284606976.ingest.us.sentry.io^$important
+||o4509816303976448.ingest.us.sentry.io^$important
+||o4511504952786944.ingest.us.sentry.io^$important
 ||o552333.ingest.sentry.io^$important
 ||o68c.sfr.fr^$important
 ||o8.hyatt.com^$important
@@ -86278,6 +86286,7 @@
 ||p.brid.tv^$important
 ||p.cab.ua^$important
 ||p.circaworks.com^$important
+||p.clarity.ms^$important
 ||p.classroombookings.com^$important
 ||p.codio.com^$important
 ||p.connorgp.com^$important
@@ -95568,12 +95577,14 @@
 ||script.4dex.io^$important
 ||script.ac^$important
 ||script.crazyegg.com^$important
+||script.hotjar.com^$important
 ||script.ioam.de^$important
 ||scripte-monster.de^$important
 ||scriptgenerator.net^$important
 ||scriptlance.com^$important
 ||scriptnulledthemes.net^$important
 ||scriptnuts.com^$important
+||scripts.clarity.ms^$important
 ||scripts.dadata.com.br^$important
 ||scripts.opti-digital.com^$important
 ||scripts.psyma.com^$important
@@ -105106,6 +105117,7 @@
 ||squishybears.com^$important
 ||sqydhw.tmall.com^$important
 ||sr-ad-lgsmartad-com.aws-prd.net^$important
+||sr-client-cfg.amplitude.com^$important
 ||sr.ad.lgsmartad.com^$important
 ||sr.lgsmartad.com^$important
 ||sr59t7wbx5.claricelin.com^$important
@@ -114281,6 +114293,7 @@
 ||tr5.mailperf.com^$important
 ||tr5.mperf.com^$important
 ||tr6.mperf.com^$important
+||tr6.snapchat.com^$important
 ||trabajarporelmundo.org^$important
 ||trabajo.gbc.criteo.com^$important
 ||trac.roomster.com^$important
@@ -117537,6 +117550,7 @@
 ||us-ad-lgsmartad-com.aws-prd.net^$important
 ||us-ads.gbc.criteo.com^$important
 ||us-affiliate.gbc.criteo.com^$important
+||us-assets.i.posthog.com^$important
 ||us-behavior.apitd.net^$important
 ||us-book.gbc.criteo.com^$important
 ||us-cafw5cuaifsvnlnjqzehy0dk.gbc.criteo.com^$important
@@ -118587,6 +118601,7 @@
 ||vc-0-cafw4cuaifsvnlnjqzehy0dk.cab.gbc.criteo.com^$important
 ||vc-ad-lgsmartad-com.aws-prd.net^$important
 ||vc.ad.lgsmartad.com^$important
+||vc.hotjar.io^$important
 ||vcbela.com^$important
 ||vcf.gov^$important
 ||vch.eulerian.net^$important

@@ -39264,6 +39264,7 @@
 ||caraunmete.com^$important
 ||caravanexhale.com^$important
 ||carawayhonest.com^$important
+||carbon-cdn.ccgateway.net^$important
 ||carbonads.com^$important
 ||carbonads.net^$important
 ||carbonateinvention.com^$important
@@ -46073,6 +46074,7 @@
 ||d-agency.net^$important
 ||d-bi.fr^$important
 ||d-can.youtheory.com^$important
+||d-code.liadm.com^$important
 ||d-collector.jennifersoft.com^$important
 ||d-kint.d-kintetsu.co.jp^$important
 ||d-log.asahi.co.jp^$important
@@ -56562,6 +56564,7 @@
 ||edge.thewolf.ca^$important
 ||edge.treehousetv.com^$important
 ||edge.truist.com^$important
+||edge.venatusmedia.com^$important
 ||edge.virginplus.ca^$important
 ||edge.vironafashion.com^$important
 ||edge.vr.de^$important
@@ -57199,6 +57202,7 @@
 ||elativeknut.cfd^$important
 ||elaxdpsxm.com^$important
 ||elaydark.com^$important
+||elb.the-ozone-project.com^$important
 ||elbowhoopman.cyou^$important
 ||elcineencasa.com^$important
 ||elclaq.icu^$important
@@ -62132,6 +62136,7 @@
 ||fkyudyohxpdao.website^$important
 ||fkyxpjyduvwbw.online^$important
 ||fkzmvsmbnblvu.life^$important
+||fl-cdn2.contentabc.com^$important
 ||fl.babytoybd.xyz^$important
 ||fl.bdbazarr.xyz^$important
 ||fl.dhakamart.shop^$important
@@ -65113,6 +65118,7 @@
 ||geo.mtvnn.com^$important
 ||geo.perezhilton.com^$important
 ||geo.play.it^$important
+||geo.privacymanager.io^$important
 ||geo.theawesomer.com^$important
 ||geo.thehindu.com^$important
 ||geo.wpforms.com^$important
@@ -66396,6 +66402,7 @@
 ||go.aculab.com^$important
 ||go.adaquest.com^$important
 ||go.adxoclick.com^$important
+||go.affec.tv^$important
 ||go.affiliatesleague.com^$important
 ||go.affiliatetakeover.com^$important
 ||go.affiliationcloud.com^$important
@@ -72084,6 +72091,7 @@
 ||hb.headbidder.net^$important
 ||hb.improvedigital.com^$important
 ||hb.vhsrv.com^$important
+||hb.vntsm.com^$important
 ||hb.yahoo.net^$important
 ||hb6i9t1mi5ufhv.cfd^$important
 ||hb94dnbe.de^$important
@@ -74772,6 +74780,7 @@
 ||i.4kporn.xxx^$important
 ||i.bigin.io^$important
 ||i.cdnboosler.cloud^$important
+||i.clean.gg^$important
 ||i.compendium.com^$important
 ||i.connectad.io^$important
 ||i.deedmortgage.com^$important
@@ -75258,6 +75267,7 @@
 ||idvideo678.blogspot.com^$important
 ||idwrx.com^$important
 ||idwtsbewkufhr.space^$important
+||idx.liadm.com^$important
 ||idyllicjazz.com^$important
 ||idylsrebank.com^$important
 ||idywxtjfmiqdn.online^$important
@@ -83740,6 +83750,8 @@
 ||launches.appsflyersdk.com^$important
 ||launchingspooky.com^$important
 ||launchjack.com^$important
+||launchpad-wrapper.privacymanager.io^$important
+||launchpad.privacymanager.io^$important
 ||laundry76.top^$important
 ||laundrydesert.com^$important
 ||laurel.macrovision.com^$important
@@ -83877,6 +83889,7 @@
 ||lazyexplore.com^$important
 ||lazyfuture.pro^$important
 ||lazyishclast.qpon^$important
+||lb.eu-1-id5-sync.com^$important
 ||lb.lawboss.com^$important
 ||lb.usemaxserver.de^$important
 ||lbbah.healthletic.io^$important
@@ -83915,6 +83928,7 @@
 ||lbqbwe.wigsis.com^$important
 ||lbrceeuashhas.net^$important
 ||lbrlp.mojosportswearcompany.com^$important
+||lbs.eu-1-id5-sync.com^$important
 ||lbszsbzuupnoe.online^$important
 ||lbudo.keptcollection.com^$important
 ||lbumpethohbsp.online^$important
@@ -84946,6 +84960,7 @@
 ||link.oddsscanner.net^$important
 ||link.pod-display.com^$important
 ||link.ru^$important
+||link.rubiconproject.com^$important
 ||link.theworkguyoo.com^$important
 ||link.wealthoftrade.com^$important
 ||link4ads.com^$important
@@ -106240,6 +106255,7 @@
 ||payroll.mywire.org^$important
 ||payrollmerchant.com^$important
 ||payserve.com^$important
+||pb-ing-02.ccgateway.net^$important
 ||pb.adriver.ru^$important
 ||pb.i.sogou.com^$important
 ||pb.plat.services^$important
@@ -109663,6 +109679,7 @@
 ||problemscrupulous.com^$important
 ||problemsmajority.com^$important
 ||probtn.com^$important
+||proc.ad.cpe.dotomi.com^$important
 ||procarsharing.store^$important
 ||proceduredisrespect.com^$important
 ||proceedingcredulous.com^$important
@@ -110892,6 +110909,7 @@
 ||puysis.com^$important
 ||puzzlepursued.com^$important
 ||puzzlingcurrent.com^$important
+||pv-track.venatus.com^$important
 ||pv.dakawm.cc^$important
 ||pv.datacaciques.com^$important
 ||pv.hd.sohu.com^$important
@@ -116030,6 +116048,7 @@
 ||roygulonic.help^$important
 ||royzgi.giftishow.com^$important
 ||rp.hpplay.cn^$important
+||rp.liadm.com^$important
 ||rpadp.romperjack.com^$important
 ||rpazaa.xyz^$important
 ||rpbc1.raamdecoratie.com^$important
@@ -117709,6 +117728,7 @@
 ||s.lybrae.nl^$important
 ||s.madamegermaine.com^$important
 ||s.magikflame.com^$important
+||s.magsrv.com^$important
 ||s.makolper.com^$important
 ||s.maldex.be^$important
 ||s.mannabag.it^$important
@@ -117761,6 +117781,7 @@
 ||s.optidigital.com^$important
 ||s.oralblow.com^$important
 ||s.orangeville.com^$important
+||s.orbsrv.com^$important
 ||s.osann.de^$important
 ||s.ourwindsor.ca^$important
 ||s.outreachmagic.io^$important
@@ -117802,6 +117823,7 @@
 ||s.schwabensolar.com^$important
 ||s.scuolayogashanti.it^$important
 ||s.sdx.ru^$important
+||s.seedtag.com^$important
 ||s.septed.site^$important
 ||s.service.tiresplus.com^$important
 ||s.sfxfunded.com^$important
@@ -119282,6 +119304,7 @@
 ||scrippsfoodnetnew.foodnetwork.com^$important
 ||scrippshgtvnew.hgtv.com^$important
 ||script-ad.mobadme.jp^$important
+||script-api.ccgateway.net^$important
 ||script-bd.baixing.net^$important
 ||script-sh.d2cdm.jp^$important
 ||script.anura.io^$important
@@ -119684,6 +119707,7 @@
 ||secure.analytics.staybridge.com^$important
 ||secure.arrow.com^$important
 ||secure.bamsocks.com^$important
+||secure.cdn.fastclick.net^$important
 ||secure.check.beautyestetique24.com^$important
 ||secure.check.beautypro365.com^$important
 ||secure.check.fitstore365.com^$important
@@ -141604,6 +141628,7 @@
 ||sync.adspend.space^$important
 ||sync.bruno.wine^$important
 ||sync.clearnview.com^$important
+||sync.crwdcntrl.net^$important
 ||sync.getpublica.com^$important
 ||sync.go.sonobi.com^$important
 ||sync.morgdm.ru^$important

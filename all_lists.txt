@@ -140831,6 +140831,7 @@ analytics.crea.ca
 analytics.creem.com
 analytics.crowdkeep.com
 analytics.crownblockdallas.com
+analytics.cube-digital.media
 analytics.cyrillus.be
 analytics.cyrillus.ch
 analytics.cyrillus.com
@@ -154836,6 +154837,7 @@ api-eu.adsymptotic.com
 api-eu.bidmachine.io
 api-eu.cleverpush.com
 api-eu.gameanalytics.com
+api-eu.mixpanel.com
 api-eu1.hubapi.com
 api-exc.hiaiabc.com
 api-exp.dfs.uk
@@ -323237,6 +323239,7 @@ carbodyrepairswestsussex.com
 carbohydratebuffetwatches.com
 carbomolco.pro
 carbon-bonsai-621.appspot.com
+carbon-cdn.ccgateway.net
 carbon-chems.com
 carbon-vertrieb.com
 carbon38.com
@@ -442264,6 +442267,7 @@ d-can.youtheory.com
 d-cem.com
 d-ceramic.ru
 d-class-personnel-9837.tumblr.com
+d-code.liadm.com
 d-codepages.com
 d-collect.jennifersoft.com
 d-collector.jennifersoft.com
@@ -516912,6 +516916,7 @@ e.blitz.bg
 e.bondagevalley.cc
 e.cdngeek.com
 e.channelexco.com
+e.clarity.ms
 e.cloudsecurityalliance.org
 e.coka.la
 e.comedycentralporn.com
@@ -524355,6 +524360,7 @@ edge.truist.com
 edge.truistmomentum.com
 edge.truistsecurities.com
 edge.tt.omtrdc.net
+edge.venatusmedia.com
 edge.virginplus.ca
 edge.vironafashion.com
 edge.vr.de
@@ -616220,6 +616226,7 @@ fkz.cruiseszip.biz
 fkzlot.giftmind.shop
 fkzmvsmbnblvu.life
 fkzoptometrists.co.za
+fl-cdn2.contentabc.com
 fl-nit.tumblr.com
 fl-postaoffice.com
 fl.7s9r.ir
@@ -700321,6 +700328,7 @@ geo.netsupportsoftware.com
 geo.ngtv.io
 geo.perezhilton.com
 geo.play.it
+geo.privacymanager.io
 geo.query.yahoo.com
 geo.settings-win.data.microsoft.com.akadns.net
 geo.settings.data.microsoft.com.akadns.net
@@ -718654,6 +718662,7 @@ go.aero.com
 go.aerocompact.com
 go.aerzen-usa.com
 go.afa.org
+go.affec.tv
 go.affiliatesleague.com
 go.affiliatetakeover.com
 go.affiliationcloud.com
@@ -760513,6 +760522,7 @@ hb.omtrdc.netespndotcom.tt.omtrdc.net
 hb.tt.omtrdc.net
 hb.undertone.com
 hb.vhsrv.com
+hb.vntsm.com
 hb.wi9ik.ru
 hb.yahoo.net
 hb.yu5k.ru
@@ -894579,6 +894589,7 @@ k.c-01e.ru
 k.c646a.ru
 k.calledelregalo.es
 k.cdn-748.ru
+k.clarity.ms
 k.cocooncenter.com
 k.cpc-8-u.ru
 k.cryptobase.icu
@@ -924520,6 +924531,7 @@ link.roomaters.com
 link.roveworld.xyz
 link.ru
 link.rubicon.com
+link.rubiconproject.com
 link.ruhgu.com
 link.saba.edu
 link.saganworks.com
@@ -996950,6 +996962,10 @@ o403-fed.gbc.criteo.com
 o4089.marbletug.ru
 o40d17vln.com
 o44e59aio5jk9q.org
+o4507529654173696.ingest.de.sentry.io
+o4508211284606976.ingest.us.sentry.io
+o4509816303976448.ingest.us.sentry.io
+o4511504952786944.ingest.us.sentry.io
 o45vbngfupiq2u6qyxl.cfd
 o46.843.mytemp.website
 o4brb-iiaaa-aaaaj-qnnfq-cai.icp0.io
@@ -1025229,6 +1025245,7 @@ p.bvqu-7.ru
 p.c34uu.ru
 p.cab.ua
 p.circaworks.com
+p.clarity.ms
 p.classroombookings.com
 p.codio.com
 p.connorgp.com
@@ -1030953,6 +1030970,7 @@ pazyre.kleszcze.ru.com
 pazzenovel.pro
 pb-hofmann-es.eulerian.net
 pb-hofmann-pt.eulerian.net
+pb-ing-02.ccgateway.net
 pb.adriver.ru
 pb.bi.gitv.tv
 pb.com
@@ -1048955,6 +1048973,7 @@ proboxingfans.com
 probtc.org
 probtn.com
 proc-dotgov.us
+proc.ad.cpe.dotomi.com
 procadiffr.pro
 procainsip.pro
 procalotti.pro
@@ -1054206,6 +1054225,7 @@ puzzlingearwig.pro
 puzzlingfall.com
 puzzlingfoxhound.pro
 pv-telegrem.top
+pv-track.venatus.com
 pv.2f8-2.ru
 pv.3e7u.ru
 pv.5sv1g.ru
@@ -1079465,6 +1079485,7 @@ s.loman.ai
 s.lybrae.nl
 s.madamegermaine.com
 s.magikflame.com
+s.magsrv.com
 s.makolper.com
 s.maldex.be
 s.mannabag.it
@@ -1079529,6 +1079550,7 @@ s.opti-digital.com
 s.optidigital.com
 s.oralblow.com
 s.orangeville.com
+s.orbsrv.com
 s.osann.de
 s.ourwindsor.ca
 s.outreachmagic.io
@@ -1086678,6 +1086700,7 @@ scrippshgtvnew.hgtv.com
 scrippshgtvpro.112.2o7.net
 scrippsrecipezaar.112.2o7.net
 script-ad.mobadme.jp
+script-api.ccgateway.net
 script-bd.baixing.net
 script-hotjar.com
 script-sh.d2cdm.jp
@@ -1086708,6 +1086731,7 @@ scriptonit-tickets.com
 scriptproxy.pie.net.pk
 scripts-ads.s3.ir-thr-at1.arvanstorage.com
 scripts-repo.reelevant.com
+scripts.clarity.ms
 scripts.cleverwebserver.com
 scripts.dadata.com.br
 scripts.host.bannerflow.com
@@ -1088329,6 +1088353,7 @@ secure.care5alea.com
 secure.cart8draw.com
 secure.cast9half.com
 secure.cavy9soho.com
+secure.cdn.fastclick.net
 secure.check.beautyestetique24.com
 secure.check.beautypro365.com
 secure.check.fitstore365.com
@@ -1139991,6 +1140016,7 @@ sync.bk128.com
 sync.bruno.wine
 sync.clearnview.com
 sync.colossusssp.com
+sync.crwdcntrl.net
 sync.da.us.gbc.criteo.com
 sync.dareck.it.com
 sync.fox.com
@@ -1186314,6 +1186340,7 @@ us-ad-lgsmartad-com.aws-prd.net
 us-ads.gbc.criteo.com
 us-affiliate.gbc.criteo.com
 us-amrkps.com
+us-assets.i.posthog.com
 us-auth-robinhod.webflow.io
 us-bank-cancel-transaction.com
 us-battie.net
@@ -1197158,6 +1197185,7 @@ vc-openai.apmen.cn
 vc-safetys.org
 vc.5-rt.ru
 vc.ad.lgsmartad.com
+vc.hotjar.io
 vc.kunwersachdev.com
 vc.rogosie4.ru
 vc.rompishvariola.com
@@ -1197209,6 +1197237,7 @@ vceconom.whamprot.site
 vcegpu.libas.com.tr
 vcegsisugrwd.bid
 vceilinichego.ru
+vceiulduuzdlisqfmdmd.supabase.co
 vcej.zizilove.ru.com
 vcejwt.omneo.ru.com
 vcejxz.interiors.fr
