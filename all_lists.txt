@@ -625557,7 +625557,6 @@ forms.fidelity.ca
 forms.fircosoft.com
 forms.fitchratings.com
 forms.flightglobal.com
-forms.gle
 forms.gocardless.com
 forms.goepson.com
 forms.gov

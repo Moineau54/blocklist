@@ -625557,7 +625557,6 @@
 ||forms.fircosoft.com^$important
 ||forms.fitchratings.com^$important
 ||forms.flightglobal.com^$important
-||forms.gle^$important
 ||forms.gocardless.com^$important
 ||forms.goepson.com^$important
 ||forms.gov^$important
