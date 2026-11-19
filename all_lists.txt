@@ -154867,6 +154867,7 @@ api-googles.com
 api-h.outgrow.co
 api-hotmart-tracking-manager.hotmart.com
 api-hw.adxplay.com
+api-iam.intercom.io
 api-id.cdo.heytapmobile.com
 api-id.game.heytapmobi.com
 api-id.game.heytapmobile.com
@@ -444768,6 +444769,7 @@ d883e0249b.com
 d88616f13ff24718a9a60a83d19c63e1.fp.measure.office.com
 d8881.win
 d890342p.beget.tech
+d8921cfcafc74fc4adae3464c30acaac.js.ubembed.com
 d894a1d400.com
 d899.webazilla.com
 d89bb76eeb804279a492614ced941372.fp.measure.office.com
@@ -1215240,6 +1215242,7 @@ widget.faphouse.com
 widget.fr3.eu.criteo.com
 widget.golfscape.com
 widget.headlines.pw
+widget.intercom.io
 widget.jp2.as.criteo.com
 widget.justwatch.com
 widget.kes.gbc.criteo.com

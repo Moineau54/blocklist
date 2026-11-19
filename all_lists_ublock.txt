@@ -154867,6 +154867,7 @@
 ||api-h.outgrow.co^$important
 ||api-hotmart-tracking-manager.hotmart.com^$important
 ||api-hw.adxplay.com^$important
+||api-iam.intercom.io^$important
 ||api-id.cdo.heytapmobile.com^$important
 ||api-id.game.heytapmobi.com^$important
 ||api-id.game.heytapmobile.com^$important
@@ -444768,6 +444769,7 @@
 ||d88616f13ff24718a9a60a83d19c63e1.fp.measure.office.com^$important
 ||d8881.win^$important
 ||d890342p.beget.tech^$important
+||d8921cfcafc74fc4adae3464c30acaac.js.ubembed.com^$important
 ||d894a1d400.com^$important
 ||d899.webazilla.com^$important
 ||d89bb76eeb804279a492614ced941372.fp.measure.office.com^$important
@@ -1215240,6 +1215242,7 @@
 ||widget.fr3.eu.criteo.com^$important
 ||widget.golfscape.com^$important
 ||widget.headlines.pw^$important
+||widget.intercom.io^$important
 ||widget.jp2.as.criteo.com^$important
 ||widget.justwatch.com^$important
 ||widget.kes.gbc.criteo.com^$important

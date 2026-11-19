@@ -14309,6 +14309,7 @@
 ||api-gl.cdo.heytapmobi.com^$important
 ||api-gl.cdo.heytapmobile.com^$important
 ||api-hotmart-tracking-manager.hotmart.com^$important
+||api-iam.intercom.io^$important
 ||api-id.cdo.heytapmobile.com^$important
 ||api-id.game.heytapmobi.com^$important
 ||api-id.game.heytapmobile.com^$important
@@ -121183,6 +121184,7 @@
 ||widget.educationdynamics.com^$important
 ||widget.eu.criteo.com^$important
 ||widget.fr3.eu.criteo.com^$important
+||widget.intercom.io^$important
 ||widget.jp2.as.criteo.com^$important
 ||widget.kes.gbc.criteo.com^$important
 ||widget.nl3.eu.criteo.com^$important

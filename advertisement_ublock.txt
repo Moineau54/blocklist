@@ -47620,6 +47620,7 @@
 ||d81mfvml8p5ml.cloudfront.net^$important
 ||d830x8j3o1b2k.cloudfront.net^$important
 ||d883e0249b.com^$important
+||d8921cfcafc74fc4adae3464c30acaac.js.ubembed.com^$important
 ||d894a1d400.com^$important
 ||d899.webazilla.com^$important
 ||d89sze2uu.com^$important

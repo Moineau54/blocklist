@@ -14308,6 +14308,7 @@ api-exponea.o2.sk
 api-gl.cdo.heytapmobi.com
 api-gl.cdo.heytapmobile.com
 api-hotmart-tracking-manager.hotmart.com
+api-iam.intercom.io
 api-id.cdo.heytapmobile.com
 api-id.game.heytapmobi.com
 api-id.game.heytapmobile.com
@@ -121182,6 +121183,7 @@ widget.da.us.preprod.criteo.com
 widget.educationdynamics.com
 widget.eu.criteo.com
 widget.fr3.eu.criteo.com
+widget.intercom.io
 widget.jp2.as.criteo.com
 widget.kes.gbc.criteo.com
 widget.nl3.eu.criteo.com
