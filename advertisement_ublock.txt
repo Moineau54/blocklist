@@ -111020,6 +111020,7 @@
 ||px-intl.ucweb.com^$important
 ||px.adfulplatform.com^$important
 ||px.adhigh.net^$important
+||px.ads.linkedin.com^$important
 ||px.blog.hu^$important
 ||px.conta49.com.br^$important
 ||px.dmp.zaloapp.com^$important
