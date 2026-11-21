@@ -335081,6 +335081,7 @@ cdn1.analporn.cc
 cdn1.animehentaivideos.xxx
 cdn1.animehentaivideos.xxx.asus
 cdn1.anondns.net
+cdn1.anonymised.io
 cdn1.arabxl.com
 cdn1.asian-porn-videos.com
 cdn1.asianporn24.com
@@ -855127,6 +855128,7 @@ ipv5da.us.gbc.criteo.com
 ipv6-api.iproyal.com
 ipv6-api.pawns.app
 ipv6-gay.pages.dev
+ipv6-survey.frumentum.nl
 ipv6-wildcard.applovin.com.edgekey.net
 ipv6.103-98-213-116.cprapid.com
 ipv6.103-98-213-203.cprapid.com
@@ -1086746,6 +1086748,7 @@ scripts.mrpiracy.xyz
 scripts.opti-digital.com
 scripts.psyma.com
 scripts.simpleanalyticscdn.com
+scripts.snigelweb.com
 scripts.static-od.com
 scripts.stay22.com
 scripts.webcontentassessor.com
@@ -1129437,6 +1129440,7 @@ static.altavara.co
 static.altitudemarketing.com
 static.ammoland.com
 static.analytics.nativeads.com
+static.anonymised.io
 static.anyclip-media.com
 static.applixir.com
 static.aqua-adserver.com
@@ -1182227,6 +1182231,7 @@ umami.aigenerations.net
 umami.askrella.de
 umami.eu.org
 umami.flixer.su
+umami.frumentum.nl
 umami.heroku.uk
 umami.is
 umami.nordiskehandel.cloud
@@ -1195561,6 +1195566,7 @@ v3xhp9zxu5i.top
 v4-ag.gbc.criteo.com
 v4.2s84d.ru
 v4.3jw5u.ru
+v4.ipv6-survey.frumentum.nl
 v4.kd-50.ru
 v4.pav3.ru
 v4.tt.omtrdc.net

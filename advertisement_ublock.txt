@@ -40151,6 +40151,7 @@
 ||cdn00.sanko.ac.jp^$important
 ||cdn001.milotree.com^$important
 ||cdn01.sanko.ac.jp^$important
+||cdn1.anonymised.io^$important
 ||cdn1.digita.media^$important
 ||cdn1.figuren-shop.de^$important
 ||cdn1.lp.saboom.com^$important
@@ -119333,8 +119334,10 @@
 ||scripts.opti-digital.com^$important
 ||scripts.psyma.com^$important
 ||scripts.simpleanalyticscdn.com^$important
+||scripts.snigelweb.com^$important
 ||scripts.static-od.com^$important
 ||scripts.stay22.com^$important
+||scripts.webcontentassessor.com^$important
 ||scripts21.com^$important
 ||scriptscalumnychirp.com^$important
 ||scriptshead.com^$important
@@ -138134,6 +138137,7 @@
 ||static.altitudemarketing.com^$important
 ||static.ammoland.com^$important
 ||static.analytics.nativeads.com^$important
+||static.anonymised.io^$important
 ||static.anyclip-media.com^$important
 ||static.applixir.com^$important
 ||static.aqua-adserver.com^$important

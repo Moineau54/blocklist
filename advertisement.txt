@@ -40150,6 +40150,7 @@ cdn.zxclan.com
 cdn00.sanko.ac.jp
 cdn001.milotree.com
 cdn01.sanko.ac.jp
+cdn1.anonymised.io
 cdn1.digita.media
 cdn1.figuren-shop.de
 cdn1.lp.saboom.com
@@ -119332,8 +119333,10 @@ scripts.mediavine.com
 scripts.opti-digital.com
 scripts.psyma.com
 scripts.simpleanalyticscdn.com
+scripts.snigelweb.com
 scripts.static-od.com
 scripts.stay22.com
+scripts.webcontentassessor.com
 scripts21.com
 scriptscalumnychirp.com
 scriptshead.com
@@ -138133,6 +138136,7 @@ static.altavara.co
 static.altitudemarketing.com
 static.ammoland.com
 static.analytics.nativeads.com
+static.anonymised.io
 static.anyclip-media.com
 static.applixir.com
 static.aqua-adserver.com

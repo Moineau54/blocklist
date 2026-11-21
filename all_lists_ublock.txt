@@ -335081,6 +335081,7 @@
 ||cdn1.animehentaivideos.xxx^$important
 ||cdn1.animehentaivideos.xxx.asus^$important
 ||cdn1.anondns.net^$important
+||cdn1.anonymised.io^$important
 ||cdn1.arabxl.com^$important
 ||cdn1.asian-porn-videos.com^$important
 ||cdn1.asianporn24.com^$important
@@ -855127,6 +855128,7 @@
 ||ipv6-api.iproyal.com^$important
 ||ipv6-api.pawns.app^$important
 ||ipv6-gay.pages.dev^$important
+||ipv6-survey.frumentum.nl^$important
 ||ipv6-wildcard.applovin.com.edgekey.net^$important
 ||ipv6.103-98-213-116.cprapid.com^$important
 ||ipv6.103-98-213-203.cprapid.com^$important
@@ -1086746,6 +1086748,7 @@
 ||scripts.opti-digital.com^$important
 ||scripts.psyma.com^$important
 ||scripts.simpleanalyticscdn.com^$important
+||scripts.snigelweb.com^$important
 ||scripts.static-od.com^$important
 ||scripts.stay22.com^$important
 ||scripts.webcontentassessor.com^$important
@@ -1129437,6 +1129440,7 @@
 ||static.altitudemarketing.com^$important
 ||static.ammoland.com^$important
 ||static.analytics.nativeads.com^$important
+||static.anonymised.io^$important
 ||static.anyclip-media.com^$important
 ||static.applixir.com^$important
 ||static.aqua-adserver.com^$important
@@ -1182227,6 +1182231,7 @@
 ||umami.askrella.de^$important
 ||umami.eu.org^$important
 ||umami.flixer.su^$important
+||umami.frumentum.nl^$important
 ||umami.heroku.uk^$important
 ||umami.is^$important
 ||umami.nordiskehandel.cloud^$important
@@ -1195561,6 +1195566,7 @@
 ||v4-ag.gbc.criteo.com^$important
 ||v4.2s84d.ru^$important
 ||v4.3jw5u.ru^$important
+||v4.ipv6-survey.frumentum.nl^$important
 ||v4.kd-50.ru^$important
 ||v4.pav3.ru^$important
 ||v4.tt.omtrdc.net^$important
